@@ -1,0 +1,243 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1395B846-26D7-461E-BB96-6730199FA014}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VIEW</RootNamespace>
+    <AssemblyName>VIEW</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44337</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Contents\icon\arrow-down-line.png" />
+    <Content Include="Contents\icon\check.png" />
+    <Content Include="Contents\icon\common-icon.png" />
+    <Content Include="Contents\icon\hoadondien.png" />
+    <Content Include="Contents\icon\icons8-date-to-24.png" />
+    <Content Include="Contents\icon\icons8-globe-earth-64.png" />
+    <Content Include="Contents\icon\icon_5shop_white_24_1.png" />
+    <Content Include="Contents\icon\icon_help_18.png" />
+    <Content Include="Contents\icon\ic_api_20.png" />
+    <Content Include="Contents\icon\ic_ocm_logo.png" />
+    <Content Include="Contents\icon\ic_sogiaohang.png" />
+    <Content Include="Contents\icon\Image.png" />
+    <Content Include="Contents\icon\load.gif" />
+    <Content Include="Contents\icon\loading2.gif" />
+    <Content Include="Contents\icon\logo-mshopkeeper.png" />
+    <Content Include="Contents\icon\misasupport_1.png" />
+    <Content Include="Contents\icon\notify-18.png" />
+    <Content Include="Contents\icon\slibarmenu.png" />
+    <Content Include="Contents\icon\sms_menu.png" />
+    <Content Include="Contents\icon\tenor.gif" />
+    <Content Include="Contents\icon\uncheck.png" />
+    <Content Include="Contents\imgs\10354686_10150004552801856_220367501106153455_n.jpg" />
+    <Content Include="Contents\imgs\5food.png" />
+    <Content Include="Contents\imgs\cancel-invoice.png" />
+    <Content Include="Contents\imgs\chevron-right.png" />
+    <Content Include="Contents\imgs\default-small-arrow.png" />
+    <Content Include="Contents\imgs\Disable16.png" />
+    <Content Include="Contents\imgs\Edit16.png" />
+    <Content Include="Contents\imgs\EmployeeImage.png" />
+    <Content Include="Contents\imgs\excel_97_24.png" />
+    <Content Include="Contents\imgs\icon-cost.png" />
+    <Content Include="Contents\imgs\icon-deposit.png" />
+    <Content Include="Contents\imgs\icon-question.png" />
+    <Content Include="Contents\imgs\icon-subscriber.png" />
+    <Content Include="Contents\imgs\iconHelp.png" />
+    <Content Include="Contents\imgs\iconMenu.png" />
+    <Content Include="Contents\imgs\icons8-add-file-16.png" />
+    <Content Include="Contents\imgs\icons8-copy-link-96.png" />
+    <Content Include="Contents\imgs\icons8-delete-48.png" />
+    <Content Include="Contents\imgs\icons8-edit-property-40.png" />
+    <Content Include="Contents\imgs\icons8-refresh-16.png" />
+    <Content Include="Contents\imgs\IconSprite.png" />
+    <Content Include="Contents\imgs\ic_GH.jpg" />
+    <Content Include="Contents\imgs\ic_GH.svg" />
+    <Content Include="Contents\imgs\ic_GopKhachHang.png" />
+    <Content Include="Contents\imgs\ic_hoadon.png" />
+    <Content Include="Contents\imgs\ic_support.jpg" />
+    <Content Include="Contents\imgs\ic_support.svg" />
+    <Content Include="Contents\imgs\Import16.png" />
+    <Content Include="Contents\imgs\page-first.png" />
+    <Content Include="Contents\imgs\page-last.png" />
+    <Content Include="Contents\imgs\page-next.png" />
+    <Content Include="Contents\imgs\page-prev.png" />
+    <Content Include="Contents\imgs\refresh.png" />
+    <Content Include="Contents\imgs\Save16.png" />
+    <Content Include="Contents\imgs\SaveAdd16.png" />
+    <Content Include="Contents\imgs\SMS_Menu.jpg" />
+    <Content Include="Contents\imgs\SMS_Menu.svg" />
+    <Content Include="Contents\imgs\sort_desc.png" />
+    <Content Include="Contents\imgs\tool-sprites.png" />
+    <Content Include="Contents\imgs\trigger.png" />
+    <Content Include="Contents\imgs\vector-smart-object.png" />
+    <Content Include="Contents\imgs\viewEmail.png" />
+    <Content Include="CSS\Libraries\jquery-ui.css" />
+    <Content Include="CSS\Project\common.css" />
+    <Content Include="CSS\Project\parent.css" />
+    <Content Include="CSS\Project\view.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\Libraries\jquery-1.12.4.js" />
+    <Content Include="Scripts\Libraries\jquery-3.4.1.js" />
+    <Content Include="Scripts\Libraries\jquery-ui.js" />
+    <Content Include="Scripts\Project\base.js" />
+    <Content Include="Scripts\Project\parent.js" />
+    <Content Include="Views\parent.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ParentsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BL\BL.csproj">
+      <Project>{75716059-279f-4c01-b007-53484fd5eeb5}</Project>
+      <Name>BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DL\DL.csproj">
+      <Project>{fadc7de4-188d-450c-8152-4bea72ee1ec5}</Project>
+      <Name>DL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{42b59704-8281-4dc0-a8f0-70bb5409098b}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58827</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44337/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

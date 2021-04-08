@@ -1,0 +1,177 @@
+﻿.text-right{
+    text-align: right;
+
+}
+.text-center{
+    text-align: center;
+
+}
+.uncheck {
+    width: 38px;
+    background: url('/Contents/icon/uncheck.png') center no-repeat;
+}
+.check {
+    background: url('/Contents/icon/check.png') center no-repeat;
+}
+.select {
+    background-color: #d7e9f4 !important;
+}
+#dialog-add {
+    display: none;
+    width: 675px !important;
+    height: 330px !important;
+    background-color: #0072bc !important;
+    margin-left: -151px;
+    margin-top: -79px;
+    position: absolute;
+}
+#dialog-edit {
+    display: none;
+    width: 675px !important;
+    height: 330px !important;
+    background-color: #0072bc !important;
+    margin-left: -151px;
+    margin-top: -79px;
+    position: absolute;
+}
+
+.dialog-add-tieu-de {
+    display: flex;
+    background-color: #0072bc;
+    width: 707px;
+    height: 30px;
+    margin-top: -8px;
+    margin-left: -16px;
+}
+.dialog-add-tieu-de {
+    display: flex;
+    background-color: #0072bc;
+    width: 707px;
+    height: 30px;
+    margin-top: -8px;
+    margin-left: -16px;
+}
+.icon-tieu-de-dialog-add, .icon-tieu-de-dialog-edit {
+    background: url('/Contents/imgs/tool-sprites.png') center no-repeat;
+    width: 20px;
+    height: 16px;
+    margin-left: 582px;
+    margin-top: 6px;
+    background-position: 0px 0px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.dialog-add-than {
+    background-color: white;
+    width: 699px;
+    height: 308px;
+    border-left: 4px solid #0072bc;
+    border-right: 4px solid #0072bc;
+    margin-left: -16px;
+    margin-left: -16px;
+}
+.dong1{
+    display: flex;
+    font-size: 13px;
+    margin-top:  3px;
+}
+.dau-sao{
+    color: red;
+}
+.btn-dialogAdd{
+    height: 25px;
+    width: 86px;
+    display: flex;
+    background-color : white;
+    border: 1px solid #b6b4b4;
+    border-radius: 2px;
+    margin-top: 10px;
+
+}
+    .btn-dialogAdd > img {
+        width: 16px;
+        height: 16px;
+        margin-left: 9px;
+    }
+.btn-dialogAdd > div{
+    margin-top: 1px;
+    margin-left: 5px;
+    font-size: 13px;
+}
+#cat-them{
+    width: 125px;
+    margin-left: 10px;
+}
+#cat-them-edit {
+    width: 125px;
+    margin-left: 10px;
+}
+#huy-bo {
+    width: 100px;
+    margin-left: 10px;
+}
+#huy-bo-edit {
+    width: 100px;
+    margin-left: 10px;
+}
+.dong1 > label{
+    margin-left: 20px;
+}
+.input1{
+    margin-left: 15px;
+    width: 190px;
+    height: 21px;
+}
+.text1{
+    margin-top: 6px;
+    border-radius: 2px;
+}
+.text2 {
+    margin-left: 26px !important;
+}
+.input3 {
+    margin-left: 15px !important;
+}
+.input4 {
+    margin-left: 41px !important;
+}
+.input5 {
+    margin-left: 58px !important;
+}
+.input6 {
+    margin-left: 50px !important;
+    width: 534px !important;
+}
+.input7 {
+    margin-left: 54px !important;
+}
+.input8 {
+    margin-left: 91px !important;
+}
+.input9 {
+    margin-left: 78px !important;
+    width: 534px !important;
+}
+.input10 {
+    margin-left: 73px !important;
+    width: 534px !important;
+    height: 42px !important;
+}
+.input11 {
+    margin-left: 72px;
+}
+.giup{
+    margin-left: 17px;
+
+}
+.cat {
+    margin-left: 242px;
+}
+
+.boder-red{
+    border: 1px solid red;
+}
+
+

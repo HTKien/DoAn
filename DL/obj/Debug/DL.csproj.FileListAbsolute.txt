@@ -1,0 +1,15 @@
+F:\HTKien\DL\bin\Debug\DL.dll
+F:\HTKien\DL\bin\Debug\DL.pdb
+F:\HTKien\DL\obj\Debug\DL.csprojAssemblyReference.cache
+F:\HTKien\DL\obj\Debug\DL.csproj.CoreCompileInputs.cache
+F:\HTKien\DL\obj\Debug\DL.dll
+F:\HTKien\DL\obj\Debug\DL.pdb
+F:\HTKien\DL\bin\Debug\DL.dll.config
+F:\HTKien\DL\bin\Debug\EntityFramework.dll
+F:\HTKien\DL\bin\Debug\EntityFramework.SqlServer.dll
+F:\HTKien\DL\bin\Debug\EntityFramework.xml
+F:\HTKien\DL\bin\Debug\EntityFramework.SqlServer.xml
+F:\HTKien\DL\obj\Debug\DL.csproj.CopyComplete
+F:\HTKien\DL\bin\Debug\Entities.dll
+F:\HTKien\DL\bin\Debug\Entities.pdb
+F:\HTKien\DL\bin\Debug\Entities.dll.config

@@ -1,0 +1,455 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.div-trai{
+    width: 230px;
+    height: 100vh;
+
+}
+.div-phai{
+   
+
+
+    width: 100%;
+    height: 100vh;
+    
+}
+.div-trai-tren {
+    background-color: #0973b9;
+    width: 100%;
+    height: 55px;
+    border-bottom: 1px solid #b7def7;
+    margin-top: 0px;
+    margin-left: 0px;
+    display: flex;
+
+
+
+
+}
+.div-trai-duoi {
+    width: 100%;
+    height: calc(100% - 56px);
+    overflow: auto;
+   
+
+}
+.div-trai-tren-icon {
+    width: 28px;
+    height: 28px;
+    margin-top: 14px;
+    margin-left: 10px;
+    background: url('/Contents/imgs/iconMenu.png') center no-repeat;
+    background-position: 0px -416px;
+}
+.div-trai-tren-text {
+    width: 20px;
+    height: 28px;
+   margin-top: 10px;
+   margin-left: 10px;
+   font-size: 25px;
+   font-weight: 900;
+   color: white;
+
+
+
+}
+.trai-duoi-1cai {
+    background-color: #0973b9;
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #094369;
+    display: flex;
+    cursor: pointer;
+
+}
+    .trai-duoi-1cai:hover {
+        background-color: #0199fc;
+
+    }
+.trai-duoi-icon {
+    width: 28px;
+    height: 28px;
+    margin-top: 5px;
+    margin-left: 10px;
+    background: url('/Contents/imgs/iconMenu.png') center no-repeat;
+    background-position: 0px 1px;
+}
+.trai-duoi-text {
+    width: 117px;
+    height: 28px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 13px;
+    color: white;
+}
+#bao-cao {
+    background-position: 2px -190px;
+}
+#mua-hang {
+    background-position: 2px -373px;
+}
+#kho {
+    background-position: 2px -35px;
+}
+#quy-tien-mat {
+    background-position: 2px -76px;
+}
+#quy-tien-gui {
+    background: url('/Contents/imgs/icon-deposit.png') center no-repeat;
+    background-position: 4px 4px;
+}
+#chi-phi {
+    background: url('/Contents/imgs/icon-cost.png') center no-repeat;
+    background-position: 1px 1px;
+}
+#khuyen-mai {
+    background-position: 0px -115px;
+}
+#danh-muc {
+    background-position: 1px -153px;
+
+}
+#thuc-don {
+    background: url('/Contents/imgs/vector-smart-object.png') center no-repeat;
+    background-position: 4px 2px;
+
+}
+#huy-hoa-don {
+    background: url('/Contents/imgs/cancel-invoice.png') center no-repeat;
+    background-position: 4px 4px;
+
+}
+#sms-marketting {
+    background: url('/Contents/icon/sms_menu.png') center no-repeat;
+    background-position: 8px 4px;
+}
+#hoa-don-dien-tu {
+    background: url('/Contents/imgs/ic_hoadon.png') center no-repeat;
+    background-position: 4px 4px;
+}
+
+#thiet-lap-he-thong {
+    background-position: 2px -230px;
+}
+#tro-giup {
+    background: url('/Contents/imgs/iconHelp.png') center no-repeat;
+    background-position: 4px 2px;
+}
+#thue-bao {
+    background: url('/Contents/imgs/icon-subscriber.png') center no-repeat;
+    background-position: 3px 5px;
+}
+#food {
+    background: url('/Contents/imgs/5food.png') center no-repeat;
+    background-position: 4px 2px;
+}
+.div-phai-tren {
+    background-color: #0973b9;
+    width: 100%;
+    height: 55px;
+    display: flex;
+
+}
+.cbb1 {
+    width: 200px;
+    height: 32px;
+    border: none;
+    background-color: #005082;
+    color: white;
+    margin-left: 5px;
+    margin-top: 12px;
+}
+.danh-muc {
+    background-color: #0199fc;
+
+}
+.div-phai-giua{
+    width: 100%;
+    height: 55px;
+    background-color: white;
+    display: flex;
+
+
+}
+.text-danh-muc {
+    margin-top: 12px;
+    margin-left: 10px;
+    font-weight: 900;
+    font-size: 20px;
+
+
+}
+.button-giua{
+    background-color: none;
+    border: 1px solid #808080;
+    border-radius : 3px;
+    margin-top: 15px;
+
+
+
+}
+.div-phai-menu-ngang {
+    background-color: #ececee;
+    width: 100%;
+    height: 27px;
+    display: flex;
+    border-top: 1px solid #d6d6d6;
+    border-bottom: 1px solid #d6d6d6;
+}
+.btn-text {
+    line-height: 27px;
+    margin-top: -1px;
+    margin-left: 5px;
+    padding-right: 5px;
+
+
+}
+.btn {
+    display: flex;
+    background-color: #ececee;
+    border: none;
+    outline: none;
+    border-right: 1px solid #d6d6d6;
+
+}
+    .btn > img {
+        margin-top: 3px;
+        padding-left: 3px;
+        width: 16px;
+        height: 16px;
+
+
+    }
+
+.phan-trang {
+    width: 100%;
+    height: 27px;
+    background-color: #ececee;
+    border-top: 1px solid #d6d6d6;
+    border-bottom: 1px solid #d6d6d6;
+}
+.table{
+    width: calc(100vw - 197px );
+    height: calc(100vh - 168px );
+    overflow: auto;
+
+   
+
+
+}
+.trang-dau {
+    background: url('/Contents/imgs/page-first.png') center no-repeat;
+    height: 16px;
+    width: 16px;
+    outline: none;
+    border: none;
+    margin-left: 11px;
+    margin-top: 5px;
+}
+.trang-truoc {
+    background: url('/Contents/imgs/page-prev.png') center no-repeat;
+    height: 16px;
+    width: 16px;
+    outline: none;
+    border: none;
+    margin-left: 11px;
+    margin-top: 5px;
+}
+.phan-trang-text{
+
+    margin-left: 10px;
+    margin-top: 3px;
+    font-size: 13px;
+
+
+
+}
+.input-trang{
+    width: 38px;
+    height: 20px;
+    margin-left: 10px;
+
+
+}
+.trang-sau {
+    background: url('/Contents/imgs/page-next.png') center no-repeat;
+    height: 16px;
+    width: 16px;
+    outline: none;
+    border: none;
+    margin-left: 11px;
+    margin-top: 5px;
+}
+.trang-cuoi {
+    background: url('/Contents/imgs/page-last.png') center no-repeat;
+    height: 16px;
+    width: 16px;
+    outline: none;
+    border: none;
+    margin-left: 11px;
+    margin-top: 5px;
+}
+.tai-lai-trang {
+    background: url('/Contents/imgs/refresh.png') center no-repeat;
+    height: 16px;
+    width: 16px;
+    outline: none;
+    border: none;
+    margin-left: 11px;
+    margin-top: 5px;
+}
+.tieu-de {
+    background-color: #ededed;
+    height: 55px;
+    border-left: 1px solid #d6d6d6;
+    border-right: 1px solid #d6d6d6;
+}
+
+
+.tieu-de-tren {
+    height: 25px;
+    width: 100%;
+    font-size: 13px;
+    line-height: 25px;
+    font-weight: 500;
+}
+.tieu-de-duoi-trai > button{
+    width: 24px;
+    height: 24px;
+
+}
+.tieu-de-duoi-phai > input {
+   
+    height: 20px;
+    margin-left: 1px;
+    border: 1px solid #d6d6d6;
+}
+    .tieu-de-duoi-phai > input.cot-ma-khach-hang {
+        width: 70px;
+    }
+    .tieu-de-duoi-phai > input.cot-ten-khach-hang {
+        width: 110px;
+    }
+    .tieu-de-duoi-phai > input.cot-ten-cong-ty {
+        width: 110px;
+    }
+    .tieu-de-duoi-phai > input.cot-ma-so-thue {
+        width: 52px;
+    }
+    .tieu-de-duoi-phai > input.cot-dia-chi {
+        width: 164px;
+    }
+    .tieu-de-duoi-phai > input.cot-dien-thoai {
+        width: 59px;
+    }
+    .tieu-de-duoi-phai > input.cot-email {
+        width: 162px;
+    }
+    .tieu-de-duoi-phai > input.cot-ma-the-thanh-vien {
+        width: 84px;
+    }
+    .tieu-de-duoi-phai > input.cot-hang-the {
+        width: 82px;
+    }
+    .tieu-de-duoi-phai > input.cot-tien-no {
+        width: 90px;
+    }
+    .tieu-de-duoi-phai > input.cot-ghi-chu {
+        width: 110px;
+    }
+    .tieu-de-duoi-phai > input.cot-5Food {
+        width: 86px;
+    }
+    .tieu-de-duoi-phai > input.cot-ngung-theo-doi {
+        width: 90px;
+    }
+    .tieu-de-duoi {
+        display: flex;
+    }
+table {
+    border-collapse: collapse;
+}
+table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+    table tbody tr{
+        height: 24px;
+        font-size : 13px;
+
+
+    }
+    table thead tr th {
+        position: sticky;
+        top: -1px !important;
+    }
+td {
+    border: 1px solid #d6d6d6;
+}
+.phan-trang > button{
+    cursor: pointer;
+
+    border : 1px solid #808080;
+    width: 30px;
+    height: 25px;
+    margin-top: 1px;
+
+
+   
+
+
+}
+    .phan-trang > button:hover {
+        background-color: rgba(1, 153, 252, 0.46);
+    }
+.div-phai-menu-ngang > button:hover {
+    background-color: rgba(1, 153, 252, 0.46);
+}
+.div-phai-menu-ngang > button{
+    cursor: pointer;
+
+}
+.div-phai-menu-ngang > button:disabled {
+    opacity: 0.5;
+}
+.phan-trang > button:disabled{
+    opacity :0.2;
+
+}
+
+.main-table tr:hover {
+    background-color: #ffffd3;
+}
+.loading {
+    background: url('/Contents/icon/load.gif') center no-repeat;
+    display: none;
+    position: absolute;
+    background-color: white !important;
+    width: calc(100vw - 197px );
+    height: calc(100vh - 240px );
+    overflow: auto;
+    margin-top: 55px;
+    background-size: 250px;
+}
+.thanh-vien-5Food {
+    width: 121px;
+    height: 24px;
+    border: 1px solid #d6d6d6;
+}
+button{
+    cursor: pointer !important;
+
+}
+
+
+
+     
+
+
+
+
