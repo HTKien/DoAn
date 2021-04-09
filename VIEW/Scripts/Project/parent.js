@@ -64,7 +64,7 @@ class Parent extends Base {
         $(document).on('keydown', 'main-table tbody tr', this.ChonNhieu.bind(this));
 
         //sự kiện thêm mới khách hàng: 
-        $(document).on('click', '#save', this.SaveKhachHang.bind(this));
+        $(document).on('click', '#save', this.SaveParent.bind(this));
 
         //sự kiện cho nút cất và thêm khách hàng: 
         $(document).on('click', '#cat-them', this.CatVaThem.bind(this));
@@ -78,7 +78,7 @@ class Parent extends Base {
         $(document).on('click', 'button.edit', this.showDiaLogEdit.bind(this));
 
         //sự kiện cho nút cất trong SỬA KHÁCH HÀNG:
-        $(document).on('click', '#save-edit', this.SaveKhachHangEdit.bind(this));
+        $(document).on('click', '#save-edit', this.SaveParentEdit.bind(this));
 
         //sự kiện cho nút cất và Thêm trong dialog Sửa:
         $(document).on('click', '#cat-them-edit', this.CatVaThemEdit.bind(this));
@@ -148,16 +148,12 @@ class Parent extends Base {
 
     }
     /**
-     * Hàm thực hiện việc mở dialog Sửa khách hàng
+     * Hàm thực hiện việc mở dialog Sửa phụ huynh
      * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 25/8/2019
      * */
     showDiaLogEdit() {
         $('#dialog-edit').dialog({
-
             modal: true,
-
-
         });
 
         var me = this;
@@ -170,22 +166,13 @@ class Parent extends Base {
 
         $.ajax({
             method: 'GET',
-            url: '/khachhangs/' + listID[0],
+            url: '/parents/' + listID[0],
             success: function (res) {
-                $('#ma-dialog-edit').val(res.Ma);
-                $('#ten-dialog-edit').val(res.Ten);
-                $('#ten-cong-ty-dialog-edit').val(res.TenCongTy);
-                $('#ma-so-thue-dialog-edit').val(res.MaSoThue);
-                $('#dia-chi-dialog-edit').val(res.DiaChi);
-                $('#dien-thoai-dialog-edit').val(res.DienThoai);
-                $('#email-dialog-edit').val(res.Email);
-                $('#ma-the-thanh-vien-dialog-edit').val(res.MaTheThanhVien);
-                $('#hang-the-dialog-edit').val(res.HangThe);
-                $('#tien-no-edit').val(res.TienNo);
-                $('#ghi-chu-dialog-edit').val(res.GhiChu);
-
-
-
+                $('#code-dialog-edit').val(res.Code);
+                $('#name-dialog-edit').val(res.Name);
+                $('#address-dialog-edit').val(res.Address);
+                $('#phone-dialog-edit').val(res.Phone);
+                $('#note-dialog-edit').val(res.Note);
             },
             error: function () {
                 alert("Hệ thống đang bị lỗi!");
@@ -213,11 +200,11 @@ class Parent extends Base {
             var ten;
             $.ajax({
                 method: 'GET',
-                url: '/khachhangs/' + listID[0],
+                url: '/parents/' + listID[0],
                 success: function (res) {
-                    ma = res.Ma;
-                    ten = res.Ten;
-                    var html = "Bạn có chắc chắn muốn xóa Khách hàng << " + ma + " - " + ten + " >> không?";
+                    ma = res.Code;
+                    ten = res.Name;
+                    var html = "Bạn có chắc chắn muốn xóa Phụ huynh << " + ma + " - " + ten + " >> không?";
 
                     $('#thong-bao').empty();
 
@@ -230,7 +217,7 @@ class Parent extends Base {
                 }
             });
         } else if (listID.length > 1) {
-            var html = "Bạn có chắc chắn muốn xóa những Khách hàng đã chọn không?";
+            var html = "Bạn có chắc chắn muốn xóa những Phụ huynh đã chọn không?";
             $('#thong-bao').empty();
             $('#thong-bao').append(html);
         }
@@ -249,7 +236,7 @@ class Parent extends Base {
                 "Có": function () {
                     $.ajax({
                         method: 'DELETE',
-                        url: '/khachhangs',
+                        url: '/parents',
                         contentType: "application/json; charset=utf-8",
                         data: JSON.stringify(listID),
                         success: function (res) {
@@ -353,7 +340,7 @@ class Parent extends Base {
         });
         $.ajax({
             method: 'DELETE',
-            url: '/khachhangs',
+            url: '/parents',
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(listID),
             success: function (res) {
@@ -378,29 +365,23 @@ class Parent extends Base {
      * Người tạo: Hàn Trung Kiên
      * Ngày tạo: 26/8/2019
      * */
-    SaveKhachHang() {
+    SaveParent() {
 
         var me = this;
         var object = {};
 
 
-        object["Ma"] = $('#ma-dialog').val();
-        object["Ten"] = $('#ten-dialog').val();
-        object["TenCongTy"] = $('#ten-cong-ty-dialog').val();
-        object["MaSoThue"] = $('#ma-so-thue-dialog').val();
-        object["DiaChi"] = $('#dia-chi-dialog').val();
-        object["DienThoai"] = $('#dien-thoai-dialog').val();
-        object["Email"] = $('#email-dialog').val();
-        object["MaTheThanhVien"] = $('#ma-the-thanh-vien-dialog').val();
-        object["HangThe"] = $('#hang-the-dialog').val();
-        object["TienNo"] = $('#tien-no').val();
-        object["GhiChu"] = $('#ghi-chu-dialog').val();
-        if (object["Ma"] == "" || object["Ten"] == "" || object["DienThoai"] == "") {
+        object["Code"] = $('#code-dialog').val();
+        object["Name"] = $('#name-dialog').val();
+        object["Address"] = $('#address-dialog').val();
+        object["Phone"] = $('#phone-dialog').val();
+        object["Note"] = $('#note-dialog').val();
+        if (object["Code"] == "" || object["Name"] == "" || object["Phone"] == "") {
             alert("Bạn phải nhập thông tin trong các trường bắt buộc!");
         } else {
             $.ajax({
                 method: 'POST',
-                url: '/khachhangs',
+                url: '/parents',
                 data: JSON.stringify(object),
                 contentType: "application/json; charset=utf-8",
                 success: function (res) {
@@ -419,7 +400,7 @@ class Parent extends Base {
     * Người tạo: Hàn Trung Kiên
     * Ngày tạo: 26/8/2019
     * */
-    SaveKhachHangEdit() {
+    SaveParentEdit() {
         var me = this;
         var object = {};
 
@@ -430,24 +411,18 @@ class Parent extends Base {
             listID.push($(item).data('recordid'));
         });
 
-        object["ID"] = listID[0];
-        object["Ma"] = $('#ma-dialog-edit').val();
-        object["Ten"] = $('#ten-dialog-edit').val();
-        object["TenCongTy"] = $('#ten-cong-ty-dialog-edit').val();
-        object["MaSoThue"] = $('#ma-so-thue-dialog-edit').val();
-        object["DiaChi"] = $('#dia-chi-dialog-edit').val();
-        object["DienThoai"] = $('#dien-thoai-dialog-edit').val();
-        object["Email"] = $('#email-dialog-edit').val();
-        object["MaTheThanhVien"] = $('#ma-the-thanh-vien-dialog-edit').val();
-        object["HangThe"] = $('#hang-the-dialog-edit').val();
-        object["TienNo"] = $('#tien-no-edit').val();
-        object["GhiChu"] = $('#ghi-chu-dialog-edit').val();
+        object["ParentID"] = listID[0];
+        object["Code"] = $('#code-dialog-edit').val();
+        object["Name"] = $('#name-dialog-edit').val();
+        object["Address"] = $('#address-dialog-edit').val();
+        object["Phone"] = $('#phone-dialog-edit').val();
+        object["Note"] = $('#note-dialog-edit').val();
         if (object["Ma"] == "" || object["Ten"] == "" || object["DienThoai"] == "") {
             alert("Bạn phải nhập thông tin trong các trường bắt buộc!");
         } else {
             $.ajax({
                 method: 'PUT',
-                url: '/khachhangs',
+                url: '/parents',
                 data: JSON.stringify(object),
                 contentType: "application/json; charset=utf-8",
                 success: function (res) {

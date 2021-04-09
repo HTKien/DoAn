@@ -5,7 +5,6 @@
     /**
      * Hàm thực hiện lấy toàn bộ dữ liệu
      * Người tạo: Hàn Trung Kiên 
-     * Ngày tạo:  22/8/2019
      * */
     getAllData() {
         var fakeData = [];
@@ -470,59 +469,16 @@
     * Ngày tạo: 22/8/2019
     * */
     AppenData(fakeData) {
-        //$('.main-table tbody').empty();
-
-        //$.each(fakeData, function (index, item) {
-        //    var rowHTML = '<tr>'
-
-
-        //        + '<td>' + item.Ma + '</td>'
-        //        + '<td>' + item.Ten + '</td>'
-        //        + '<td>' + item.TenCongTy + '</td>'
-        //        + '<td>' + item.MaSoThue + '</td>'
-        //        + '<td>' + item.DiaChi + '</td>'
-        //        + '<td>' + item.DienThoai + '</td>'
-        //        + '<td>' + item.Email + '</td>'
-        //        + '<td>' + item.MaTheThanhVien + '</td>'
-        //        + '<td>' + item.HangThe + '</td>'
-        //        + '<td>' + item.TienNo + '</td>'
-        //        + '<td>' + item.GhiChu + '</td>'
-        //        + '<td class="uncheck"> </td>'
-        //        + '<td class="uncheck"> </td>'
-
-        //        + '</tr>';
-        //    $('.main-table tbody').append(rowHTML);
-        //});
         var fields = $('.main-table th[fieldName]');
         $('.main-table tbody').empty();
         $.each(fakeData, function (index, item) {
-            var rowHTML = $('<tr></tr>').data("recordid", item["ID"]);
+            var rowHTML = $('<tr></tr>').data("recordid", item["ParentID"]);
             $.each(fields, function (fieldIndex, fieldItem) {
                 var fieldName = fieldItem.getAttribute('fieldName');
                 var fieldValue = item[fieldName];
-                //var cls = 'text-left';
-                //if (fieldName == "NgaySinh") {
-                //    fieldValue = new Date(fieldValue);
-                //}
-                //var type = $.type(fieldValue);
-                //switch (type) {
-                //    case "number":
-                //        cls = 'text-right';
-                //        break;
-                //    case "date":
-                //        fieldValue = fieldValue.formatddMMyyyy();
-                //        cls = 'text-center';
-                //        break;
-                //}
-                if (fieldName) {
-                    rowHTML.append('<td>' + fieldValue + '</td>');
-                } else {
-                    rowHTML.append('<td class = "uncheck" id = "checkbox"></td>');
-                }
+                rowHTML.append('<td>' + fieldValue + '</td>');
             });
-
             $('.main-table tbody').append(rowHTML);
-
         });
 
     }

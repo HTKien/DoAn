@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Parent</title>
+    <title>Quản lý phụ huynh</title>
     <link href="/CSS/Libraries/jquery-ui.css" rel="stylesheet" />
     <link href="/CSS/Project/view.css" rel="stylesheet" />
     <link href="/CSS/Project/common.css" rel="stylesheet" />
@@ -116,8 +116,8 @@
     </div>
     <div class="div-phai">
         <div style="width: fit-content();display: flex; justify-content: flex-end" class="div-phai-tren">
-            <select class="cbb1" style="width: 140px; background-color: #0973b9; margin-right: 10px ">
-                <option value="value">Hàn Trung Kiên</option>
+            <select class="cbb1" style="width: 66px; background-color: #0973b9; margin-right: 10px ">
+                <option value="value">Admin</option>
             </select>
         </div>
         <div class="div-phai-giua">
@@ -213,8 +213,8 @@
                 <div style="width : 1px; height: 15px; background-color: #cccccc; margin-top: 5px; margin-left: 15px; "></div>
                 <div class="div-cbb">
                     <select style="width: 60px; height: 24px;" class="cbb-trang page-size">
-                        <option>50</option>
                         <option>25</option>
+                        <option>50</option>
                         <option>100</option>
 
 
@@ -238,68 +238,37 @@
         </div>
         <div id="dialog-add">
             <div class="dialog-add-tieu-de">
-                <div style="color: white; line-height: 30px; margin-left: 15px; ">Khách hàng</div>
+                <div style="color: white; line-height: 30px; margin-left: 15px; ">Thêm mới</div>
                 <button class="icon-tieu-de-dialog-add"></button>
             </div>
             <div class="dialog-add-than">
                 <div style="height: 5px; "></div>
                 <div class="dong1">
-                    <label class="text-dialog text1">Mã khách hàng<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1" id="ma-dialog" />
-                    <label class="text-dialog text1 text2">Tên khách hàng <span class="dau-sao">(*)</span> </label>
-                    <input type="text" name="name" value="" class="input1" id="ten-dialog" />
-
+                    <label class="text-dialog text1">Mã phụ huynh<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="code-dialog" />
                 </div>
                 <div class="dong1">
-                    <label class="text-dialog text1">Mã thẻ thành viên</label>
-                    <input type="text" name="name" value="" class="input1 input3" id="ma-the-thanh-vien-dialog" />
-                    <label class="text-dialog text1 text2">Hạng thẻ</label>
-                    <input type="text" name="name" value="" class="input1 input11" id="hang-the-dialog" />
-
-                </div>
-                <div class="dong1">
-                    <label class="text-dialog text1">ĐT di động<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1 input4" id="dien-thoai-dialog" />
-                </div>
-                <div class="dong1">
-                    <label class="text-dialog text1">Số tiền nợ</label>
-                    <input type="text" name="name" value="" class="input1 input5" id="tien-no" />
-                </div>
-                <div class="dong1">
-                    <label class="text-dialog text1">Tên công ty</label>
-                    <input type="text" name="name" value="" class="input1 input6" id="ten-cong-ty-dialog" />
-                </div>
-                <div class="dong1">
-                    <label class="text-dialog text1">Mã số thuế</label>
-                    <input type="text" name="name" value="" class="input1 input7" id="ma-so-thue-dialog" />
-                    <label class="text-dialog text1 text2">Email</label>
-                    <input type="text" name="name" value="" class="input1 input8" id="email-dialog" />
-
+                    <label class="text-dialog text1">Họ và tên<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="name-dialog" />
                 </div>
                 <div class="dong1">
                     <label class="text-dialog text1">Địa chỉ</label>
-                    <input type="text" name="name" value="" class="input1 input9" id="dia-chi-dialog" />
+                    <input type="text" name="name" value="" class="input1 input3" id="address-dialog" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Điện thoại<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1 input4" id="phone-dialog" />
                 </div>
                 <div class="dong1">
                     <label class="text-dialog text1">Ghi chú</label>
-                    <input type="text" name="name" value="" class="input1 input10" id="ghi-chu-dialog" />
+                    <textarea id="note-dialog"></textarea>
                 </div>
 
-                <div class="dong1">
-                    <button class="btn-dialogAdd giup">
-                        <img src="/Contents/imgs/iconHelp.png" />
-
-
-                        <div>Giúp</div>
-                    </button>
+                <div class="dong1 list-btn">
+                   
                     <button class="btn-dialogAdd cat" id="save">
                         <img src="/Contents/imgs/Save16.png" />
-                        <div>Cất</div>
-
-                    </button>
-                    <button class="btn-dialogAdd" id="cat-them">
-                        <img src="/Contents/imgs/SaveAdd16.png" />
-                        <div>Cất & Thêm</div>
+                        <div>Lưu</div>
 
                     </button>
                     <button class="btn-dialogAdd" id="huy-bo">
@@ -314,68 +283,37 @@
         </div>
         <div id="dialog-edit">
             <div class="dialog-add-tieu-de">
-                <div style="color: white; line-height: 30px; margin-left: 15px; ">Khách hàng</div>
+                <div style="color: white; line-height: 30px; margin-left: 15px; ">Sửa phụ huynh</div>
                 <button class="icon-tieu-de-dialog-edit"></button>
             </div>
             <div class="dialog-add-than">
                 <div style="height: 5px; "></div>
                 <div class="dong1">
-                    <label class="text-dialog text1">Mã khách hàng<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1" id="ma-dialog-edit" />
-                    <label class="text-dialog text1 text2">Tên khách hàng <span class="dau-sao">(*)</span> </label>
-                    <input type="text" name="name" value="" class="input1" id="ten-dialog-edit" />
-
+                    <label class="text-dialog text1">Mã phụ huynh<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="code-dialog-edit" />
                 </div>
                 <div class="dong1">
-                    <label class="text-dialog text1">Mã thẻ thành viên</label>
-                    <input type="text" name="name" value="" class="input1 input3" id="ma-the-thanh-vien-dialog-edit" />
-                    <label class="text-dialog text1 text2">Hạng thẻ</label>
-                    <input type="text" name="name" value="" class="input1 input11" id="hang-the-dialog-edit" />
-
-                </div>
-                <div class="dong1">
-                    <label class="text-dialog text1">ĐT di động<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1 input4" id="dien-thoai-dialog-edit" />
-                </div>
-                <div class="dong1">
-                    <label class="text-dialog text1">Số tiền nợ</label>
-                    <input type="text" name="name" value="" class="input1 input5" id="tien-no-edit" />
-                </div>
-                <div class="dong1">
-                    <label class="text-dialog text1">Tên công ty</label>
-                    <input type="text" name="name" value="" class="input1 input6" id="ten-cong-ty-dialog-edit" />
-                </div>
-                <div class="dong1">
-                    <label class="text-dialog text1">Mã số thuế</label>
-                    <input type="text" name="name" value="" class="input1 input7" id="ma-so-thue-dialog-edit" />
-                    <label class="text-dialog text1 text2">Email</label>
-                    <input type="text" name="name" value="" class="input1 input8" id="email-dialog-edit" />
-
+                    <label class="text-dialog text1">Họ và tên<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="name-dialog-edit" />
                 </div>
                 <div class="dong1">
                     <label class="text-dialog text1">Địa chỉ</label>
-                    <input type="text" name="name" value="" class="input1 input9" id="dia-chi-dialog-edit" />
+                    <input type="text" name="name" value="" class="input1 input3" id="address-dialog-edit" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Điện thoại<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1 input4" id="phone-dialog-edit" />
                 </div>
                 <div class="dong1">
                     <label class="text-dialog text1">Ghi chú</label>
-                    <input type="text" name="name" value="" class="input1 input10" id="ghi-chu-dialog-edit" />
+                    <textarea id="note-dialog-edit"></textarea>
                 </div>
 
-                <div class="dong1">
-                    <button class="btn-dialogAdd giup">
-                        <img src="/Contents/imgs/iconHelp.png" />
-
-
-                        <div>Giúp</div>
-                    </button>
+                <div class="dong1 list-btn">
+                    
                     <button class="btn-dialogAdd cat" id="save-edit">
                         <img src="/Contents/imgs/Save16.png" />
-                        <div>Cất</div>
-
-                    </button>
-                    <button class="btn-dialogAdd" id="cat-them-edit">
-                        <img src="/Contents/imgs/SaveAdd16.png" />
-                        <div>Cất & Thêm</div>
+                        <div>Lưu lại</div>
 
                     </button>
                     <button class="btn-dialogAdd" id="huy-bo-edit">

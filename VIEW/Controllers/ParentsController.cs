@@ -21,9 +21,8 @@ namespace VIEW.Controllers
         private ParentBL _parentBL = new ParentBL();
         public VIEWContext db = new VIEWContext();
         /// <summary>
-        /// service thực hiện lấy toàn bộ danh sách khách hàng
+        /// service thực hiện lấy toàn bộ danh sách phụ huynh
         /// Người tạo: Hàn Trung Kiên
-        /// Ngày tạo :22/8/2019
         /// </summary>
         /// <returns></returns>
 
@@ -35,9 +34,8 @@ namespace VIEW.Controllers
         }
 
         /// <summary>
-        /// service thực hiện lấy danh sách khách hàng tùy vào trang và kích thước trang:
+        /// service thực hiện lấy danh sách phụ huynh tùy vào trang và kích thước trang:
         /// Người tạo: Hàn Trung Kiên
-        /// Ngày tạo: 22/8/2019
         /// </summary>
         /// <param name="pageIndex"></param>
         /// <param name="pageSize"></param>
@@ -48,17 +46,12 @@ namespace VIEW.Controllers
         [HttpGet]
         public IEnumerable<Parent> GetPagingParent(int pageIndex, int pageSize)
         {
-
-
             return _parentBL.GetPagingData(pageIndex, pageSize);
-
-
         }
 
 
-        //service thực hiện xóa dữ liệu khách hàng trên database:
+        //service thực hiện xóa dữ liệu phụ huynh trên database:
         //Người tạo : Hàn Trung Kiên
-        //Ngày tạo: 22/8/2019
         [Route("parents")]
         [HttpDelete]
         public async Task<AjaxResult> DeleteParentCtrl([FromBody] List<Guid> ids)
@@ -78,9 +71,8 @@ namespace VIEW.Controllers
             return ajaxResult;
         }
 
-        //service thực hiện lấy thông tin phiếu thu theo ID
+        //service thực hiện lấy thông tin bản ghi theo ID
         //Người tạo : Hàn Trung Kiên
-        //Ngày tạo: 25/8/2019
         [Route("parents/{id}")]
         [HttpGet]
         public Parent GetInforParent(Guid id)
@@ -90,7 +82,7 @@ namespace VIEW.Controllers
         }
 
 
-        //Service thực hiện thêm mới khách hàng: 
+        //Service thực hiện thêm mới phụ huynh: 
         //Người tạo: Hàn Trung Kiên
         //Ngày tạo: 26/8/2019
         [Route("parents")]

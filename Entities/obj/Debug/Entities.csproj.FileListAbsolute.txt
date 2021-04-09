@@ -11,3 +11,4 @@ F:\HTKien\Entities\bin\Debug\EntityFramework.SqlServer.xml
 F:\HTKien\Entities\obj\Debug\Entities.csproj.CopyComplete
 F:\HTKien\Entities\obj\Debug\Entities.Migrations.Initial.resources
 F:\HTKien\Entities\obj\Debug\Entities.csproj.GenerateResource.cache
+F:\HTKien\Entities\obj\Debug\Entities.csprojAssemblyReference.cache

@@ -11,9 +11,8 @@ namespace DL
     {
         private VIEWContext db = new VIEWContext();
 
-        //Hàm thực hiện lấy dữ liệu từ database về 
+        //Hàm thực hiện lấy dữ liệu phụ huynh từ database về 
         //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 22/8/2019
         public IEnumerable<Parent> GetParent()
         {
             return db.Parents;
@@ -21,7 +20,6 @@ namespace DL
 
         //Hàm thực hiện việc xóa dữ  liệu  bản ghi khách hàng: xoa nhieu hoac xoa 1 deu duoc
         //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 22/8/2019
         public void DeleteParent(List<Guid> ids)
         {
             foreach (var id in ids)

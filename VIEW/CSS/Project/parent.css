@@ -9,3 +9,49 @@
 .tieu-de {
     height: unset;
 }
+#code-dialog, #code-dialog-edit {
+    margin-left: 20px;
+    width: 528px;
+}
+#name-dialog, #name-dialog-edit {
+    margin-left: 47px;
+    width: 528px;
+}
+#address-dialog, #address-dialog-edit {
+    margin-left: 76px !important;
+    width: 528px;
+}
+#phone-dialog, #phone-dialog-edit {
+    margin-left: 44px !important;
+}
+#note-dialog, #note-dialog-edit {
+    margin-left: 71px !important;
+    width: 528px;
+    height: 100px;
+}
+#save {
+    margin-left: unset;
+}
+.list-btn {
+    justify-content: center;
+    margin-top: 16px;
+}
+.list-btn img {
+    margin-top: 2px;
+}
+.list-btn div {
+    margin-top: 2px;
+}
+
+.icon-tieu-de-dialog-edit {
+    margin-left: unset;
+}
+.dialog-add-tieu-de {
+    justify-content: space-between !important;
+}
+.icon-tieu-de-dialog-add, .icon-tieu-de-dialog-edit {
+    margin-right: 15px;
+}
+.cat {
+    margin-left: unset !important;
+}
