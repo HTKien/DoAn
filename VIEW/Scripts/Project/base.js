@@ -95,7 +95,7 @@
     * */
     getRefreshData() {
         var pageIndex = $('.page-index').val(1);
-        var pageSize = $('.page-size').val(50);
+        var pageSize = $('.page-size').val(25);
 
         var pageIndex = $('.page-index').val();
         var pageSize = $('.page-size option:selected').val();

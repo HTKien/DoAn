@@ -18,7 +18,7 @@ namespace DL
             return db.Parents;
         }
 
-        //Hàm thực hiện việc xóa dữ  liệu  bản ghi khách hàng: xoa nhieu hoac xoa 1 deu duoc
+        //Hàm thực hiện việc xóa dữ  liệu  bản ghi phụ huynh: xoa nhieu hoac xoa 1 deu duoc
         //Người tạo: Hàn Trung Kiên
         public void DeleteParent(List<Guid> ids)
         {
@@ -32,7 +32,7 @@ namespace DL
 
         }
 
-        //Hàm thực hiện thêm mới khách hàng: 
+        //Hàm thực hiện thêm mới phụ huynh: 
         //Người tạo: Hàn Trung Kiên
         //Ngày tạo: 26/8/2019
         public void AddParent(Parent _parent)
@@ -43,7 +43,7 @@ namespace DL
         }
 
 
-        //Hàm thực hiện sửa thông tin khách hàng
+        //Hàm thực hiện sửa thông tin phụ huynh
         //Người tạo: Hàn Trung Kiên
         //Ngày tạo: 26/8/2019
         public void UpdateParent(Parent _parent)

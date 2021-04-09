@@ -53,10 +53,11 @@
   <ItemGroup>
     <Compile Include="Dictionary\AjaxResult.cs" />
     <Compile Include="Dictionary\Parent.cs" />
+    <Compile Include="Dictionary\Teacher.cs" />
     <Compile Include="Dictionary\VIEWContext.cs" />
-    <Compile Include="Migrations\202104081955084_Initial.cs" />
-    <Compile Include="Migrations\202104081955084_Initial.designer.cs">
-      <DependentUpon>202104081955084_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202104091811279_Initial.cs" />
+    <Compile Include="Migrations\202104091811279_Initial.designer.cs">
+      <DependentUpon>202104091811279_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,8 +67,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104081955084_Initial.resx">
-      <DependentUpon>202104081955084_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104091811279_Initial.resx">
+      <DependentUpon>202104091811279_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
