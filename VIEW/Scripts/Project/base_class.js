@@ -55,8 +55,6 @@
                 async: false,
                 success: function (res) {
                     fakeData = res;
-
-
                 },
                 error: function (res) {
                     alert("Hệ thống đang bị lỗi!");
@@ -82,6 +80,8 @@
 
 
         }
+
+        
 
 
         return fakeData;
@@ -472,10 +472,32 @@
         var fields = $('.main-table th[fieldName]');
         $('.main-table tbody').empty();
         $.each(fakeData, function (index, item) {
+            var teacherCode;
+            var teacherName;
+            $.ajax({
+                method: 'GET',
+                url: '/teachers/' + item.TeacherID,
+                dataType: 'json',
+                async: false,
+                success: function (res) {
+                    teacherName = res.Name;
+                    teacherCode = res.Code;
+                },
+                error: function (res) {
+                    alert("Hệ thống đang bị lỗi!");
+                }
+            })
             var rowHTML = $('<tr></tr>').data("recordid", item["ClassID"]);
             $.each(fields, function (fieldIndex, fieldItem) {
                 var fieldName = fieldItem.getAttribute('fieldName');
-                var fieldValue = item[fieldName];
+                var fieldValue;
+                fieldValue = item[fieldName];
+                if (fieldName === "TeacherCode") {
+                    fieldValue = teacherCode;
+                }
+                if (fieldName === "TeacherName") {
+                    fieldValue = teacherName;
+                }
                 rowHTML.append('<td>' + fieldValue + '</td>');
             });
             $('.main-table tbody').append(rowHTML);

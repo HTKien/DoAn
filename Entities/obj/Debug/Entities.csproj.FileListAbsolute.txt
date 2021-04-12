@@ -11,3 +11,17 @@ F:\HTKien\Entities\bin\Debug\EntityFramework.SqlServer.xml
 F:\HTKien\Entities\obj\Debug\Entities.csproj.CopyComplete
 F:\HTKien\Entities\obj\Debug\Entities.Migrations.Initial.resources
 F:\HTKien\Entities\obj\Debug\Entities.csproj.GenerateResource.cache
+G:\DoAn\Entities\bin\Debug\Entities.dll.config
+G:\DoAn\Entities\bin\Debug\Entities.dll
+G:\DoAn\Entities\bin\Debug\Entities.pdb
+G:\DoAn\Entities\bin\Debug\EntityFramework.dll
+G:\DoAn\Entities\bin\Debug\EntityFramework.SqlServer.dll
+G:\DoAn\Entities\bin\Debug\EntityFramework.xml
+G:\DoAn\Entities\bin\Debug\EntityFramework.SqlServer.xml
+G:\DoAn\Entities\obj\Debug\Entities.csprojAssemblyReference.cache
+G:\DoAn\Entities\obj\Debug\Entities.Migrations.Initial.resources
+G:\DoAn\Entities\obj\Debug\Entities.csproj.GenerateResource.cache
+G:\DoAn\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
+G:\DoAn\Entities\obj\Debug\Entities.csproj.CopyComplete
+G:\DoAn\Entities\obj\Debug\Entities.dll
+G:\DoAn\Entities\obj\Debug\Entities.pdb
