@@ -22,6 +22,8 @@ namespace Entities
         public System.Data.Entity.DbSet<Entities.Parent> Parents { get; set; }
         public System.Data.Entity.DbSet<Entities.Teacher> Teachers { get; set; }
         public System.Data.Entity.DbSet<Entities.Class> Classes { get; set; }
+        public System.Data.Entity.DbSet<Entities.Scores> Scores { get; set; }
+
 
     }
 }

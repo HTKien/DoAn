@@ -7,6 +7,7 @@
     <link href="/CSS/Project/view.css" rel="stylesheet" />
     <link href="/CSS/Project/common.css" rel="stylesheet" />
     <link href="/CSS/Project/parent.css" rel="stylesheet" />
+    <link href="/CSS/Project/class_management.css" rel="stylesheet" />
 </head>
 <body>
     <div class="div-trai">
@@ -139,7 +140,7 @@
             </button>
             <button class="btn">
                 <img src="/Contents/imgs/Import16.png" />
-                <div class="btn-text">Nhập khẩu</div>
+                <div class="btn-text">Vào lớp</div>
             </button>
             <button class="btn">
                 <img src="/Contents/imgs/excel_97_24.png" />
@@ -253,30 +254,50 @@
             </div>
             <div class="dialog-add-than">
                 <div style="height: 5px; "></div>
-                <div class="dong1">
+                <div class="dong1" >
                     <label class="text-dialog text1">Mã lớp học<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1" id="code-dialog" />
+                    <input style="margin-left: 37px !important" type="text" name="name" value="" class="input1" id="code-dialog" />
                 </div>
                 <div class="dong1">
-                    <label class="text-dialog text1">Họ và tên<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1" id="name-dialog" />
+                    <label class="text-dialog text1">Tên lớp học<span class="dau-sao">(*)</span></label>
+                    <input style="margin-left: 33px !important" type="text" name="name" value="" class="input1" id="name-dialog" />
                 </div>
                 <div class="dong1">
-                    <label class="text-dialog text1">Địa chỉ</label>
-                    <input type="text" name="name" value="" class="input1 input3" id="address-dialog" />
-                </div>
-                <div class="dong1">
-                    <label class="text-dialog text1">Điện thoại<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1 input4" id="phone-dialog" />
-                    <label class="text-dialog text1">Giới tính<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1 input4" id="sex-dialog" />
+                    <label class="text-dialog text1">Năm học</label>
+                    <input style="margin-left: 64px !important" type="text" name="name" value="" class="input1 input3" id="schoolyear-dialog" />
                 </div>
                 <div class="dong1">
                     <label class="text-dialog text1">Ghi chú</label>
-                    <textarea id="note-dialog"></textarea>
+                    <textarea style="height: 38px; width: 530px" id="note-dialog"></textarea>
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Chọn GVCN</label>
+                    <div id="select-teacher">
+                        <table class="main-table-select-teacher">
+                            <thead>
+                                <tr>
+                                    <th class="tieu-de" fieldName="Code">
+                                        <div class="tieu-de-tren">Mã giáo viên</div>
+                                    </th>
+                                    <th class="tieu-de" fieldName="Name">
+                                        <div class="tieu-de-tren">Họ và tên</div>
+                                    </th>
+                                    <th class="tieu-de cot1" fieldName="Phone">
+                                        <div class="tieu-de-tren">Điện thoại</div>
+                                    </th>
+                                    <th class="tieu-de cot1" fieldName="Note">
+                                        <div class="tieu-de-tren">Ghi chú</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+
+                    </div>
                 </div>
 
-                <div class="dong1 list-btn">
+                <div style="margin-top: 3px" class="dong1 list-btn">
 
                     <button class="btn-dialogAdd cat" id="save">
                         <img src="/Contents/imgs/Save16.png" />
@@ -302,28 +323,48 @@
                 <div style="height: 5px; "></div>
                 <div class="dong1">
                     <label class="text-dialog text1">Mã lớp học<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1" id="code-dialog-edit" />
+                    <input style="margin-left: 37px !important" type="text" name="name" value="" class="input1" id="code-dialog-edit" />
                 </div>
                 <div class="dong1">
-                    <label class="text-dialog text1">Họ và tên<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1" id="name-dialog-edit" />
+                    <label class="text-dialog text1">Tên lớp học<span class="dau-sao">(*)</span></label>
+                    <input style="margin-left: 33px !important" type="text" name="name" value="" class="input1" id="name-dialog-edit" />
                 </div>
                 <div class="dong1">
-                    <label class="text-dialog text1">Địa chỉ</label>
-                    <input type="text" name="name" value="" class="input1 input3" id="address-dialog-edit" />
-                </div>
-                <div class="dong1">
-                    <label class="text-dialog text1">Điện thoại<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1 input4" id="phone-dialog-edit" />
-                    <label class="text-dialog text1">Giới tính<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1 input4" id="sex-dialog-edit" />
+                    <label class="text-dialog text1">Năm học</label>
+                    <input style="margin-left: 64px !important" type="text" name="name" value="" class="input1 input3" id="schoolyear-dialog-edit" />
                 </div>
                 <div class="dong1">
                     <label class="text-dialog text1">Ghi chú</label>
-                    <textarea id="note-dialog-edit"></textarea>
+                    <textarea style="height: 38px; width: 530px" id="note-dialog-edit"></textarea>
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Chọn GVCN</label>
+                    <div id="select-teacher">
+                        <table class="main-table-select-teacher-edit">
+                            <thead>
+                                <tr>
+                                    <th class="tieu-de" fieldName="Code">
+                                        <div class="tieu-de-tren">Mã giáo viên</div>
+                                    </th>
+                                    <th class="tieu-de" fieldName="Name">
+                                        <div class="tieu-de-tren">Họ và tên</div>
+                                    </th>
+                                    <th class="tieu-de cot1" fieldName="Phone">
+                                        <div class="tieu-de-tren">Điện thoại</div>
+                                    </th>
+                                    <th class="tieu-de cot1" fieldName="Note">
+                                        <div class="tieu-de-tren">Ghi chú</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+
+                    </div>
                 </div>
 
-                <div class="dong1 list-btn">
+                <div style="margin-top: 3px" class="dong1 list-btn">
 
                     <button class="btn-dialogAdd cat" id="save-edit">
                         <img src="/Contents/imgs/Save16.png" />

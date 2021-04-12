@@ -504,4 +504,69 @@
         });
 
     }
+
+    /**
+    *Hàm thực hiện append tất cả giáo viên lên dialog thêm mới lớp học
+    * Người tạo: Hàn Trung Kiên
+    * Ngày tạo: 22/8/2019
+    * */
+    AppenAllTeacher(fakeData) {
+        var fields = $('.main-table-select-teacher th[fieldName]');
+        $('.main-table-select-teacher tbody').empty();
+        $.each(fakeData, function (index, item) {
+            var rowHTML = $('<tr></tr>').data("recordid", item["TeacherID"]);
+            $.each(fields, function (fieldIndex, fieldItem) {
+                var fieldName = fieldItem.getAttribute('fieldName');
+                var fieldValue = item[fieldName];
+                rowHTML.append('<td>' + fieldValue + '</td>');
+            });
+            $('.main-table-select-teacher tbody').append(rowHTML);
+        });
+
+    } 
+    AppenAllTeacherEdit(fakeData) {
+        var fields = $('.main-table-select-teacher-edit th[fieldName]');
+        $('.main-table-select-teacher-edit tbody').empty();
+        $.each(fakeData, function (index, item) {
+            var rowHTML = $('<tr></tr>').data("recordid", item["TeacherID"]);
+            $.each(fields, function (fieldIndex, fieldItem) {
+                var fieldName = fieldItem.getAttribute('fieldName');
+                var fieldValue = item[fieldName];
+                rowHTML.append('<td>' + fieldValue + '</td>');
+            });
+            $('.main-table-select-teacher-edit tbody').append(rowHTML);
+        });
+
+    }
+
+    GetAllTeacher() {
+        var fakeData = [];
+        $.ajax({
+            method: 'GET',
+            url: '/teachers',
+            dataType: 'json',
+            async: false,
+            success: function (res) {
+                fakeData = res;
+            },
+            error: function (res) {
+                alert("Hệ thống đang bị lỗi!");
+            }
+        })
+        return fakeData;
+    }
+
+    /**
+     * Hàm thực hiện load dữ liệu lên html
+     * Người tạo: Hàn Trung Kiên
+     * Ngày tạo: 22/8/2019
+     * */
+    loadAllTeacher() {
+        var data = this.GetAllTeacher();
+        this.AppenAllTeacher(data);
+    }
+    loadAllTeacherEdit() {
+        var data = this.GetAllTeacher();
+        this.AppenAllTeacherEdit(data);
+    }
 }

@@ -1,0 +1,13 @@
+﻿#select-teacher {
+    width: 536px;
+    height: 115px;
+    margin-left: 44px;
+    background-color: white;
+    overflow-y: scroll;
+    border: 1px solid gray;
+    border-radius: 2px;
+}
+.main-table-select-teacher,
+.main-table-select-teacher-edit{
+    width: 100%;
+}

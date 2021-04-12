@@ -66,8 +66,7 @@ class Class extends BaseClass {
         //sự kiện thêm mới khách hàng: 
         $(document).on('click', '#save', this.SaveClass.bind(this));
 
-        //sự kiện cho nút cất và thêm khách hàng: 
-        $(document).on('click', '#cat-them', this.CatVaThem.bind(this));
+        
 
         //sự kiện cho nút Hủy bỏ trong dialog :
         $(document).on('click', '#huy-bo', this.CloseDiaLog.bind(this));
@@ -140,11 +139,9 @@ class Class extends BaseClass {
      * */
     showDiaLogAdd() {
         $('#dialog-add').dialog({
-
             modal: true,
-
-
         });
+        this.loadAllTeacher();
 
     }
     /**
@@ -152,9 +149,11 @@ class Class extends BaseClass {
      * Người tạo: Hàn Trung Kiên
      * */
     showDiaLogEdit() {
+        
         $('#dialog-edit').dialog({
             modal: true,
         });
+        this.loadAllTeacherEdit();
 
         var me = this;
         var listRow = $('.select');
@@ -170,10 +169,9 @@ class Class extends BaseClass {
             success: function (res) {
                 $('#code-dialog-edit').val(res.Code);
                 $('#name-dialog-edit').val(res.Name);
-                $('#address-dialog-edit').val(res.Address);
-                $('#phone-dialog-edit').val(res.Phone);
-                $('#sex-dialog-edit').val(res.Sex);
+                $('#schoolyear-dialog-edit').val(res.SchoolYear);
                 $('#note-dialog-edit').val(res.Note);
+                
             },
             error: function () {
                 alert("Hệ thống đang bị lỗi!");
@@ -368,17 +366,22 @@ class Class extends BaseClass {
      * */
     SaveClass() {
 
+
         var me = this;
         var object = {};
+        var listRow = $('.select');
+        var listID = [];
 
+        $.each(listRow, function (index, item) {
+            listID.push($(item).data('recordid'));
+        });
 
+        object["TeacherID"] = listID[0];
         object["Code"] = $('#code-dialog').val();
         object["Name"] = $('#name-dialog').val();
-        object["Address"] = $('#address-dialog').val();
-        object["Phone"] = $('#phone-dialog').val();
-        object["Sex"] = $('#sex-dialog').val();
+        object["SchoolYear"] = $('#schoolyear-dialog').val();
         object["Note"] = $('#note-dialog').val();
-        if (object["Code"] == "" || object["Name"] == "" || object["Phone"] == "" || object["Sex"] ==="") {
+        if (object["Code"] == "" || object["Name"] == "" || object["SchoolYear"] == "") {
             alert("Bạn phải nhập thông tin trong các trường bắt buộc!");
         } else {
             $.ajax({
@@ -416,11 +419,11 @@ class Class extends BaseClass {
         object["ClassID"] = listID[0];
         object["Code"] = $('#code-dialog-edit').val();
         object["Name"] = $('#name-dialog-edit').val();
-        object["Address"] = $('#address-dialog-edit').val();
-        object["Phone"] = $('#phone-dialog-edit').val();
-        object["Sex"] = $('#sex-dialog-edit').val();
+        object["SchoolYear"] = $('#schoolyear-dialog-edit').val();
         object["Note"] = $('#note-dialog-edit').val();
-        if (object["Ma"] == "" || object["Ten"] == "" || object["DienThoai"] == "" || object["Sex"] === "") {
+        object["TeacherID"] = listID[1];
+
+        if (object["Code"] == "" || object["Name"] == "" || object["SchoolYear"] == "") {
             alert("Bạn phải nhập thông tin trong các trường bắt buộc!");
         } else {
             $.ajax({
@@ -429,7 +432,6 @@ class Class extends BaseClass {
                 data: JSON.stringify(object),
                 contentType: "application/json; charset=utf-8",
                 success: function (res) {
-                    //$('.dong1 input').val("");
                     $('#dialog-edit').dialog('close');
                     me.loadData();
                 },
@@ -440,99 +442,6 @@ class Class extends BaseClass {
         }
 
     }
-    /**
-    * Hàm thực hiện lưu khách hàng lên database và mở dialog Thêm mới : (đang trong dialog sửa)
-    * Người tạo: Hàn Trung Kiên
-    * Ngày tạo: 26/8/2019
-    * */
-    CatVaThemEdit() {
-        var me = this;
-        var object = {};
-
-        var listRow = $('.select');
-        var listID = [];
-
-        $.each(listRow, function (index, item) {
-            listID.push($(item).data('recordid'));
-        });
-
-        object["ID"] = listID[0];
-        object["Ma"] = $('#ma-dialog-edit').val();
-        object["Ten"] = $('#ten-dialog-edit').val();
-        object["TenCongTy"] = $('#ten-cong-ty-dialog-edit').val();
-        object["MaSoThue"] = $('#ma-so-thue-dialog-edit').val();
-        object["DiaChi"] = $('#dia-chi-dialog-edit').val();
-        object["DienThoai"] = $('#dien-thoai-dialog-edit').val();
-        object["Email"] = $('#email-dialog-edit').val();
-        object["MaTheThanhVien"] = $('#ma-the-thanh-vien-dialog-edit').val();
-        object["HangThe"] = $('#hang-the-dialog-edit').val();
-        object["TienNo"] = $('#tien-no-edit').val();
-        object["GhiChu"] = $('#ghi-chu-dialog-edit').val();
-        if (object["Ma"] == "" || object["Ten"] == "" || object["DienThoai"] == "") {
-            alert("Bạn phải nhập thông tin trong các trường bắt buộc!");
-        } else {
-            $.ajax({
-                method: 'PUT',
-                url: '/khachhangs',
-                data: JSON.stringify(object),
-                contentType: "application/json; charset=utf-8",
-                success: function (res) {
-                    me.loadData();
-
-                    //$('.dong1 input').val("");
-                    $('#dialog-edit').dialog('close');
-                    me.showDiaLogAdd();
-
-
-                },
-                error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
-                }
-            });
-        }
-
-    }
-    /**
-    * Hàm thực hiện lưu khách hàng lên database và mở dialog Thêm mới : (đang trong dialog Thêm mới)
-    * Người tạo: Hàn Trung Kiên
-    * Ngày tạo: 26/8/2019
-    * */
-    CatVaThem() {
-        var me = this;
-        var object = {};
-
-
-        object["Ma"] = $('#ma-dialog').val();
-        object["Ten"] = $('#ten-dialog').val();
-        object["TenCongTy"] = $('#ten-cong-ty-dialog').val();
-        object["MaSoThue"] = $('#ma-so-thue-dialog').val();
-        object["DiaChi"] = $('#dia-chi-dialog').val();
-        object["DienThoai"] = $('#dien-thoai-dialog').val();
-        object["Email"] = $('#email-dialog').val();
-        object["MaTheThanhVien"] = $('#ma-the-thanh-vien-dialog').val();
-        object["HangThe"] = $('#hang-the-dialog').val();
-        object["TienNo"] = $('#tien-no').val();
-        object["GhiChu"] = $('#ghi-chu-dialog').val();
-        if (object["Ma"] == "" || object["Ten"] == "" || object["DienThoai"] == "") {
-            alert("Bạn phải nhập thông tin trong các trường bắt buộc!");
-        } else {
-            $.ajax({
-                method: 'POST',
-                url: '/khachhangs',
-                data: JSON.stringify(object),
-                contentType: "application/json; charset=utf-8",
-                success: function (res) {
-
-                    me.loadData();
-                    $('.dong1 input').val("");
-                    $('#dialog-add').dialog();
-                },
-                error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
-                }
-            });
-        }
-
-    }
+    
 
 }
