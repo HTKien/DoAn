@@ -55,6 +55,7 @@
     <Compile Include="Dictionary\Class.cs" />
     <Compile Include="Dictionary\Parent.cs" />
     <Compile Include="Dictionary\Scores.cs" />
+    <Compile Include="Dictionary\Student.cs" />
     <Compile Include="Dictionary\Teacher.cs" />
     <Compile Include="Dictionary\VIEWContext.cs" />
     <Compile Include="Migrations\202104111810255_Initial.cs" />
@@ -64,6 +65,10 @@
     <Compile Include="Migrations\202104121806255_Scores.cs" />
     <Compile Include="Migrations\202104121806255_Scores.designer.cs">
       <DependentUpon>202104121806255_Scores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104131621326_Student.cs" />
+    <Compile Include="Migrations\202104131621326_Student.designer.cs">
+      <DependentUpon>202104131621326_Student.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104121806255_Scores.resx">
       <DependentUpon>202104121806255_Scores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104131621326_Student.resx">
+      <DependentUpon>202104131621326_Student.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

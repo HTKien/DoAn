@@ -49,6 +49,9 @@ class Class extends BaseClass {
         //sự kiện show dialog thêm khách hàng:
         $(document).on('click', 'button.add', this.showDiaLogAdd.bind(this));
 
+        //sự kiện vào một lớp học:
+        $(document).on('click', 'button.goclass', this.goClass.bind(this));
+
         //sự kiện đóng dialog khi nhấn icon đóng:
         $(document).on('click', 'button.icon-tieu-de-dialog-add', this.CloseDiaLog.bind(this));
         $(document).on('click', 'button.icon-tieu-de-dialog-edit', this.CloseDiaLogEdit.bind(this));
@@ -143,6 +146,19 @@ class Class extends BaseClass {
         });
         this.loadAllTeacher();
 
+    }
+    goClass() {
+        var classIDinFunc;
+        var me = this;
+        var listRow = $('.select');
+        var listID = [];
+
+        $.each(listRow, function (index, item) {
+            listID.push($(item).data('recordid'));
+        });
+        classIDinFunc = listID[0];
+        console.log(classIDinFunc);
+        classID = classIDinFunc;
     }
     /**
      * Hàm thực hiện việc mở dialog Sửa giáo viên

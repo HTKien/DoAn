@@ -25,3 +25,4 @@ G:\DoAn\Entities\obj\Debug\Entities.csproj.CopyComplete
 G:\DoAn\Entities\obj\Debug\Entities.dll
 G:\DoAn\Entities\obj\Debug\Entities.pdb
 G:\DoAn\Entities\obj\Debug\Entities.Migrations.Scores.resources
+G:\DoAn\Entities\obj\Debug\Entities.Migrations.Student.resources
