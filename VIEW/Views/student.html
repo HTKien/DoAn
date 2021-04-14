@@ -121,7 +121,7 @@
             </select>
         </div>
         <div class="div-phai-giua">
-            <div id="class_title" class="text-danh-muc">Lớp 6A</div>
+            <div id="class_title" class="text-danh-muc"></div>
         </div>
 
         <div class="div-phai-menu-ngang">
@@ -139,7 +139,7 @@
             </button>
             <button class="btn">
                 <img src="/Contents/imgs/Import16.png" />
-                <div class="btn-text">Nhập khẩu</div>
+                <div class="btn-text">Xem chi tiết</div>
             </button>
             <button class="btn">
                 <img src="/Contents/imgs/excel_97_24.png" />
@@ -276,7 +276,7 @@
 
 
         </div>
-        <div id="dialog-add">
+        <div  id="dialog-add">
             <div class="dialog-add-tieu-de">
                 <div style="color: white; line-height: 30px; margin-left: 15px; ">Thêm mới</div>
                 <button class="icon-tieu-de-dialog-add"></button>
@@ -284,7 +284,7 @@
             <div class="dialog-add-than">
                 <div style="height: 5px; "></div>
                 <div class="dong1">
-                    <label class="text-dialog text1">Mã giáo viên<span class="dau-sao">(*)</span></label>
+                    <label class="text-dialog text1">Mã học sinh<span class="dau-sao">(*)</span></label>
                     <input type="text" name="name" value="" class="input1" id="code-dialog" />
                 </div>
                 <div class="dong1">
@@ -292,18 +292,26 @@
                     <input type="text" name="name" value="" class="input1" id="name-dialog" />
                 </div>
                 <div class="dong1">
-                    <label class="text-dialog text1">Địa chỉ</label>
-                    <input type="text" name="name" value="" class="input1 input3" id="address-dialog" />
-                </div>
-                <div class="dong1">
-                    <label class="text-dialog text1">Điện thoại<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1 input4" id="phone-dialog" />
                     <label class="text-dialog text1">Giới tính<span class="dau-sao">(*)</span></label>
                     <input type="text" name="name" value="" class="input1 input4" id="sex-dialog" />
+                    <label class="text-dialog text1">Ngày sinh<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1 input4" id="birthday-dialog" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Địa chỉ<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="address-dialog" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Họ và tên PH<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="parentname-dialog" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">SĐT phụ huynh<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="parentphone-dialog" />
                 </div>
                 <div class="dong1">
                     <label class="text-dialog text1">Ghi chú</label>
-                    <textarea id="note-dialog"></textarea>
+                    <textarea style="height: 48px" id="note-dialog"></textarea>
                 </div>
 
                 <div class="dong1 list-btn">
@@ -325,13 +333,13 @@
         </div>
         <div id="dialog-edit">
             <div class="dialog-add-tieu-de">
-                <div style="color: white; line-height: 30px; margin-left: 15px; ">Sửa giáo viên</div>
+                <div style="color: white; line-height: 30px; margin-left: 15px; ">Sửa học sinh</div>
                 <button class="icon-tieu-de-dialog-edit"></button>
             </div>
             <div class="dialog-add-than">
                 <div style="height: 5px; "></div>
                 <div class="dong1">
-                    <label class="text-dialog text1">Mã giáo viên<span class="dau-sao">(*)</span></label>
+                    <label class="text-dialog text1">Mã học sinh<span class="dau-sao">(*)</span></label>
                     <input type="text" name="name" value="" class="input1" id="code-dialog-edit" />
                 </div>
                 <div class="dong1">
@@ -339,18 +347,26 @@
                     <input type="text" name="name" value="" class="input1" id="name-dialog-edit" />
                 </div>
                 <div class="dong1">
-                    <label class="text-dialog text1">Địa chỉ</label>
-                    <input type="text" name="name" value="" class="input1 input3" id="address-dialog-edit" />
-                </div>
-                <div class="dong1">
-                    <label class="text-dialog text1">Điện thoại<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1 input4" id="phone-dialog-edit" />
                     <label class="text-dialog text1">Giới tính<span class="dau-sao">(*)</span></label>
                     <input type="text" name="name" value="" class="input1 input4" id="sex-dialog-edit" />
+                    <label class="text-dialog text1">Ngày sinh<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1 input4" id="birthday-dialog-edit" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Địa chỉ<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="address-dialog-edit" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Họ và tên PH<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="parentname-dialog-edit" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">SĐT phụ huynh<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="parentphone-dialog-edit" />
                 </div>
                 <div class="dong1">
                     <label class="text-dialog text1">Ghi chú</label>
-                    <textarea id="note-dialog-edit"></textarea>
+                    <textarea style="height: 48px" id="note-dialog-edit"></textarea>
                 </div>
 
                 <div class="dong1 list-btn">

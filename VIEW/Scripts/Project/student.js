@@ -66,8 +66,6 @@ class Student extends BaseStudent {
         //sự kiện thêm mới khách hàng: 
         $(document).on('click', '#save', this.SaveStudent.bind(this));
 
-        //sự kiện cho nút cất và thêm khách hàng: 
-        $(document).on('click', '#cat-them', this.CatVaThem.bind(this));
 
         //sự kiện cho nút Hủy bỏ trong dialog :
         $(document).on('click', '#huy-bo', this.CloseDiaLog.bind(this));
@@ -80,8 +78,6 @@ class Student extends BaseStudent {
         //sự kiện cho nút cất trong SỬA KHÁCH HÀNG:
         $(document).on('click', '#save-edit', this.SaveStudentEdit.bind(this));
 
-        //sự kiện cho nút cất và Thêm trong dialog Sửa:
-        $(document).on('click', '#cat-them-edit', this.CatVaThemEdit.bind(this));
 
 
 
@@ -170,9 +166,11 @@ class Student extends BaseStudent {
             success: function (res) {
                 $('#code-dialog-edit').val(res.Code);
                 $('#name-dialog-edit').val(res.Name);
-                $('#address-dialog-edit').val(res.Address);
-                $('#phone-dialog-edit').val(res.Phone);
                 $('#sex-dialog-edit').val(res.Sex);
+                $('#birthday-dialog-edit').val(res.Birthday);
+                $('#address-dialog-edit').val(res.Address);
+                $('#parentname-dialog-edit').val(res.ParentName);
+                $('#parentphone-dialog-edit').val(res.ParentPhone);
                 $('#note-dialog-edit').val(res.Note);
             },
             error: function () {
@@ -374,11 +372,15 @@ class Student extends BaseStudent {
 
         object["Code"] = $('#code-dialog').val();
         object["Name"] = $('#name-dialog').val();
-        object["Address"] = $('#address-dialog').val();
-        object["Phone"] = $('#phone-dialog').val();
         object["Sex"] = $('#sex-dialog').val();
+        object["Birthday"] = $('#birthday-dialog').val();
+        object["Address"] = $('#address-dialog').val();
+        object["ParentName"] = $('#parentname-dialog').val();
+        object["ParentPhone"] = $('#parentphone-dialog').val();
         object["Note"] = $('#note-dialog').val();
-        if (object["Code"] == "" || object["Name"] == "" || object["Phone"] == "" || object["Sex"] ==="") {
+        object["ClassID"] = classID;
+
+        if (object["Code"] == "" || object["Name"] == "" || object["Sex"] == "" || object["Birthday"] === "" || object["Address"] === "" || object["ParentName"] === "" || object["ParentPhone"] === "") {
             alert("Bạn phải nhập thông tin trong các trường bắt buộc!");
         } else {
             $.ajax({
@@ -416,11 +418,15 @@ class Student extends BaseStudent {
         object["StudentID"] = listID[0];
         object["Code"] = $('#code-dialog-edit').val();
         object["Name"] = $('#name-dialog-edit').val();
-        object["Address"] = $('#address-dialog-edit').val();
-        object["Phone"] = $('#phone-dialog-edit').val();
         object["Sex"] = $('#sex-dialog-edit').val();
+        object["Birthday"] = $('#birthday-dialog-edit').val();
+        object["Address"] = $('#address-dialog-edit').val();
+        object["ParentName"] = $('#parentname-dialog-edit').val();
+        object["ParentPhone"] = $('#parentphone-dialog-edit').val();
         object["Note"] = $('#note-dialog-edit').val();
-        if (object["Ma"] == "" || object["Ten"] == "" || object["DienThoai"] == "" || object["Sex"] === "") {
+        object["ClassID"] = classID;
+
+        if (object["Code"] == "" || object["Name"] == "" || object["Sex"] == "" || object["Birthday"] === "" || object["Address"] === "" || object["ParentName"] === "" || object["ParentPhone"] === "") {
             alert("Bạn phải nhập thông tin trong các trường bắt buộc!");
         } else {
             $.ajax({
@@ -429,6 +435,7 @@ class Student extends BaseStudent {
                 data: JSON.stringify(object),
                 contentType: "application/json; charset=utf-8",
                 success: function (res) {
+                    console.log(object);
                     //$('.dong1 input').val("");
                     $('#dialog-edit').dialog('close');
                     me.loadData();
@@ -440,99 +447,6 @@ class Student extends BaseStudent {
         }
 
     }
-    /**
-    * Hàm thực hiện lưu khách hàng lên database và mở dialog Thêm mới : (đang trong dialog sửa)
-    * Người tạo: Hàn Trung Kiên
-    * Ngày tạo: 26/8/2019
-    * */
-    CatVaThemEdit() {
-        var me = this;
-        var object = {};
-
-        var listRow = $('.select');
-        var listID = [];
-
-        $.each(listRow, function (index, item) {
-            listID.push($(item).data('recordid'));
-        });
-
-        object["ID"] = listID[0];
-        object["Ma"] = $('#ma-dialog-edit').val();
-        object["Ten"] = $('#ten-dialog-edit').val();
-        object["TenCongTy"] = $('#ten-cong-ty-dialog-edit').val();
-        object["MaSoThue"] = $('#ma-so-thue-dialog-edit').val();
-        object["DiaChi"] = $('#dia-chi-dialog-edit').val();
-        object["DienThoai"] = $('#dien-thoai-dialog-edit').val();
-        object["Email"] = $('#email-dialog-edit').val();
-        object["MaTheThanhVien"] = $('#ma-the-thanh-vien-dialog-edit').val();
-        object["HangThe"] = $('#hang-the-dialog-edit').val();
-        object["TienNo"] = $('#tien-no-edit').val();
-        object["GhiChu"] = $('#ghi-chu-dialog-edit').val();
-        if (object["Ma"] == "" || object["Ten"] == "" || object["DienThoai"] == "") {
-            alert("Bạn phải nhập thông tin trong các trường bắt buộc!");
-        } else {
-            $.ajax({
-                method: 'PUT',
-                url: '/khachhangs',
-                data: JSON.stringify(object),
-                contentType: "application/json; charset=utf-8",
-                success: function (res) {
-                    me.loadData();
-
-                    //$('.dong1 input').val("");
-                    $('#dialog-edit').dialog('close');
-                    me.showDiaLogAdd();
-
-
-                },
-                error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
-                }
-            });
-        }
-
-    }
-    /**
-    * Hàm thực hiện lưu khách hàng lên database và mở dialog Thêm mới : (đang trong dialog Thêm mới)
-    * Người tạo: Hàn Trung Kiên
-    * Ngày tạo: 26/8/2019
-    * */
-    CatVaThem() {
-        var me = this;
-        var object = {};
-
-
-        object["Ma"] = $('#ma-dialog').val();
-        object["Ten"] = $('#ten-dialog').val();
-        object["TenCongTy"] = $('#ten-cong-ty-dialog').val();
-        object["MaSoThue"] = $('#ma-so-thue-dialog').val();
-        object["DiaChi"] = $('#dia-chi-dialog').val();
-        object["DienThoai"] = $('#dien-thoai-dialog').val();
-        object["Email"] = $('#email-dialog').val();
-        object["MaTheThanhVien"] = $('#ma-the-thanh-vien-dialog').val();
-        object["HangThe"] = $('#hang-the-dialog').val();
-        object["TienNo"] = $('#tien-no').val();
-        object["GhiChu"] = $('#ghi-chu-dialog').val();
-        if (object["Ma"] == "" || object["Ten"] == "" || object["DienThoai"] == "") {
-            alert("Bạn phải nhập thông tin trong các trường bắt buộc!");
-        } else {
-            $.ajax({
-                method: 'POST',
-                url: '/khachhangs',
-                data: JSON.stringify(object),
-                contentType: "application/json; charset=utf-8",
-                success: function (res) {
-
-                    me.loadData();
-                    $('.dong1 input').val("");
-                    $('#dialog-add').dialog();
-                },
-                error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
-                }
-            });
-        }
-
-    }
+    
 
 }

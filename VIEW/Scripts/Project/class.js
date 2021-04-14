@@ -83,7 +83,6 @@ class Class extends BaseClass {
         $(document).on('click', '#save-edit', this.SaveClassEdit.bind(this));
 
         //sự kiện cho nút cất và Thêm trong dialog Sửa:
-        $(document).on('click', '#cat-them-edit', this.CatVaThemEdit.bind(this));
 
 
 
@@ -148,7 +147,6 @@ class Class extends BaseClass {
 
     }
     goClass() {
-        var classIDinFunc;
         var me = this;
         var listRow = $('.select');
         var listID = [];
@@ -156,9 +154,7 @@ class Class extends BaseClass {
         $.each(listRow, function (index, item) {
             listID.push($(item).data('recordid'));
         });
-        classIDinFunc = listID[0];
-        console.log(classIDinFunc);
-        classID = classIDinFunc;
+        location.href = "/Views/student.html";
     }
     /**
      * Hàm thực hiện việc mở dialog Sửa giáo viên

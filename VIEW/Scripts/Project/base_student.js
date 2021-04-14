@@ -483,7 +483,6 @@
     * Ngày tạo: 22/8/2019
     * */
     AppenData(fakeData) {
-        console.log(fakeData);
         var classID = fakeData[0].ClassID;
         var classCode;
         var className;
