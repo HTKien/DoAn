@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dictionary\AjaxResult.cs" />
+    <Compile Include="Dictionary\BonusStudent.cs" />
     <Compile Include="Dictionary\Class.cs" />
     <Compile Include="Dictionary\Parent.cs" />
     <Compile Include="Dictionary\Score.cs" />
@@ -69,6 +70,10 @@
     <Compile Include="Migrations\202104162334500_Score.Designer.cs">
       <DependentUpon>202104162334500_Score.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104162348122_BonusStudent.cs" />
+    <Compile Include="Migrations\202104162348122_BonusStudent.Designer.cs">
+      <DependentUpon>202104162348122_BonusStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -85,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104162334500_Score.resx">
       <DependentUpon>202104162334500_Score.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104162348122_BonusStudent.resx">
+      <DependentUpon>202104162348122_BonusStudent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

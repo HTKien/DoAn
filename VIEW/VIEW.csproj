@@ -176,6 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BonusStudentsController.cs" />
     <Compile Include="Controllers\ClassesController.cs" />
     <Compile Include="Controllers\ParentsController.cs" />
     <Compile Include="Controllers\ScoresController.cs" />

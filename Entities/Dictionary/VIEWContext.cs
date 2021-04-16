@@ -24,6 +24,8 @@ namespace Entities
         public System.Data.Entity.DbSet<Entities.Class> Classes { get; set; }
         public System.Data.Entity.DbSet<Entities.Student> Students { get; set; }
         public System.Data.Entity.DbSet<Entities.Score> Scores { get; set; }
+        public System.Data.Entity.DbSet<Entities.BonusStudent> BonusStudents { get; set; }
+
 
 
 
