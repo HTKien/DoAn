@@ -1,0 +1,40 @@
+﻿body {
+}
+
+#dialog-student-detail {
+    background-color: white;
+    width: 90vw !important;
+    margin-top: -227px !important;
+    display: none;
+    height: 535px !important;
+    max-height: unset !important;
+    position: absolute;
+    margin-left: -32vw !important;
+    border: 5px solid #0973B9;
+}
+
+.detail-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detail-title-btn {
+    margin-left: unset;
+    margin-right: 0;
+}
+
+.icon-tieu-de-dialog-detail {
+    margin-left: unset;
+}
+
+.dialog-detail-title {
+    width: 1261px !important;
+}
+
+.grid-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    line-height: 1.5;
+}

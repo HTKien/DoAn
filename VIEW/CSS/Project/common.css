@@ -51,7 +51,7 @@
     margin-top: -8px;
     margin-left: -16px;
 }
-.icon-tieu-de-dialog-add, .icon-tieu-de-dialog-edit {
+.icon-tieu-de-dialog-add, .icon-tieu-de-dialog-edit, .icon-tieu-de-dialog-detail {
     background: url('/Contents/imgs/tool-sprites.png') center no-repeat;
     width: 20px;
     height: 16px;

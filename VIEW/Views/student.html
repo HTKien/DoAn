@@ -7,6 +7,7 @@
     <link href="/CSS/Project/view.css" rel="stylesheet" />
     <link href="/CSS/Project/common.css" rel="stylesheet" />
     <link href="/CSS/Project/parent.css" rel="stylesheet" />
+    <link href="/CSS/Project/student.css" rel="stylesheet" />
 </head>
 <body>
     <div class="div-trai">
@@ -137,7 +138,7 @@
                 <img src="/Contents/imgs/icons8-delete-48.png" />
                 <div class="btn-text">Xóa</div>
             </button>
-            <button class="btn">
+            <button class="btn detail">
                 <img src="/Contents/imgs/Import16.png" />
                 <div class="btn-text">Xem chi tiết</div>
             </button>
@@ -273,10 +274,39 @@
                 <div id="thong-bao" style="font-size: 13px; margin-left: 10px; margin-top: 5px; "> </div>
 
             </div>
-
-
         </div>
-        <div  id="dialog-add">
+        <div id="dialog-student-detail">
+            <div class="dialog-add-tieu-de dialog-detail-title">
+                <div style="color: white; line-height: 30px; margin-left: 15px; ">Thông tin chi tiết học sinh</div>
+                <button class="icon-tieu-de-dialog-detail"></button>
+            </div>
+            <div class="grid-info">
+                <div class="col">
+                    <div id="student_code">Mã học sinh:</div>
+                    <div id="student_name">Họ và tên:</div>
+                    <div id="student_sex">Giới tính:</div>
+                    <div id="student_birthday">Ngày sinh:</div>
+                    <div id="student_address">Địa chỉ:</div>
+                    <div id="student_class">Lớp:</div>
+                    <div id="student_teacher">GVCN:</div>
+                </div>
+                <div class="col">
+                    <div id="student_bonus">Số khen thưởng/tuyên dương:</div>
+                    <div id="student_critic">Số phê bình:</div>
+                    <div id="student_attendance">Điểm danh:</div>
+                    <div id="student_conduct">Hạnh kiểm:</div>
+                    <div id="student_mediumscore">Điểm trung bình:</div>
+                    <div id="student_classify">Xếp loại:</div>
+                    <div id="student_status">Tình trạng:</div>
+                </div>
+                <div class="col">
+                    <div>Thông tin phụ huynh</div>
+                    <div id="parent_name">Họ và tên:</div>
+                    <div id="parent_phone">Số điện thoại:</div>
+                </div>
+            </div>
+        </div>
+        <div id="dialog-add">
             <div class="dialog-add-tieu-de">
                 <div style="color: white; line-height: 30px; margin-left: 15px; ">Thêm mới</div>
                 <button class="icon-tieu-de-dialog-add"></button>
@@ -331,6 +361,7 @@
 
 
         </div>
+
         <div id="dialog-edit">
             <div class="dialog-add-tieu-de">
                 <div style="color: white; line-height: 30px; margin-left: 15px; ">Sửa học sinh</div>

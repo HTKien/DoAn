@@ -48,9 +48,12 @@ class Student extends BaseStudent {
 
         //sự kiện show dialog thêm khách hàng:
         $(document).on('click', 'button.add', this.showDiaLogAdd.bind(this));
+        $(document).on('click', 'button.detail', this.showDiaLogDetail.bind(this));
 
         //sự kiện đóng dialog khi nhấn icon đóng:
         $(document).on('click', 'button.icon-tieu-de-dialog-add', this.CloseDiaLog.bind(this));
+        $(document).on('click', 'button.icon-tieu-de-dialog-detail', this.CloseDiaLogDetail.bind(this));
+
         $(document).on('click', 'button.icon-tieu-de-dialog-edit', this.CloseDiaLogEdit.bind(this));
 
 
@@ -70,6 +73,9 @@ class Student extends BaseStudent {
         //sự kiện cho nút Hủy bỏ trong dialog :
         $(document).on('click', '#huy-bo', this.CloseDiaLog.bind(this));
         $(document).on('click', '#huy-bo-edit', this.CloseDiaLogEdit.bind(this));
+
+
+
 
 
         //sự kiện cho nút sửa khách hàng: 
@@ -118,6 +124,10 @@ class Student extends BaseStudent {
 
 
     }
+    CloseDiaLogDetail() {
+        $('#dialog-student-detail').dialog("close");
+
+    }
 
     /**
      * Hàm thực hiện việc đóng dialog Sửa khách hàng
@@ -143,6 +153,73 @@ class Student extends BaseStudent {
         });
 
     }
+    showDiaLogDetail() {
+        $('#dialog-student-detail').dialog({
+            modal: true,
+        });
+        var me = this;
+        var listRow = $('.select');
+        var listID = [];
+        var class_id;
+
+        $.each(listRow, function (index, item) {
+            listID.push($(item).data('recordid'));
+        });
+
+        $.ajax({
+            method: 'GET',
+            url: '/students/' + listID[0],
+            success: function (res) {
+                class_id = res.ClassID;
+                $('#dialog-student-detail #student_code').text("Mã học sinh: " + res.Code);
+                $('#dialog-student-detail #student_name').text("Họ và tên: " + res.Name);
+                $('#dialog-student-detail #student_sex').text("Giới tính: " + res.Sex);
+                $('#dialog-student-detail #student_birthday').text("Ngày sinh: " + res.Birthday);
+                $('#dialog-student-detail #student_address').text("Địa chỉ: " + res.Address);
+                $('#dialog-student-detail #student_bonus').text("Số khen thưởng/tuyên dương: " + res.Bonus);
+                $('#dialog-student-detail #student_critic').text("Số phê bình: " + res.Critic);
+                $('#dialog-student-detail #student_attendance').text("Điểm danh: " + res.Attendence);
+                $('#dialog-student-detail #student_conduct').text("Hạnh kiểm: " + res.Conduct);
+                $('#dialog-student-detail #student_mediumscore').text("Điểm TB: " + res.MediumScore);
+                $('#dialog-student-detail #student_classify').text("Xếp loại: " + res.Classify);
+                $('#dialog-student-detail #student_status').text("Tình trạng: " + res.Status);
+                $('#dialog-student-detail #parent_name').text("Tên phụ huynh: " + res.ParentName);
+                $('#dialog-student-detail #parent_phone').text("Số điện thoại: " + res.ParentPhone);
+                $.ajax({
+                    method: 'GET',
+                    url: '/classes/' + class_id,
+                    dataType: 'json',
+                    async: false,
+                    success: function (res) {
+                        $('#dialog-student-detail #student_class').text("Lớp: " + res.Code + " - " + res.Name);
+                        var teacherID = res.TeacherID;
+                        $.ajax({
+                            method: 'GET',
+                            url: '/teachers/' + teacherID,
+                            dataType: 'json',
+                            async: false,
+                            success: function (res) {
+                                $('#dialog-student-detail #student_teacher').text("Giáo viên chủ nhiệm: " + res.Name);
+
+                            },
+                            error: function (res) {
+                                alert("Hệ thống đang bị lỗi!");
+                            }
+                        })
+                    },
+                    error: function (res) {
+                        alert("Hệ thống đang bị lỗi!");
+                    }
+                });
+            },
+            error: function () {
+                alert("Hệ thống đang bị lỗi!");
+            }
+        });
+
+
+    }
+
     /**
      * Hàm thực hiện việc mở dialog Sửa học sinh
      * Người tạo: Hàn Trung Kiên
@@ -447,6 +524,6 @@ class Student extends BaseStudent {
         }
 
     }
-    
+
 
 }

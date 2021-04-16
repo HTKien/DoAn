@@ -51,8 +51,11 @@ namespace DL
             var studentFind = db.Students.Where(n => n.StudentID == _student.StudentID).SingleOrDefault();
             studentFind.Code = _student.Code;
             studentFind.Name = _student.Name;
-            studentFind.Address = _student.Address;
             studentFind.Sex = _student.Sex;
+            studentFind.Birthday = _student.Birthday;
+            studentFind.Address = _student.Address;
+            studentFind.ParentName = _student.ParentName;
+            studentFind.ParentPhone = _student.ParentPhone;
             studentFind.Note = _student.Note;
             db.SaveChanges();
         }
