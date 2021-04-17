@@ -552,6 +552,32 @@
     }
 
     AppendScore(fakeData) {
+        var tbNguVan;
+        parseFloat(tbNguVan);
+        var totalNguVan = 0;
+        parseFloat(totalNguVan);
+        var countNguVan = 0;
+        for (var i = 0; i < fakeData.length; i++) {
+            if (fakeData[i].Subject === "Ngữ văn") {
+                if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
+                    totalNguVan = totalNguVan + parseFloat(fakeData[i].Point);
+                    countNguVan = countNguVan + 1;
+                } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
+                    totalNguVan = totalNguVan + parseFloat(fakeData[i].Point) * 2;
+                    countNguVan = countNguVan + 2;
+                } else if (fakeData[i].Type === "Điểm thi học kỳ") {
+                    totalNguVan = totalNguVan + parseFloat(fakeData[i].Point) * 3;
+                    countNguVan = countNguVan + 3;
+                } else {
+                    totalNguVan = totalNguVan + parseFloat(fakeData[i].Point);
+                    countNguVan = countNguVan + 1;
+                }
+            }
+        }
+        tbNguVan = totalNguVan / countNguVan;
+        $('#scoreNguVan').text("Ngữ văn: " + tbNguVan.toFixed(2));
+        $('#scoreToan').text("Toán: " + tbNguVan.toFixed(2));
+        $('#scoreVatLy').text("Vật lý: " + tbNguVan.toFixed(2));
         var fields = $('.main-table-score th[fieldName]');
         $('.main-table-score tbody').empty();
         $.each(fakeData, function (index, item) {
