@@ -559,6 +559,9 @@
             $.each(fields, function (fieldIndex, fieldItem) {
                 var fieldName = fieldItem.getAttribute('fieldName');
                 var fieldValue = item[fieldName];
+                if (fieldValue === undefined) {
+                    fieldValue = "";
+                }
                 rowHTML.append('<td>' + fieldValue + '</td>');
             });
             $('.main-table-score tbody').append(rowHTML);

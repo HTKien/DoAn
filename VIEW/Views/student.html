@@ -322,9 +322,7 @@
                                         <th class="tieu-de cot1" fieldName="Point">
                                             <div class="tieu-de-tren">Điểm</div>
                                         </th>
-                                        <th class="tieu-de cot1" fieldName="Note">
-                                            <div class="tieu-de-tren">Ghi chú</div>
-                                        </th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -333,9 +331,21 @@
                         </div>
                         <div class="student-score-show">
                             <div class="score-nav">
-                                <button>Thêm</button>
-                                <button>Sửa</button>
-                                <button>Xóa</button>
+                                <button id="add_score">Thêm</button>
+                                <button id="edit_score">Sửa</button>
+                                <button id="delete_score">Xóa</button>
+                            </div>
+                            <div class="show-item">
+                                <label>Môn học</label>
+                                <input id="score_subject" />
+                            </div>
+                            <div class="show-item">
+                                <label>Loại điểm</label>
+                                <input id="score_type" />
+                            </div>
+                            <div class="show-item">
+                                <label>Nhập điểm</label>
+                                <input id="score_point" />
                             </div>
 
                         </div>

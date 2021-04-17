@@ -45,6 +45,8 @@ class Student extends BaseStudent {
 
         //sự kiện show dialog xác nhận xóa khách hàng:
         $(document).on('click', 'button.delete', this.showDiaLog.bind(this));
+        $(document).on('click', '#delete_score', this.deleteScore.bind(this));
+        $(document).on('click', '#edit_score', this.editScore.bind(this));
 
         //sự kiện show dialog thêm khách hàng:
         $(document).on('click', 'button.add', this.showDiaLogAdd.bind(this));
@@ -68,6 +70,7 @@ class Student extends BaseStudent {
 
         //sự kiện thêm mới khách hàng: 
         $(document).on('click', '#save', this.SaveStudent.bind(this));
+        $(document).on('click', '#add_score', this.AddScore.bind(this));
 
 
         //sự kiện cho nút Hủy bỏ trong dialog :
@@ -153,6 +156,7 @@ class Student extends BaseStudent {
         });
 
     }
+    student_id;
     showDiaLogDetail() {
         $('#dialog-student-detail').dialog({
             modal: true,
@@ -216,8 +220,8 @@ class Student extends BaseStudent {
                 alert("Hệ thống đang bị lỗi!");
             }
         });
-        this.loadScore(listID[0]);
-
+        this.student_id = listID[0];
+        this.loadScore(this.student_id);
 
     }
 
@@ -263,6 +267,93 @@ class Student extends BaseStudent {
      * Người tạo: Hàn Trung Kiên
      * Ngày tạo: 24/8/2019
      * */
+    deleteScore() {
+        alert("Xác nhận xóa điểm?");
+        var me = this;
+        var listRow = $('.select');
+        var listID = [];
+        $.each(listRow, function (index, item) {
+            listID.push($(item).data('recordid'));
+        });
+        var listID_update = [];
+        for (var i = 1; i < listID.length; i++) {
+            listID_update.push(listID[i]);
+        }
+        $.ajax({
+            method: 'DELETE',
+            url: '/scores',
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(listID_update),
+            success: function (res) {
+                alert("Xóa điểm thành công!");
+                me.loadScore(me.student_id);
+            },
+            error: function (res) {
+                alert("Hệ thống đang bị lỗi!");
+            }
+        });
+
+        
+    }
+    editScore() {
+        var me = this;
+        var listRow = $('.select');
+        var listID = [];
+        $.each(listRow, function (index, item) {
+            listID.push($(item).data('recordid'));
+        });
+        var listID_update = [];
+        for (var i = 1; i < listID.length; i++) {
+            listID_update.push(listID[i]);
+        }
+        if ($('#edit_score').text() == "Sửa") {
+            $.ajax({
+                method: 'GET',
+                url: '/scores/' + listID[1],
+                dataType: 'json',
+                async: false,
+                success: function (res) {
+                    $('#score_subject').val(res.Subject);
+                    $('#score_type').val(res.Type);
+                    $('#score_point').val(res.Point);
+                    $('#edit_score').text("Lưu lại")
+                },
+                error: function (res) {
+                    alert("Hệ thống đang bị lỗi!");
+                }
+            })
+           
+        } else if ($('#edit_score').text() == "Lưu lại") {
+            var object = {};
+
+            object["ScoreID"] = listID[1];
+            object["Subject"] = $('#score_subject').val();
+            object["Type"] = $('#score_type').val();
+            object["Point"] = $('#score_point').val();
+            object["StudentID"] = me.student_id;
+
+            $.ajax({
+                method: 'PUT',
+                url: '/scores',
+                data: JSON.stringify(object),
+                contentType: "application/json; charset=utf-8",
+                success: function (res) {
+                    alert("Sửa điểm thành công!");
+                    me.loadScore(me.student_id);
+                    $('#edit_score').text("Sửa");
+                    $('#score_subject').val("");
+                    $('#score_type').val("");
+                    $('#score_point').val("");
+
+                },
+                error: function () {
+                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                }
+            });
+        }
+        
+
+    }
     showDiaLog() {
 
         var me = this;
@@ -470,6 +561,35 @@ class Student extends BaseStudent {
                     $('.dong1 input').val("");
                     $('#dialog-add').dialog('close');
                     me.loadData();
+                },
+                error: function () {
+                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                }
+            });
+        }
+    }
+    AddScore() {
+        var me = this;
+        var object = {};
+        object["Subject"] = $('#score_subject').val();
+        object["Type"] = $('#score_type').val();
+        object["Point"] = $('#score_point').val();
+        object["StudentID"] = this.student_id;
+        if (false) {
+            alert("Bạn phải nhập thông tin trong các trường bắt buộc!");
+        } else {
+            $.ajax({
+                method: 'POST',
+                url: '/scores',
+                data: JSON.stringify(object),
+                contentType: "application/json; charset=utf-8",
+                success: function (res) {
+                    alert("Thêm mới điểm thành công!");
+                    $('#score_subject').val("");
+                    $('#score_type').val("");
+                    $('#score_point').val("");
+                    me.loadScore(me.student_id);
+
                 },
                 error: function () {
                     alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");

@@ -51,6 +51,7 @@
     .student-score-table {
         height: 170px;
         overflow-y: scroll;
+        border: 1px solid gray;
     }
     .main-table-score {
         width: 100%;
