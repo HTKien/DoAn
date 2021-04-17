@@ -66,13 +66,13 @@
     <Compile Include="Migrations\202104131621326_Student.designer.cs">
       <DependentUpon>202104131621326_Student.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104162334500_Score.cs" />
-    <Compile Include="Migrations\202104162334500_Score.Designer.cs">
-      <DependentUpon>202104162334500_Score.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202104162348122_BonusStudent.cs" />
     <Compile Include="Migrations\202104162348122_BonusStudent.Designer.cs">
       <DependentUpon>202104162348122_BonusStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104171653246_Score.cs" />
+    <Compile Include="Migrations\202104171653246_Score.Designer.cs">
+      <DependentUpon>202104171653246_Score.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,11 +88,11 @@
     <EmbeddedResource Include="Migrations\202104131621326_Student.resx">
       <DependentUpon>202104131621326_Student.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104162334500_Score.resx">
-      <DependentUpon>202104162334500_Score.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104162348122_BonusStudent.resx">
       <DependentUpon>202104162348122_BonusStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104171653246_Score.resx">
+      <DependentUpon>202104171653246_Score.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

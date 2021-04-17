@@ -529,4 +529,48 @@
         });
 
     }
+
+    GetScore(studentID) {
+        var fakeData = [];
+        $.ajax({
+            method: 'GET',
+            url: '/scores',
+            dataType: 'json',
+            async: false,
+            success: function (res) {
+                $.each(res, function (index, item) {
+                    if (item.StudentID === studentID) {
+                        fakeData.push(item);
+                    }
+                });
+            },
+            error: function (res) {
+                alert("Hệ thống đang bị lỗi!");
+            }
+        })
+        return fakeData;
+    }
+
+    AppendScore(fakeData) {
+        var fields = $('.main-table-score th[fieldName]');
+        $('.main-table-score tbody').empty();
+        $.each(fakeData, function (index, item) {
+            var rowHTML = $('<tr></tr>').data("recordid", item["ScoreID"]);
+            $.each(fields, function (fieldIndex, fieldItem) {
+                var fieldName = fieldItem.getAttribute('fieldName');
+                var fieldValue = item[fieldName];
+                rowHTML.append('<td>' + fieldValue + '</td>');
+            });
+            $('.main-table-score tbody').append(rowHTML);
+        });
+
+    } 
+    loadScore(studentID) {
+        var data = this.GetScore(studentID);
+        this.AppendScore(data);
+    }
+
+    
+
+    
 }

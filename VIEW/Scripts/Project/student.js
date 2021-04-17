@@ -216,6 +216,7 @@ class Student extends BaseStudent {
                 alert("Hệ thống đang bị lỗi!");
             }
         });
+        this.loadScore(listID[0]);
 
 
     }

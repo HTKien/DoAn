@@ -280,31 +280,138 @@
                 <div style="color: white; line-height: 30px; margin-left: 15px; ">Thông tin chi tiết học sinh</div>
                 <button class="icon-tieu-de-dialog-detail"></button>
             </div>
-            <div class="grid-info">
-                <div class="col">
-                    <div id="student_code">Mã học sinh:</div>
-                    <div id="student_name">Họ và tên:</div>
-                    <div id="student_sex">Giới tính:</div>
-                    <div id="student_birthday">Ngày sinh:</div>
-                    <div id="student_address">Địa chỉ:</div>
-                    <div id="student_class">Lớp:</div>
-                    <div id="student_teacher">GVCN:</div>
+            <div class="main-content">
+                <div class="grid-info">
+                    <div class="col">
+                        <div id="student_code">Mã học sinh:</div>
+                        <div id="student_name">Họ và tên:</div>
+                        <div id="student_sex">Giới tính:</div>
+                        <div id="student_birthday">Ngày sinh:</div>
+                        <div id="student_address">Địa chỉ:</div>
+                        <div id="student_class">Lớp:</div>
+                        <div id="student_teacher">GVCN:</div>
+                    </div>
+                    <div class="col">
+                        <div id="student_bonus">Số khen thưởng/tuyên dương:</div>
+                        <div id="student_critic">Số phê bình:</div>
+                        <div id="student_attendance">Điểm danh:</div>
+                        <div id="student_conduct">Hạnh kiểm:</div>
+                        <div id="student_mediumscore">Điểm trung bình:</div>
+                        <div id="student_classify">Xếp loại:</div>
+                        <div id="student_status">Tình trạng:</div>
+                    </div>
+                    <div class="col">
+                        <div>Thông tin phụ huynh</div>
+                        <div id="parent_name">Họ và tên:</div>
+                        <div id="parent_phone">Số điện thoại:</div>
+                    </div>
                 </div>
-                <div class="col">
-                    <div id="student_bonus">Số khen thưởng/tuyên dương:</div>
-                    <div id="student_critic">Số phê bình:</div>
-                    <div id="student_attendance">Điểm danh:</div>
-                    <div id="student_conduct">Hạnh kiểm:</div>
-                    <div id="student_mediumscore">Điểm trung bình:</div>
-                    <div id="student_classify">Xếp loại:</div>
-                    <div id="student_status">Tình trạng:</div>
+                <div class="student-score">
+                    <div>Thông tin chi tiết điểm</div>
+                    <div class="student-score-content">
+                        <div class="student-score-table">
+                            <table class="main-table-score">
+                                <thead>
+                                    <tr>
+                                        <th class="tieu-de" fieldName="Subject">
+                                            <div class="tieu-de-tren">Môn học</div>
+                                        </th>
+                                        <th class="tieu-de" fieldName="Type">
+                                            <div class="tieu-de-tren">Loại điểm</div>
+                                        </th>
+                                        <th class="tieu-de cot1" fieldName="Point">
+                                            <div class="tieu-de-tren">Điểm</div>
+                                        </th>
+                                        <th class="tieu-de cot1" fieldName="Note">
+                                            <div class="tieu-de-tren">Ghi chú</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="student-score-show">
+                            <div class="score-nav">
+                                <button>Thêm</button>
+                                <button>Sửa</button>
+                                <button>Xóa</button>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
-                <div class="col">
-                    <div>Thông tin phụ huynh</div>
-                    <div id="parent_name">Họ và tên:</div>
-                    <div id="parent_phone">Số điện thoại:</div>
+                <div class="student-score">
+                    <div>Thông tin khen thưởng/tuyên dương</div>
+                    <div class="student-score-content">
+                        <div class="student-score-table">
+                            <table class="main-table-bonus">
+                                <thead>
+                                    <tr>
+                                        <th class="tieu-de" fieldName="Code">
+                                            <div class="tieu-de-tren">Thời gian</div>
+                                        </th>
+                                        <th class="tieu-de" fieldName="Name">
+                                            <div class="tieu-de-tren">Nội dung</div>
+                                        </th>
+                                        <th class="tieu-de cot1" fieldName="Phone">
+                                            <div class="tieu-de-tren">Môn học</div>
+                                        </th>
+                                        <th class="tieu-de cot1" fieldName="Note">
+                                            <div class="tieu-de-tren">Điểm cộng</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="student-score-show">
+                            <div class="score-nav">
+                                <button>Thêm</button>
+                                <button>Sửa</button>
+                                <button>Xóa</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="student-score">
+                    <div>Thông tin phê bình</div>
+                    <div class="student-score-content">
+                        <div class="student-score-table">
+                            <table class="main-table-critic">
+                                <thead>
+                                    <tr>
+                                        <th class="tieu-de" fieldName="Code">
+                                            <div class="tieu-de-tren">Thời gian</div>
+                                        </th>
+                                        <th class="tieu-de" fieldName="Name">
+                                            <div class="tieu-de-tren">Nội dung</div>
+                                        </th>
+                                        <th class="tieu-de cot1" fieldName="Phone">
+                                            <div class="tieu-de-tren">Môn học</div>
+                                        </th>
+                                        <th class="tieu-de cot1" fieldName="Note">
+                                            <div class="tieu-de-tren">Điểm cộng</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="student-score-show">
+                            <div class="score-nav">
+                                <button>Thêm</button>
+                                <button>Sửa</button>
+                                <button>Xóa</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            
         </div>
         <div id="dialog-add">
             <div class="dialog-add-tieu-de">

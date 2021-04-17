@@ -11,6 +11,7 @@
     position: absolute;
     margin-left: -32vw !important;
     border: 5px solid #0973B9;
+    overflow: unset;
 }
 
 .detail-title {
@@ -37,4 +38,36 @@
     justify-content: space-between;
     font-size: 15px;
     line-height: 1.5;
+}
+.student-score {
+    width: 100%;
+    border-top: 1px solid gray;
+    padding-top: 10px;
+    height: 200px;
+}
+.student-score-table, .student-score-show {
+    width: 50%;
+}
+    .student-score-table {
+        height: 170px;
+        overflow-y: scroll;
+    }
+    .main-table-score {
+        width: 100%;
+    }
+.student-score-content {
+    display: flex;
+    justify-content: space-between;
+}
+.score-nav {
+    margin-left: 190px;
+}
+.main-content {
+    overflow-y: scroll !important;
+    height: 521px;
+    scroll-behavior: smooth;
+}
+.main-content::-webkit-scrollbar {
+     width: 0 !important;
+     display: none;
 }
