@@ -59,5 +59,13 @@ namespace DL
             studentFind.Note = _student.Note;
             db.SaveChanges();
         }
+        //Hàm thực hiện update các thông số của học sinh
+        public void UpdateStudentCalculate(Student _student)
+        {
+            var studentFind = db.Students.Where(n => n.StudentID == _student.StudentID).SingleOrDefault();
+            studentFind.MediumScore = _student.MediumScore;
+            db.SaveChanges();
+        }
+
     }
 }

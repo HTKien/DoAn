@@ -1,7 +1,10 @@
 ﻿class BaseStudent {
     constructor() {
+        this.Calculate();
         this.loadData();
     }
+    tbScore;
+
     /**
      * Hàm thực hiện lấy toàn bộ dữ liệu
      * Người tạo: Hàn Trung Kiên 
@@ -120,11 +123,86 @@
      * Người tạo: Hàn Trung Kiên
      * Ngày tạo: 22/8/2019
      * */
+    Calculate() {
+        var me = this;
+        var data = me.getData();
+        for (var t = 0; t < data.length; t++) {
+            var scores = [];
+            scores = this.GetScore(data[t].StudentID);
+            //toan
+            var tbToan = 0;
+            parseFloat(tbToan);
+            var totalToan = 0;
+            parseFloat(totalToan);
+            var countToan = 0;
+            for (var i = 0; i < scores.length; i++) {
+                if (scores[i].Subject === "Toán") {
+                    if (scores[i].Type === "Điểm miệng" || scores[i].Type === "Điểm 15 phút") {
+                        totalToan = totalToan + parseFloat(scores[i].Point);
+                        countToan = countToan + 1;
+                    } else if (scores[i].Type === "Điểm 45 phút" || scores[i].Type === "Điểm 90 phút") {
+                        totalToan = totalToan + parseFloat(scores[i].Point) * 2;
+                        countToan = countToan + 2;
+                    } else if (scores[i].Type === "Điểm thi học kỳ") {
+                        totalToan = totalToan + parseFloat(scores[i].Point) * 3;
+                        countToan = countToan + 3;
+                    } else {
+                        totalToan = totalToan + parseFloat(scores[i].Point);
+                        countToan = countToan + 1;
+                    }
+                }
+            }
+            tbToan = (totalToan / countToan).toFixed(2);
+            //ly
+            var tbVatLy = 0;
+            parseFloat(tbVatLy);
+            var totalVatLy = 0;
+            parseFloat(totalVatLy);
+            var countVatLy = 0;
+            for (var i = 0; i < scores.length; i++) {
+                if (scores[i].Subject === "Vật lý") {
+                    if (scores[i].Type === "Điểm miệng" || scores[i].Type === "Điểm 15 phút") {
+                        totalVatLy = totalVatLy + parseFloat(scores[i].Point);
+                        countVatLy = countVatLy + 1;
+                    } else if (scores[i].Type === "Điểm 45 phút" || scores[i].Type === "Điểm 90 phút") {
+                        totalVatLy = totalVatLy + parseFloat(scores[i].Point) * 2;
+                        countVatLy = countVatLy + 2;
+                    } else if (scores[i].Type === "Điểm thi học kỳ") {
+                        totalVatLy = totalVatLy + parseFloat(scores[i].Point) * 3;
+                        countVatLy = countVatLy + 3;
+                    } else {
+                        totalVatLy = totalVatLy + parseFloat(scores[i].Point);
+                        countVatLy = countVatLy + 1;
+                    }
+                }
+            }
+            tbVatLy = (totalVatLy / countVatLy).toFixed(2);
+            //put
+            var objectStudent = {};
+            objectStudent["StudentID"] = data[t].StudentID;
+            objectStudent["MediumScore"] = tbVatLy;
+            $.ajax({
+                method: 'PUT',
+                url: '/studentscalculate',
+                data: JSON.stringify(objectStudent),
+                contentType: "application/json; charset=utf-8",
+                success: function (res) {
+                },
+                error: function () {
+                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                }
+            });
+            //
+
+        }
+        
+    }
     loadData() {
         $('.loading').show();
 
         var me = this;
         var data = me.getData();
+
         this.AppenData(data);
         this.CountRecord();
         //$('.loading').hide();
@@ -855,19 +933,20 @@
             }
         }
         tbCongNghe = totalCongNghe / countCongNghe;
-        $('#scoreCongNghe').text("Công nghệ: " + tbCongNghe.toFixed(2));
-        $('#dialog-student-detail #student_mediumscore').text("Điểm trung bình các môn: " + ((tbToan + tbVatLy + tbHoaHoc + tbSinhHoc + tbNguVan + tbLichSu + tbDiaLy + tbTinHoc + tbCongDan + tbTiengAnh + tbTheDuc + tbCongNghe) / 12).toFixed(2));
 
+        $('#scoreCongNghe').text("Công nghệ: " + tbCongNghe.toFixed(2));
+        this.tbScore = ((tbToan + tbVatLy + tbHoaHoc + tbSinhHoc + tbNguVan + tbLichSu + tbDiaLy + tbTinHoc + tbCongDan + tbTiengAnh + tbTheDuc + tbCongNghe) / 12).toFixed(2);
+        $('#dialog-student-detail #student_mediumscore').text("Điểm trung bình các môn: " + this.tbScore);
         var fields = $('.main-table-score th[fieldName]');
+        //put student:
+
+        //
         $('.main-table-score tbody').empty();
         $.each(fakeData, function (index, item) {
             var rowHTML = $('<tr></tr>').data("recordid", item["ScoreID"]);
             $.each(fields, function (fieldIndex, fieldItem) {
                 var fieldName = fieldItem.getAttribute('fieldName');
                 var fieldValue = item[fieldName];
-                if (fieldValue === undefined) {
-                    fieldValue = "";
-                }
                 rowHTML.append('<td>' + fieldValue + '</td>');
             });
             $('.main-table-score tbody').append(rowHTML);

@@ -123,5 +123,26 @@ namespace VIEW.Controllers
             }
             return ajaxResult;
         }
+        //Hàm thực hiện sửa thông tin cập nhật thêm của học sinh
+        //Người tạo: Hàn Trung Kiên
+        //Ngày tạo: 26/8/2019
+
+        [Route("studentscalculate")]
+        [HttpPut]
+        public AjaxResult PutStudentCalculate([FromBody] Student _student)
+        {
+            var ajaxResult = new AjaxResult();
+            try
+            {
+                _studentDL.UpdateStudentCalculate(_student);
+            }
+            catch (Exception ex)
+            {
+                ajaxResult.Data = ex;
+                ajaxResult.Success = false;
+                ajaxResult.Message = "Hệ thống đang bị lỗi!";
+            }
+            return ajaxResult;
+        }
     }
 }

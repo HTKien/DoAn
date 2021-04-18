@@ -474,6 +474,26 @@
         $.each(fakeData, function (index, item) {
             var teacherCode;
             var teacherName;
+            var studentNumber;
+            var fakeDataStudent = [];
+            $.ajax({
+                method: 'GET',
+                url: '/students',
+                dataType: 'json',
+                async: false,
+                success: function (res) {
+                    $.each(res, function (index, itemCon) {
+                        if (itemCon.ClassID === item.ClassID) {
+                            fakeDataStudent.push(itemCon);
+                        }
+                    });
+                },
+                error: function (res) {
+                    alert("Hệ thống đang bị lỗi!");
+                }
+            })
+            studentNumber = fakeDataStudent.length;
+
             $.ajax({
                 method: 'GET',
                 url: '/teachers/' + item.TeacherID,
@@ -497,6 +517,9 @@
                 }
                 if (fieldName === "TeacherName") {
                     fieldValue = teacherName;
+                }
+                if (fieldName === "StudentNumber") {
+                    fieldValue = studentNumber;
                 }
                 rowHTML.append('<td>' + fieldValue + '</td>');
             });
