@@ -51,7 +51,7 @@
     .student-score-table {
         height: 170px;
         overflow-y: scroll;
-        border: 1px solid gray;
+        border: 1px solid #D6D6D6;
     }
     .main-table-score {
         width: 100%;
@@ -71,4 +71,8 @@
 .main-content::-webkit-scrollbar {
      width: 0 !important;
      display: none;
+}
+.score-medium {
+    display: flex;
+    justify-content: space-between;
 }
