@@ -1,1 +1,4 @@
-﻿var classID ="a369c4e8-b247-4f5c-b426-0585dcea0ff6";
+﻿var classID;
+let classIDStorageGet = localStorage.getItem('classIDStorage') ? JSON.parse(localStorage.getItem('classIDStorage')) : [];
+classID = classIDStorageGet[0].id;
+localStorage.clear();

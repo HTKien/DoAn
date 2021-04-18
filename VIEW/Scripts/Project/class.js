@@ -154,6 +154,12 @@ class Class extends BaseClass {
         $.each(listRow, function (index, item) {
             listID.push($(item).data('recordid'));
         });
+        let classIDStorage = localStorage.getItem('classIDStorage') ? JSON.parse(localStorage.getItem('classIDStorage')) : [];
+
+        classIDStorage.push({
+            id: listID[0]
+        });
+        localStorage.setItem('classIDStorage', JSON.stringify(classIDStorage));
         location.href = "/Views/student.html";
     }
     /**

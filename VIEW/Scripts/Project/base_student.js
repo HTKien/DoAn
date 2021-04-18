@@ -33,12 +33,16 @@
     * Ngày tạo: 22/8/2019
     * */
     getData() {
+        
         var pageIndex = $('.page-index').val();
         var pageSize = $('.page-size option:selected').val();
 
 
         this.FormatBtn(pageIndex, pageSize);
         var fakeData = [];
+        if (this.getAllData(classID).length === 0) {
+            return fakeData;
+        }
         var allStudentClass = [];
 
 
@@ -483,7 +487,6 @@
     * Ngày tạo: 22/8/2019
     * */
     AppenData(fakeData) {
-        var classID = fakeData[0].ClassID;
         var classCode;
         var className;
         var TeacherID;
