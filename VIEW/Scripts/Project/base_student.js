@@ -553,7 +553,7 @@
 
     AppendScore(fakeData) {
         //tinh diem trung binh Toán:
-        var tbToan;
+        var tbToan = 0;
         parseFloat(tbToan);
         var totalToan = 0;
         parseFloat(totalToan);
@@ -578,7 +578,7 @@
         tbToan = totalToan / countToan;
         $('#scoreToan').text("Toán: " + tbToan.toFixed(2));
         //tinh diem trung binh Vật lý:
-        var tbVatLy;
+        var tbVatLy = 0;
         parseFloat(tbVatLy);
         var totalVatLy = 0;
         parseFloat(totalVatLy);
@@ -603,7 +603,7 @@
         tbVatLy = totalVatLy / countVatLy;
         $('#scoreVatLy').text("Vật lý: " + tbVatLy.toFixed(2));
         //tinh diem trung binh Hóa học:
-        var tbHoaHoc;
+        var tbHoaHoc = 0;
         parseFloat(tbHoaHoc);
         var totalHoaHoc = 0;
         parseFloat(totalHoaHoc);
@@ -628,7 +628,7 @@
         tbHoaHoc = totalHoaHoc / countHoaHoc;
         $('#scoreHoaHoc').text("Hóa học: " + tbHoaHoc.toFixed(2));
         //tinh diem trung binh Sinh học:
-        var tbSinhHoc;
+        var tbSinhHoc = 0;
         parseFloat(tbSinhHoc);
         var totalSinhHoc = 0;
         parseFloat(totalSinhHoc);
@@ -654,7 +654,7 @@
         $('#scoreSinhHoc').text("Sinh học: " + tbSinhHoc.toFixed(2));
 
         //tinh diem trung binh Ngu van:
-        var tbNguVan;
+        var tbNguVan = 0;
         parseFloat(tbNguVan);
         var totalNguVan = 0;
         parseFloat(totalNguVan);
@@ -679,7 +679,7 @@
         tbNguVan = totalNguVan / countNguVan;
         $('#scoreNguVan').text("Ngữ văn: " + tbNguVan.toFixed(2));
         //tinh diem trung binh Lịch sử:
-        var tbLichSu;
+        var tbLichSu = 0;
         parseFloat(tbLichSu);
         var totalLichSu = 0;
         parseFloat(totalLichSu);
@@ -704,7 +704,7 @@
         tbLichSu = totalLichSu / countLichSu;
         $('#scoreLichSu').text("Lịch sử: " + tbLichSu.toFixed(2));
         //tinh diem trung binh Địa lý:
-        var tbDiaLy;
+        var tbDiaLy = 0;
         parseFloat(tbDiaLy);
         var totalDiaLy = 0;
         parseFloat(totalDiaLy);
@@ -729,7 +729,7 @@
         tbDiaLy = totalDiaLy / countDiaLy;
         $('#scoreDiaLy').text("Địa lý: " + tbDiaLy.toFixed(2));
         //tinh diem trung binh Tin học:
-        var tbTinHoc;
+        var tbTinHoc = 0;
         parseFloat(tbTinHoc);
         var totalTinHoc = 0;
         parseFloat(totalTinHoc);
@@ -754,7 +754,7 @@
         tbTinHoc = totalTinHoc / countTinHoc;
         $('#scoreTinHoc').text("Tin học: " + tbTinHoc.toFixed(2));
         //tinh diem trung binh Giáo dục công dân:
-        var tbCongDan;
+        var tbCongDan = 0;
         parseFloat(tbCongDan);
         var totalCongDan = 0;
         parseFloat(totalCongDan);
@@ -778,7 +778,83 @@
         }
         tbCongDan = totalCongDan / countCongDan;
         $('#scoreCongDan').text("Giáo dục công dân: " + tbCongDan.toFixed(2));
-        
+        //tinh diem trung binh Giáo dục Tiếng Anh:
+        var tbTiengAnh = 0;
+        parseFloat(tbTiengAnh);
+        var totalTiengAnh = 0;
+        parseFloat(totalTiengAnh);
+        var countTiengAnh = 0;
+        for (var i = 0; i < fakeData.length; i++) {
+            if (fakeData[i].Subject === "Tiếng Anh") {
+                if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
+                    totalTiengAnh = totalTiengAnh + parseFloat(fakeData[i].Point);
+                    countTiengAnh = countTiengAnh + 1;
+                } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
+                    totalTiengAnh = totalTiengAnh + parseFloat(fakeData[i].Point) * 2;
+                    countTiengAnh = countTiengAnh + 2;
+                } else if (fakeData[i].Type === "Điểm thi học kỳ") {
+                    totalTiengAnh = totalTiengAnh + parseFloat(fakeData[i].Point) * 3;
+                    countTiengAnh = countTiengAnh + 3;
+                } else {
+                    totalTiengAnh = totalTiengAnh + parseFloat(fakeData[i].Point);
+                    countTiengAnh = countTiengAnh + 1;
+                }
+            }
+        }
+        tbTiengAnh = totalTiengAnh / countTiengAnh;
+        $('#scoreTiengAnh').text("Tiếng Anh: " + tbTiengAnh.toFixed(2));
+        //tinh diem trung binh Giáo dục Thể dục:
+        var tbTheDuc = 0;
+        parseFloat(tbTheDuc);
+        var totalTheDuc = 0;
+        parseFloat(totalTheDuc);
+        var countTheDuc = 0;
+        for (var i = 0; i < fakeData.length; i++) {
+            if (fakeData[i].Subject === "Thể dục") {
+                if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
+                    totalTheDuc = totalTheDuc + parseFloat(fakeData[i].Point);
+                    countTheDuc = countTheDuc + 1;
+                } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
+                    totalTheDuc = totalTheDuc + parseFloat(fakeData[i].Point) * 2;
+                    countTheDuc = countTheDuc + 2;
+                } else if (fakeData[i].Type === "Điểm thi học kỳ") {
+                    totalTheDuc = totalTheDuc + parseFloat(fakeData[i].Point) * 3;
+                    countTheDuc = countTheDuc + 3;
+                } else {
+                    totalTheDuc = totalTheDuc + parseFloat(fakeData[i].Point);
+                    countTheDuc = countTheDuc + 1;
+                }
+            }
+        }
+        tbTheDuc = totalTheDuc / countTheDuc;
+        $('#scoreTheDuc').text("Thể dục: " + tbTheDuc.toFixed(2));
+        //tinh diem trung binh Giáo dục Công nghệ:
+        var tbCongNghe =0;
+        parseFloat(tbCongNghe);
+        var totalCongNghe = 0;
+        parseFloat(totalCongNghe);
+        var countCongNghe = 0;
+        for (var i = 0; i < fakeData.length; i++) {
+            if (fakeData[i].Subject === "Công nghệ") {
+                if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
+                    totalCongNghe = totalCongNghe + parseFloat(fakeData[i].Point);
+                    countCongNghe = countCongNghe + 1;
+                } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
+                    totalCongNghe = totalCongNghe + parseFloat(fakeData[i].Point) * 2;
+                    countCongNghe = countCongNghe + 2;
+                } else if (fakeData[i].Type === "Điểm thi học kỳ") {
+                    totalCongNghe = totalCongNghe + parseFloat(fakeData[i].Point) * 3;
+                    countCongNghe = countCongNghe + 3;
+                } else {
+                    totalCongNghe = totalCongNghe + parseFloat(fakeData[i].Point);
+                    countCongNghe = countCongNghe + 1;
+                }
+            }
+        }
+        tbCongNghe = totalCongNghe / countCongNghe;
+        $('#scoreCongNghe').text("Công nghệ: " + tbCongNghe.toFixed(2));
+        $('#dialog-student-detail #student_mediumscore').text("Điểm trung bình các môn: " + ((tbToan + tbVatLy + tbHoaHoc + tbSinhHoc + tbNguVan + tbLichSu + tbDiaLy + tbTinHoc + tbCongDan + tbTiengAnh + tbTheDuc + tbCongNghe) / 12).toFixed(2));
+
         var fields = $('.main-table-score th[fieldName]');
         $('.main-table-score tbody').empty();
         $.each(fakeData, function (index, item) {

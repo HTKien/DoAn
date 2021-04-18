@@ -184,7 +184,7 @@ class Student extends BaseStudent {
                 $('#dialog-student-detail #student_critic').text("Số phê bình: " + res.Critic);
                 $('#dialog-student-detail #student_attendance').text("Điểm danh: " + res.Attendence);
                 $('#dialog-student-detail #student_conduct').text("Hạnh kiểm: " + res.Conduct);
-                $('#dialog-student-detail #student_mediumscore').text("Điểm TB: " + res.MediumScore);
+                //$('#dialog-student-detail #student_mediumscore').text("Điểm TB: " + res.MediumScore);
                 $('#dialog-student-detail #student_classify').text("Xếp loại: " + res.Classify);
                 $('#dialog-student-detail #student_status').text("Tình trạng: " + res.Status);
                 $('#dialog-student-detail #parent_name').text("Tên phụ huynh: " + res.ParentName);
@@ -585,8 +585,8 @@ class Student extends BaseStudent {
                 contentType: "application/json; charset=utf-8",
                 success: function (res) {
                     alert("Thêm mới điểm thành công!");
-                    $('#score_subject').val("");
-                    $('#score_type').val("");
+                    $('#score_subject').val("Toán");
+                    $('#score_type').val("Điểm miệng");
                     $('#score_point').val("");
                     me.loadScore(me.student_id);
 
