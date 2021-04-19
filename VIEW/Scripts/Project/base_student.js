@@ -4,6 +4,7 @@
         this.loadData();
     }
     tbScore;
+    tb;
 
     /**
      * Hàm thực hiện lấy toàn bộ dữ liệu
@@ -152,7 +153,12 @@
                     }
                 }
             }
-            tbToan = (totalToan / countToan).toFixed(2);
+            if (countToan === 0) {
+                tbToan = 0;
+            } else {
+                tbToan = (totalToan / countToan).toFixed(2);
+            }
+            tbToan = parseFloat(tbToan);
             //ly
             var tbVatLy = 0;
             parseFloat(tbVatLy);
@@ -176,11 +182,320 @@
                     }
                 }
             }
-            tbVatLy = (totalVatLy / countVatLy).toFixed(2);
+            if (countVatLy === 0) {
+                tbVatLy = 0;
+            } else {
+                tbVatLy = totalVatLy / countVatLy;
+            }
+            tbVatLy = parseFloat(tbVatLy);
+
+            //Hóa học
+            var tbHoaHoc = 0;
+            parseFloat(tbHoaHoc);
+            var totalHoaHoc = 0;
+            parseFloat(totalHoaHoc);
+            var countHoaHoc = 0;
+            for (var i = 0; i < scores.length; i++) {
+                if (scores[i].Subject === "Hóa học") {
+                    if (scores[i].Type === "Điểm miệng" || scores[i].Type === "Điểm 15 phút") {
+                        totalHoaHoc = totalHoaHoc + parseFloat(scores[i].Point);
+                        countHoaHoc = countHoaHoc + 1;
+                    } else if (scores[i].Type === "Điểm 45 phút" || scores[i].Type === "Điểm 90 phút") {
+                        totalHoaHoc = totalHoaHoc + parseFloat(scores[i].Point) * 2;
+                        countHoaHoc = countHoaHoc + 2;
+                    } else if (scores[i].Type === "Điểm thi học kỳ") {
+                        totalHoaHoc = totalHoaHoc + parseFloat(scores[i].Point) * 3;
+                        countHoaHoc = countHoaHoc + 3;
+                    } else {
+                        totalHoaHoc = totalHoaHoc + parseFloat(scores[i].Point);
+                        countHoaHoc = countHoaHoc + 1;
+                    }
+                }
+            }
+            if (countHoaHoc === 0) {
+                tbHoaHoc = 0;
+            } else {
+                tbHoaHoc = totalHoaHoc / countHoaHoc;
+            }
+            tbHoaHoc = parseFloat(tbHoaHoc);
+
+            //Sinh học
+            var tbSinhHoc = 0;
+            parseFloat(tbSinhHoc);
+            var totalSinhHoc = 0;
+            parseFloat(totalSinhHoc);
+            var countSinhHoc = 0;
+            for (var i = 0; i < scores.length; i++) {
+                if (scores[i].Subject === "Sinh học") {
+                    if (scores[i].Type === "Điểm miệng" || scores[i].Type === "Điểm 15 phút") {
+                        totalSinhHoc = totalSinhHoc + parseFloat(scores[i].Point);
+                        countSinhHoc = countSinhHoc + 1;
+                    } else if (scores[i].Type === "Điểm 45 phút" || scores[i].Type === "Điểm 90 phút") {
+                        totalSinhHoc = totalSinhHoc + parseFloat(scores[i].Point) * 2;
+                        countSinhHoc = countSinhHoc + 2;
+                    } else if (scores[i].Type === "Điểm thi học kỳ") {
+                        totalSinhHoc = totalSinhHoc + parseFloat(scores[i].Point) * 3;
+                        countSinhHoc = countSinhHoc + 3;
+                    } else {
+                        totalSinhHoc = totalSinhHoc + parseFloat(scores[i].Point);
+                        countSinhHoc = countSinhHoc + 1;
+                    }
+                }
+            }
+            if (countSinhHoc === 0) {
+                tbSinhHoc = 0;
+            } else {
+                tbSinhHoc = totalSinhHoc / countSinhHoc;
+            }
+            tbSinhHoc = parseFloat(tbSinhHoc);
+
+            //Ngữ văn
+            var tbNguVan = 0;
+            parseFloat(tbNguVan);
+            var totalNguVan = 0;
+            parseFloat(totalNguVan);
+            var countNguVan = 0;
+            for (var i = 0; i < scores.length; i++) {
+                if (scores[i].Subject === "Ngữ văn") {
+                    if (scores[i].Type === "Điểm miệng" || scores[i].Type === "Điểm 15 phút") {
+                        totalNguVan = totalNguVan + parseFloat(scores[i].Point);
+                        countNguVan = countNguVan + 1;
+                    } else if (scores[i].Type === "Điểm 45 phút" || scores[i].Type === "Điểm 90 phút") {
+                        totalNguVan = totalNguVan + parseFloat(scores[i].Point) * 2;
+                        countNguVan = countNguVan + 2;
+                    } else if (scores[i].Type === "Điểm thi học kỳ") {
+                        totalNguVan = totalNguVan + parseFloat(scores[i].Point) * 3;
+                        countNguVan = countNguVan + 3;
+                    } else {
+                        totalNguVan = totalNguVan + parseFloat(scores[i].Point);
+                        countNguVan = countNguVan + 1;
+                    }
+                }
+            }
+            if (countNguVan === 0) {
+                tbNguVan = 0;
+            } else {
+                tbNguVan = totalNguVan / countNguVan;
+            }
+            tbNguVan = parseFloat(tbNguVan);
+
+            //Lịch sử
+            var tbLichSu = 0;
+            parseFloat(tbLichSu);
+            var totalLichSu = 0;
+            parseFloat(totalLichSu);
+            var countLichSu = 0;
+            for (var i = 0; i < scores.length; i++) {
+                if (scores[i].Subject === "Lịch sử") {
+                    if (scores[i].Type === "Điểm miệng" || scores[i].Type === "Điểm 15 phút") {
+                        totalLichSu = totalLichSu + parseFloat(scores[i].Point);
+                        countLichSu = countLichSu + 1;
+                    } else if (scores[i].Type === "Điểm 45 phút" || scores[i].Type === "Điểm 90 phút") {
+                        totalLichSu = totalLichSu + parseFloat(scores[i].Point) * 2;
+                        countLichSu = countLichSu + 2;
+                    } else if (scores[i].Type === "Điểm thi học kỳ") {
+                        totalLichSu = totalLichSu + parseFloat(scores[i].Point) * 3;
+                        countLichSu = countLichSu + 3;
+                    } else {
+                        totalLichSu = totalLichSu + parseFloat(scores[i].Point);
+                        countLichSu = countLichSu + 1;
+                    }
+                }
+            }
+            if (countLichSu === 0) {
+                tbLichSu = 0;
+            } else {
+                tbLichSu = totalLichSu / countLichSu;
+
+            }
+            tbLichSu = parseFloat(tbLichSu);
+
+            //Địa lý
+            var tbDiaLy = 0;
+            parseFloat(tbDiaLy);
+            var totalDiaLy = 0;
+            parseFloat(totalDiaLy);
+            var countDiaLy = 0;
+            for (var i = 0; i < scores.length; i++) {
+                if (scores[i].Subject === "Địa lý") {
+                    if (scores[i].Type === "Điểm miệng" || scores[i].Type === "Điểm 15 phút") {
+                        totalDiaLy = totalDiaLy + parseFloat(scores[i].Point);
+                        countDiaLy = countDiaLy + 1;
+                    } else if (scores[i].Type === "Điểm 45 phút" || scores[i].Type === "Điểm 90 phút") {
+                        totalDiaLy = totalDiaLy + parseFloat(scores[i].Point) * 2;
+                        countDiaLy = countDiaLy + 2;
+                    } else if (scores[i].Type === "Điểm thi học kỳ") {
+                        totalDiaLy = totalDiaLy + parseFloat(scores[i].Point) * 3;
+                        countDiaLy = countDiaLy + 3;
+                    } else {
+                        totalDiaLy = totalDiaLy + parseFloat(scores[i].Point);
+                        countDiaLy = countDiaLy + 1;
+                    }
+                }
+            }
+            if (countDiaLy === 0) {
+                tbDiaLy = 0;
+            } else {
+                tbDiaLy = totalDiaLy / countDiaLy;
+            }
+            tbDiaLy = parseFloat(tbDiaLy);
+
+            //Tin học
+            var tbTinHoc = 0;
+            parseFloat(tbTinHoc);
+            var totalTinHoc = 0;
+            parseFloat(totalTinHoc);
+            var countTinHoc = 0;
+            for (var i = 0; i < scores.length; i++) {
+                if (scores[i].Subject === "Tin học") {
+                    if (scores[i].Type === "Điểm miệng" || scores[i].Type === "Điểm 15 phút") {
+                        totalTinHoc = totalTinHoc + parseFloat(scores[i].Point);
+                        countTinHoc = countTinHoc + 1;
+                    } else if (scores[i].Type === "Điểm 45 phút" || scores[i].Type === "Điểm 90 phút") {
+                        totalTinHoc = totalTinHoc + parseFloat(scores[i].Point) * 2;
+                        countTinHoc = countTinHoc + 2;
+                    } else if (scores[i].Type === "Điểm thi học kỳ") {
+                        totalTinHoc = totalTinHoc + parseFloat(scores[i].Point) * 3;
+                        countTinHoc = countTinHoc + 3;
+                    } else {
+                        totalTinHoc = totalTinHoc + parseFloat(scores[i].Point);
+                        countTinHoc = countTinHoc + 1;
+                    }
+                }
+            }
+            if (countTinHoc === 0) {
+                tbTinHoc = 0;
+            } else {
+                tbTinHoc = totalTinHoc / countTinHoc;
+            }
+            tbTinHoc = parseFloat(tbTinHoc);
+
+            //Công dân
+            var tbCongDan = 0;
+            parseFloat(tbCongDan);
+            var totalCongDan = 0;
+            parseFloat(totalCongDan);
+            var countCongDan = 0;
+            for (var i = 0; i < scores.length; i++) {
+                if (scores[i].Subject === "Giáo dục công dân") {
+                    if (scores[i].Type === "Điểm miệng" || scores[i].Type === "Điểm 15 phút") {
+                        totalCongDan = totalCongDan + parseFloat(scores[i].Point);
+                        countCongDan = countCongDan + 1;
+                    } else if (scores[i].Type === "Điểm 45 phút" || scores[i].Type === "Điểm 90 phút") {
+                        totalCongDan = totalCongDan + parseFloat(scores[i].Point) * 2;
+                        countCongDan = countCongDan + 2;
+                    } else if (scores[i].Type === "Điểm thi học kỳ") {
+                        totalCongDan = totalCongDan + parseFloat(scores[i].Point) * 3;
+                        countCongDan = countCongDan + 3;
+                    } else {
+                        totalCongDan = totalCongDan + parseFloat(scores[i].Point);
+                        countCongDan = countCongDan + 1;
+                    }
+                }
+            }
+            if (countCongDan === 0) {
+                tbCongDan = 0;
+            } else {
+                tbCongDan = totalCongDan / countCongDan;
+            }
+            tbCongDan = parseFloat(tbCongDan);
+
+            //Tiếng Anh
+            var tbTiengAnh = 0;
+            parseFloat(tbTiengAnh);
+            var totalTiengAnh = 0;
+            parseFloat(totalTiengAnh);
+            var countTiengAnh = 0;
+            for (var i = 0; i < scores.length; i++) {
+                if (scores[i].Subject === "Tiếng Anh") {
+                    if (scores[i].Type === "Điểm miệng" || scores[i].Type === "Điểm 15 phút") {
+                        totalTiengAnh = totalTiengAnh + parseFloat(scores[i].Point);
+                        countTiengAnh = countTiengAnh + 1;
+                    } else if (scores[i].Type === "Điểm 45 phút" || scores[i].Type === "Điểm 90 phút") {
+                        totalTiengAnh = totalTiengAnh + parseFloat(scores[i].Point) * 2;
+                        countTiengAnh = countTiengAnh + 2;
+                    } else if (scores[i].Type === "Điểm thi học kỳ") {
+                        totalTiengAnh = totalTiengAnh + parseFloat(scores[i].Point) * 3;
+                        countTiengAnh = countTiengAnh + 3;
+                    } else {
+                        totalTiengAnh = totalTiengAnh + parseFloat(scores[i].Point);
+                        countTiengAnh = countTiengAnh + 1;
+                    }
+                }
+            }
+            if (countTiengAnh === 0) {
+                tbTiengAnh = 0;
+            } else {
+                tbTiengAnh = totalTiengAnh / countTiengAnh;
+            }
+            tbTiengAnh = parseFloat(tbTiengAnh);
+
+            //Thể dục
+            var tbTheDuc = 0;
+            parseFloat(tbTheDuc);
+            var totalTheDuc = 0;
+            parseFloat(totalTheDuc);
+            var countTheDuc = 0;
+            for (var i = 0; i < scores.length; i++) {
+                if (scores[i].Subject === "Thể dục") {
+                    if (scores[i].Type === "Điểm miệng" || scores[i].Type === "Điểm 15 phút") {
+                        totalTheDuc = totalTheDuc + parseFloat(scores[i].Point);
+                        countTheDuc = countTheDuc + 1;
+                    } else if (scores[i].Type === "Điểm 45 phút" || scores[i].Type === "Điểm 90 phút") {
+                        totalTheDuc = totalTheDuc + parseFloat(scores[i].Point) * 2;
+                        countTheDuc = countTheDuc + 2;
+                    } else if (scores[i].Type === "Điểm thi học kỳ") {
+                        totalTheDuc = totalTheDuc + parseFloat(scores[i].Point) * 3;
+                        countTheDuc = countTheDuc + 3;
+                    } else {
+                        totalTheDuc = totalTheDuc + parseFloat(scores[i].Point);
+                        countTheDuc = countTheDuc + 1;
+                    }
+                }
+            }
+            if (countTheDuc === 0) {
+                tbTheDuc = 0;
+            } else {
+                tbTheDuc = totalTheDuc / countTheDuc;
+            }
+            tbTheDuc = parseFloat(tbTheDuc);
+
+            //Công nghệ
+            var tbCongNghe = 0;
+            parseFloat(tbCongNghe);
+            var totalCongNghe = 0;
+            parseFloat(totalCongNghe);
+            var countCongNghe = 0;
+            for (var i = 0; i < scores.length; i++) {
+                if (scores[i].Subject === "Công nghệ") {
+                    if (scores[i].Type === "Điểm miệng" || scores[i].Type === "Điểm 15 phút") {
+                        totalCongNghe = totalCongNghe + parseFloat(scores[i].Point);
+                        countCongNghe = countCongNghe + 1;
+                    } else if (scores[i].Type === "Điểm 45 phút" || scores[i].Type === "Điểm 90 phút") {
+                        totalCongNghe = totalCongNghe + parseFloat(scores[i].Point) * 2;
+                        countCongNghe = countCongNghe + 2;
+                    } else if (scores[i].Type === "Điểm thi học kỳ") {
+                        totalCongNghe = totalCongNghe + parseFloat(scores[i].Point) * 3;
+                        countCongNghe = countCongNghe + 3;
+                    } else {
+                        totalCongNghe = totalCongNghe + parseFloat(scores[i].Point);
+                        countCongNghe = countCongNghe + 1;
+                    }
+                }
+            }
+            if (countCongNghe === 0) {
+                tbCongNghe = 0;
+            } else {
+                tbCongNghe = totalCongNghe / countCongNghe;
+            }
+            tbCongNghe = parseFloat(tbCongNghe);
+
+
+            this.tb = ((tbToan + tbVatLy + tbHoaHoc + tbSinhHoc + tbNguVan + tbLichSu + tbDiaLy + tbTinHoc + tbCongDan + tbTiengAnh + tbTheDuc + tbCongNghe) / 12).toFixed(2);
             //put
             var objectStudent = {};
             objectStudent["StudentID"] = data[t].StudentID;
-            objectStudent["MediumScore"] = tbVatLy;
+            objectStudent["MediumScore"] = this.tb;
             $.ajax({
                 method: 'PUT',
                 url: '/studentscalculate',
@@ -656,7 +971,11 @@
                 }
             }
         }
-        tbToan = totalToan / countToan;
+        if (countToan === 0) {
+            tbToan = 0;
+        } else {
+            tbToan = totalToan / countToan;
+        }
         $('#scoreToan').text("Toán: " + tbToan.toFixed(2));
         //tinh diem trung binh Vật lý:
         var tbVatLy = 0;
@@ -681,7 +1000,11 @@
                 }
             }
         }
-        tbVatLy = totalVatLy / countVatLy;
+        if (countVatLy === 0) {
+            tbVatLy = 0;
+        } else {
+            tbVatLy = totalVatLy / countVatLy;
+        }
         $('#scoreVatLy').text("Vật lý: " + tbVatLy.toFixed(2));
         //tinh diem trung binh Hóa học:
         var tbHoaHoc = 0;
@@ -706,7 +1029,12 @@
                 }
             }
         }
-        tbHoaHoc = totalHoaHoc / countHoaHoc;
+        
+        if (countHoaHoc === 0) {
+            tbHoaHoc = 0;
+        } else {
+            tbHoaHoc = totalHoaHoc / countHoaHoc;
+        }
         $('#scoreHoaHoc').text("Hóa học: " + tbHoaHoc.toFixed(2));
         //tinh diem trung binh Sinh học:
         var tbSinhHoc = 0;
@@ -731,7 +1059,11 @@
                 }
             }
         }
-        tbSinhHoc = totalSinhHoc / countSinhHoc;
+        if (countSinhHoc === 0) {
+            tbSinhHoc = 0;
+        } else {
+            tbSinhHoc = totalSinhHoc / countSinhHoc;
+        }
         $('#scoreSinhHoc').text("Sinh học: " + tbSinhHoc.toFixed(2));
 
         //tinh diem trung binh Ngu van:
@@ -757,7 +1089,11 @@
                 }
             }
         }
-        tbNguVan = totalNguVan / countNguVan;
+        if (countNguVan === 0) {
+            tbNguVan = 0;
+        } else {
+            tbNguVan = totalNguVan / countNguVan;
+        }
         $('#scoreNguVan').text("Ngữ văn: " + tbNguVan.toFixed(2));
         //tinh diem trung binh Lịch sử:
         var tbLichSu = 0;
@@ -782,7 +1118,12 @@
                 }
             }
         }
-        tbLichSu = totalLichSu / countLichSu;
+        if (countLichSu === 0) {
+            tbLichSu = 0;
+        } else {
+            tbLichSu = totalLichSu / countLichSu;
+
+        }
         $('#scoreLichSu').text("Lịch sử: " + tbLichSu.toFixed(2));
         //tinh diem trung binh Địa lý:
         var tbDiaLy = 0;
@@ -807,7 +1148,11 @@
                 }
             }
         }
-        tbDiaLy = totalDiaLy / countDiaLy;
+        if (countDiaLy === 0) {
+            tbDiaLy = 0;
+        } else {
+            tbDiaLy = totalDiaLy / countDiaLy;
+        }
         $('#scoreDiaLy').text("Địa lý: " + tbDiaLy.toFixed(2));
         //tinh diem trung binh Tin học:
         var tbTinHoc = 0;
@@ -832,7 +1177,11 @@
                 }
             }
         }
-        tbTinHoc = totalTinHoc / countTinHoc;
+        if (countTinHoc === 0) {
+            tbTinHoc = 0;
+        } else {
+            tbTinHoc = totalTinHoc / countTinHoc;
+        }
         $('#scoreTinHoc').text("Tin học: " + tbTinHoc.toFixed(2));
         //tinh diem trung binh Giáo dục công dân:
         var tbCongDan = 0;
@@ -857,7 +1206,11 @@
                 }
             }
         }
-        tbCongDan = totalCongDan / countCongDan;
+        if (countCongDan === 0) {
+            tbCongDan = 0;
+        } else {
+            tbCongDan = totalCongDan / countCongDan;
+        }
         $('#scoreCongDan').text("Giáo dục công dân: " + tbCongDan.toFixed(2));
         //tinh diem trung binh Giáo dục Tiếng Anh:
         var tbTiengAnh = 0;
@@ -882,7 +1235,11 @@
                 }
             }
         }
-        tbTiengAnh = totalTiengAnh / countTiengAnh;
+        if (countTiengAnh === 0) {
+            tbTiengAnh = 0;
+        } else {
+            tbTiengAnh = totalTiengAnh / countTiengAnh;
+        }
         $('#scoreTiengAnh').text("Tiếng Anh: " + tbTiengAnh.toFixed(2));
         //tinh diem trung binh Giáo dục Thể dục:
         var tbTheDuc = 0;
@@ -907,7 +1264,11 @@
                 }
             }
         }
-        tbTheDuc = totalTheDuc / countTheDuc;
+        if (countTheDuc === 0) {
+            tbTheDuc = 0;
+        } else {
+            tbTheDuc = totalTheDuc / countTheDuc;
+        }
         $('#scoreTheDuc').text("Thể dục: " + tbTheDuc.toFixed(2));
         //tinh diem trung binh Giáo dục Công nghệ:
         var tbCongNghe =0;
@@ -932,7 +1293,11 @@
                 }
             }
         }
-        tbCongNghe = totalCongNghe / countCongNghe;
+        if (countCongNghe === 0) {
+            tbCongNghe = 0;
+        } else {
+            tbCongNghe = totalCongNghe / countCongNghe;
+        }
 
         $('#scoreCongNghe').text("Công nghệ: " + tbCongNghe.toFixed(2));
         this.tbScore = ((tbToan + tbVatLy + tbHoaHoc + tbSinhHoc + tbNguVan + tbLichSu + tbDiaLy + tbTinHoc + tbCongDan + tbTiengAnh + tbTheDuc + tbCongNghe) / 12).toFixed(2);
