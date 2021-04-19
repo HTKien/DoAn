@@ -401,19 +401,19 @@
                     <div>Thông tin khen thưởng/tuyên dương</div>
                     <div class="student-score-content">
                         <div class="student-score-table">
-                            <table class="main-table-bonus">
+                            <table style="width: 100%;" class="main-table-bonus">
                                 <thead>
                                     <tr>
-                                        <th class="tieu-de" fieldName="Code">
+                                        <th class="tieu-de" fieldName="Time">
                                             <div class="tieu-de-tren">Thời gian</div>
                                         </th>
-                                        <th class="tieu-de" fieldName="Name">
+                                        <th class="tieu-de" fieldName="Content">
                                             <div class="tieu-de-tren">Nội dung</div>
                                         </th>
-                                        <th class="tieu-de cot1" fieldName="Phone">
+                                        <th class="tieu-de cot1" fieldName="Subject">
                                             <div class="tieu-de-tren">Môn học</div>
                                         </th>
-                                        <th class="tieu-de cot1" fieldName="Note">
+                                        <th class="tieu-de cot1" fieldName="Value">
                                             <div class="tieu-de-tren">Điểm cộng</div>
                                         </th>
                                     </tr>
@@ -424,12 +424,31 @@
                         </div>
                         <div class="student-score-show">
                             <div class="score-nav">
-                                <button>Thêm</button>
-                                <button>Sửa</button>
-                                <button>Xóa</button>
+                                <button id="add_bonus">Thêm</button>
+                                <button id="edit_bonus">Sửa</button>
+                                <button id="delete_bonus">Xóa</button>
+                                <button>Làm mới</button>
+                            </div>
+                            <div>
+                                <label>Thời gian</label>
+                                <input id="bonus_time" />
+                            </div>
+                            <div>
+                                <label>Nội dung</label>
+                                <input id="bonus_content" />
+                            </div>
+                            <div>
+                                <label>Môn học</label>
+                                <input id="bonus_subject" />
+                            </div>
+                            <div>
+                                <label>Điểm cộng</label>
+                                <input id="bonus_value" />
                             </div>
                         </div>
                     </div>
+                    <div id="total_bonus">Tổng điểm cộng: </div>
+
                 </div>
                 <div class="student-score">
                     <div>Thông tin phê bình</div>

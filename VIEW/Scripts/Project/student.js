@@ -46,7 +46,9 @@ class Student extends BaseStudent {
         //sự kiện show dialog xác nhận xóa khách hàng:
         $(document).on('click', 'button.delete', this.showDiaLog.bind(this));
         $(document).on('click', '#delete_score', this.deleteScore.bind(this));
+        $(document).on('click', '#delete_bonus', this.deleteBonus.bind(this));
         $(document).on('click', '#edit_score', this.editScore.bind(this));
+        $(document).on('click', '#edit_bonus', this.editBonus.bind(this));
 
         //sự kiện show dialog thêm khách hàng:
         $(document).on('click', 'button.add', this.showDiaLogAdd.bind(this));
@@ -71,6 +73,7 @@ class Student extends BaseStudent {
         //sự kiện thêm mới khách hàng: 
         $(document).on('click', '#save', this.SaveStudent.bind(this));
         $(document).on('click', '#add_score', this.AddScore.bind(this));
+        $(document).on('click', '#add_bonus', this.AddBonus.bind(this));
 
 
         //sự kiện cho nút Hủy bỏ trong dialog :
@@ -222,6 +225,7 @@ class Student extends BaseStudent {
         });
         this.student_id = listID[0];
         this.loadScore(this.student_id);
+        this.loadBonusStudent(this.student_id);
 
     }
 
@@ -295,6 +299,32 @@ class Student extends BaseStudent {
 
         
     }
+    deleteBonus() {
+        alert("Xác nhận xóa khen thưởng?");
+        var me = this;
+        var listRow = $('.select');
+        var listID = [];
+        $.each(listRow, function (index, item) {
+            listID.push($(item).data('recordid'));
+        });
+        var listID_update = [];
+        for (var i = 1; i < listID.length; i++) {
+            listID_update.push(listID[i]);
+        }
+        $.ajax({
+            method: 'DELETE',
+            url: '/bonusStudents',
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(listID_update),
+            success: function (res) {
+                alert("Xóa khen thưởng thành công!");
+                me.loadBonusStudent(me.student_id);
+            },
+            error: function (res) {
+                alert("Hệ thống đang bị lỗi!");
+            }
+        });
+    }
     editScore() {
         var me = this;
         var listRow = $('.select');
@@ -353,6 +383,66 @@ class Student extends BaseStudent {
         }
         
 
+    }
+    editBonus() {
+        var me = this;
+        var listRow = $('.select');
+        var listID = [];
+        $.each(listRow, function (index, item) {
+            listID.push($(item).data('recordid'));
+        });
+        var listID_update = [];
+        for (var i = 1; i < listID.length; i++) {
+            listID_update.push(listID[i]);
+        }
+        if ($('#edit_bonus').text() == "Sửa") {
+            $.ajax({
+                method: 'GET',
+                url: '/bonusStudents/' + listID[1],
+                dataType: 'json',
+                async: false,
+                success: function (res) {
+                    $('#bonus_time').val(res.Time);
+                    $('#bonus_content').val(res.Content);
+                    $('#bonus_subject').val(res.Subject);
+                    $('#bonus_value').val(res.Value);
+                    $('#edit_bonus').text("Lưu lại")
+                },
+                error: function (res) {
+                    alert("Hệ thống đang bị lỗi!");
+                }
+            })
+
+        } else if ($('#edit_bonus').text() == "Lưu lại") {
+            var object = {};
+
+            object["BonusStudentID"] = listID[1];
+            object["Time"] = $('#bonus_time').val();
+            object["Content"] = $('#bonus_content').val();
+            object["Subject"] = $('#bonus_subject').val();
+            object["Value"] = $('#bonus_value').val();
+            object["StudentID"] = me.student_id;
+
+            $.ajax({
+                method: 'PUT',
+                url: '/bonusStudents',
+                data: JSON.stringify(object),
+                contentType: "application/json; charset=utf-8",
+                success: function (res) {
+                    alert("Sửa khen thưởng thành công!");
+                    me.loadBonusStudent(me.student_id);
+                    $('#edit_bonus').text("Sửa");
+                    $('#bonus_time').val("");
+                    $('#bonus_content').val("");
+                    $('#bonus_subject').val("");
+                    $('#bonus_value').val("");
+
+                },
+                error: function () {
+                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                }
+            });
+        }
     }
     showDiaLog() {
 
@@ -589,6 +679,37 @@ class Student extends BaseStudent {
                     $('#score_type').val("Điểm miệng");
                     $('#score_point').val("");
                     me.loadScore(me.student_id);
+
+                },
+                error: function () {
+                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                }
+            });
+        }
+    }
+    AddBonus() {
+        var me = this;
+        var object = {};
+        object["Time"] = $('#bonus_time').val();
+        object["Content"] = $('#bonus_content').val();
+        object["Subject"] = $('#bonus_subject').val();
+        object["Value"] = $('#bonus_value').val();
+        object["StudentID"] = this.student_id;
+        if (false) {
+            alert("Bạn phải nhập thông tin trong các trường bắt buộc!");
+        } else {
+            $.ajax({
+                method: 'POST',
+                url: '/bonusStudents',
+                data: JSON.stringify(object),
+                contentType: "application/json; charset=utf-8",
+                success: function (res) {
+                    alert("Thêm mới khen thưởng thành công!");
+                    $('#bonus_time').val("");
+                    $('#bonus_content').val("");
+                    $('#bonus_subject').val("");
+                    $('#bonus_value').val("");
+                    me.loadBonusStudent(me.student_id);
 
                 },
                 error: function () {

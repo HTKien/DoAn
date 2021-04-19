@@ -946,6 +946,45 @@
         })
         return fakeData;
     }
+    GetBonusStudent(studentID) {
+        var fakeData = [];
+        $.ajax({
+            method: 'GET',
+            url: '/bonusStudents',
+            dataType: 'json',
+            async: false,
+            success: function (res) {
+                $.each(res, function (index, item) {
+                    if (item.StudentID === studentID) {
+                        fakeData.push(item);
+                    }
+                });
+            },
+            error: function (res) {
+                alert("Hệ thống đang bị lỗi!");
+            }
+        })
+        return fakeData;
+    }
+    AppendBonusStudent(fakeData) {
+        var totalBonus = 0;
+        totalBonus = parseFloat(totalBonus);
+        for (var t = 0; t < fakeData.length; t++) {
+            totalBonus = totalBonus + parseFloat(fakeData[t].Value) ;
+        }
+        $('#total_bonus').text("Tổng điểm cộng: " + totalBonus);
+        var fields = $('.main-table-bonus th[fieldName]');
+        $('.main-table-bonus tbody').empty();
+        $.each(fakeData, function (index, item) {
+            var rowHTML = $('<tr></tr>').data("recordid", item["BonusStudentID"]);
+            $.each(fields, function (fieldIndex, fieldItem) {
+                var fieldName = fieldItem.getAttribute('fieldName');
+                var fieldValue = item[fieldName];
+                rowHTML.append('<td>' + fieldValue + '</td>');
+            });
+            $('.main-table-bonus tbody').append(rowHTML);
+        });
+    }
 
     AppendScore(fakeData) {
         //tinh diem trung binh Toán:
@@ -1303,9 +1342,6 @@
         this.tbScore = ((tbToan + tbVatLy + tbHoaHoc + tbSinhHoc + tbNguVan + tbLichSu + tbDiaLy + tbTinHoc + tbCongDan + tbTiengAnh + tbTheDuc + tbCongNghe) / 12).toFixed(2);
         $('#dialog-student-detail #student_mediumscore').text("Điểm trung bình các môn: " + this.tbScore);
         var fields = $('.main-table-score th[fieldName]');
-        //put student:
-
-        //
         $('.main-table-score tbody').empty();
         $.each(fakeData, function (index, item) {
             var rowHTML = $('<tr></tr>').data("recordid", item["ScoreID"]);
@@ -1321,6 +1357,10 @@
     loadScore(studentID) {
         var data = this.GetScore(studentID);
         this.AppendScore(data);
+    }
+    loadBonusStudent(studentID) {
+        var data = this.GetBonusStudent(studentID);
+        this.AppendBonusStudent(data);
     }
 
     
