@@ -423,7 +423,8 @@ td {
 }
 
 .main-table tr:hover {
-    background-color: #ffffd3;
+    background-color: #ADD7F5;
+    cursor: pointer;
 }
 .loading {
     background: url('/Contents/icon/load.gif') center no-repeat;

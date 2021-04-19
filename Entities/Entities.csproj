@@ -58,6 +58,7 @@
     <Compile Include="Dictionary\Score.cs" />
     <Compile Include="Dictionary\Student.cs" />
     <Compile Include="Dictionary\Teacher.cs" />
+    <Compile Include="Dictionary\User.cs" />
     <Compile Include="Dictionary\VIEWContext.cs" />
     <Compile Include="Migrations\202104111810255_Initial.cs" />
     <Compile Include="Migrations\202104111810255_Initial.designer.cs">
@@ -78,6 +79,10 @@
     <Compile Include="Migrations\202104191129290_Critic.cs" />
     <Compile Include="Migrations\202104191129290_Critic.Designer.cs">
       <DependentUpon>202104191129290_Critic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104191928500_User.cs" />
+    <Compile Include="Migrations\202104191928500_User.Designer.cs">
+      <DependentUpon>202104191928500_User.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104191129290_Critic.resx">
       <DependentUpon>202104191129290_Critic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104191928500_User.resx">
+      <DependentUpon>202104191928500_User.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -151,6 +151,7 @@
     <Content Include="Contents\imgs\viewEmail.png" />
     <Content Include="CSS\Libraries\jquery-ui.css" />
     <Content Include="CSS\Project\common.css" />
+    <Content Include="CSS\Project\login.css" />
     <Content Include="CSS\Project\parent.css" />
     <Content Include="CSS\Project\class_management.css" />
     <Content Include="CSS\Project\student.css" />
@@ -169,6 +170,7 @@
     <Content Include="Scripts\Project\student.js" />
     <Content Include="Scripts\Project\teacher.js" />
     <Content Include="Scripts\Project\parent.js" />
+    <Content Include="Views\login.html" />
     <Content Include="Views\parent.html" />
     <Content Include="Views\class_managment.html" />
     <Content Include="Views\student.html" />
@@ -184,6 +186,7 @@
     <Compile Include="Controllers\ScoresController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

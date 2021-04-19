@@ -56,6 +56,7 @@
     <Compile Include="Dictionary\StudentBL.cs" />
     <Compile Include="Dictionary\ScoreBL.cs" />
     <Compile Include="Dictionary\TeacherBL.cs" />
+    <Compile Include="Dictionary\UserBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
