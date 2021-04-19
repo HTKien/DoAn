@@ -3,6 +3,7 @@
         this.Calculate();
         this.loadData();
     }
+    
     tbScore;
     tb;
 
@@ -128,6 +129,23 @@
         var me = this;
         var data = me.getData();
         for (var t = 0; t < data.length; t++) {
+            //
+            var bonuss = [];
+            bonuss = this.GetBonusStudent(data[t].StudentID);
+            var totalBonus = 0;
+            totalBonus = parseFloat(totalBonus);
+            for (var m = 0; m < bonuss.length; m++) {
+                totalBonus = totalBonus + parseFloat(bonuss[m].Value);
+            }
+            //
+            var critics = [];
+            critics = this.GetCritic(data[t].StudentID);
+            var totalCritic = 0;
+            totalCritic = parseFloat(totalCritic);
+            for (var n = 0; n < critics.length; n++) {
+                totalCritic = totalCritic + parseFloat(critics[n].Value);
+            }
+            //
             var scores = [];
             scores = this.GetScore(data[t].StudentID);
             //toan
@@ -496,6 +514,8 @@
             var objectStudent = {};
             objectStudent["StudentID"] = data[t].StudentID;
             objectStudent["MediumScore"] = this.tb;
+            objectStudent["Bonus"] = totalBonus;
+            objectStudent["Critic"] = totalCritic;
             $.ajax({
                 method: 'PUT',
                 url: '/studentscalculate',
@@ -525,7 +545,104 @@
             $('.loading').hide();
 
         }, 500);
+        this.sortTable(0, ">");
 
+    }
+    search(colNumber, id_input) {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById(id_input);
+        filter = input.value.toUpperCase();
+        table = document.getElementById("table_student");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[colNumber];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+    sortTable(colNumber, objective) {
+        var table, rows, switching, i, x, y, shouldSwitch;
+        table = document.getElementById("table_student");
+        switching = true;
+
+        while (switching) {
+            switching = false;
+            rows = table.rows;
+            for (i = 1; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+                x = rows[i].getElementsByTagName("TD")[colNumber];
+                y = rows[i + 1].getElementsByTagName("TD")[colNumber];
+                if (objective == ">") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+
+                } else {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+            }
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+            }
+        }
+    }
+    sortByScoreMedium() {
+        this.sortTable(8, "<");
+    }
+    sortByBonus() {
+        this.sortTable(5, "<");
+
+    }
+    sortByCritic() {
+        this.sortTable(6, ">");
+
+    }
+    searchByCode() {
+        this.search(0, "code_search");
+    }
+    searchByName() {
+        this.search(1, "name_search");
+
+    }
+    searchBySex() {
+        this.search(2, "sex_search");
+
+    }
+    searchByBirthday() {
+        this.search(3, "birthday_search");
+
+    }
+    searchByAddress() {
+        this.search(4, "address_search");
+    }
+    searchByBonus() {
+        this.search(5, "bonus_search");
+    }
+    searchByCritic() {
+        this.search(6, "critic_search");
+    }
+    searchByConduct() {
+        this.search(7, "conduct_search");
+    }
+    searchByMediumScore() {
+        this.search(8, "medium_score_search");
+    }
+    searchByClassify() {
+        this.search(9, "classify_search");
+    }
+    searchByNote() {
+        this.search(10, "note_search");
     }
     /**
     * Hàm  thực hiện load dữ liệu của hàm getRefreshData lên table
@@ -966,6 +1083,26 @@
         })
         return fakeData;
     }
+    GetCritic(studentID) {
+        var fakeData = [];
+        $.ajax({
+            method: 'GET',
+            url: '/critics',
+            dataType: 'json',
+            async: false,
+            success: function (res) {
+                $.each(res, function (index, item) {
+                    if (item.StudentID === studentID) {
+                        fakeData.push(item);
+                    }
+                });
+            },
+            error: function (res) {
+                alert("Hệ thống đang bị lỗi!");
+            }
+        })
+        return fakeData;
+    }
     AppendBonusStudent(fakeData) {
         var totalBonus = 0;
         totalBonus = parseFloat(totalBonus);
@@ -983,6 +1120,25 @@
                 rowHTML.append('<td>' + fieldValue + '</td>');
             });
             $('.main-table-bonus tbody').append(rowHTML);
+        });
+    }
+    AppendCritic(fakeData) {
+        var totalCritic = 0;
+        totalCritic = parseFloat(totalCritic);
+        for (var t = 0; t < fakeData.length; t++) {
+            totalCritic = totalCritic + parseFloat(fakeData[t].Value);
+        }
+        $('#total_critic').text("Tổng điểm trừ: " + totalCritic);
+        var fields = $('.main-table-critic th[fieldName]');
+        $('.main-table-critic tbody').empty();
+        $.each(fakeData, function (index, item) {
+            var rowHTML = $('<tr></tr>').data("recordid", item["CriticID"]);
+            $.each(fields, function (fieldIndex, fieldItem) {
+                var fieldName = fieldItem.getAttribute('fieldName');
+                var fieldValue = item[fieldName];
+                rowHTML.append('<td>' + fieldValue + '</td>');
+            });
+            $('.main-table-critic tbody').append(rowHTML);
         });
     }
 
@@ -1361,6 +1517,10 @@
     loadBonusStudent(studentID) {
         var data = this.GetBonusStudent(studentID);
         this.AppendBonusStudent(data);
+    }
+    loadCritic(studentID) {
+        var data = this.GetCritic(studentID);
+        this.AppendCritic(data);
     }
 
     

@@ -1,5 +1,11 @@
 ﻿$(document).ready(function () {
     var student = new Student();
+    $("#search_fulltable").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#student_table_body tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
 })
 
 class Student extends BaseStudent {
@@ -10,6 +16,7 @@ class Student extends BaseStudent {
 
 
     }
+    
     //Hàm để gọi các sự kiện xử lý cho bài toán
     //Người tạo: Hàn Trung Kiên
     //Ngày tạo: 22/8/2019
@@ -38,6 +45,20 @@ class Student extends BaseStudent {
 
         //sự kiện cho nút refresh ở phần trang:
         $(document).on('click', '#refresh', this.loadRefreshData.bind(this));
+        $(document).on('click', '#sort_by_score', this.sortByScoreMedium.bind(this));
+        $(document).on('click', '#sort_by_bonus', this.sortByBonus.bind(this));
+        $(document).on('click', '#sort_by_critic', this.sortByCritic.bind(this));
+        $(document).on('keyup', '#code_search', this.searchByCode.bind(this));
+        $(document).on('keyup', '#name_search', this.searchByName.bind(this));
+        $(document).on('keyup', '#sex_search', this.searchBySex.bind(this));
+        $(document).on('keyup', '#birthday_search', this.searchByBirthday.bind(this));
+        $(document).on('keyup', '#address_search', this.searchByAddress.bind(this));
+        $(document).on('keyup', '#bonus_search', this.searchByBonus.bind(this));
+        $(document).on('keyup', '#critic_search', this.searchByCritic.bind(this));
+        $(document).on('keyup', '#conduct_search', this.searchByConduct.bind(this));
+        $(document).on('keyup', '#medium_score_search', this.searchByMediumScore.bind(this));
+        $(document).on('keyup', '#classify_search', this.searchByClassify.bind(this));
+        $(document).on('keyup', '#note_search', this.searchByNote.bind(this));
 
         //sự kiện chọn một hay nhiều hàng rồi ấn nút xóa thì xóa dữ liệu:
         //$(document).on('click', 'button.delete', this.ClickButtonXoa.bind(this));
@@ -47,8 +68,10 @@ class Student extends BaseStudent {
         $(document).on('click', 'button.delete', this.showDiaLog.bind(this));
         $(document).on('click', '#delete_score', this.deleteScore.bind(this));
         $(document).on('click', '#delete_bonus', this.deleteBonus.bind(this));
+        $(document).on('click', '#delete_critic', this.deleteCritic.bind(this));
         $(document).on('click', '#edit_score', this.editScore.bind(this));
         $(document).on('click', '#edit_bonus', this.editBonus.bind(this));
+        $(document).on('click', '#edit_critic', this.editCritic.bind(this));
 
         //sự kiện show dialog thêm khách hàng:
         $(document).on('click', 'button.add', this.showDiaLogAdd.bind(this));
@@ -74,6 +97,7 @@ class Student extends BaseStudent {
         $(document).on('click', '#save', this.SaveStudent.bind(this));
         $(document).on('click', '#add_score', this.AddScore.bind(this));
         $(document).on('click', '#add_bonus', this.AddBonus.bind(this));
+        $(document).on('click', '#add_critic', this.AddCritic.bind(this));
 
 
         //sự kiện cho nút Hủy bỏ trong dialog :
@@ -226,6 +250,7 @@ class Student extends BaseStudent {
         this.student_id = listID[0];
         this.loadScore(this.student_id);
         this.loadBonusStudent(this.student_id);
+        this.loadCritic(this.student_id);
 
     }
 
@@ -319,6 +344,32 @@ class Student extends BaseStudent {
             success: function (res) {
                 alert("Xóa khen thưởng thành công!");
                 me.loadBonusStudent(me.student_id);
+            },
+            error: function (res) {
+                alert("Hệ thống đang bị lỗi!");
+            }
+        });
+    }
+    deleteCritic() {
+        alert("Xác nhận xóa phê bình?");
+        var me = this;
+        var listRow = $('.select');
+        var listID = [];
+        $.each(listRow, function (index, item) {
+            listID.push($(item).data('recordid'));
+        });
+        var listID_update = [];
+        for (var i = 1; i < listID.length; i++) {
+            listID_update.push(listID[i]);
+        }
+        $.ajax({
+            method: 'DELETE',
+            url: '/critics',
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(listID_update),
+            success: function (res) {
+                alert("Xóa phê bình thành công!");
+                me.loadCritic(me.student_id);
             },
             error: function (res) {
                 alert("Hệ thống đang bị lỗi!");
@@ -436,6 +487,66 @@ class Student extends BaseStudent {
                     $('#bonus_content').val("");
                     $('#bonus_subject').val("");
                     $('#bonus_value').val("");
+
+                },
+                error: function () {
+                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                }
+            });
+        }
+    }
+    editCritic() {
+        var me = this;
+        var listRow = $('.select');
+        var listID = [];
+        $.each(listRow, function (index, item) {
+            listID.push($(item).data('recordid'));
+        });
+        var listID_update = [];
+        for (var i = 1; i < listID.length; i++) {
+            listID_update.push(listID[i]);
+        }
+        if ($('#edit_critic').text() == "Sửa") {
+            $.ajax({
+                method: 'GET',
+                url: '/critics/' + listID[1],
+                dataType: 'json',
+                async: false,
+                success: function (res) {
+                    $('#critic_time').val(res.Time);
+                    $('#critic_content').val(res.Content);
+                    $('#critic_subject').val(res.Subject);
+                    $('#critic_value').val(res.Value);
+                    $('#edit_critic').text("Lưu lại")
+                },
+                error: function (res) {
+                    alert("Hệ thống đang bị lỗi!");
+                }
+            })
+
+        } else if ($('#edit_critic').text() == "Lưu lại") {
+            var object = {};
+
+            object["CriticID"] = listID[1];
+            object["Time"] = $('#critic_time').val();
+            object["Content"] = $('#critic_content').val();
+            object["Subject"] = $('#critic_subject').val();
+            object["Value"] = $('#critic_value').val();
+            object["StudentID"] = me.student_id;
+
+            $.ajax({
+                method: 'PUT',
+                url: '/critics',
+                data: JSON.stringify(object),
+                contentType: "application/json; charset=utf-8",
+                success: function (res) {
+                    alert("Sửa phê bình thành công!");
+                    me.loadCritic(me.student_id);
+                    $('#edit_critic').text("Sửa");
+                    $('#critic_time').val("");
+                    $('#critic_content').val("");
+                    $('#critic_subject').val("");
+                    $('#critic_value').val("");
 
                 },
                 error: function () {
@@ -710,6 +821,37 @@ class Student extends BaseStudent {
                     $('#bonus_subject').val("");
                     $('#bonus_value').val("");
                     me.loadBonusStudent(me.student_id);
+
+                },
+                error: function () {
+                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                }
+            });
+        }
+    }
+    AddCritic() {
+        var me = this;
+        var object = {};
+        object["Time"] = $('#critic_time').val();
+        object["Content"] = $('#critic_content').val();
+        object["Subject"] = $('#critic_subject').val();
+        object["Value"] = $('#critic_value').val();
+        object["StudentID"] = this.student_id;
+        if (false) {
+            alert("Bạn phải nhập thông tin trong các trường bắt buộc!");
+        } else {
+            $.ajax({
+                method: 'POST',
+                url: '/critics',
+                data: JSON.stringify(object),
+                contentType: "application/json; charset=utf-8",
+                success: function (res) {
+                    alert("Thêm mới phê bình thành công!");
+                    $('#critic_time').val("");
+                    $('#critic_content').val("");
+                    $('#critic_subject').val("");
+                    $('#critic_value').val("");
+                    me.loadCritic(me.student_id);
 
                 },
                 error: function () {

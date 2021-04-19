@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dictionary\BonusStudentDL.cs" />
+    <Compile Include="Dictionary\CriticDL.cs" />
     <Compile Include="Dictionary\ParentDL.cs" />
     <Compile Include="Dictionary\ClassDL.cs" />
     <Compile Include="Dictionary\StudentDL.cs" />

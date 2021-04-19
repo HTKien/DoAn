@@ -123,6 +123,7 @@
         </div>
         <div class="div-phai-giua">
             <div id="class_title" class="text-danh-muc"></div>
+            <div> <input id="search_fulltable" /> </div>
         </div>
 
         <div class="div-phai-menu-ngang">
@@ -160,78 +161,88 @@
 
         <div class="du-lieu">
             <div class="table">
-                <table class="main-table">
+                <table id="table_student" class="main-table">
                     <thead>
                         <tr>
-
                             <th class="tieu-de" fieldName="Code">
                                 <div class="tieu-de-tren">Mã học sinh</div>
                                 <div class="tieu-de-duoi">
+                                    <input style="width: 70px; margin: auto;" id="code_search" />
                                 </div>
                             </th>
                             <th class="tieu-de" fieldName="Name">
                                 <div class="tieu-de-tren">Họ và tên</div>
                                 <div class="tieu-de-duoi">
+                                    <input style="width: 117px; margin: auto;" id="name_search" />
+
                                 </div>
                             </th>
                             <th class="tieu-de cot1" fieldName="Sex">
                                 <div class="tieu-de-tren">Giới tính</div>
                                 <div class="tieu-de-duoi">
+                                    <input style="width: 60px; margin: auto;" id="sex_search" />
+
                                 </div>
                             </th>
                             <th class="tieu-de cot1" fieldName="Birthday">
                                 <div class="tieu-de-tren">Ngày sinh</div>
                                 <div class="tieu-de-duoi">
+                                    <input style="width: 70px; margin: auto;" id="birthday_search" />
+
                                 </div>
                             </th>
                             <th class="tieu-de cot1" fieldName="Address">
                                 <div class="tieu-de-tren">Địa chỉ</div>
                                 <div class="tieu-de-duoi">
+                                    <input style="width: 100px; margin: auto;" id="address_search" />
+
                                 </div>
                             </th>
                             <th class="tieu-de cot1" fieldName="Bonus">
-                                <div class="tieu-de-tren">Khen thưởng</div>
+                                <div class="tieu-de-tren">Khen thưởng<i id="sort_by_bonus" class="fas fa-sort"></i></div>
                                 <div class="tieu-de-duoi">
+                                    <input style="width: 100px; margin: auto;" id="bonus_search" />
+
                                 </div>
                             </th>
                             <th class="tieu-de cot1" fieldName="Critic">
-                                <div class="tieu-de-tren">Phê bình</div>
+                                <div class="tieu-de-tren">Phê bình<i id="sort_by_critic" class="fas fa-sort"></i></div>
                                 <div class="tieu-de-duoi">
-                                </div>
-                            </th>
-                            <th class="tieu-de cot1" fieldName="Attendence">
-                                <div class="tieu-de-tren">Điểm danh</div>
-                                <div class="tieu-de-duoi">
+                                    <input style="width: 100px; margin: auto;" id="critic_search" />
+
                                 </div>
                             </th>
                             <th class="tieu-de cot1" fieldName="Conduct">
                                 <div class="tieu-de-tren">Hạnh kiểm</div>
                                 <div class="tieu-de-duoi">
+                                    <input style="width: 100px; margin: auto;" id="conduct_search" />
+
                                 </div>
                             </th>
                             <th class="tieu-de cot1" fieldName="MediumScore">
-                                <div class="tieu-de-tren">Điểm TB</div>
+                                <div class="tieu-de-tren">Điểm TB <i id="sort_by_score" class="fas fa-sort"></i></div>
                                 <div class="tieu-de-duoi">
+                                    <input style="width: 100px; margin: auto;" id="medium_score_search" />
+
                                 </div>
                             </th>
                             <th class="tieu-de cot1" fieldName="Classify">
                                 <div class="tieu-de-tren">Xếp loại</div>
                                 <div class="tieu-de-duoi">
-                                </div>
-                            </th>
-                            <th class="tieu-de cot1" fieldName="Status">
-                                <div class="tieu-de-tren">Tình trạng</div>
-                                <div class="tieu-de-duoi">
+                                    <input style="width: 100px; margin: auto;" id="classify_search" />
+
                                 </div>
                             </th>
                             <th class="tieu-de cot1" fieldName="Note">
                                 <div class="tieu-de-tren">Ghi chú</div>
                                 <div class="tieu-de-duoi">
+                                    <input style="width: 100px; margin: auto;" id="note_search" />
+
                                 </div>
                             </th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="student_table_body">
                     </tbody>
                 </table>
 
@@ -454,20 +465,20 @@
                     <div>Thông tin phê bình</div>
                     <div class="student-score-content">
                         <div class="student-score-table">
-                            <table class="main-table-critic">
+                            <table style="width: 100%" class="main-table-critic">
                                 <thead>
                                     <tr>
-                                        <th class="tieu-de" fieldName="Code">
+                                        <th class="tieu-de" fieldName="Time">
                                             <div class="tieu-de-tren">Thời gian</div>
                                         </th>
-                                        <th class="tieu-de" fieldName="Name">
+                                        <th class="tieu-de" fieldName="Content">
                                             <div class="tieu-de-tren">Nội dung</div>
                                         </th>
-                                        <th class="tieu-de cot1" fieldName="Phone">
+                                        <th class="tieu-de cot1" fieldName="Subject">
                                             <div class="tieu-de-tren">Môn học</div>
                                         </th>
-                                        <th class="tieu-de cot1" fieldName="Note">
-                                            <div class="tieu-de-tren">Điểm cộng</div>
+                                        <th class="tieu-de cot1" fieldName="Value">
+                                            <div class="tieu-de-tren">Điểm trừ</div>
                                         </th>
                                     </tr>
                                 </thead>
@@ -477,12 +488,31 @@
                         </div>
                         <div class="student-score-show">
                             <div class="score-nav">
-                                <button>Thêm</button>
-                                <button>Sửa</button>
-                                <button>Xóa</button>
+                                <button id="add_critic">Thêm</button>
+                                <button id="edit_critic">Sửa</button>
+                                <button id="delete_critic">Xóa</button>
+                                <button>Làm mới</button>
+                            </div>
+                            <div>
+                                <label>Thời gian</label>
+                                <input id="critic_time" />
+                            </div>
+                            <div>
+                                <label>Nội dung</label>
+                                <input id="critic_content" />
+                            </div>
+                            <div>
+                                <label>Môn học</label>
+                                <input id="critic_subject" />
+                            </div>
+                            <div>
+                                <label>Điểm cộng</label>
+                                <input id="critic_value" />
                             </div>
                         </div>
                     </div>
+                    <div id="total_critic">Tổng điểm trừ: </div>
+
                 </div>
             </div>
 
@@ -602,6 +632,7 @@
 
 
     </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src='https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)'></script>
     <script src="/Scripts/Libraries/jquery-3.4.1.js"></script>
     <script src="/Scripts/Libraries/jquery-ui.js"></script>

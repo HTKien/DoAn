@@ -141,13 +141,15 @@
                 <img src="/Contents/imgs/Import16.png" />
                 <div class="btn-text">Nhập khẩu</div>
             </button>
-            <button class="btn">
+            <div class="btn importfile">
                 <img src="/Contents/imgs/excel_97_24.png" />
-                <div class="btn-text">Xuất khẩu</div>
-            </button>
-            <button class="btn">
+                <div class="btn-text">
+                    <input type="file" id="input_file" accept=".xls,.xlsx,.ods">
+                </div>
+            </div>
+            <button class="btn export" onclick="exportReportToExcel(this)">
                 <img src="/Contents/imgs/ic_GopKhachHang.png" />
-                <div class="btn-text">Gộp khách hàng</div>
+                <div class="btn-text">Export data</div>
             </button>
             <button class="btn">
                 <img src="/Contents/imgs/iconHelp.png" />
@@ -159,7 +161,7 @@
 
         <div class="du-lieu">
             <div class="table">
-                <table class="main-table">
+                <table id="table_teacher" class="main-table">
                     <thead>
                         <tr>
 
@@ -339,9 +341,14 @@
 
 
     </div>
+    <script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/Scripts/Libraries/jquery-3.4.1.js"></script>
     <script src="/Scripts/Libraries/jquery-ui.js"></script>
     <script src="/Scripts/Project/base_teacher.js"></script>
     <script src="/Scripts/Project/teacher.js"></script>
+    <script src="/Scripts/Project/import_file_teacher.js"></script>
+
 </body>
 </html>

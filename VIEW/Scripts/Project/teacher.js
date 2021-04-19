@@ -48,6 +48,7 @@ class Teacher extends BaseTeacher {
 
         //sự kiện show dialog thêm khách hàng:
         $(document).on('click', 'button.add', this.showDiaLogAdd.bind(this));
+        $(document).on('click', 'button.importfile', this.AddByFile.bind(this));
 
         //sự kiện đóng dialog khi nhấn icon đóng:
         $(document).on('click', 'button.icon-tieu-de-dialog-add', this.CloseDiaLog.bind(this));
@@ -146,6 +147,9 @@ class Teacher extends BaseTeacher {
 
         });
 
+    }
+    AddByFile() {
+        alert("kien")
     }
     /**
      * Hàm thực hiện việc mở dialog Sửa giáo viên

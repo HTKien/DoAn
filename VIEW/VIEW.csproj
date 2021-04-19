@@ -165,6 +165,7 @@
     <Content Include="Scripts\Project\base.js" />
     <Content Include="Scripts\Project\class.js" />
     <Content Include="Scripts\Project\class_student.js" />
+    <Content Include="Scripts\Project\import_file_teacher.js" />
     <Content Include="Scripts\Project\student.js" />
     <Content Include="Scripts\Project\teacher.js" />
     <Content Include="Scripts\Project\parent.js" />
@@ -178,6 +179,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BonusStudentsController.cs" />
     <Compile Include="Controllers\ClassesController.cs" />
+    <Compile Include="Controllers\CriticsController.cs" />
     <Compile Include="Controllers\ParentsController.cs" />
     <Compile Include="Controllers\ScoresController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />

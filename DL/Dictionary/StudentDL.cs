@@ -64,6 +64,8 @@ namespace DL
         {
             var studentFind = db.Students.Where(n => n.StudentID == _student.StudentID).SingleOrDefault();
             studentFind.MediumScore = _student.MediumScore;
+            studentFind.Bonus = _student.Bonus;
+            studentFind.Critic = _student.Critic;
             db.SaveChanges();
         }
 
