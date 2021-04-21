@@ -144,5 +144,47 @@ namespace VIEW.Controllers
             }
             return ajaxResult;
         }
+        //Hàm thực hiện update điểm danh của học sinh
+        //Người tạo: Hàn Trung Kiên
+        //Ngày tạo: 26/8/2019
+
+        [Route("students_attendence")]
+        [HttpPut]
+        public AjaxResult PutStudentAttendence([FromBody] Student _student)
+        {
+            var ajaxResult = new AjaxResult();
+            try
+            {
+                _studentDL.UpdateAttendence(_student);
+            }
+            catch (Exception ex)
+            {
+                ajaxResult.Data = ex;
+                ajaxResult.Success = false;
+                ajaxResult.Message = "Hệ thống đang bị lỗi!";
+            }
+            return ajaxResult;
+        }
+        //Hàm thực hiện update total điểm danh của học sinh
+        //Người tạo: Hàn Trung Kiên
+        //Ngày tạo: 26/8/2019
+
+        [Route("students_total_attendence")]
+        [HttpPut]
+        public AjaxResult PutTotalStudentAttendence([FromBody] Student _student)
+        {
+            var ajaxResult = new AjaxResult();
+            try
+            {
+                _studentDL.UpdateTotalAttendence(_student);
+            }
+            catch (Exception ex)
+            {
+                ajaxResult.Data = ex;
+                ajaxResult.Success = false;
+                ajaxResult.Message = "Hệ thống đang bị lỗi!";
+            }
+            return ajaxResult;
+        }
     }
 }

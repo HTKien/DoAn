@@ -68,6 +68,20 @@ namespace DL
             studentFind.Critic = _student.Critic;
             db.SaveChanges();
         }
+        //Hàm thực hiện việc update điểm danh:
+        public void UpdateAttendence(Student _student)
+        {
+            var studentFind = db.Students.Where(n => n.StudentID == _student.StudentID).SingleOrDefault();
+            studentFind.Attendence = _student.Attendence;
+            db.SaveChanges();
+        }
+        //Hàm thực hiện việc update total điểm danh:
+        public void UpdateTotalAttendence(Student _student)
+        {
+            var studentFind = db.Students.Where(n => n.StudentID == _student.StudentID).SingleOrDefault();
+            studentFind.Status = _student.Status;
+            db.SaveChanges();
+        }
 
     }
 }

@@ -66,6 +66,7 @@ class Student extends BaseStudent {
 
         //sự kiện show dialog xác nhận xóa khách hàng:
         $(document).on('click', 'button.delete', this.showDiaLog.bind(this));
+        $(document).on('click', 'button.attendence', this.submitAttendence.bind(this));
         $(document).on('click', '#delete_score', this.deleteScore.bind(this));
         $(document).on('click', '#delete_bonus', this.deleteBonus.bind(this));
         $(document).on('click', '#delete_critic', this.deleteCritic.bind(this));
@@ -209,11 +210,11 @@ class Student extends BaseStudent {
                 $('#dialog-student-detail #student_address').text("Địa chỉ: " + res.Address);
                 $('#dialog-student-detail #student_bonus').text("Số khen thưởng/tuyên dương: " + res.Bonus);
                 $('#dialog-student-detail #student_critic').text("Số phê bình: " + res.Critic);
-                $('#dialog-student-detail #student_attendance').text("Điểm danh: " + res.Attendence);
+                $('#dialog-student-detail #student_attendance').text("Điểm danh: " + res.Attendence + "/" + res.Status);
                 $('#dialog-student-detail #student_conduct').text("Hạnh kiểm: " + res.Conduct);
                 //$('#dialog-student-detail #student_mediumscore').text("Điểm TB: " + res.MediumScore);
                 $('#dialog-student-detail #student_classify').text("Xếp loại: " + res.Classify);
-                $('#dialog-student-detail #student_status').text("Tình trạng: " + res.Status);
+                $('#dialog-student-detail #student_status').text("Tình trạng: setup linh hoạt"  );
                 $('#dialog-student-detail #parent_name').text("Tên phụ huynh: " + res.ParentName);
                 $('#dialog-student-detail #parent_phone').text("Số điện thoại: " + res.ParentPhone);
                 $.ajax({
@@ -554,6 +555,68 @@ class Student extends BaseStudent {
                 }
             });
         }
+    }
+    submitAttendence() {
+        
+        var me = this;
+        var listRow = $('.select');
+        var listID = [];
+
+        $.each(listRow, function (index, item) {
+            listID.push($(item).data('recordid'));
+        });
+        for (var i = 0; i < listID.length; i++) {
+            $.ajax({
+                method: 'GET',
+                url: '/students/' + listID[i],
+                success: function (ress) {
+                    var object = {};
+                    object["StudentID"] = ress.StudentID;
+                    object["Attendence"] = parseInt(ress.Attendence) + 1;
+                    $.ajax({
+                        method: 'PUT',
+                        url: '/students_attendence',
+                        data: JSON.stringify(object),
+                        contentType: "application/json; charset=utf-8",
+                        success: function (res) {
+                        },
+                        error: function () {
+                            alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                        }
+                    });
+                },
+                error: function () {
+                    alert("Hệ thống đang bị lỗi!");
+                }
+            });
+            
+           
+        }
+        //submit total điểm danh: 
+        var listAllStudent = [];
+        listAllStudent = this.getAllData(classID);
+        for (var k = 0; k < listAllStudent.length; k++) {
+            var object = {};
+            object["StudentID"] = listAllStudent[k].StudentID;
+            object["Status"] = parseInt(listAllStudent[k].Status) + 1;
+
+            $.ajax({
+                method: 'PUT',
+                url: '/students_total_attendence',
+                data: JSON.stringify(object),
+                contentType: "application/json; charset=utf-8",
+                success: function (res) {
+                },
+                error: function () {
+                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                }
+            });
+
+
+        }
+        //
+        me.loadData();
+        alert("Đã submit điểm danh!");
     }
     showDiaLog() {
 
