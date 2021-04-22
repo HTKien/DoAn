@@ -16,7 +16,7 @@ namespace Entities.Migrations
                         Username = c.String(nullable: false),
                         Password = c.String(nullable: false),
                         Role = c.String(nullable: false),
-                        ReferenceID = c.Guid(),
+                        ReferenceID = c.Guid(nullable: true),
                     })
                 .PrimaryKey(t => t.UserID);
             

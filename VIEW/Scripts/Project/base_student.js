@@ -510,12 +510,26 @@
 
 
             this.tb = ((tbToan + tbVatLy + tbHoaHoc + tbSinhHoc + tbNguVan + tbLichSu + tbDiaLy + tbTinHoc + tbCongDan + tbTiengAnh + tbTheDuc + tbCongNghe) / 12).toFixed(2);
+            //hạnh kiểm: 
+            var conduct;
+            var tmp = totalBonus + totalCritic;
+            if (tmp >= 0) {
+                conduct = "Tốt";
+            } else if (-100 <= tmp < 0) {
+                conduct = "Khá";
+            } else if (-200 <= tmp < -100) {
+                conduct = "Trung bình";
+            } else if (tmp < -200) {
+                conduct = "Yếu";
+            }
+            //
             //put
             var objectStudent = {};
             objectStudent["StudentID"] = data[t].StudentID;
             objectStudent["MediumScore"] = this.tb;
             objectStudent["Bonus"] = totalBonus;
             objectStudent["Critic"] = totalCritic;
+            objectStudent["Conduct"] = conduct;
             $.ajax({
                 method: 'PUT',
                 url: '/studentscalculate',

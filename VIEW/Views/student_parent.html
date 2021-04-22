@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>eSupport</title>
+    <link href="/CSS/Libraries/jquery-ui.css" rel="stylesheet" />
+    <link href="/CSS/Project/view.css" rel="stylesheet" />
+    <link href="/CSS/Project/common.css" rel="stylesheet" />
+    <link href="/CSS/Project/parent.css" rel="stylesheet" />
+    <link href="/CSS/Project/student.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="div-trai">
+        <div class="div-trai-tren">
+            <div class="div-trai-tren-icon"></div>
+            <div class="div-trai-tren-text">eSupport</div>
+
+
+
+
+        </div>
+        <div class="div-trai-duoi">
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon"></div>
+                <div class="trai-duoi-text">Thông tin học sinh</div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon" id="bao-cao"></div>
+                <div class="trai-duoi-text">Điểm</div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon" id="mua-hang"></div>
+                <div class="trai-duoi-text">Tuyên dương</div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon" id="kho"></div>
+                <div class="trai-duoi-text">Phê bình</div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon" id="quy-tien-mat"></div>
+                <div class="trai-duoi-text">Đánh giá xếp loại</div>
+
+            </div>
+            <div class="trai-duoi-1cai" style="background-color: #0199FC">
+                <div class="trai-duoi-icon" id="quy-tien-gui"></div>
+                <div class="trai-duoi-text">Thông tin lớp học</div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon" id="chi-phi"></div>
+                <div class="trai-duoi-text">Thông tin giáo viên</div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon" id="chi-phi"></div>
+                <div class="trai-duoi-text">
+                    <button style="width: 150px;border: none; background: none; color: white; outline: none;">Cập nhật thông tin</button>
+                </div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon" id="chi-phi"></div>
+                <div class="trai-duoi-text">Đổi mật khẩu</div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon" id="chi-phi"></div>
+                <div class="trai-duoi-text">Thoát đăng nhập</div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="div-phai">
+        <div style="width: fit-content();display: flex; justify-content: flex-end" class="div-phai-tren">
+            <select class="cbb1" style="width: 66px; background-color: #0973b9; margin-right: 10px ">
+                <option value="value">phanthihong</option>
+            </select>
+        </div>
+        <div style="display: block; height: 90vh; overflow-y: scroll" class="div-phai-giua">
+            <div id="student_infor" class="student-infor">
+                <div>Thông tin học sinh</div>
+                <div style="display: flex;justify-content: space-between; width: 1000px;">
+                    <div class="col">
+                        <div id="student_code">Mã học sinh:</div>
+                        <div id="student_name">Họ và tên:</div>
+                        <div id="student_sex">Giới tính:</div>
+                        <div id="student_birthday">Ngày sinh:</div>
+                        <div id="student_address">Địa chỉ:</div>
+
+                    </div>
+
+                    <div class="col">
+                        <div>Thông tin phụ huynh</div>
+                        <div id="parent_name">Họ và tên PH:</div>
+                        <div id="parent_phone">Số điện thoại PH:</div>
+                    </div>
+                </div>
+
+            </div>
+            <div>Thông tin điểm</div>
+            <div style="width: 1000px" class="student-score-table">
+                <table style="width: 100%;" class="main-table-score">
+                    <thead>
+                        <tr>
+                            <th class="tieu-de" fieldName="Subject">
+                                <div class="tieu-de-tren">Môn học</div>
+                            </th>
+                            <th class="tieu-de" fieldName="Type">
+                                <div class="tieu-de-tren">Loại điểm</div>
+                            </th>
+                            <th class="tieu-de cot1" fieldName="Point">
+                                <div class="tieu-de-tren">Điểm</div>
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+            </div>
+            <div>Điểm trung bình từng môn học</div>
+            <div class="score-medium">
+                <div>
+                    <div id="scoreToan"></div>
+                    <div id="scoreVatLy"></div>
+                    <div id="scoreHoaHoc"></div>
+                </div>
+                <div>
+                    <div id="scoreSinhHoc"></div>
+                    <div id="scoreNguVan"></div>
+                    <div id="scoreLichSu"></div>
+                </div>
+                <div>
+                    <div id="scoreDiaLy"></div>
+                    <div id="scoreTinHoc"></div>
+                    <div id="scoreCongDan"></div>
+                </div>
+                <div>
+                    <div id="scoreTiengAnh"></div>
+                    <div id="scoreTheDuc"></div>
+                    <div id="scoreCongNghe"></div>
+                </div>
+
+            </div>
+            <div class="student-bonus">
+                <div>Tuyên dương/ Khen thưởng</div>
+                <div style="width: 1000px" class="student-score-table">
+                    <table style="width: 100%;" class="main-table-bonus">
+                        <thead>
+                            <tr>
+                                <th class="tieu-de" fieldName="Time">
+                                    <div class="tieu-de-tren">Thời gian</div>
+                                </th>
+                                <th class="tieu-de" fieldName="Content">
+                                    <div class="tieu-de-tren">Nội dung</div>
+                                </th>
+                                <th class="tieu-de cot1" fieldName="Subject">
+                                    <div class="tieu-de-tren">Môn học</div>
+                                </th>
+                                <th class="tieu-de cot1" fieldName="Value">
+                                    <div class="tieu-de-tren">Điểm cộng</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="total_bonus">Tổng điểm cộng: </div>
+
+            </div>
+            <div class="student-critic">
+                <div>Thông tin phê bình</div>
+                <div style="width: 1000px" class="student-score-table">
+                    <table style="width: 100%" class="main-table-critic">
+                        <thead>
+                            <tr>
+                                <th class="tieu-de" fieldName="Time">
+                                    <div class="tieu-de-tren">Thời gian</div>
+                                </th>
+                                <th class="tieu-de" fieldName="Content">
+                                    <div class="tieu-de-tren">Nội dung</div>
+                                </th>
+                                <th class="tieu-de cot1" fieldName="Subject">
+                                    <div class="tieu-de-tren">Môn học</div>
+                                </th>
+                                <th class="tieu-de cot1" fieldName="Value">
+                                    <div class="tieu-de-tren">Điểm trừ</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="total_critic">Tổng điểm trừ: </div>
+
+
+            </div>
+            <div>Đánh giá xếp loại</div>
+            <div id="student_attendence">Điểm danh</div>
+            <div id="student_conduct">Hạnh kiểm</div>
+            <div id="student_mediumscore">Điểm trung bình</div>
+            <div id="student_classify">Xếp loại</div>
+            <div>Thông tin lớp học</div>
+            <div id="class_code">Mã lớp</div>
+            <div id="class_name">Tên lớp</div>
+            <div id="number_student">Tổng số học sinh</div>
+            <div id="teacher_code">Mã giáo viên</div>
+            <div id="teacher_name">Mã giáo viên</div>
+            <div id="teacher_address">Địa chỉ</div>
+            <div id="teacher_phone">Điện thoại</div>
+
+        </div>
+        
+
+
+
+
+
+    </div>
+
+
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src='https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)'></script>
+    <script src="/Scripts/Libraries/jquery-3.4.1.js"></script>
+    <script src="/Scripts/Libraries/jquery-ui.js"></script>
+    <script src="/Scripts/Project/student_parent.js"></script>
+
+</body>
+</html>
