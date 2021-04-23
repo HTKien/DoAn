@@ -20,7 +20,6 @@
                 alert("Hệ thống đang bị lỗi!");
             }
         })
-        debugger
         return fakeData;
 
     }

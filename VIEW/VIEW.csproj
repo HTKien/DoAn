@@ -168,6 +168,7 @@
     <Content Include="Scripts\Project\base.js" />
     <Content Include="Scripts\Project\class.js" />
     <Content Include="Scripts\Project\class_student.js" />
+    <Content Include="Scripts\Project\forgot_password.js" />
     <Content Include="Scripts\Project\import_file_teacher.js" />
     <Content Include="Scripts\Project\login.js" />
     <Content Include="Scripts\Project\student.js" />

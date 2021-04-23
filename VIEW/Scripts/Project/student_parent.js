@@ -1,7 +1,9 @@
 ﻿$(document).ready(function () {
     
 
-    var studentID = "93de14e9-a4d4-4f09-a8a5-070be7e89f03";
+    var studentID;
+    let studentIDStorageGet = localStorage.getItem('studentIDStorage') ? JSON.parse(localStorage.getItem('studentIDStorage')) : [];
+    studentID = studentIDStorageGet[studentIDStorageGet.length - 1].id;
     var classID;
     $.ajax({
         method: 'GET',
