@@ -157,17 +157,29 @@
             for (var i = 0; i < scores.length; i++) {
                 if (scores[i].Subject === "Toán") {
                     if (scores[i].Type === "Điểm miệng" || scores[i].Type === "Điểm 15 phút") {
-                        totalToan = totalToan + parseFloat(scores[i].Point);
-                        countToan = countToan + 1;
+                        if (scores[i].Point !== "Thiếu điểm") {
+                            totalToan = totalToan + parseFloat(scores[i].Point);
+                            countToan = countToan + 1;
+                        }
+                        
                     } else if (scores[i].Type === "Điểm 45 phút" || scores[i].Type === "Điểm 90 phút") {
-                        totalToan = totalToan + parseFloat(scores[i].Point) * 2;
-                        countToan = countToan + 2;
+                        if (scores[i].Point !== "Thiếu điểm") {
+                            totalToan = totalToan + parseFloat(scores[i].Point) * 2;
+                            countToan = countToan + 2;
+                        }
+                        
                     } else if (scores[i].Type === "Điểm thi học kỳ") {
-                        totalToan = totalToan + parseFloat(scores[i].Point) * 3;
-                        countToan = countToan + 3;
+                        if (scores[i].Point !== "Thiếu điểm") {
+                           totalToan = totalToan + parseFloat(scores[i].Point) * 3;
+                           countToan = countToan + 3;
+                        }
+                        
                     } else {
-                        totalToan = totalToan + parseFloat(scores[i].Point);
-                        countToan = countToan + 1;
+                        if (scores[i].Point !== "Thiếu điểm") {
+                            totalToan = totalToan + parseFloat(scores[i].Point);
+                            countToan = countToan + 1;
+                        }
+                        
                     }
                 }
             }
@@ -1056,6 +1068,25 @@
         });
 
     }
+    AppenSubmitScore(fakeData) {
+        var fields = $('.main-table-submit-score th[fieldName]');
+        $('.main-table-submit-score tbody').empty();
+        $.each(fakeData, function (index, item) {
+            var rowHTML = $('<tr></tr>').data("recordid", item["StudentID"]);
+            $.each(fields, function (fieldIndex, fieldItem) {
+                var fieldName = fieldItem.getAttribute('fieldName');
+                var fieldValue = item[fieldName];
+                if (fieldValue == undefined) {
+                    rowHTML.append('<td contenteditable="true">' + "" + '</td>');
+
+                } else {
+                    rowHTML.append('<td>' + fieldValue + '</td>');
+
+                }
+            });
+            $('.main-table-submit-score tbody').append(rowHTML);
+        });
+    }
 
     GetScore(studentID) {
         var fakeData = [];
@@ -1166,17 +1197,29 @@
         for (var i = 0; i < fakeData.length; i++) {
             if (fakeData[i].Subject === "Toán") {
                 if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
-                    totalToan = totalToan + parseFloat(fakeData[i].Point);
-                    countToan = countToan + 1;
+                    if (fakeData[i].Point !== "Thiếu điểm") {
+                        totalToan = totalToan + parseFloat(fakeData[i].Point);
+                        countToan = countToan + 1;
+                    }
+                    
                 } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
-                    totalToan = totalToan + parseFloat(fakeData[i].Point) * 2;
-                    countToan = countToan + 2;
+                    if (fakeData[i].Point !== "Thiếu điểm") {
+                        totalToan = totalToan + parseFloat(fakeData[i].Point) * 2;
+                        countToan = countToan + 2;
+                    }
+                    
                 } else if (fakeData[i].Type === "Điểm thi học kỳ") {
-                    totalToan = totalToan + parseFloat(fakeData[i].Point) * 3;
-                    countToan = countToan + 3;
+                    if (fakeData[i].Point !== "Thiếu điểm") {
+                        totalToan = totalToan + parseFloat(fakeData[i].Point) * 3;
+                        countToan = countToan + 3;
+                    }
+                    
                 } else {
-                    totalToan = totalToan + parseFloat(fakeData[i].Point);
-                    countToan = countToan + 1;
+                    if (fakeData[i].Point !== "Thiếu điểm") {
+                        totalToan = totalToan + parseFloat(fakeData[i].Point);
+                        countToan = countToan + 1;
+                    }
+                    
                 }
             }
         }
@@ -1535,6 +1578,10 @@
     loadCritic(studentID) {
         var data = this.GetCritic(studentID);
         this.AppendCritic(data);
+    }
+    loadSubmitScore() {
+        var data = this.getAllData(classID);
+        this.AppenSubmitScore(data);
     }
 
     

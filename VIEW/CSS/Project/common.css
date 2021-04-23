@@ -16,6 +16,9 @@
 .select {
     background-color: #0199FC !important;
 }
+.main-table-submit-score .select {
+    background-color: unset !important;
+}
 #dialog-add {
     display: none;
     width: 675px !important;
@@ -51,7 +54,7 @@
     margin-top: -8px;
     margin-left: -16px;
 }
-.icon-tieu-de-dialog-add, .icon-tieu-de-dialog-edit, .icon-tieu-de-dialog-detail {
+.icon-tieu-de-dialog-add, .icon-tieu-de-dialog-edit, .icon-tieu-de-dialog-detail, .icon-tieu-de-dialog-score {
     background: url('/Contents/imgs/tool-sprites.png') center no-repeat;
     width: 20px;
     height: 16px;

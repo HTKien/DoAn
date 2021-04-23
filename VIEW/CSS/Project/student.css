@@ -79,3 +79,13 @@
 #sort_by_score, #sort_by_bonus, #sort_by_critic {
     cursor: pointer;
 }
+
+#dialog-score {
+   position: absolute;
+   display: none;
+   margin-top: -227px;
+   margin-left: -157px;
+   height: 534px !important;
+   background-color: white;
+   padding: unset;
+}

@@ -147,9 +147,9 @@
                 <img src="/Contents/imgs/excel_97_24.png" />
                 <div class="btn-text">Xuất khẩu</div>
             </button>
-            <button class="btn">
+            <button class="btn submit_score">
                 <img src="/Contents/imgs/ic_GopKhachHang.png" />
-                <div class="btn-text">Gộp khách hàng</div>
+                <div class="btn-text">Nhập điểm</div>
             </button>
             <button class="btn attendence">
                 <img src="/Contents/imgs/iconHelp.png" />
@@ -286,6 +286,7 @@
 
             </div>
         </div>
+
         <div id="dialog-student-detail">
             <div class="dialog-add-tieu-de dialog-detail-title">
                 <div style="color: white; line-height: 30px; margin-left: 15px; ">Thông tin chi tiết học sinh</div>
@@ -572,6 +573,62 @@
 
 
         </div>
+        <div id="dialog-score">
+            <div class="dialog-add-tieu-de">
+                <div style="color: white; line-height: 30px; margin-left: 15px; ">Nhập điểm</div>
+                <button class="icon-tieu-de-dialog-score"></button>
+            </div>
+            <div class="">
+                <div>
+                    <label>Môn học</label>
+                    <select id="submit_score_subject">
+                        <option>Toán</option>
+                        <option>Toán</option>
+                        <option>Toán</option>
+                        <option>Toán</option>
+                        <option>Toán</option>
+                        <option>Toán</option>
+                    </select>
+                    <label>Loại điểm</label>
+                    <select id="submit_score_type" >
+                        <option>Điểm miệng</option>
+                        <option>Điểm 15 phút</option>
+                        <option>Điểm 45 phút</option>
+                        <option>Điểm 90 phút</option>
+                        <option>Điểm thi học kỳ</option>
+                    </select>
+                    <button id="save_submit_score">Submit</button>
+                </div>
+
+
+
+            </div>
+            <div  class="">
+                <table style="width: 100%" id="table_submit_score" class="main-table-submit-score">
+                    <thead>
+                        <tr>
+                            <th class="tieu-de" fieldName="Code">
+                                <div class="tieu-de-tren">Mã học sinh</div>
+                            </th>
+                            <th class="tieu-de" fieldName="Name">
+                                <div class="tieu-de-tren">Họ và tên</div>
+
+                            </th>
+                            <th class="tieu-de" fieldName="">
+                                <div class="tieu-de-tren">Điểm</div>
+
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                    </tbody>
+                </table>
+
+
+            </div>
+
+
+        </div>
 
         <div id="dialog-edit">
             <div class="dialog-add-tieu-de">
@@ -628,6 +685,9 @@
 
 
         </div>
+
+
+
 
 
 

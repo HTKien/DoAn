@@ -77,10 +77,12 @@ class Student extends BaseStudent {
         //sự kiện show dialog thêm khách hàng:
         $(document).on('click', 'button.add', this.showDiaLogAdd.bind(this));
         $(document).on('click', 'button.detail', this.showDiaLogDetail.bind(this));
+        $(document).on('click', 'button.submit_score', this.showDiaLogScore.bind(this));
 
         //sự kiện đóng dialog khi nhấn icon đóng:
         $(document).on('click', 'button.icon-tieu-de-dialog-add', this.CloseDiaLog.bind(this));
         $(document).on('click', 'button.icon-tieu-de-dialog-detail', this.CloseDiaLogDetail.bind(this));
+        $(document).on('click', 'button.icon-tieu-de-dialog-score', this.CloseDiaLogScore.bind(this));
 
         $(document).on('click', 'button.icon-tieu-de-dialog-edit', this.CloseDiaLogEdit.bind(this));
 
@@ -99,6 +101,7 @@ class Student extends BaseStudent {
         $(document).on('click', '#add_score', this.AddScore.bind(this));
         $(document).on('click', '#add_bonus', this.AddBonus.bind(this));
         $(document).on('click', '#add_critic', this.AddCritic.bind(this));
+        $(document).on('click', '#save_submit_score', this.SaveSubmitScore.bind(this));
 
 
         //sự kiện cho nút Hủy bỏ trong dialog :
@@ -159,6 +162,10 @@ class Student extends BaseStudent {
         $('#dialog-student-detail').dialog("close");
 
     }
+    CloseDiaLogScore() {
+        $('#dialog-score').dialog("close");
+
+    }
 
     /**
      * Hàm thực hiện việc đóng dialog Sửa khách hàng
@@ -184,6 +191,16 @@ class Student extends BaseStudent {
         });
 
     }
+    showDiaLogScore() {
+        $('#dialog-score').dialog({
+
+            modal: true,
+
+
+        });
+        this.loadSubmitScore();
+    }
+    
     student_id;
     showDiaLogDetail() {
         $('#dialog-student-detail').dialog({
@@ -891,6 +908,49 @@ class Student extends BaseStudent {
                 }
             });
         }
+    }
+    SaveSubmitScore() {
+        var me = this;
+        var listRow = $('#table_submit_score tbody tr');
+        var listID = [];
+        
+
+        $.each(listRow, function (index, item) {
+                listID.push($(item).data('recordid'));
+        });
+        var listScore = [];
+        for (var k = 1; k < document.getElementById("table_submit_score").rows.length ; k++) {
+            var objCells = document.getElementById("table_submit_score").rows.item(k).cells;
+            listScore.push(objCells.item(2).innerHTML);
+        }
+        for (var i = 0; i < listID.length; i++) {
+            var object = {};
+            object["Subject"] = $('#submit_score_subject').val();
+            object["Type"] = $('#submit_score_type').val();
+            if (listScore[i] === "") {
+                object["Point"] = "Thiếu điểm";
+            } else {
+                object["Point"] = listScore[i];
+            }
+            object["StudentID"] = listID[i];
+            if (false) {
+                alert("Bạn phải nhập thông tin trong các trường bắt buộc!");
+            } else {
+                $.ajax({
+                    method: 'POST',
+                    url: '/scores',
+                    data: JSON.stringify(object),
+                    contentType: "application/json; charset=utf-8",
+                    success: function (res) {
+
+                    },
+                    error: function () {
+                        alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    }
+                });
+            }
+        }
+        alert("Thêm danh sách điểm thành công!")
     }
     AddCritic() {
         var me = this;
