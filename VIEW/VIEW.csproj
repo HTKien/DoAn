@@ -162,7 +162,9 @@
     <Content Include="Scripts\Libraries\jquery-3.4.1.js" />
     <Content Include="Scripts\Libraries\jquery-ui.js" />
     <Content Include="Scripts\Project\all_critic.js" />
+    <Content Include="Scripts\Project\score_by_class.js" />
     <Content Include="Scripts\Project\base_all_critic.js" />
+    <Content Include="Scripts\Project\base_score_by_class.js" />
     <Content Include="Scripts\Project\base_class.js" />
     <Content Include="Scripts\Project\base_student.js" />
     <Content Include="Scripts\Project\base_all_student.js" />
@@ -184,6 +186,7 @@
     <Content Include="Scripts\Project\user.js" />
     <Content Include="Scripts\Project\teacher.js" />
     <Content Include="Scripts\Project\parent.js" />
+    <Content Include="Views\score_by_class.html" />
     <Content Include="Views\forgot-password.html" />
     <Content Include="Views\login.html" />
     <Content Include="Views\parent.html" />
