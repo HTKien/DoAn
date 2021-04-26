@@ -103,19 +103,22 @@ function AppendScore(fakeData) {
     var countToan = 0;
     for (var i = 0; i < fakeData.length; i++) {
         if (fakeData[i].Subject === "Toán") {
-            if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
-                totalToan = totalToan + parseFloat(fakeData[i].Point);
-                countToan = countToan + 1;
-            } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
-                totalToan = totalToan + parseFloat(fakeData[i].Point) * 2;
-                countToan = countToan + 2;
-            } else if (fakeData[i].Type === "Điểm thi học kỳ") {
-                totalToan = totalToan + parseFloat(fakeData[i].Point) * 3;
-                countToan = countToan + 3;
-            } else {
-                totalToan = totalToan + parseFloat(fakeData[i].Point);
-                countToan = countToan + 1;
+            if (fakeData[i].Point !== "Thiếu điểm") {
+                if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
+                    totalToan = totalToan + parseFloat(fakeData[i].Point);
+                    countToan = countToan + 1;
+                } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
+                    totalToan = totalToan + parseFloat(fakeData[i].Point) * 2;
+                    countToan = countToan + 2;
+                } else if (fakeData[i].Type === "Điểm thi học kỳ") {
+                    totalToan = totalToan + parseFloat(fakeData[i].Point) * 3;
+                    countToan = countToan + 3;
+                } else {
+                    totalToan = totalToan + parseFloat(fakeData[i].Point);
+                    countToan = countToan + 1;
+                }
             }
+            
         }
     }
     if (countToan === 0) {
@@ -132,19 +135,22 @@ function AppendScore(fakeData) {
     var countVatLy = 0;
     for (var i = 0; i < fakeData.length; i++) {
         if (fakeData[i].Subject === "Vật lý") {
-            if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
-                totalVatLy = totalVatLy + parseFloat(fakeData[i].Point);
-                countVatLy = countVatLy + 1;
-            } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
-                totalVatLy = totalVatLy + parseFloat(fakeData[i].Point) * 2;
-                countVatLy = countVatLy + 2;
-            } else if (fakeData[i].Type === "Điểm thi học kỳ") {
-                totalVatLy = totalVatLy + parseFloat(fakeData[i].Point) * 3;
-                countVatLy = countVatLy + 3;
-            } else {
-                totalVatLy = totalVatLy + parseFloat(fakeData[i].Point);
-                countVatLy = countVatLy + 1;
+            if (fakeData[i].Point !== "Thiếu điểm") {
+                if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
+                    totalVatLy = totalVatLy + parseFloat(fakeData[i].Point);
+                    countVatLy = countVatLy + 1;
+                } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
+                    totalVatLy = totalVatLy + parseFloat(fakeData[i].Point) * 2;
+                    countVatLy = countVatLy + 2;
+                } else if (fakeData[i].Type === "Điểm thi học kỳ") {
+                    totalVatLy = totalVatLy + parseFloat(fakeData[i].Point) * 3;
+                    countVatLy = countVatLy + 3;
+                } else {
+                    totalVatLy = totalVatLy + parseFloat(fakeData[i].Point);
+                    countVatLy = countVatLy + 1;
+                }
             }
+            
         }
     }
     if (countVatLy === 0) {
@@ -161,19 +167,22 @@ function AppendScore(fakeData) {
     var countHoaHoc = 0;
     for (var i = 0; i < fakeData.length; i++) {
         if (fakeData[i].Subject === "Hóa học") {
-            if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
-                totalHoaHoc = totalHoaHoc + parseFloat(fakeData[i].Point);
-                countHoaHoc = countHoaHoc + 1;
-            } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
-                totalHoaHoc = totalHoaHoc + parseFloat(fakeData[i].Point) * 2;
-                countHoaHoc = countHoaHoc + 2;
-            } else if (fakeData[i].Type === "Điểm thi học kỳ") {
-                totalHoaHoc = totalHoaHoc + parseFloat(fakeData[i].Point) * 3;
-                countHoaHoc = countHoaHoc + 3;
-            } else {
-                totalHoaHoc = totalHoaHoc + parseFloat(fakeData[i].Point);
-                countHoaHoc = countHoaHoc + 1;
+            if (fakeData[i].Point !== "Thiếu điểm") {
+                if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
+                    totalHoaHoc = totalHoaHoc + parseFloat(fakeData[i].Point);
+                    countHoaHoc = countHoaHoc + 1;
+                } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
+                    totalHoaHoc = totalHoaHoc + parseFloat(fakeData[i].Point) * 2;
+                    countHoaHoc = countHoaHoc + 2;
+                } else if (fakeData[i].Type === "Điểm thi học kỳ") {
+                    totalHoaHoc = totalHoaHoc + parseFloat(fakeData[i].Point) * 3;
+                    countHoaHoc = countHoaHoc + 3;
+                } else {
+                    totalHoaHoc = totalHoaHoc + parseFloat(fakeData[i].Point);
+                    countHoaHoc = countHoaHoc + 1;
+                }
             }
+            
         }
     }
 
@@ -191,19 +200,22 @@ function AppendScore(fakeData) {
     var countSinhHoc = 0;
     for (var i = 0; i < fakeData.length; i++) {
         if (fakeData[i].Subject === "Sinh học") {
-            if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
-                totalSinhHoc = totalSinhHoc + parseFloat(fakeData[i].Point);
-                countSinhHoc = countSinhHoc + 1;
-            } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
-                totalSinhHoc = totalSinhHoc + parseFloat(fakeData[i].Point) * 2;
-                countSinhHoc = countSinhHoc + 2;
-            } else if (fakeData[i].Type === "Điểm thi học kỳ") {
-                totalSinhHoc = totalSinhHoc + parseFloat(fakeData[i].Point) * 3;
-                countSinhHoc = countSinhHoc + 3;
-            } else {
-                totalSinhHoc = totalSinhHoc + parseFloat(fakeData[i].Point);
-                countSinhHoc = countSinhHoc + 1;
+            if (fakeData[i].Point !== "Thiếu điểm") {
+                if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
+                    totalSinhHoc = totalSinhHoc + parseFloat(fakeData[i].Point);
+                    countSinhHoc = countSinhHoc + 1;
+                } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
+                    totalSinhHoc = totalSinhHoc + parseFloat(fakeData[i].Point) * 2;
+                    countSinhHoc = countSinhHoc + 2;
+                } else if (fakeData[i].Type === "Điểm thi học kỳ") {
+                    totalSinhHoc = totalSinhHoc + parseFloat(fakeData[i].Point) * 3;
+                    countSinhHoc = countSinhHoc + 3;
+                } else {
+                    totalSinhHoc = totalSinhHoc + parseFloat(fakeData[i].Point);
+                    countSinhHoc = countSinhHoc + 1;
+                }
             }
+            
         }
     }
     if (countSinhHoc === 0) {
@@ -221,19 +233,22 @@ function AppendScore(fakeData) {
     var countNguVan = 0;
     for (var i = 0; i < fakeData.length; i++) {
         if (fakeData[i].Subject === "Ngữ văn") {
-            if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
-                totalNguVan = totalNguVan + parseFloat(fakeData[i].Point);
-                countNguVan = countNguVan + 1;
-            } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
-                totalNguVan = totalNguVan + parseFloat(fakeData[i].Point) * 2;
-                countNguVan = countNguVan + 2;
-            } else if (fakeData[i].Type === "Điểm thi học kỳ") {
-                totalNguVan = totalNguVan + parseFloat(fakeData[i].Point) * 3;
-                countNguVan = countNguVan + 3;
-            } else {
-                totalNguVan = totalNguVan + parseFloat(fakeData[i].Point);
-                countNguVan = countNguVan + 1;
+            if (fakeData[i].Point !== "Thiếu điểm") {
+                if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
+                    totalNguVan = totalNguVan + parseFloat(fakeData[i].Point);
+                    countNguVan = countNguVan + 1;
+                } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
+                    totalNguVan = totalNguVan + parseFloat(fakeData[i].Point) * 2;
+                    countNguVan = countNguVan + 2;
+                } else if (fakeData[i].Type === "Điểm thi học kỳ") {
+                    totalNguVan = totalNguVan + parseFloat(fakeData[i].Point) * 3;
+                    countNguVan = countNguVan + 3;
+                } else {
+                    totalNguVan = totalNguVan + parseFloat(fakeData[i].Point);
+                    countNguVan = countNguVan + 1;
+                }
             }
+            
         }
     }
     if (countNguVan === 0) {
@@ -250,19 +265,22 @@ function AppendScore(fakeData) {
     var countLichSu = 0;
     for (var i = 0; i < fakeData.length; i++) {
         if (fakeData[i].Subject === "Lịch sử") {
-            if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
-                totalLichSu = totalLichSu + parseFloat(fakeData[i].Point);
-                countLichSu = countLichSu + 1;
-            } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
-                totalLichSu = totalLichSu + parseFloat(fakeData[i].Point) * 2;
-                countLichSu = countLichSu + 2;
-            } else if (fakeData[i].Type === "Điểm thi học kỳ") {
-                totalLichSu = totalLichSu + parseFloat(fakeData[i].Point) * 3;
-                countLichSu = countLichSu + 3;
-            } else {
-                totalLichSu = totalLichSu + parseFloat(fakeData[i].Point);
-                countLichSu = countLichSu + 1;
+            if (fakeData[i].Point !== "Thiếu điểm") {
+                if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
+                    totalLichSu = totalLichSu + parseFloat(fakeData[i].Point);
+                    countLichSu = countLichSu + 1;
+                } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
+                    totalLichSu = totalLichSu + parseFloat(fakeData[i].Point) * 2;
+                    countLichSu = countLichSu + 2;
+                } else if (fakeData[i].Type === "Điểm thi học kỳ") {
+                    totalLichSu = totalLichSu + parseFloat(fakeData[i].Point) * 3;
+                    countLichSu = countLichSu + 3;
+                } else {
+                    totalLichSu = totalLichSu + parseFloat(fakeData[i].Point);
+                    countLichSu = countLichSu + 1;
+                }
             }
+            
         }
     }
     if (countLichSu === 0) {
@@ -280,19 +298,22 @@ function AppendScore(fakeData) {
     var countDiaLy = 0;
     for (var i = 0; i < fakeData.length; i++) {
         if (fakeData[i].Subject === "Địa lý") {
-            if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
-                totalDiaLy = totalDiaLy + parseFloat(fakeData[i].Point);
-                countDiaLy = countDiaLy + 1;
-            } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
-                totalDiaLy = totalDiaLy + parseFloat(fakeData[i].Point) * 2;
-                countDiaLy = countDiaLy + 2;
-            } else if (fakeData[i].Type === "Điểm thi học kỳ") {
-                totalDiaLy = totalDiaLy + parseFloat(fakeData[i].Point) * 3;
-                countDiaLy = countDiaLy + 3;
-            } else {
-                totalDiaLy = totalDiaLy + parseFloat(fakeData[i].Point);
-                countDiaLy = countDiaLy + 1;
+            if (fakeData[i].Point !== "Thiếu điểm") {
+                if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
+                    totalDiaLy = totalDiaLy + parseFloat(fakeData[i].Point);
+                    countDiaLy = countDiaLy + 1;
+                } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
+                    totalDiaLy = totalDiaLy + parseFloat(fakeData[i].Point) * 2;
+                    countDiaLy = countDiaLy + 2;
+                } else if (fakeData[i].Type === "Điểm thi học kỳ") {
+                    totalDiaLy = totalDiaLy + parseFloat(fakeData[i].Point) * 3;
+                    countDiaLy = countDiaLy + 3;
+                } else {
+                    totalDiaLy = totalDiaLy + parseFloat(fakeData[i].Point);
+                    countDiaLy = countDiaLy + 1;
+                }
             }
+            
         }
     }
     if (countDiaLy === 0) {
@@ -309,19 +330,22 @@ function AppendScore(fakeData) {
     var countTinHoc = 0;
     for (var i = 0; i < fakeData.length; i++) {
         if (fakeData[i].Subject === "Tin học") {
-            if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
-                totalTinHoc = totalTinHoc + parseFloat(fakeData[i].Point);
-                countTinHoc = countTinHoc + 1;
-            } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
-                totalTinHoc = totalTinHoc + parseFloat(fakeData[i].Point) * 2;
-                countTinHoc = countTinHoc + 2;
-            } else if (fakeData[i].Type === "Điểm thi học kỳ") {
-                totalTinHoc = totalTinHoc + parseFloat(fakeData[i].Point) * 3;
-                countTinHoc = countTinHoc + 3;
-            } else {
-                totalTinHoc = totalTinHoc + parseFloat(fakeData[i].Point);
-                countTinHoc = countTinHoc + 1;
+            if (fakeData[i].Point !== "Thiếu điểm") {
+                if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
+                    totalTinHoc = totalTinHoc + parseFloat(fakeData[i].Point);
+                    countTinHoc = countTinHoc + 1;
+                } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
+                    totalTinHoc = totalTinHoc + parseFloat(fakeData[i].Point) * 2;
+                    countTinHoc = countTinHoc + 2;
+                } else if (fakeData[i].Type === "Điểm thi học kỳ") {
+                    totalTinHoc = totalTinHoc + parseFloat(fakeData[i].Point) * 3;
+                    countTinHoc = countTinHoc + 3;
+                } else {
+                    totalTinHoc = totalTinHoc + parseFloat(fakeData[i].Point);
+                    countTinHoc = countTinHoc + 1;
+                }
             }
+            
         }
     }
     if (countTinHoc === 0) {
@@ -338,19 +362,22 @@ function AppendScore(fakeData) {
     var countCongDan = 0;
     for (var i = 0; i < fakeData.length; i++) {
         if (fakeData[i].Subject === "Giáo dục công dân") {
-            if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
-                totalCongDan = totalCongDan + parseFloat(fakeData[i].Point);
-                countCongDan = countCongDan + 1;
-            } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
-                totalCongDan = totalCongDan + parseFloat(fakeData[i].Point) * 2;
-                countCongDan = countCongDan + 2;
-            } else if (fakeData[i].Type === "Điểm thi học kỳ") {
-                totalCongDan = totalCongDan + parseFloat(fakeData[i].Point) * 3;
-                countCongDan = countCongDan + 3;
-            } else {
-                totalCongDan = totalCongDan + parseFloat(fakeData[i].Point);
-                countCongDan = countCongDan + 1;
+            if (fakeData[i].Point !== "Thiếu điểm") {
+                if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
+                    totalCongDan = totalCongDan + parseFloat(fakeData[i].Point);
+                    countCongDan = countCongDan + 1;
+                } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
+                    totalCongDan = totalCongDan + parseFloat(fakeData[i].Point) * 2;
+                    countCongDan = countCongDan + 2;
+                } else if (fakeData[i].Type === "Điểm thi học kỳ") {
+                    totalCongDan = totalCongDan + parseFloat(fakeData[i].Point) * 3;
+                    countCongDan = countCongDan + 3;
+                } else {
+                    totalCongDan = totalCongDan + parseFloat(fakeData[i].Point);
+                    countCongDan = countCongDan + 1;
+                }
             }
+            
         }
     }
     if (countCongDan === 0) {
@@ -367,19 +394,22 @@ function AppendScore(fakeData) {
     var countTiengAnh = 0;
     for (var i = 0; i < fakeData.length; i++) {
         if (fakeData[i].Subject === "Tiếng Anh") {
-            if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
-                totalTiengAnh = totalTiengAnh + parseFloat(fakeData[i].Point);
-                countTiengAnh = countTiengAnh + 1;
-            } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
-                totalTiengAnh = totalTiengAnh + parseFloat(fakeData[i].Point) * 2;
-                countTiengAnh = countTiengAnh + 2;
-            } else if (fakeData[i].Type === "Điểm thi học kỳ") {
-                totalTiengAnh = totalTiengAnh + parseFloat(fakeData[i].Point) * 3;
-                countTiengAnh = countTiengAnh + 3;
-            } else {
-                totalTiengAnh = totalTiengAnh + parseFloat(fakeData[i].Point);
-                countTiengAnh = countTiengAnh + 1;
+            if (fakeData[i].Point !== "Thiếu điểm") {
+                if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
+                    totalTiengAnh = totalTiengAnh + parseFloat(fakeData[i].Point);
+                    countTiengAnh = countTiengAnh + 1;
+                } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
+                    totalTiengAnh = totalTiengAnh + parseFloat(fakeData[i].Point) * 2;
+                    countTiengAnh = countTiengAnh + 2;
+                } else if (fakeData[i].Type === "Điểm thi học kỳ") {
+                    totalTiengAnh = totalTiengAnh + parseFloat(fakeData[i].Point) * 3;
+                    countTiengAnh = countTiengAnh + 3;
+                } else {
+                    totalTiengAnh = totalTiengAnh + parseFloat(fakeData[i].Point);
+                    countTiengAnh = countTiengAnh + 1;
+                }
             }
+            
         }
     }
     if (countTiengAnh === 0) {
@@ -396,19 +426,22 @@ function AppendScore(fakeData) {
     var countTheDuc = 0;
     for (var i = 0; i < fakeData.length; i++) {
         if (fakeData[i].Subject === "Thể dục") {
-            if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
-                totalTheDuc = totalTheDuc + parseFloat(fakeData[i].Point);
-                countTheDuc = countTheDuc + 1;
-            } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
-                totalTheDuc = totalTheDuc + parseFloat(fakeData[i].Point) * 2;
-                countTheDuc = countTheDuc + 2;
-            } else if (fakeData[i].Type === "Điểm thi học kỳ") {
-                totalTheDuc = totalTheDuc + parseFloat(fakeData[i].Point) * 3;
-                countTheDuc = countTheDuc + 3;
-            } else {
-                totalTheDuc = totalTheDuc + parseFloat(fakeData[i].Point);
-                countTheDuc = countTheDuc + 1;
+            if (fakeData[i].Point !== "Thiếu điểm") {
+                if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
+                    totalTheDuc = totalTheDuc + parseFloat(fakeData[i].Point);
+                    countTheDuc = countTheDuc + 1;
+                } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
+                    totalTheDuc = totalTheDuc + parseFloat(fakeData[i].Point) * 2;
+                    countTheDuc = countTheDuc + 2;
+                } else if (fakeData[i].Type === "Điểm thi học kỳ") {
+                    totalTheDuc = totalTheDuc + parseFloat(fakeData[i].Point) * 3;
+                    countTheDuc = countTheDuc + 3;
+                } else {
+                    totalTheDuc = totalTheDuc + parseFloat(fakeData[i].Point);
+                    countTheDuc = countTheDuc + 1;
+                }
             }
+            
         }
     }
     if (countTheDuc === 0) {
@@ -425,19 +458,22 @@ function AppendScore(fakeData) {
     var countCongNghe = 0;
     for (var i = 0; i < fakeData.length; i++) {
         if (fakeData[i].Subject === "Công nghệ") {
-            if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
-                totalCongNghe = totalCongNghe + parseFloat(fakeData[i].Point);
-                countCongNghe = countCongNghe + 1;
-            } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
-                totalCongNghe = totalCongNghe + parseFloat(fakeData[i].Point) * 2;
-                countCongNghe = countCongNghe + 2;
-            } else if (fakeData[i].Type === "Điểm thi học kỳ") {
-                totalCongNghe = totalCongNghe + parseFloat(fakeData[i].Point) * 3;
-                countCongNghe = countCongNghe + 3;
-            } else {
-                totalCongNghe = totalCongNghe + parseFloat(fakeData[i].Point);
-                countCongNghe = countCongNghe + 1;
+            if (fakeData[i].Point !== "Thiếu điểm") {
+                if (fakeData[i].Type === "Điểm miệng" || fakeData[i].Type === "Điểm 15 phút") {
+                    totalCongNghe = totalCongNghe + parseFloat(fakeData[i].Point);
+                    countCongNghe = countCongNghe + 1;
+                } else if (fakeData[i].Type === "Điểm 45 phút" || fakeData[i].Type === "Điểm 90 phút") {
+                    totalCongNghe = totalCongNghe + parseFloat(fakeData[i].Point) * 2;
+                    countCongNghe = countCongNghe + 2;
+                } else if (fakeData[i].Type === "Điểm thi học kỳ") {
+                    totalCongNghe = totalCongNghe + parseFloat(fakeData[i].Point) * 3;
+                    countCongNghe = countCongNghe + 3;
+                } else {
+                    totalCongNghe = totalCongNghe + parseFloat(fakeData[i].Point);
+                    countCongNghe = countCongNghe + 1;
+                }
             }
+            
         }
     }
     if (countCongNghe === 0) {
