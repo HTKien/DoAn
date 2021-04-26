@@ -1,0 +1,354 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Quản lý khen thưởng</title>
+    <link href="/CSS/Libraries/jquery-ui.css" rel="stylesheet" />
+    <link href="/CSS/Project/view.css" rel="stylesheet" />
+    <link href="/CSS/Project/common.css" rel="stylesheet" />
+    <link href="/CSS/Project/parent.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="div-trai">
+        <div class="div-trai-tren">
+            <div class="div-trai-tren-icon"></div>
+            <div class="div-trai-tren-text">eSupport</div>
+
+
+
+
+        </div>
+        <div class="div-trai-duoi">
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon"></div>
+                <div class="trai-duoi-text">Tổng quan</div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon" id="bao-cao"></div>
+                <div class="trai-duoi-text">Báo cáo</div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon" id="mua-hang"></div>
+                <div class="trai-duoi-text">Mua hàng</div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon" id="kho"></div>
+                <div class="trai-duoi-text">Kho</div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon" id="quy-tien-mat"></div>
+                <div class="trai-duoi-text">Quỹ tiền mặt</div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon" id="quy-tien-gui"></div>
+                <div class="trai-duoi-text">Quỹ tiền gửi</div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon" id="chi-phi"></div>
+                <div class="trai-duoi-text">Chi phí</div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon" id="khuyen-mai"></div>
+                <div class="trai-duoi-text">Khuyến mại</div>
+
+            </div>
+
+            <div class="trai-duoi-1cai" style="background-color: #0199FC">
+                <div class="trai-duoi-icon" id="thuc-don"></div>
+                <div class="trai-duoi-text">Giáo viên</div>
+
+            </div>
+            <div class="trai-duoi-1cai danh-muc" style="background-color: #0973B9">
+                <div class="trai-duoi-icon" id="danh-muc"></div>
+                <div class="trai-duoi-text">Phụ huynh</div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon" id="huy-hoa-don"></div>
+                <div class="trai-duoi-text">Hủy hóa đơn</div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon" id="sms-marketting"></div>
+                <div class="trai-duoi-text">SMS Marketing</div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon"></div>
+                <div class="trai-duoi-text">Đối tác giao hàng</div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon" id="hoa-don-dien-tu"></div>
+                <div class="trai-duoi-text">Hóa đơn điện tử</div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon" id="thiet-lap-he-thong"></div>
+                <div class="trai-duoi-text">Thiết lập hệ thống</div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon" id="tro-giup"></div>
+                <div class="trai-duoi-text">Trợ giúp</div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon" id="thue-bao"></div>
+                <div class="trai-duoi-text">Thuê bao</div>
+
+            </div>
+            <div class="trai-duoi-1cai">
+                <div class="trai-duoi-icon" id="food"></div>
+                <div class="trai-duoi-text">5Food</div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="div-phai">
+        <div style="width: fit-content();display: flex; justify-content: flex-end" class="div-phai-tren">
+            <select class="cbb1" style="width: 66px; background-color: #0973b9; margin-right: 10px ">
+                <option value="value">Admin</option>
+            </select>
+        </div>
+        <div class="div-phai-giua">
+            <div class="text-danh-muc">Giáo viên</div>
+        </div>
+
+        <div class="div-phai-menu-ngang">
+            <button style=" border-left: 1px solid #d6d6d6;" class="btn add">
+                <img src="/Contents/imgs/icons8-add-file-16.png" />
+                <div class="btn-text">Thêm</div>
+            </button>
+            <button class="btn edit" disabled>
+                <img src="/Contents/imgs/Edit16.png" />
+                <div class="btn-text">Sửa</div>
+            </button>
+            <button class="btn delete" disabled>
+                <img src="/Contents/imgs/icons8-delete-48.png" />
+                <div class="btn-text">Xóa</div>
+            </button>
+            <button class="btn">
+                <img src="/Contents/imgs/Import16.png" />
+                <div class="btn-text">Nhập khẩu</div>
+            </button>
+            <div class="btn importfile">
+                <img src="/Contents/imgs/excel_97_24.png" />
+                <div class="btn-text">
+                    <input type="file" id="input_file" accept=".xls,.xlsx,.ods">
+                </div>
+            </div>
+            <button class="btn export" onclick="exportReportToExcel(this)">
+                <img src="/Contents/imgs/ic_GopKhachHang.png" />
+                <div class="btn-text">Export data</div>
+            </button>
+            <button class="btn">
+                <img src="/Contents/imgs/iconHelp.png" />
+                <div class="btn-text">Giúp</div>
+            </button>
+
+        </div>
+        <div class="loading"></div>
+
+        <div class="du-lieu">
+            <div class="table">
+                <table id="table_teacher" class="main-table">
+                    <thead>
+                        <tr>
+
+                            <th class="tieu-de" fieldName="StudentCode">
+                                <div class="tieu-de-tren">Mã học sinh</div>
+                                <div class="tieu-de-duoi">
+                                </div>
+                            </th>
+                            <th class="tieu-de" fieldName="StudentName">
+                                <div class="tieu-de-tren">Họ và tên</div>
+                                <div class="tieu-de-duoi">
+                                </div>
+                            </th>
+                            <th class="tieu-de cot1" fieldName="Time">
+                                <div class="tieu-de-tren">Thời gian</div>
+                                <div class="tieu-de-duoi">
+                                </div>
+                            </th>
+                            <th class="tieu-de cot1" fieldName="Content">
+                                <div class="tieu-de-tren">Nội dung</div>
+                                <div class="tieu-de-duoi">
+                                </div>
+                            </th>
+                            <th class="tieu-de cot1" fieldName="Subject">
+                                <div class="tieu-de-tren">Môn học</div>
+                                <div class="tieu-de-duoi">
+                                </div>
+                            </th>
+                            <th class="tieu-de cot1" fieldName="Value">
+                                <div class="tieu-de-tren">Điểm cộng</div>
+                                <div class="tieu-de-duoi">
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+
+            </div>
+
+            <div class="phan-trang" style="display: flex; ">
+                <div style="width : 1px; height: 27px; background-color: #cccccc; margin-top: 0px; margin-left: 0px; "></div>
+                <button id="trang-dau" class="trang-dau"></button>
+                <button id="trang-truoc" class="trang-truoc"></button>
+                <div style="width : 1px; height: 15px; background-color: #cccccc; margin-top: 5px; margin-left: 5px; "></div>
+                <div class="phan-trang-text">Trang</div>
+                <input id="input-trang" class="input-trang page-index" type="number" name="name" value="1" min="1" />
+                <div class="phan-trang-text so-trang-max"> </div>
+                <div style="width : 1px; height: 15px; background-color: #cccccc; margin-top: 5px; margin-left: 15px; "></div>
+                <button id="trang-sau" class="trang-sau"></button>
+                <button id="trang-cuoi" class="trang-cuoi"></button>
+                <div style="width : 1px; height: 15px; background-color: #cccccc; margin-top: 5px; margin-left: 15px; "></div>
+                <button id="refresh" class="tai-lai-trang"></button>
+                <div style="width : 1px; height: 15px; background-color: #cccccc; margin-top: 5px; margin-left: 15px; "></div>
+                <div class="div-cbb">
+                    <select style="width: 60px; height: 24px;" class="cbb-trang page-size">
+                        <option>25</option>
+                        <option>50</option>
+                        <option>100</option>
+
+
+                    </select>
+
+                </div>
+                <div class="dem-ban-ghi phan-trang-text" style="margin-left: 400px;  "></div>
+
+            </div>
+        </div>
+
+        <!--các dialog-->
+        <div id="dialog" style="display : none;">
+            <div style="display: flex; ">
+                <img style="width: 32px; height: 32px; " src="/Contents/imgs/icon-question.png" />
+                <div id="thong-bao" style="font-size: 13px; margin-left: 10px; margin-top: 5px; "> </div>
+
+            </div>
+
+
+        </div>
+        <div id="dialog-add">
+            <div class="dialog-add-tieu-de">
+                <div style="color: white; line-height: 30px; margin-left: 15px; ">Thêm mới</div>
+                <button class="icon-tieu-de-dialog-add"></button>
+            </div>
+            <div class="dialog-add-than">
+                <div style="height: 5px; "></div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Mã khen thưởng<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="code-dialog" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Họ và tên<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="name-dialog" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Địa chỉ</label>
+                    <input type="text" name="name" value="" class="input1 input3" id="address-dialog" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Điện thoại<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1 input4" id="phone-dialog" />
+                    <label class="text-dialog text1">Giới tính<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1 input4" id="sex-dialog" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Ghi chú</label>
+                    <textarea id="note-dialog"></textarea>
+                </div>
+
+                <div class="dong1 list-btn">
+
+                    <button class="btn-dialogAdd cat" id="save">
+                        <img src="/Contents/imgs/Save16.png" />
+                        <div>Lưu</div>
+
+                    </button>
+                    <button class="btn-dialogAdd" id="huy-bo">
+                        <img src="/Contents/imgs/Disable16.png" />
+                        <div>Hủy bỏ</div>
+                    </button>
+
+                </div>
+            </div>
+
+
+        </div>
+        <div id="dialog-edit">
+            <div class="dialog-add-tieu-de">
+                <div style="color: white; line-height: 30px; margin-left: 15px; ">Sửa khen thưởng</div>
+                <button class="icon-tieu-de-dialog-edit"></button>
+            </div>
+            <div class="dialog-add-than">
+                <div style="height: 5px; "></div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Mã khen thưởng<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="code-dialog-edit" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Họ và tên<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="name-dialog-edit" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Địa chỉ</label>
+                    <input type="text" name="name" value="" class="input1 input3" id="address-dialog-edit" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Điện thoại<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1 input4" id="phone-dialog-edit" />
+                    <label class="text-dialog text1">Giới tính<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1 input4" id="sex-dialog-edit" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Ghi chú</label>
+                    <textarea id="note-dialog-edit"></textarea>
+                </div>
+
+                <div class="dong1 list-btn">
+
+                    <button class="btn-dialogAdd cat" id="save-edit">
+                        <img src="/Contents/imgs/Save16.png" />
+                        <div>Lưu lại</div>
+
+                    </button>
+                    <button class="btn-dialogAdd" id="huy-bo-edit">
+                        <img src="/Contents/imgs/Disable16.png" />
+                        <div>Hủy bỏ</div>
+                    </button>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/Scripts/Libraries/jquery-3.4.1.js"></script>
+    <script src="/Scripts/Libraries/jquery-ui.js"></script>
+    <script src="/Scripts/Project/base_all_bonus.js"></script>
+    <script src="/Scripts/Project/all_bonus.js"></script>
+    <script src="/Scripts/Project/import_file_teacher.js"></script>
+
+</body>
+</html>

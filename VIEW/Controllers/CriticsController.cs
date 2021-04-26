@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using BL;
 using DL;
 using Entities;
 
@@ -17,7 +18,7 @@ namespace VIEW.Controllers
     public class CriticsController : ApiController
     {
         private CriticDL _criticDL = new CriticDL();
-        //private CriticBL _criticBL = new CriticBL();
+        private CriticBL _criticBL = new CriticBL();
         public VIEWContext db = new VIEWContext();
         /// <summary>
         /// service thực hiện lấy toàn bộ danh sách phụ huynh
@@ -41,12 +42,12 @@ namespace VIEW.Controllers
         /// <returns></returns>
 
 
-        //[Route("critics/{pageIndex}/{pageSize}")]
-        //[HttpGet]
-        //public IEnumerable<Critic> GetPagingCritic(int pageIndex, int pageSize)
-        //{
-        //    return _criticBL.GetPagingData(pageIndex, pageSize);
-        //}
+        [Route("critics/{pageIndex}/{pageSize}")]
+        [HttpGet]
+        public IEnumerable<Critic> GetPagingCritic(int pageIndex, int pageSize)
+        {
+            return _criticBL.GetPagingData(pageIndex, pageSize);
+        }
 
 
         //service thực hiện xóa dữ liệu phụ huynh trên database:

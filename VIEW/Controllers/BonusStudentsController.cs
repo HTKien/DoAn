@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using BL;
 using DL;
 using Entities;
 
@@ -17,7 +18,7 @@ namespace VIEW.Controllers
     public class BonusStudentsController : ApiController
     {
         private BonusStudentDL _bonusStudentDL = new BonusStudentDL();
-        //private BonusStudentBL _bonusStudentBL = new BonusStudentBL();
+        private BonusStudentBL _bonusStudentBL = new BonusStudentBL();
         public VIEWContext db = new VIEWContext();
         /// <summary>
         /// service thực hiện lấy toàn bộ danh sách phụ huynh
@@ -41,12 +42,12 @@ namespace VIEW.Controllers
         /// <returns></returns>
 
 
-        //[Route("bonusStudents/{pageIndex}/{pageSize}")]
-        //[HttpGet]
-        //public IEnumerable<BonusStudent> GetPagingBonusStudent(int pageIndex, int pageSize)
-        //{
-        //    return _bonusStudentBL.GetPagingData(pageIndex, pageSize);
-        //}
+        [Route("bonusStudents/{pageIndex}/{pageSize}")]
+        [HttpGet]
+        public IEnumerable<BonusStudent> GetPagingBonusStudent(int pageIndex, int pageSize)
+        {
+            return _bonusStudentBL.GetPagingData(pageIndex, pageSize);
+        }
 
 
         //service thực hiện xóa dữ liệu phụ huynh trên database:

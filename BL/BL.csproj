@@ -51,6 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dictionary\BonusStudentBL.cs" />
+    <Compile Include="Dictionary\CriticBL.cs" />
     <Compile Include="Dictionary\ParentBL.cs" />
     <Compile Include="Dictionary\ClassBL.cs" />
     <Compile Include="Dictionary\StudentBL.cs" />

@@ -45,4 +45,3 @@ F:\Code\DoAn\Entities\obj\Debug\Entities.pdb
 F:\Code\DoAn\Entities\obj\Debug\Entities.Migrations.Score.resources
 F:\Code\DoAn\Entities\obj\Debug\Entities.Migrations.Critic.resources
 F:\Code\DoAn\Entities\obj\Debug\Entities.Migrations.User.resources
-F:\Code\DoAn\Entities\obj\Debug\Entities.csprojAssemblyReference.cache

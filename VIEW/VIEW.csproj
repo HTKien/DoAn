@@ -161,8 +161,13 @@
     <Content Include="Scripts\Libraries\jquery-1.12.4.js" />
     <Content Include="Scripts\Libraries\jquery-3.4.1.js" />
     <Content Include="Scripts\Libraries\jquery-ui.js" />
+    <Content Include="Scripts\Project\all_critic.js" />
+    <Content Include="Scripts\Project\base_all_critic.js" />
     <Content Include="Scripts\Project\base_class.js" />
     <Content Include="Scripts\Project\base_student.js" />
+    <Content Include="Scripts\Project\base_all_student.js" />
+    <Content Include="Scripts\Project\base_all_score.js" />
+    <Content Include="Scripts\Project\base_all_bonus.js" />
     <Content Include="Scripts\Project\base_user.js" />
     <Content Include="Scripts\Project\base_teacher.js" />
     <Content Include="Scripts\Project\base.js" />
@@ -173,6 +178,9 @@
     <Content Include="Scripts\Project\login.js" />
     <Content Include="Scripts\Project\student.js" />
     <Content Include="Scripts\Project\student_parent.js" />
+    <Content Include="Scripts\Project\all_student.js" />
+    <Content Include="Scripts\Project\all_score.js" />
+    <Content Include="Scripts\Project\all_bonus.js" />
     <Content Include="Scripts\Project\user.js" />
     <Content Include="Scripts\Project\teacher.js" />
     <Content Include="Scripts\Project\parent.js" />
@@ -182,6 +190,10 @@
     <Content Include="Views\class_managment.html" />
     <Content Include="Views\student.html" />
     <Content Include="Views\student_parent.html" />
+    <Content Include="Views\all_student.html" />
+    <Content Include="Views\all_score.html" />
+    <Content Include="Views\all_bonus.html" />
+    <Content Include="Views\all_critic.html" />
     <Content Include="Views\user.html" />
     <Content Include="Views\teacher.html" />
     <Content Include="Web.config" />
