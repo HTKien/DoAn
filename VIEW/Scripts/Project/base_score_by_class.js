@@ -390,9 +390,9 @@
     * Ngày tạo: 22/8/2019
     * */
     FormatBtn(pageIndex, pageSize) {
-        if (this.getAllData().length % pageSize !== 0) {
-            $('.page-index').attr("max", this.getAllData().length / pageSize + 1);
-            if (pageIndex > parseInt((this.getAllData().length / pageSize))) {
+        if (this.getAllData(classID).length % pageSize !== 0) {
+            $('.page-index').attr("max", this.getAllData(classID).length / pageSize + 1);
+            if (pageIndex > parseInt((this.getAllData(classID).length / pageSize))) {
                 $('.page-index').prop('disabled', true);
                 $('button#trang-sau').prop('disabled', true);
                 $('button#trang-cuoi').prop('disabled', true);
@@ -409,9 +409,9 @@
 
             }
 
-        } else if (this.getAllData().length % pageSize === 0) {
-            $('.page-index').attr("max", this.getAllData().length / pageSize);
-            if (pageIndex >= parseInt((this.getAllData().length / pageSize))) {
+        } else if (this.getAllData(classID).length % pageSize === 0) {
+            $('.page-index').attr("max", this.getAllData(classID).length / pageSize);
+            if (pageIndex >= parseInt((this.getAllData(classID).length / pageSize))) {
                 $('.page-index').prop('disabled', true);
                 $('button#trang-sau').prop('disabled', true);
                 $('button#trang-cuoi').prop('disabled', true);
