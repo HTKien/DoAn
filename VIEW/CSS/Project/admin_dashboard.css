@@ -1,0 +1,188 @@
+﻿*, body {
+    font-family: 'Roboto', sans-serif;
+}
+.div-trai-tren-text {
+    width: 180px;
+    height: unset;
+    margin-left:10px;
+}
+.icon-sidebar {
+    color: #fff;
+    font-size: 20px;
+    line-height: 55px;
+    margin-left: 20px;
+    margin-right: 6px;
+    width: 30px;
+}
+.div-phai-tren, .div-trai-tren {
+    height: 60px;
+}
+.trai-duoi-1cai {
+    height: 55px;
+    margin: auto;
+    border-color: #6794db;
+    border: none;
+}
+.trai-duoi-text {
+    width: unset;
+    line-height: 55px;
+    margin-top: unset;
+    font-size: 15px;
+    margin: unset;
+}
+.logo {
+    color: #fff;
+    font-size: 30px;
+    line-height: 60px;
+    margin-left: 25px;
+}
+.logo-text {
+    color: #fff;
+    margin-top: 17px;
+}
+.div-trai {
+    width: 280px;
+    background-color: #0973B9;
+}
+.line {
+    height: 1px;
+    width: 100%;
+    background-color: #6794db;
+    margin: auto;
+}
+.div-trai-duoi{
+    height: unset;
+}
+.active {
+    background-color: #0199FC;
+}
+.div-phai-giua-tren {
+    /*border-bottom: 1px solid #D6D6D6;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.text-danh-muc {
+    margin-top: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 12px;
+}
+.table {
+    width: unset;
+    height: calc(100vh - 164px );
+    margin-left: 10px;
+}
+.main-table{
+    width: 100%;
+}
+.loading {
+    width: calc(100vw - 262px) !important;
+    height: calc(100vh - 194px );
+    margin-top: 31px;
+}
+.btn-text{
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: unset;
+    line-height:27px;
+}
+.btn-nav {
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #0973B9;
+    color: #ffff;
+}
+.div-phai-menu-ngang, .phan-trang {
+    margin-left: 10px;
+    width: calc(100% - 10px);
+}
+.div-phai-menu-ngang {
+    background-color: #0973B9;
+}
+.icon-btn{
+    line-height: 27px;
+}
+.importfile{
+    border-right: none;
+}
+.tieu-de{
+    height: unset;
+}
+.tieu-de-tren{
+    font-size: 15px;
+}
+.import-file {
+    background-color: #0973B9;
+    font-weight: bold;
+    margin-top: 5px;
+    border-right: none;
+    cursor: pointer;
+    
+}
+.import-file:hover {
+    background-color: #0199FC;
+}
+.btn-nav:hover {
+    background-color: #0199FC !important;
+}
+    .btn-nav:hover .import-file {
+        background-color: #0199FC !important;
+    }
+
+.main-table tr{
+    height: 30px;
+}
+.main-table tbody tr{
+    text-align: center;
+    font-size: 15px;
+}
+.phan-trang-text{
+    font-size: 15px;
+    margin-top: unset;
+    line-height: 27px;
+}
+.dem-ban-ghi {
+    font-weight: 600;
+    margin-left: 16px !important;
+}
+.phan-trang {
+}
+    .phan-trang > button:hover {
+        background-color: unset;
+
+    }
+    .phan-trang > button{
+        border: none;
+    }
+.icon-btn-page {
+    font-size: 30px;
+    line-height: 27px;
+    color: #0973B9;
+}
+    .icon-btn-page:hover {
+        color: #0199FC;
+    }
+.main-table th {
+    background-color: #bfbfbf;
+}
+.imput-search {
+    width: 250px;
+    height: 25px;
+    border: 1px solid #BFBFBF;
+    border-radius: 3px;
+    outline: none;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+.label-search{
+    font-size: 15px;
+}
+.page-index, .page-size{
+    border: 1px solid #d6d6d6;
+    outline: none;
+    height: 23px;
+}
+.fa-sort {
+    line-height: 30px;
+}

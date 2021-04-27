@@ -151,6 +151,7 @@
     <Content Include="Contents\imgs\viewEmail.png" />
     <Content Include="CSS\Libraries\jquery-ui.css" />
     <Content Include="CSS\Libraries\sb-admin-2.min.css" />
+    <Content Include="CSS\Project\admin_dashboard.css" />
     <Content Include="CSS\Project\common.css" />
     <Content Include="CSS\Project\login.css" />
     <Content Include="CSS\Project\parent.css" />
@@ -197,6 +198,7 @@
     <Content Include="Views\login.html" />
     <Content Include="Views\parent.html" />
     <Content Include="Views\class_managment.html" />
+    <Content Include="Views\admin_dashboard.html" />
     <Content Include="Views\student.html" />
     <Content Include="Views\student_parent.html" />
     <Content Include="Views\all_student.html" />
