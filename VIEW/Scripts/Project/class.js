@@ -1,5 +1,11 @@
 ﻿$(document).ready(function () {
     var call_class = new Class();
+    $("#search_fulltable_class").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#table_class tbody tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
 })
 
 class Class extends BaseClass {
@@ -17,6 +23,10 @@ class Class extends BaseClass {
 
         //sự kiện click chuột vào một hàng: 
         $('tbody').on('click', 'tr', this.RowOnClick);
+        $(document).on('click', '#sort_by_class_name', this.sortByClassName.bind(this));
+        $(document).on('click', '#sort_by_school_year', this.sortBySchoolYear.bind(this));
+        $(document).on('click', '#sort_by_student_number', this.sortByStudentNumber.bind(this));
+
 
         //sự kiện thay đổi số trang thì load lại dữ liệu cho trang tương ứng :
         $(document).on('keyup', 'input.page-index', this.PagingData.bind(this));

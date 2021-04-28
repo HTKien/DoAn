@@ -27,7 +27,7 @@
             </a>
 
             <div class="line"></div>
-            <a>
+            <a href="/Views/class_managment.html">
                 <div class="trai-duoi-1cai active">
                     <i class="fas fa-chalkboard icon-sidebar"></i>
                     <div class="trai-duoi-text">Quản lý lớp học</div>
@@ -35,7 +35,7 @@
             </a>
 
             <div class="line"></div>
-            <a>
+            <a href="/Views/teacher.html">
                 <div class="trai-duoi-1cai ">
                     <i class="fas fa-chalkboard-teacher icon-sidebar"></i>
                     <div class="trai-duoi-text">Quản lý giáo viên</div>
@@ -128,14 +128,18 @@
                 <i class="fas fa-trash-alt icon-btn"></i>
                 <div class="btn-text">Xóa</div>
             </button>
-            <button class="btn export btn-nav" onclick="exportReportToExcel(this)">
+            <button class="btn goclass btn-nav">
+                <i class="fas fa-edit icon-btn"></i>
+                <div class="btn-text">Vào lớp</div>
+            </button>
+            <button class="btn export btn-nav" onclick="exportClassToExcel(this)">
                 <i class="fas fa-file-export icon-btn"></i>
                 <div class="btn-text">Xuất file</div>
             </button>
             <div class="btn importfile btn-nav">
                 <i class="fas fa-file-alt icon-btn"></i>
-                <label for="input_file" class="btn-nav import-file">Nhập file</label>
-                <input id="input_file" style="display: none;" type="file" accept=".xls,.xlsx,.ods">
+                <label for="input_file_class" class="btn-nav import-file">Nhập file</label>
+                <input id="input_file_class" style="display: none;" type="file" accept=".xls,.xlsx,.ods">
             </div>
 
         </div>
@@ -143,22 +147,22 @@
 
         <div class="du-lieu">
             <div class="table">
-                <table class="main-table">
+                <table id="table_class" class="main-table">
                     <thead>
                         <tr>
 
                             <th class="tieu-de" fieldName="Code">
-                                <div class="tieu-de-tren">Mã lớp học</div>
+                                <div class="tieu-de-tren">Mã lớp học <i id="sort_by_class_code" class="fas fa-sort"></i></div>
                                 <div class="tieu-de-duoi">
                                 </div>
                             </th>
                             <th class="tieu-de" fieldName="Name">
-                                <div class="tieu-de-tren">Tên lớp</div>
+                                <div class="tieu-de-tren">Tên lớp<i id="sort_by_class_name" class="fas fa-sort"></i></div>
                                 <div class="tieu-de-duoi">
                                 </div>
                             </th>
                             <th class="tieu-de cot1" fieldName="SchoolYear">
-                                <div class="tieu-de-tren">Năm học</div>
+                                <div class="tieu-de-tren">Năm học<i id="sort_by_school_year" class="fas fa-sort"></i></div>
                                 <div class="tieu-de-duoi">
                                 </div>
                             </th>
@@ -173,7 +177,7 @@
                                 </div>
                             </th>
                             <th class="tieu-de cot1" fieldName="StudentNumber">
-                                <div class="tieu-de-tren">Số lượng học sinh</div>
+                                <div class="tieu-de-tren">Số lượng học sinh<i id="sort_by_student_number" class="fas fa-sort"></i></div>
                                 <div class="tieu-de-duoi">
                                 </div>
                             </th>
@@ -259,7 +263,7 @@
                     <label class="text-dialog text1">Ghi chú</label>
                     <textarea style="height: 26px; width: 276px" id="note-dialog"></textarea>
                 </div>
-                
+
                 <div class="dong1">
                     <label class="text-dialog text1">Chọn GVCN</label>
                     <div id="select-teacher">
@@ -372,11 +376,17 @@
 
     </div>
     <script src='https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)'></script>
+    <script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/Scripts/Libraries/jquery-3.4.1.js"></script>
     <script src="/Scripts/Libraries/jquery-ui.js"></script>
     <script src="/Scripts/Project/base_class.js"></script>
     <script src="/Scripts/Project/class.js"></script>
     <script src="/Scripts/Project/class_student.js"></script>
+    <script src="/Scripts/Project/export.js"></script>
+    <script src="/Scripts/Project/import.js"></script>
+    <script src="/Scripts/Project/sort.js"></script>
 
 </body>
 </html>

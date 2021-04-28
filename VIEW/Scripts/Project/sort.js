@@ -1,4 +1,6 @@
-﻿function sortTable(tableID, colNumber, objective) {
+﻿const { isNumeric } = require("jquery");
+
+function sortTable(tableID, colNumber, objective) {
     var table, rows, switching, i, x, y, shouldSwitch;
     table = document.getElementById(tableID);
     switching = true;
@@ -11,16 +13,32 @@
             x = rows[i].getElementsByTagName("TD")[colNumber];
             y = rows[i + 1].getElementsByTagName("TD")[colNumber];
             if (objective == ">") {
-                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                    shouldSwitch = true;
-                    break;
+                if (Number.isInteger(parseInt(x.innerHTML.toLowerCase()))) {
+                    if (parseInt(x.innerHTML.toLowerCase()) > parseInt(y.innerHTML.toLowerCase())) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
                 }
+                
 
             } else {
-                if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                    shouldSwitch = true;
-                    break;
+                if (Number.isInteger(parseInt(x.innerHTML.toLowerCase()))===true) {
+                    if (parseInt(x.innerHTML.toLowerCase()) < parseInt(y.innerHTML.toLowerCase())) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
                 }
+                
             }
         }
         if (shouldSwitch) {

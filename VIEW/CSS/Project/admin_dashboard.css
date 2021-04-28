@@ -185,6 +185,7 @@
 }
 .fa-sort {
     line-height: 30px;
+    margin-left: 5px;
 }
 #dialog-add, #dialog-edit {
     border-radius: 5px;
@@ -249,4 +250,7 @@ tr{
 }
 th {
     background-color: #BFBFBF !important;
+}
+a{
+    text-decoration: none;
 }

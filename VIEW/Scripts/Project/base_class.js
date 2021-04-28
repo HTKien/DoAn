@@ -592,4 +592,14 @@
         var data = this.GetAllTeacher();
         this.AppenAllTeacherEdit(data);
     }
+    sortByClassName() {
+        sortTable("table_class", 1, ">");
+    }
+    sortBySchoolYear() {
+        sortTable("table_class", 2, ">");
+    }
+    sortByStudentNumber() {
+        sortTable("table_class", 5, "<");
+    }
+
 }

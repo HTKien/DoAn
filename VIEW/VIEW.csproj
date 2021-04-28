@@ -167,6 +167,8 @@
     <Content Include="Scripts\Project\base_critic_by_class.js" />
     <Content Include="Scripts\Project\bonus_by_class.js" />
     <Content Include="Scripts\Project\critic_by_class.js" />
+    <Content Include="Scripts\Project\export.js" />
+    <Content Include="Scripts\Project\import.js" />
     <Content Include="Scripts\Project\sort.js" />
     <Content Include="Scripts\Project\score_by_class.js" />
     <Content Include="Scripts\Project\base_all_critic.js" />
