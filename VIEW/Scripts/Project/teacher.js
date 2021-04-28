@@ -1,5 +1,11 @@
 ﻿$(document).ready(function () {
     var teacher = new Teacher();
+    $("#search_fulltable_teacher").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#table_teacher tbody tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
 })
 
 class Teacher extends BaseTeacher {
@@ -14,6 +20,7 @@ class Teacher extends BaseTeacher {
     //Người tạo: Hàn Trung Kiên
     //Ngày tạo: 22/8/2019
     InitEvent() {
+        $(document).on('click', '#sort_by_teachername', this.sortByTeacherName.bind(this));
 
         //sự kiện click chuột vào một hàng: 
         $('tbody').on('click', 'tr', this.RowOnClick);
@@ -209,7 +216,7 @@ class Teacher extends BaseTeacher {
                 success: function (res) {
                     ma = res.Code;
                     ten = res.Name;
-                    var html = "Bạn có chắc chắn muốn xóa Giáo viên << " + ma + " - " + ten + " >> không?";
+                    var html = "Bạn có chắc chắn muốn xóa Giáo viên '" + ma + " - " + ten + "' không?";
 
                     $('#thong-bao').empty();
 
@@ -235,7 +242,7 @@ class Teacher extends BaseTeacher {
         //$('#thong-bao').append(html);
 
         $('#dialog').dialog({
-            title: "CUKCUK - Quản lý nhà hàng",
+            title: "Xác nhận",
             modal: true,
             buttons: {
                 "Có": function () {
@@ -274,7 +281,7 @@ class Teacher extends BaseTeacher {
 
 
     }
-
+    
     /**
      * Hàm thực hiện việc click chuột vào một bản ghi dữ liệu
      * Người tạo: Hàn Trung Kiên

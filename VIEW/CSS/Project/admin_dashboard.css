@@ -186,3 +186,54 @@
 .fa-sort {
     line-height: 30px;
 }
+#dialog-add, #dialog-edit {
+    border-radius: 5px;
+    margin-top: -120px;
+}
+.dialog-add-tieu-de{
+    justify-content: space-between;
+}
+.icon-tieu-de-dialog-add, .icon-tieu-de-dialog-edit {
+    margin-left: unset;
+    margin-right: 5px;
+}
+.text-dialog{
+    font-size: 15px;
+}
+.input1, #note-dialog, select, #note-dialog-edit {
+    border: 1px solid #a6a6a6;
+    outline: none;
+    border-radius: 4px;
+}
+.input1{
+    height: 30px;
+    padding: 0 10px;
+    width:520px;
+}
+.dong1{
+    margin-bottom: 5px;
+}
+.text1{
+    width: 102px;
+}
+.input4{
+    margin-left: unset !important;
+}
+.btn-dialogAdd {
+    font-size: 15px;
+    background-color: #0973B9;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+    height: 30px;
+    width: 100px;
+    text-align: center;
+    margin-top: 20px;
+}
+    .btn-dialogAdd:hover {
+        background-color: #0199FC;
+
+    }
+    .btn-dialogAdd > div{
+        margin-top: unset;
+    }

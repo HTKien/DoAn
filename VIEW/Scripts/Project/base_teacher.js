@@ -139,6 +139,8 @@
             $('.loading').hide();
 
         }, 500);
+        sortTable("table_teacher",0, ">");
+
 
     }
     /**
@@ -205,6 +207,9 @@
 
 
 
+    }
+    sortByTeacherName() {
+        sortTable("table_teacher", 1, ">");
     }
 
     /**

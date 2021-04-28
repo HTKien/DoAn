@@ -108,7 +108,7 @@
             <div id="class_title" class="text-danh-muc">Quản lý giáo viên</div>
             <div>
                 <label class="label-search">Tìm kiếm</label>
-                <input  class="imput-search" />
+                <input id="search_fulltable_teacher" class="imput-search" />
             </div>
         </div>
 
@@ -150,7 +150,7 @@
                                 <div class="tieu-de-tren">Mã giáo viên <i class="fas fa-sort"></i></div>
                             </th>
                             <th class="tieu-de" fieldName="Name">
-                                <div class="tieu-de-tren">Họ và tên <i class="fas fa-sort"></i></div>
+                                <div class="tieu-de-tren">Họ và tên <i id="sort_by_teachername" class="fas fa-sort"></i></div>
                             </th>
                             <th class="tieu-de cot1" fieldName="Address">
                                 <div class="tieu-de-tren">Địa chỉ</div>
@@ -231,11 +231,11 @@
                 <div style="height: 5px; "></div>
                 <div class="dong1">
                     <label class="text-dialog text1">Mã giáo viên<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1" id="code-dialog" />
+                    <input style="width: 520px;" type="text" name="name" value="" class="input1" id="code-dialog" />
                 </div>
                 <div class="dong1">
                     <label class="text-dialog text1">Họ và tên<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1" id="name-dialog" />
+                    <input style="width: 520px;" type="text" name="name" value="" class="input1" id="name-dialog" />
                 </div>
                 <div class="dong1">
                     <label class="text-dialog text1">Địa chỉ</label>
@@ -243,25 +243,28 @@
                 </div>
                 <div class="dong1">
                     <label class="text-dialog text1">Điện thoại<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1 input4" id="phone-dialog" />
-                    <label class="text-dialog text1">Giới tính<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1 input4" id="sex-dialog" />
+                    <input style="width: 150px; margin-left: 15px !important" type="text" name="name" value="" class="input1 input4" id="phone-dialog" />
+                    <label style="margin-left: 118px;" class="text-dialog text1">Giới tính<span class="dau-sao">(*)</span></label>
+                    <select style="width: 150px;" id="sex-dialog">
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
+                    </select>
                 </div>
                 <div class="dong1">
-                    <label class="text-dialog text1">Ghi chú</label>
-                    <textarea id="note-dialog"></textarea>
+                    <label style="width: 116px;" class="text-dialog text1">Ghi chú</label>
+                    <textarea style="width: 521px; padding: 10px; height: 50px; " id="note-dialog"></textarea>
                 </div>
 
                 <div class="dong1 list-btn">
 
                     <button class="btn-dialogAdd cat" id="save">
-                        <img src="/Contents/imgs/Save16.png" />
-                        <div>Lưu</div>
+                        <i style="font-size: 15px; line-height: 30px; margin-left: 10px;" class="fas fa-save"></i>
+                        <div style="font-size: 15px; line-height: 30px;">Lưu lại</div>
 
                     </button>
                     <button class="btn-dialogAdd" id="huy-bo">
-                        <img src="/Contents/imgs/Disable16.png" />
-                        <div>Hủy bỏ</div>
+                        <i style="font-size: 15px; line-height: 30px; margin-left: 10px;" class="fas fa-ban"></i>
+                        <div style="font-size: 15px; line-height: 30px;">Hủy bỏ</div>
                     </button>
 
                 </div>
@@ -290,25 +293,26 @@
                 </div>
                 <div class="dong1">
                     <label class="text-dialog text1">Điện thoại<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1 input4" id="phone-dialog-edit" />
-                    <label class="text-dialog text1">Giới tính<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1 input4" id="sex-dialog-edit" />
+                    <input style="width: 150px; margin-left: 15px !important" type="text" name="name" value="" class="input1 input4" id="phone-dialog-edit" />
+                    <label style="margin-left: 118px;" class="text-dialog text1">Giới tính<span class="dau-sao">(*)</span></label>
+                    <select style="width: 150px;" id="sex-dialog-edit">
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
+                    </select>
                 </div>
                 <div class="dong1">
-                    <label class="text-dialog text1">Ghi chú</label>
-                    <textarea id="note-dialog-edit"></textarea>
+                    <label style="width: 116px;" class="text-dialog text1">Ghi chú</label>
+                    <textarea style="width: 521px; padding: 10px; height: 50px; " id="note-dialog-edit"></textarea>
                 </div>
 
                 <div class="dong1 list-btn">
-
                     <button class="btn-dialogAdd cat" id="save-edit">
-                        <img src="/Contents/imgs/Save16.png" />
-                        <div>Lưu lại</div>
-
+                        <i style="font-size: 15px; line-height: 30px; margin-left: 10px;" class="fas fa-save"></i>
+                        <div style="font-size: 15px; line-height: 30px;">Lưu lại</div>
                     </button>
                     <button class="btn-dialogAdd" id="huy-bo-edit">
-                        <img src="/Contents/imgs/Disable16.png" />
-                        <div>Hủy bỏ</div>
+                        <i style="font-size: 15px; line-height: 30px; margin-left: 10px;" class="fas fa-ban"></i>
+                        <div style="font-size: 15px; line-height: 30px;">Hủy bỏ</div>
                     </button>
 
                 </div>
@@ -328,6 +332,7 @@
     <script src="/Scripts/Project/base_teacher.js"></script>
     <script src="/Scripts/Project/teacher.js"></script>
     <script src="/Scripts/Project/import_file_teacher.js"></script>
+    <script src="/Scripts/Project/sort.js"></script>
 
 </body>
 </html>

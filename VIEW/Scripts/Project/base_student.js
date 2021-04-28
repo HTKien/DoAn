@@ -604,7 +604,7 @@
             $('.loading').hide();
 
         }, 500);
-        this.sortTable(0, ">");
+        sortTable("table_student",0, ">");
 
     }
     search(colNumber, id_input) {
@@ -660,7 +660,7 @@
         this.sortTable(8, "<");
     }
     sortByBonus() {
-        this.sortTable(5, "<");
+        sortTable("table_student",5, "<");
 
     }
     sortByCritic() {
