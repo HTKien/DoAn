@@ -1,5 +1,11 @@
 ﻿$(document).ready(function () {
     var student = new Student();
+    $("#search_fulltable_all_student").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#table_all_student tbody tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
 })
 
 class Student extends BaseStudent {
@@ -17,6 +23,8 @@ class Student extends BaseStudent {
 
         //sự kiện click chuột vào một hàng: 
         $('tbody').on('click', 'tr', this.RowOnClick);
+        $(document).on('click', '#sort_by_student_name', this.sortByStudentName.bind(this));
+        $(document).on('click', '#sort_by_class', this.sortByClass.bind(this));
 
         //sự kiện thay đổi số trang thì load lại dữ liệu cho trang tương ứng :
         $(document).on('keyup', 'input.page-index', this.PagingData.bind(this));
@@ -209,7 +217,7 @@ class Student extends BaseStudent {
                 success: function (res) {
                     ma = res.Code;
                     ten = res.Name;
-                    var html = "Bạn có chắc chắn muốn xóa Giáo viên << " + ma + " - " + ten + " >> không?";
+                    var html = "Bạn có chắc chắn muốn xóa Học sinh << " + ma + " - " + ten + " >> không?";
 
                     $('#thong-bao').empty();
 
@@ -222,7 +230,7 @@ class Student extends BaseStudent {
                 }
             });
         } else if (listID.length > 1) {
-            var html = "Bạn có chắc chắn muốn xóa những Giáo viên đã chọn không?";
+            var html = "Bạn có chắc chắn muốn xóa những Học sinh đã chọn không?";
             $('#thong-bao').empty();
             $('#thong-bao').append(html);
         }
@@ -235,7 +243,7 @@ class Student extends BaseStudent {
         //$('#thong-bao').append(html);
 
         $('#dialog').dialog({
-            title: "CUKCUK - Quản lý nhà hàng",
+            title: "Xác nhận",
             modal: true,
             buttons: {
                 "Có": function () {

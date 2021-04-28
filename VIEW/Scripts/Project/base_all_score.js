@@ -139,6 +139,7 @@
             $('.loading').hide();
 
         }, 500);
+        sortTable("table_all_score", 0, ">");
 
     }
     /**
@@ -502,5 +503,11 @@
             $('.main-table tbody').append(rowHTML);
         });
 
+    }
+    sortByStudentName() {
+        sortTable("table_all_score", 1, ">");
+    }
+    sortByScore() {
+        sortTable("table_all_score", 4, "<");
     }
 }

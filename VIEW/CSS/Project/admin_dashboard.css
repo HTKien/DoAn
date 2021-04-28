@@ -99,6 +99,8 @@
 }
 .div-phai-menu-ngang {
     background-color: #0973B9;
+    border-top: 1px solid #0973B9;
+    border-bottom: 1px solid #0973B9;
 }
 .icon-btn{
     line-height: 27px;
@@ -138,7 +140,7 @@
     font-size: 15px;
 }
 .phan-trang-text{
-    font-size: 15px;
+    font-size: 14px;
     margin-top: unset;
     line-height: 27px;
 }
@@ -182,15 +184,19 @@
     border: 1px solid #d6d6d6;
     outline: none;
     height: 23px;
+    border-radius: 3px;
 }
 .fa-sort {
     line-height: 30px;
     margin-left: 5px;
 }
-#dialog-add, #dialog-edit {
-    border-radius: 5px;
-    margin-top: -120px;
-}
+    .fa-sort:hover {
+        color: #0973B9 !important;
+    }
+    #dialog-add, #dialog-edit {
+        border-radius: 5px;
+        margin-top: -120px;
+    }
 .dialog-add-tieu-de{
     justify-content: space-between;
 }
@@ -246,7 +252,7 @@
     height: 170px !important;
 }
 tr{
-    font-size: 15px !important;
+    font-size: 14px !important;
 }
 th {
     background-color: #BFBFBF !important;

@@ -1,5 +1,11 @@
 ﻿$(document).ready(function () {
     var score = new Score();
+    $("#search_fulltable_all_score").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#table_all_score tbody tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
 })
 
 class Score extends BaseScore {
@@ -17,6 +23,8 @@ class Score extends BaseScore {
 
         //sự kiện click chuột vào một hàng: 
         $('tbody').on('click', 'tr', this.RowOnClick);
+        $(document).on('click', '#sort_by_student_name', this.sortByStudentName.bind(this));
+        $(document).on('click', '#sort_by_score', this.sortByScore.bind(this));
 
         //sự kiện thay đổi số trang thì load lại dữ liệu cho trang tương ứng :
         $(document).on('keyup', 'input.page-index', this.PagingData.bind(this));

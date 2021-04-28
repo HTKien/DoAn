@@ -194,6 +194,7 @@
     <Content Include="Scripts\Project\user.js" />
     <Content Include="Scripts\Project\teacher.js" />
     <Content Include="Scripts\Project\parent.js" />
+    <Content Include="Views\user_manual.html" />
     <Content Include="Views\bonus_by_class.html" />
     <Content Include="Views\critic_by_class.html" />
     <Content Include="Views\score_by_class.html" />

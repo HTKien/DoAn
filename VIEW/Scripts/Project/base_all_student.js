@@ -139,6 +139,8 @@
             $('.loading').hide();
 
         }, 500);
+        sortTable("table_all_student", 0, ">");
+
 
     }
     /**
@@ -497,5 +499,11 @@
             $('.main-table tbody').append(rowHTML);
         });
 
+    }
+    sortByStudentName() {
+        sortTable("table_all_student", 1, ">");
+    }
+    sortByClass(){
+        sortTable("table_all_student", 5, ">");
     }
 }

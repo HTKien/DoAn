@@ -209,7 +209,7 @@ class Critic extends BaseCritic {
                 success: function (res) {
                     ma = res.Code;
                     ten = res.Name;
-                    var html = "Bạn có chắc chắn muốn xóa Giáo viên << " + ma + " - " + ten + " >> không?";
+                    var html = "Bạn có chắc chắn muốn xóa Phê bình đã chọn không?";
 
                     $('#thong-bao').empty();
 
@@ -222,7 +222,7 @@ class Critic extends BaseCritic {
                 }
             });
         } else if (listID.length > 1) {
-            var html = "Bạn có chắc chắn muốn xóa những Giáo viên đã chọn không?";
+            var html = "Bạn có chắc chắn muốn xóa những Phê bình đã chọn không?";
             $('#thong-bao').empty();
             $('#thong-bao').append(html);
         }
@@ -235,7 +235,7 @@ class Critic extends BaseCritic {
         //$('#thong-bao').append(html);
 
         $('#dialog').dialog({
-            title: "CUKCUK - Quản lý nhà hàng",
+            title: "Xác nhận",
             modal: true,
             buttons: {
                 "Có": function () {

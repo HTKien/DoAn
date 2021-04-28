@@ -63,4 +63,3 @@ F:\Code_HanKien\DoAn\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
 F:\Code_HanKien\DoAn\Entities\obj\Debug\Entities.csproj.CopyComplete
 F:\Code_HanKien\DoAn\Entities\obj\Debug\Entities.dll
 F:\Code_HanKien\DoAn\Entities\obj\Debug\Entities.pdb
-F:\Code_HanKien\DoAn\Entities\obj\Debug\Entities.csprojAssemblyReference.cache

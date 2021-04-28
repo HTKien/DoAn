@@ -2,114 +2,100 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Quản lý tài khoản</title>
+    <title>Quản lý người dùng - Admin</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="/CSS/Libraries/jquery-ui.css" rel="stylesheet" />
     <link href="/CSS/Project/view.css" rel="stylesheet" />
     <link href="/CSS/Project/common.css" rel="stylesheet" />
-    <link href="/CSS/Project/parent.css" rel="stylesheet" />
+    <link href="/CSS/Project/admin_dashboard.css" rel="stylesheet" />
 </head>
 <body>
     <div class="div-trai">
         <div class="div-trai-tren">
-            <div class="div-trai-tren-icon"></div>
-            <div class="div-trai-tren-text">eSupport</div>
-
-
-
-
+            <i class="fas fa-book-reader logo"></i>
+            <div class="div-trai-tren-text logo-text">e-Support</div>
         </div>
         <div class="div-trai-duoi">
-            <div class="trai-duoi-1cai">
-                <div class="trai-duoi-icon"></div>
-                <div class="trai-duoi-text">Tổng quan</div>
+            <a href="/Views/admin_dashboard.html">
+                <div class="trai-duoi-1cai">
+                    <i class="fas fa-tachometer-alt icon-sidebar"></i>
+                    <div class="trai-duoi-text">Tổng quan</div>
+                </div>
+            </a>
 
-            </div>
-            <div class="trai-duoi-1cai">
-                <div class="trai-duoi-icon" id="bao-cao"></div>
-                <div class="trai-duoi-text">Báo cáo</div>
+            <div class="line"></div>
+            <a href="/Views/class_managment.html">
+                <div class="trai-duoi-1cai">
+                    <i class="fas fa-chalkboard icon-sidebar"></i>
+                    <div class="trai-duoi-text">Quản lý lớp học</div>
+                </div>
+            </a>
 
-            </div>
-            <div class="trai-duoi-1cai">
-                <div class="trai-duoi-icon" id="mua-hang"></div>
-                <div class="trai-duoi-text">Mua hàng</div>
+            <div class="line"></div>
+            <a href="/Views/teacher.html">
+                <div class="trai-duoi-1cai">
+                    <i class="fas fa-chalkboard-teacher icon-sidebar"></i>
+                    <div class="trai-duoi-text">Quản lý giáo viên</div>
+                </div>
+            </a>
 
-            </div>
-            <div class="trai-duoi-1cai">
-                <div class="trai-duoi-icon" id="kho"></div>
-                <div class="trai-duoi-text">Kho</div>
+            <div class="line"></div>
+            <a href="/Views/all_student.html">
+                <div class="trai-duoi-1cai">
+                    <i class="fas fa-user-graduate icon-sidebar"></i>
+                    <div class="trai-duoi-text">Quản lý học sinh</div>
+                </div>
+            </a>
 
-            </div>
-            <div class="trai-duoi-1cai">
-                <div class="trai-duoi-icon" id="quy-tien-mat"></div>
-                <div class="trai-duoi-text">Quỹ tiền mặt</div>
+            <div class="line"></div>
+            <a href="/Views/all_score.html">
+                <div class="trai-duoi-1cai">
+                    <i class="fas fa-star-half-alt icon-sidebar"></i>
+                    <div class="trai-duoi-text">Quản lý điểm</div>
+                </div>
+            </a>
 
-            </div>
-            <div class="trai-duoi-1cai">
-                <div class="trai-duoi-icon" id="quy-tien-gui"></div>
-                <div class="trai-duoi-text">Quỹ tiền gửi</div>
+            <div class="line"></div>
+            <a href="/Views/all_bonus.html">
+                <div class="trai-duoi-1cai">
+                    <i class="fas fa-award icon-sidebar"></i>
+                    <div class="trai-duoi-text">Quản lý khen thưởng</div>
+                </div>
+            </a>
 
-            </div>
-            <div class="trai-duoi-1cai">
-                <div class="trai-duoi-icon" id="chi-phi"></div>
-                <div class="trai-duoi-text">Chi phí</div>
+            <div class="line"></div>
+            <a href="/Views/all_critic.html">
+                <div class="trai-duoi-1cai">
+                    <i class="fas fa-prescription icon-sidebar"></i>
+                    <div class="trai-duoi-text">Quản lý phê bình</div>
+                </div>
+            </a>
 
-            </div>
-            <div class="trai-duoi-1cai">
-                <div class="trai-duoi-icon" id="khuyen-mai"></div>
-                <div class="trai-duoi-text">Khuyến mại</div>
+            <div class="line"></div>
+            <a href="/Views/user.html">
+                <div class="trai-duoi-1cai active">
+                    <i class="fas fa-user-friends icon-sidebar"></i>
+                    <div class="trai-duoi-text">Quản lý người dùng</div>
+                </div>
+            </a>
 
-            </div>
+            <div class="line"></div>
+            <a href="/Views/user_manual.html">
+                <div class="trai-duoi-1cai">
+                    <i class="fas fa-book icon-sidebar"></i>
+                    <div class="trai-duoi-text">Hướng dẫn sử dụng</div>
+                </div>
+            </a>
 
-            <div class="trai-duoi-1cai" style="background-color: #0199FC">
-                <div class="trai-duoi-icon" id="thuc-don"></div>
-                <div class="trai-duoi-text">Quản lý tài khoản</div>
-
-            </div>
-            <div class="trai-duoi-1cai danh-muc" style="background-color: #0973B9">
-                <div class="trai-duoi-icon" id="danh-muc"></div>
-                <div class="trai-duoi-text">Phụ huynh</div>
-
-            </div>
-            <div class="trai-duoi-1cai">
-                <div class="trai-duoi-icon" id="huy-hoa-don"></div>
-                <div class="trai-duoi-text">Hủy hóa đơn</div>
-
-            </div>
-            <div class="trai-duoi-1cai">
-                <div class="trai-duoi-icon" id="sms-marketting"></div>
-                <div class="trai-duoi-text">SMS Marketing</div>
-
-            </div>
-            <div class="trai-duoi-1cai">
-                <div class="trai-duoi-icon"></div>
-                <div class="trai-duoi-text">Đối tác giao hàng</div>
-
-            </div>
-            <div class="trai-duoi-1cai">
-                <div class="trai-duoi-icon" id="hoa-don-dien-tu"></div>
-                <div class="trai-duoi-text">Hóa đơn điện tử</div>
-
-            </div>
-            <div class="trai-duoi-1cai">
-                <div class="trai-duoi-icon" id="thiet-lap-he-thong"></div>
-                <div class="trai-duoi-text">Thiết lập hệ thống</div>
-
-            </div>
-            <div class="trai-duoi-1cai">
-                <div class="trai-duoi-icon" id="tro-giup"></div>
-                <div class="trai-duoi-text">Trợ giúp</div>
-
-            </div>
-            <div class="trai-duoi-1cai">
-                <div class="trai-duoi-icon" id="thue-bao"></div>
-                <div class="trai-duoi-text">Thuê bao</div>
-
-            </div>
-            <div class="trai-duoi-1cai">
-                <div class="trai-duoi-icon" id="food"></div>
-                <div class="trai-duoi-text">5Food</div>
-
-            </div>
+            <div class="line"></div>
+            <a>
+                <div class="trai-duoi-1cai ">
+                    <i class="fas fa-sign-out-alt icon-sidebar"></i>
+                    <div class="trai-duoi-text">Đăng xuất</div>
+                </div>
+            </a>
 
         </div>
 
@@ -120,40 +106,22 @@
                 <option value="value">Admin</option>
             </select>
         </div>
-        <div class="div-phai-giua">
-            <div class="text-danh-muc">Quản lý tài khoản</div>
+        <div class="div-phai-giua-tren">
+            <div id="class_title" class="text-danh-muc">Quản lý người dùng</div>
+            <div>
+                <label class="label-search">Tìm kiếm</label>
+                <input id="search_fulltable_all_student" class="imput-search" />
+            </div>
         </div>
 
         <div class="div-phai-menu-ngang">
-            <button style=" border-left: 1px solid #d6d6d6;" class="btn add">
-                <img src="/Contents/imgs/icons8-add-file-16.png" />
-                <div class="btn-text">Thêm</div>
-            </button>
-            <button class="btn edit" disabled>
-                <img src="/Contents/imgs/Edit16.png" />
-                <div class="btn-text">Sửa</div>
-            </button>
-            <button class="btn delete" disabled>
-                <img src="/Contents/imgs/icons8-delete-48.png" />
+            <button class="btn delete btn-nav" disabled>
+                <i class="fas fa-trash-alt icon-btn"></i>
                 <div class="btn-text">Xóa</div>
             </button>
-            <button class="btn">
-                <img src="/Contents/imgs/Import16.png" />
-                <div class="btn-text">Nhập khẩu</div>
-            </button>
-            <div class="btn importfile">
-                <img src="/Contents/imgs/excel_97_24.png" />
-                <div class="btn-text">
-                    <input type="file" id="input_file" accept=".xls,.xlsx,.ods">
-                </div>
-            </div>
-            <button class="btn export" onclick="exportReportToExcel(this)">
-                <img src="/Contents/imgs/ic_GopKhachHang.png" />
-                <div class="btn-text">Export data</div>
-            </button>
-            <button class="btn">
-                <img src="/Contents/imgs/iconHelp.png" />
-                <div class="btn-text">Giúp</div>
+            <button class="btn export btn-nav" onclick="exportAllStudent(this)">
+                <i class="fas fa-file-export icon-btn"></i>
+                <div class="btn-text">Xuất file</div>
             </button>
 
         </div>
@@ -196,20 +164,30 @@
 
             <div class="phan-trang" style="display: flex; ">
                 <div style="width : 1px; height: 27px; background-color: #cccccc; margin-top: 0px; margin-left: 0px; "></div>
-                <button id="trang-dau" class="trang-dau"></button>
-                <button id="trang-truoc" class="trang-truoc"></button>
+                <button id="trang-dau" class="">
+                    <i style="font-size: 22px" class="fas fa-backward icon-btn-page"></i>
+                </button>
+                <button id="trang-truoc" class="">
+                    <i class="fas fa-caret-left icon-btn-page"></i>
+                </button>
                 <div style="width : 1px; height: 15px; background-color: #cccccc; margin-top: 5px; margin-left: 5px; "></div>
                 <div class="phan-trang-text">Trang</div>
                 <input id="input-trang" class="input-trang page-index" type="number" name="name" value="1" min="1" />
                 <div class="phan-trang-text so-trang-max"> </div>
                 <div style="width : 1px; height: 15px; background-color: #cccccc; margin-top: 5px; margin-left: 15px; "></div>
-                <button id="trang-sau" class="trang-sau"></button>
-                <button id="trang-cuoi" class="trang-cuoi"></button>
+                <button id="trang-sau" class="">
+                    <i class="fas fa-caret-right icon-btn-page"></i>
+                </button>
+                <button id="trang-cuoi" class="">
+                    <i style="font-size: 22px" class="fas fa-forward icon-btn-page"></i>
+                </button>
                 <div style="width : 1px; height: 15px; background-color: #cccccc; margin-top: 5px; margin-left: 15px; "></div>
-                <button id="refresh" class="tai-lai-trang"></button>
+                <button id="refresh" class="">
+                    <i style="font-size: 22px" class="fas fa-sync-alt icon-btn-page"></i>
+                </button>
                 <div style="width : 1px; height: 15px; background-color: #cccccc; margin-top: 5px; margin-left: 15px; "></div>
                 <div class="div-cbb">
-                    <select style="width: 60px; height: 24px;" class="cbb-trang page-size">
+                    <select style="width: 60px; height: 27px;" class="cbb-trang page-size">
                         <option>25</option>
                         <option>50</option>
                         <option>100</option>
