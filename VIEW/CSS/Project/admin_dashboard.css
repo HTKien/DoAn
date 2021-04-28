@@ -237,3 +237,16 @@
     .btn-dialogAdd > div{
         margin-top: unset;
     }
+#select-teacher {
+    margin-left: unset !important;
+    width: 554px !important;
+    border-radius: 5px !important;
+    border: 1px solid #a6a6a6 !important;
+    height: 170px !important;
+}
+tr{
+    font-size: 15px !important;
+}
+th {
+    background-color: #BFBFBF !important;
+}

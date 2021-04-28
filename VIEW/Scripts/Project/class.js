@@ -221,7 +221,7 @@ class Class extends BaseClass {
                 success: function (res) {
                     ma = res.Code;
                     ten = res.Name;
-                    var html = "Bạn có chắc chắn muốn xóa Lớp học << " + ma + " - " + ten + " >> không?";
+                    var html = "Bạn có chắc chắn muốn xóa Lớp học '" + ma + " - " + ten + "' không?";
 
                     $('#thong-bao').empty();
 
@@ -247,7 +247,7 @@ class Class extends BaseClass {
         //$('#thong-bao').append(html);
 
         $('#dialog').dialog({
-            title: "CUKCUK - Quản lý nhà hàng",
+            title: "Xác nhận",
             modal: true,
             buttons: {
                 "Có": function () {
