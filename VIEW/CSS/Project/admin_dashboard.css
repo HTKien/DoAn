@@ -9,7 +9,7 @@
 .icon-sidebar {
     color: #fff;
     font-size: 20px;
-    line-height: 55px;
+    line-height: 55px !important;
     margin-left: 20px;
     margin-right: 6px;
     width: 30px;
@@ -33,7 +33,7 @@
 .logo {
     color: #fff;
     font-size: 30px;
-    line-height: 60px;
+    line-height: 60px !important;
     margin-left: 25px;
 }
 .logo-text {
@@ -103,7 +103,7 @@
     border-bottom: 1px solid #0973B9;
 }
 .icon-btn{
-    line-height: 27px;
+    line-height: 27px !important
 }
 .importfile{
     border-right: none;
@@ -259,4 +259,10 @@ th {
 }
 a{
     text-decoration: none;
+}
+table input {
+    outline: none;
+    border: 1px solid #F2F2F2;
+    border-radius: 3px;
+    height: 18px;
 }

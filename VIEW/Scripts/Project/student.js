@@ -46,6 +46,7 @@ class Student extends BaseStudent {
         //sự kiện cho nút refresh ở phần trang:
         $(document).on('click', '#refresh', this.loadRefreshData.bind(this));
         $(document).on('click', '#sort_by_score', this.sortByScoreMedium.bind(this));
+        $(document).on('click', '#sort_by_name', this.sortByName.bind(this));
         $(document).on('click', '#sort_by_bonus', this.sortByBonus.bind(this));
         $(document).on('click', '#sort_by_critic', this.sortByCritic.bind(this));
         $(document).on('keyup', '#code_search', this.searchByCode.bind(this));
@@ -679,7 +680,7 @@ class Student extends BaseStudent {
         //$('#thong-bao').append(html);
 
         $('#dialog').dialog({
-            title: "CUKCUK - Quản lý nhà hàng",
+            title: "Xác nhận",
             modal: true,
             buttons: {
                 "Có": function () {

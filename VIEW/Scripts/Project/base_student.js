@@ -657,15 +657,17 @@
         }
     }
     sortByScoreMedium() {
-        this.sortTable(8, "<");
+        sortTable("table_student", 6, "<");
+    }
+    sortByName() {
+        sortTable("table_student", 1, ">");
     }
     sortByBonus() {
-        sortTable("table_student",5, "<");
+        sortTable("table_student",3, "<");
 
     }
     sortByCritic() {
-        this.sortTable(6, ">");
-
+        sortTable("table_student", 4, ">");
     }
     searchByCode() {
         this.search(0, "code_search");

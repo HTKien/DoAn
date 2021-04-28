@@ -13,8 +13,8 @@ function sortTable(tableID, colNumber, objective) {
             x = rows[i].getElementsByTagName("TD")[colNumber];
             y = rows[i + 1].getElementsByTagName("TD")[colNumber];
             if (objective == ">") {
-                if (Number.isInteger(parseInt(x.innerHTML.toLowerCase()))) {
-                    if (parseInt(x.innerHTML.toLowerCase()) > parseInt(y.innerHTML.toLowerCase())) {
+                if (Number.isInteger(parseFloat(x.innerHTML.toLowerCase()))) {
+                    if (parseFloat(x.innerHTML.toLowerCase()) > parseFloat(y.innerHTML.toLowerCase())) {
                         shouldSwitch = true;
                         break;
                     }
@@ -27,8 +27,8 @@ function sortTable(tableID, colNumber, objective) {
                 
 
             } else {
-                if (Number.isInteger(parseInt(x.innerHTML.toLowerCase()))===true) {
-                    if (parseInt(x.innerHTML.toLowerCase()) < parseInt(y.innerHTML.toLowerCase())) {
+                if (Number.isInteger(parseFloat(x.innerHTML.toLowerCase()))===true) {
+                    if (parseFloat(x.innerHTML.toLowerCase()) < parseFloat(y.innerHTML.toLowerCase())) {
                         shouldSwitch = true;
                         break;
                     }

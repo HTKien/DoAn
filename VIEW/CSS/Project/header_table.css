@@ -1,0 +1,13 @@
+﻿body {
+}
+.tieu-de{
+    height: 55px;
+}
+.table {
+    height: calc(100vh - 166px );
+}
+.loading {
+    width: calc(100vw - 262px) !important;
+    height: calc(100vh - 224px );
+    margin-top: 58px;
+}

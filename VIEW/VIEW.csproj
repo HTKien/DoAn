@@ -153,6 +153,7 @@
     <Content Include="CSS\Libraries\sb-admin-2.min.css" />
     <Content Include="CSS\Project\admin_dashboard.css" />
     <Content Include="CSS\Project\common.css" />
+    <Content Include="CSS\Project\header_table.css" />
     <Content Include="CSS\Project\login.css" />
     <Content Include="CSS\Project\parent.css" />
     <Content Include="CSS\Project\class_management.css" />
@@ -194,6 +195,7 @@
     <Content Include="Scripts\Project\user.js" />
     <Content Include="Scripts\Project\teacher.js" />
     <Content Include="Scripts\Project\parent.js" />
+    <Content Include="Views\teacher_dashboard.html" />
     <Content Include="Views\user_manual.html" />
     <Content Include="Views\bonus_by_class.html" />
     <Content Include="Views\critic_by_class.html" />
