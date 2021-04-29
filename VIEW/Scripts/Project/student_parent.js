@@ -1,6 +1,27 @@
 ﻿$(document).ready(function () {
     
-
+    //
+    $("#search_score").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#table_score_parent tbody tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+    //
+    $("#search_bonus").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#table_bonus_parent tbody tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+    //
+    $("#search_critic").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#table_critic_parent tbody tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+    //
     var studentID;
     let studentIDStorageGet = localStorage.getItem('studentIDStorage') ? JSON.parse(localStorage.getItem('studentIDStorage')) : [];
     studentID = studentIDStorageGet[studentIDStorageGet.length - 1].id;
@@ -577,5 +598,46 @@ function AppendCritic(fakeData) {
             rowHTML.append('<td>' + fieldValue + '</td>');
         });
         $('.main-table-critic tbody').append(rowHTML);
+    });
+}
+function editPH() {
+    document.getElementById('id01').style.display = 'block';
+    var studentID;
+    let studentIDStorageGet = localStorage.getItem('studentIDStorage') ? JSON.parse(localStorage.getItem('studentIDStorage')) : [];
+    studentID = studentIDStorageGet[studentIDStorageGet.length - 1].id;
+    $.ajax({
+        method: 'GET',
+        url: '/students/' + studentID,
+        success: function (res) {
+            $('#parent_name_modal').val(res.ParentName);
+            $('#parent_phone_modal').val( res.ParentPhone);
+        },
+        error: function () {
+            alert("Hệ thống đang bị lỗi!");
+        }
+    });
+}
+function savePH() {
+    var studentID;
+    let studentIDStorageGet = localStorage.getItem('studentIDStorage') ? JSON.parse(localStorage.getItem('studentIDStorage')) : [];
+    studentID = studentIDStorageGet[studentIDStorageGet.length - 1].id;
+    var objectStudent = {};
+    objectStudent["StudentID"] = studentID;
+    objectStudent["ParentName"] = $('#parent_name_modal').val();
+    objectStudent["ParentPhone"] = $('#parent_phone_modal').val();
+    
+    $.ajax({
+        method: 'PUT',
+        url: '/students_parent',
+        data: JSON.stringify(objectStudent),
+        contentType: "application/json; charset=utf-8",
+        success: function (res) {
+            document.getElementById('id01').style.display = 'none';
+            alert("Cập nhật thành công!");
+            location.reload();
+        },
+        error: function () {
+            alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+        }
     });
 }

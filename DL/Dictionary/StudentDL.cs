@@ -83,6 +83,14 @@ namespace DL
             studentFind.Status = _student.Status;
             db.SaveChanges();
         }
+        //Hàm thực hiện việc update total điểm danh:
+        public void UpdatePH(Student _student)
+        {
+            var studentFind = db.Students.Where(n => n.StudentID == _student.StudentID).SingleOrDefault();
+            studentFind.ParentName = _student.ParentName;
+            studentFind.ParentPhone = _student.ParentPhone;
+            db.SaveChanges();
+        }
 
     }
 }

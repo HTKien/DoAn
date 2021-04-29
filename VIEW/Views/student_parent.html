@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -17,7 +17,6 @@
     <link href="/CSS/Project/admin_dashboard.css" rel="stylesheet" />
     <link href="/CSS/Project/student.css" rel="stylesheet" />
     <link href="/CSS/Project/student_parent.css" rel="stylesheet" />
-    
     <style>
 
 
@@ -33,9 +32,9 @@
             <div class="div-trai-tren-text logo-text">e-Support</div>
         </div>
         <div class="div-trai-duoi">
-            <a   href="#student_infor">
+            <a href="#student_infor">
                 <div class="trai-duoi-1cai ">
-                    <i class="fas fa-tachometer-alt icon-sidebar"></i>
+                    <i class="fas fa-user-graduate icon-sidebar"></i>
                     <div class="trai-duoi-text">Thông tin học sinh</div>
                 </div>
             </a>
@@ -43,7 +42,7 @@
             <div class="line"></div>
             <a href="#score_infor">
                 <div class="trai-duoi-1cai ">
-                    <i class="fas fa-chalkboard icon-sidebar"></i>
+                    <i class="fas fa-star-half-alt icon-sidebar"></i>
                     <div class="trai-duoi-text">Điểm</div>
                 </div>
             </a>
@@ -51,7 +50,7 @@
             <div class="line"></div>
             <a href="#bonus_infor">
                 <div class="trai-duoi-1cai">
-                    <i class="fas fa-chalkboard-teacher icon-sidebar"></i>
+                    <i class="fas fa-award icon-sidebar"></i>
                     <div class="trai-duoi-text">Khen thưởng</div>
                 </div>
             </a>
@@ -81,7 +80,7 @@
             </a>
 
             <div class="line"></div>
-            <a href="/Views/">
+            <a onclick="editPH()" class="">
                 <div class="trai-duoi-1cai">
                     <i class="fas fa-user-friends icon-sidebar"></i>
                     <div class="trai-duoi-text">Cập nhật thông tin</div>
@@ -135,9 +134,9 @@
             <div id="score_infor">
                 <div style="margin-bottom: 15px;" class="title_info">Thông tin điểm</div>
                 <div class="body-info">
-                    <label style="font-weight: normal;" class="label-search">Tìm kiếm</label><input class="imput-search" />
+                    <label style="font-weight: normal;" class="label-search">Tìm kiếm</label><input id="search_score" class="imput-search" />
                     <div style="" class="student-score-table">
-                        <table style="width: 100%;" class="main-table-score">
+                        <table id="table_score_parent" style="width: 100%;" class="main-table-score">
                             <thead>
                                 <tr>
                                     <th class="tieu-de" fieldName="Subject">
@@ -182,15 +181,15 @@
 
                     </div>
                 </div>
-                
+
             </div>
-            
+
             <div id="bonus_infor" class="student-bonus">
                 <div style="margin-bottom: 15px;" class="title_info">Tuyên dương - Khen thưởng</div>
                 <div class="body-info">
-                    <label style="font-weight: normal;" class="label-search">Tìm kiếm</label><input class="imput-search" />
+                    <label style="font-weight: normal;" class="label-search">Tìm kiếm</label><input id="search_bonus" class="imput-search" />
                     <div style="" class="student-score-table">
-                        <table style="width: 100%;" class="main-table-bonus">
+                        <table id="table_bonus_parent" style="width: 100%;" class="main-table-bonus">
                             <thead>
                                 <tr>
                                     <th class="tieu-de" fieldName="Time">
@@ -218,9 +217,9 @@
             <div id="critic_infor" class="student-critic">
                 <div style="margin-bottom: 15px;" class="title_info">Thông tin phê bình</div>
                 <div class="body-info">
-                    <label style="font-weight: normal;" class="label-search">Tìm kiếm</label><input class="imput-search" />
+                    <label style="font-weight: normal;" class="label-search">Tìm kiếm</label><input id="search_critic" class="imput-search" />
                     <div style="" class="student-score-table">
-                        <table style="width: 100%" class="main-table-critic">
+                        <table id="table_critic_parent" style="width: 100%" class="main-table-critic">
                             <thead>
                                 <tr>
                                     <th class="tieu-de" fieldName="Time">
@@ -266,19 +265,33 @@
                     <div class="info" id="teacher_phone">Điện thoại</div>
                 </div>
             </div>
-            
+
 
         </div>
-
-
-
-
-
-
     </div>
 
+    <div   id="id01" class="w3-modal">
+        <div style="border-radius: 5px; width: 500px; " class="w3-modal-content w3-animate-top w3-card-4">
+            <header style="border-top-left-radius: 5px; border-top-right-radius: 5px; background-color: #0973B9 !important;" class="w3-container w3-teal">
+                <span style="margin-right: 10px;" onclick="document.getElementById('id01').style.display='none'"
+                      class="w3-button w3-display-topright">&times;</span>
+                <h4>Cập nhật thông tin</h4>
+            </header>
+            <div style="padding: 25px 30px;" class="w3-container">
+                <div>Họ và tên PH <span class="dau-sao">(*)</span> <input id="parent_name_modal" style="width: 292px; margin-left: 30px;" class="input1" /></div>
+                <div style="margin-top: 10px;">Số điện thoại PH <span class="dau-sao">(*)</span><input id="parent_phone_modal" style="width: 292px; margin-left: 10px;" class="input1" /></div>
+                <div style="margin-left: 150px; margin-top:15px;">
+                    <button onclick="savePH()" class="btn-save-parent" style="border: none; background-color: #0973B9; border-radius: 3px; text-align: center; width: 70px; height: 30px; color: white"  >Lưu lại</button>
+                    <button class="btn-save-parent" style="border: none; background-color: #0973B9; border-radius: 3px; text-align: center; width: 70px; height: 30px; color: white">Hủy bỏ</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
 
-
+    <script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src='https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)'></script>
     <script src="/Scripts/Libraries/jquery-3.4.1.js"></script>

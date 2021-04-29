@@ -186,5 +186,26 @@ namespace VIEW.Controllers
             }
             return ajaxResult;
         }
+        //Hàm thực hiện update PH
+        //Người tạo: Hàn Trung Kiên
+        //Ngày tạo: 26/8/2019
+
+        [Route("students_parent")]
+        [HttpPut]
+        public AjaxResult PutPH([FromBody] Student _student)
+        {
+            var ajaxResult = new AjaxResult();
+            try
+            {
+                _studentDL.UpdatePH(_student);
+            }
+            catch (Exception ex)
+            {
+                ajaxResult.Data = ex;
+                ajaxResult.Success = false;
+                ajaxResult.Message = "Hệ thống đang bị lỗi!";
+            }
+            return ajaxResult;
+        }
     }
 }

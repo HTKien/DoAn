@@ -1,0 +1,687 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Quản lý học sinh</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="/CSS/Libraries/jquery-ui.css" rel="stylesheet" />
+    <link href="/CSS/Project/view.css" rel="stylesheet" />
+    <link href="/CSS/Project/common.css" rel="stylesheet" />
+    <link href="/CSS/Project/student.css" rel="stylesheet" />
+    <link href="/CSS/Project/admin_dashboard.css" rel="stylesheet" />
+    <link href="/CSS/Project/header_table.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <div class="div-trai">
+        <div class="div-trai-tren">
+            <i class="fas fa-book-reader logo"></i>
+            <div class="div-trai-tren-text logo-text">e-Support</div>
+        </div>
+        <div class="div-trai-duoi">
+            <a href="/Views/admin_dashboard.html">
+                <div class="trai-duoi-1cai">
+                    <i class="fas fa-tachometer-alt icon-sidebar"></i>
+                    <div class="trai-duoi-text">Tổng quan</div>
+                </div>
+            </a>
+
+            <div class="line"></div>
+            <a href="/Views/class_managment.html">
+                <div class="trai-duoi-1cai active">
+                    <i class="fas fa-chalkboard icon-sidebar"></i>
+                    <div class="trai-duoi-text">Quản lý lớp học</div>
+                </div>
+            </a>
+
+            <div class="line"></div>
+            <a href="/Views/teacher.html">
+                <div class="trai-duoi-1cai">
+                    <i class="fas fa-chalkboard-teacher icon-sidebar"></i>
+                    <div class="trai-duoi-text">Quản lý giáo viên</div>
+                </div>
+            </a>
+
+            <div class="line"></div>
+            <a href="/Views/all_student.html">
+                <div class="trai-duoi-1cai">
+                    <i class="fas fa-user-graduate icon-sidebar"></i>
+                    <div class="trai-duoi-text">Quản lý học sinh</div>
+                </div>
+            </a>
+
+            <div class="line"></div>
+            <a href="/Views/all_score.html">
+                <div class="trai-duoi-1cai">
+                    <i class="fas fa-star-half-alt icon-sidebar"></i>
+                    <div class="trai-duoi-text">Quản lý điểm</div>
+                </div>
+            </a>
+
+            <div class="line"></div>
+            <a href="/Views/all_bonus.html">
+                <div class="trai-duoi-1cai">
+                    <i class="fas fa-award icon-sidebar"></i>
+                    <div class="trai-duoi-text">Quản lý khen thưởng</div>
+                </div>
+            </a>
+
+            <div class="line"></div>
+            <a href="/Views/all_critic.html">
+                <div class="trai-duoi-1cai">
+                    <i class="fas fa-prescription icon-sidebar"></i>
+                    <div class="trai-duoi-text">Quản lý phê bình</div>
+                </div>
+            </a>
+
+            <div class="line"></div>
+            <a href="/Views/user.html">
+                <div class="trai-duoi-1cai">
+                    <i class="fas fa-user-friends icon-sidebar"></i>
+                    <div class="trai-duoi-text">Quản lý người dùng</div>
+                </div>
+            </a>
+
+            <div class="line"></div>
+            <a href="/Views/user_manual.html">
+                <div class="trai-duoi-1cai">
+                    <i class="fas fa-book icon-sidebar"></i>
+                    <div class="trai-duoi-text">Hướng dẫn sử dụng</div>
+                </div>
+            </a>
+
+            <div class="line"></div>
+            <a>
+                <div class="trai-duoi-1cai ">
+                    <i class="fas fa-sign-out-alt icon-sidebar"></i>
+                    <div class="trai-duoi-text">Đăng xuất</div>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+    <div class="div-phai">
+        <div style="width: fit-content();display: flex; justify-content: flex-end" class="div-phai-tren">
+            <select class="cbb1" style="width: 76px; background-color: #0973b9; margin-right: 10px ">
+                <option value="value">Admin</option>
+            </select>
+        </div>
+        <div class="div-phai-giua-tren">
+            <div id="class_title" class="text-danh-muc">Quản lý học sinh</div>
+            <div>
+                <label class="label-search">Tìm kiếm</label>
+                <input id="search_fulltable" class="imput-search" />
+            </div>
+        </div>
+
+        <div class="div-phai-menu-ngang">
+            <button style=" border-left: 1px solid #d6d6d6;" class="btn add btn-nav">
+                <i style="line-height: 27px" class="fas fa-plus icon-btn"></i>
+                <div class="btn-text">Thêm</div>
+            </button>
+            <button class="btn edit btn-nav" disabled>
+                <i style="line-height: 27px" class="fas fa-edit icon-btn"></i>
+                <div class="btn-text">Sửa</div>
+            </button>
+            <button class="btn delete btn-nav" disabled>
+                <i style="line-height: 27px" class="fas fa-trash-alt icon-btn"></i>
+                <div class="btn-text">Xóa</div>
+            </button>
+            <button class="btn detail btn-nav">
+                <i style="line-height: 27px" class="fas fa-info-circle icon-btn"></i>
+                <div class="btn-text">Xem chi tiết</div>
+            </button>
+            <button class="btn export btn-nav" onclick="exportClassToExcel(this)">
+                <i class="fas fa-file-export icon-btn"></i>
+                <div class="btn-text">Xuất file</div>
+            </button>
+            <div class="btn importfile btn-nav">
+                <i class="fas fa-file-alt icon-btn"></i>
+                <label for="input_file_class" class="btn-nav import-file">Nhập file</label>
+                <input id="input_file_class" style="display: none;" type="file" accept=".xls,.xlsx,.ods">
+            </div>
+
+        </div>
+        <div class="loading"></div>
+
+        <div class="du-lieu">
+            <div class="table">
+                <table id="table_student" class="main-table">
+                    <thead>
+                        <tr>
+                            <th class="tieu-de" fieldName="Code">
+                                <div class="tieu-de-tren">Mã học sinh<i id="" class="fas fa-sort"></i></div>
+                                <div class="tieu-de-duoi">
+                                    <input style="width: 86px; margin: auto;" id="code_search" />
+                                </div>
+                            </th>
+                            <th class="tieu-de" fieldName="Name">
+                                <div class="tieu-de-tren">Họ và tên<i id="sort_by_name" class="fas fa-sort"></i></div>
+                                <div class="tieu-de-duoi">
+                                    <input style="width: 117px; margin: auto;" id="name_search" />
+
+                                </div>
+                            </th>
+                            <th class="tieu-de cot1" fieldName="Sex">
+                                <div class="tieu-de-tren">Giới tính</div>
+                                <div class="tieu-de-duoi">
+                                    <input style="width: 60px; margin: auto;" id="sex_search" />
+
+                                </div>
+                            </th>
+                            <th class="tieu-de cot1" fieldName="Bonus">
+                                <div class="tieu-de-tren">Khen thưởng<i id="sort_by_bonus" class="fas fa-sort"></i></div>
+                                <div class="tieu-de-duoi">
+                                    <input style="width: 100px; margin: auto;" id="bonus_search" />
+
+                                </div>
+                            </th>
+                            <th class="tieu-de cot1" fieldName="Critic">
+                                <div class="tieu-de-tren">Phê bình<i id="sort_by_critic" class="fas fa-sort"></i></div>
+                                <div class="tieu-de-duoi">
+                                    <input style="width: 100px; margin: auto;" id="critic_search" />
+
+                                </div>
+                            </th>
+                            <th class="tieu-de cot1" fieldName="Conduct">
+                                <div class="tieu-de-tren">Hạnh kiểm</div>
+                                <div class="tieu-de-duoi">
+                                    <input style="width: 100px; margin: auto;" id="conduct_search" />
+
+                                </div>
+                            </th>
+                            <th class="tieu-de cot1" fieldName="MediumScore">
+                                <div class="tieu-de-tren">Điểm TB <i id="sort_by_score" class="fas fa-sort"></i></div>
+                                <div class="tieu-de-duoi">
+                                    <input style="width: 100px; margin: auto;" id="medium_score_search" />
+
+                                </div>
+                            </th>
+                            <th class="tieu-de cot1" fieldName="Classify">
+                                <div class="tieu-de-tren">Xếp loại</div>
+                                <div class="tieu-de-duoi">
+                                    <input style="width: 100px; margin: auto;" id="classify_search" />
+
+                                </div>
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="student_table_body">
+                    </tbody>
+                </table>
+
+
+            </div>
+
+            <div class="phan-trang" style="display: flex; ">
+                <div style="width : 1px; height: 27px; background-color: #cccccc; margin-top: 0px; margin-left: 0px; "></div>
+                <button id="trang-dau" class="">
+                    <i style="font-size: 22px" class="fas fa-backward icon-btn-page"></i>
+                </button>
+                <button id="trang-truoc" class="">
+                    <i class="fas fa-caret-left icon-btn-page"></i>
+                </button>
+                <div style="width : 1px; height: 15px; background-color: #cccccc; margin-top: 5px; margin-left: 5px; "></div>
+                <div class="phan-trang-text">Trang</div>
+                <input id="input-trang" class="input-trang page-index" type="number" name="name" value="1" min="1" />
+                <div class="phan-trang-text so-trang-max"> </div>
+                <div style="width : 1px; height: 15px; background-color: #cccccc; margin-top: 5px; margin-left: 15px; "></div>
+                <button id="trang-sau" class="">
+                    <i class="fas fa-caret-right icon-btn-page"></i>
+                </button>
+                <button id="trang-cuoi" class="">
+                    <i style="font-size: 22px" class="fas fa-forward icon-btn-page"></i>
+                </button>
+                <div style="width : 1px; height: 15px; background-color: #cccccc; margin-top: 5px; margin-left: 15px; "></div>
+                <button id="refresh" class="">
+                    <i style="font-size: 22px" class="fas fa-sync-alt icon-btn-page"></i>
+                </button>
+                <div style="width : 1px; height: 15px; background-color: #cccccc; margin-top: 5px; margin-left: 15px; "></div>
+                <div class="div-cbb">
+                    <select style="width: 60px; height: 27px;" class="cbb-trang page-size">
+                        <option>25</option>
+                        <option>50</option>
+                        <option>100</option>
+
+
+                    </select>
+
+                </div>
+                <div class="dem-ban-ghi phan-trang-text" style="margin-left: 400px;  "></div>
+
+            </div>
+        </div>
+
+        <!--các dialog-->
+        <div id="dialog" style="display : none;">
+            <div style="display: flex; ">
+                <img style="width: 32px; height: 32px; " src="/Contents/imgs/icon-question.png" />
+                <div id="thong-bao" style="font-size: 13px; margin-left: 10px; margin-top: 5px; "> </div>
+
+            </div>
+        </div>
+
+        <div id="dialog-student-detail">
+            <div class="dialog-add-tieu-de dialog-detail-title">
+                <div style="color: white; line-height: 30px; margin-left: 15px; ">Thông tin chi tiết học sinh</div>
+                <button class="icon-tieu-de-dialog-detail"></button>
+            </div>
+            <div class="main-content">
+                <div class="grid-info">
+                    <div class="col">
+                        <div id="student_code">Mã học sinh:</div>
+                        <div id="student_name">Họ và tên:</div>
+                        <div id="student_sex">Giới tính:</div>
+                        <div id="student_birthday">Ngày sinh:</div>
+                        <div id="student_address">Địa chỉ:</div>
+                        <div id="student_class">Lớp:</div>
+                        <div id="student_teacher">GVCN:</div>
+                    </div>
+                    <div class="col">
+                        <div id="student_bonus">Số khen thưởng/tuyên dương:</div>
+                        <div id="student_critic">Số phê bình:</div>
+                        <div id="student_attendance">Điểm danh:</div>
+                        <div id="student_conduct">Hạnh kiểm:</div>
+                        <div id="student_mediumscore">Điểm trung bình:</div>
+                        <div id="student_classify">Xếp loại:</div>
+                        <div id="student_status">Tình trạng:</div>
+                    </div>
+                    <div class="col">
+                        <div>Thông tin phụ huynh</div>
+                        <div id="parent_name">Họ và tên:</div>
+                        <div id="parent_phone">Số điện thoại:</div>
+                    </div>
+                </div>
+                <div class="student-score">
+                    <div>Thông tin chi tiết điểm</div>
+                    <div class="student-score-content">
+                        <div class="student-score-table">
+                            <table class="main-table-score">
+                                <thead>
+                                    <tr>
+                                        <th class="tieu-de" fieldName="Subject">
+                                            <div class="tieu-de-tren">Môn học</div>
+                                        </th>
+                                        <th class="tieu-de" fieldName="Type">
+                                            <div class="tieu-de-tren">Loại điểm</div>
+                                        </th>
+                                        <th class="tieu-de cot1" fieldName="Point">
+                                            <div class="tieu-de-tren">Điểm</div>
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="student-score-show">
+                            <div class="score-nav">
+                                <button id="add_score">Thêm</button>
+                                <button id="edit_score">Sửa</button>
+                                <button id="delete_score">Xóa</button>
+                                <button>Làm mới</button>
+                            </div>
+                            <div class="show-item">
+                                <label>Môn học</label>
+                                <!--<input id="score_subject" />-->
+                                <select id="score_subject">
+                                    <option selected value="Toán">Toán</option>
+                                    <option value="Vật lý">Vật lý</option>
+                                    <option value="Hóa học">Hóa học</option>
+                                    <option value="Sinh học">Sinh học</option>
+                                    <option value="Ngữ văn">Ngữ văn</option>
+                                    <option value="Lịch sử">Lịch sử</option>
+                                    <option value="Địa lý">Địa lý</option>
+                                    <option value="Tin học">Tin học</option>
+                                    <option value="Giáo dục công dân">Giáo dục công dân</option>
+                                    <option value="Tiếng Anh">Tiếng Anh</option>
+                                    <option value="Thể dục">Thể dục</option>
+                                    <option value="Công nghệ">Công nghệ</option>
+                                </select>
+                            </div>
+                            <div class="show-item">
+                                <label>Loại điểm</label>
+                                <select id="score_type">
+                                    <option selected value="Điểm miệng">Điểm miệng</option>
+                                    <option value="Điểm 15 phút">Điểm 15 phút</option>
+                                    <option value="Điểm 45 phút">Điểm 45 phút</option>
+                                    <option value="Điểm 90 phút">Điểm 90 phút</option>
+                                    <option value="Điểm thi học kỳ">Điểm thi học kỳ</option>
+                                </select>
+                            </div>
+                            <div class="show-item">
+                                <label>Nhập điểm</label>
+                                <input id="score_point" />
+                            </div>
+
+                        </div>
+                    </div>
+                    <div>Điểm trung bình từng môn học</div>
+                    <div class="score-medium">
+                        <div>
+                            <div id="scoreToan"></div>
+                            <div id="scoreVatLy"></div>
+                            <div id="scoreHoaHoc"></div>
+                        </div>
+                        <div>
+                            <div id="scoreSinhHoc"></div>
+                            <div id="scoreNguVan"></div>
+                            <div id="scoreLichSu"></div>
+                        </div>
+                        <div>
+                            <div id="scoreDiaLy"></div>
+                            <div id="scoreTinHoc"></div>
+                            <div id="scoreCongDan"></div>
+                        </div>
+                        <div>
+                            <div id="scoreTiengAnh"></div>
+                            <div id="scoreTheDuc"></div>
+                            <div id="scoreCongNghe"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="student-score">
+                    <div>Thông tin khen thưởng/tuyên dương</div>
+                    <div class="student-score-content">
+                        <div class="student-score-table">
+                            <table style="width: 100%;" class="main-table-bonus">
+                                <thead>
+                                    <tr>
+                                        <th class="tieu-de" fieldName="Time">
+                                            <div class="tieu-de-tren">Thời gian</div>
+                                        </th>
+                                        <th class="tieu-de" fieldName="Content">
+                                            <div class="tieu-de-tren">Nội dung</div>
+                                        </th>
+                                        <th class="tieu-de cot1" fieldName="Subject">
+                                            <div class="tieu-de-tren">Môn học</div>
+                                        </th>
+                                        <th class="tieu-de cot1" fieldName="Value">
+                                            <div class="tieu-de-tren">Điểm cộng</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="student-score-show">
+                            <div class="score-nav">
+                                <button id="add_bonus">Thêm</button>
+                                <button id="edit_bonus">Sửa</button>
+                                <button id="delete_bonus">Xóa</button>
+                                <button>Làm mới</button>
+                            </div>
+                            <div>
+                                <label>Thời gian</label>
+                                <input id="bonus_time" />
+                            </div>
+                            <div>
+                                <label>Nội dung</label>
+                                <input id="bonus_content" />
+                            </div>
+                            <div>
+                                <label>Môn học</label>
+                                <input id="bonus_subject" />
+                            </div>
+                            <div>
+                                <label>Điểm cộng</label>
+                                <input id="bonus_value" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="total_bonus">Tổng điểm cộng: </div>
+
+                </div>
+                <div class="student-score">
+                    <div>Thông tin phê bình</div>
+                    <div class="student-score-content">
+                        <div class="student-score-table">
+                            <table style="width: 100%" class="main-table-critic">
+                                <thead>
+                                    <tr>
+                                        <th class="tieu-de" fieldName="Time">
+                                            <div class="tieu-de-tren">Thời gian</div>
+                                        </th>
+                                        <th class="tieu-de" fieldName="Content">
+                                            <div class="tieu-de-tren">Nội dung</div>
+                                        </th>
+                                        <th class="tieu-de cot1" fieldName="Subject">
+                                            <div class="tieu-de-tren">Môn học</div>
+                                        </th>
+                                        <th class="tieu-de cot1" fieldName="Value">
+                                            <div class="tieu-de-tren">Điểm trừ</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="student-score-show">
+                            <div class="score-nav">
+                                <button id="add_critic">Thêm</button>
+                                <button id="edit_critic">Sửa</button>
+                                <button id="delete_critic">Xóa</button>
+                                <button>Làm mới</button>
+                            </div>
+                            <div>
+                                <label>Thời gian</label>
+                                <input id="critic_time" />
+                            </div>
+                            <div>
+                                <label>Nội dung</label>
+                                <input id="critic_content" />
+                            </div>
+                            <div>
+                                <label>Môn học</label>
+                                <input id="critic_subject" />
+                            </div>
+                            <div>
+                                <label>Điểm cộng</label>
+                                <input id="critic_value" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="total_critic">Tổng điểm trừ: </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div id="dialog-add">
+            <div class="dialog-add-tieu-de">
+                <div style="color: white; line-height: 30px; margin-left: 15px; ">Thêm mới</div>
+                <button class="icon-tieu-de-dialog-add"></button>
+            </div>
+            <div class="dialog-add-than">
+                <div style="height: 5px; "></div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Mã học sinh<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="code-dialog" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Họ và tên<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="name-dialog" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Giới tính<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1 input4" id="sex-dialog" />
+                    <label class="text-dialog text1">Ngày sinh<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1 input4" id="birthday-dialog" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Địa chỉ<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="address-dialog" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Họ và tên PH<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="parentname-dialog" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">SĐT phụ huynh<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="parentphone-dialog" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Ghi chú</label>
+                    <textarea style="height: 48px" id="note-dialog"></textarea>
+                </div>
+
+                <div class="dong1 list-btn">
+
+                    <button class="btn-dialogAdd cat" id="save">
+                        <img src="/Contents/imgs/Save16.png" />
+                        <div>Lưu</div>
+
+                    </button>
+                    <button class="btn-dialogAdd" id="huy-bo">
+                        <img src="/Contents/imgs/Disable16.png" />
+                        <div>Hủy bỏ</div>
+                    </button>
+
+                </div>
+            </div>
+
+
+        </div>
+        <div id="dialog-score">
+            <div class="dialog-add-tieu-de">
+                <div style="color: white; line-height: 30px; margin-left: 15px; ">Nhập điểm</div>
+                <button class="icon-tieu-de-dialog-score"></button>
+            </div>
+            <div class="">
+                <div>
+                    <label>Môn học</label>
+                    <select id="submit_score_subject">
+                        <option>Toán</option>
+                        <option>Vật lý</option>
+                        <option>Hóa học</option>
+                        <option>Toán</option>
+                        <option>Toán</option>
+                        <option>Toán</option>
+                    </select>
+                    <label>Loại điểm</label>
+                    <select id="submit_score_type">
+                        <option>Điểm miệng</option>
+                        <option>Điểm 15 phút</option>
+                        <option>Điểm 45 phút</option>
+                        <option>Điểm 90 phút</option>
+                        <option>Điểm thi học kỳ</option>
+                    </select>
+                    <button id="save_submit_score">Submit</button>
+                </div>
+
+
+
+            </div>
+            <div class="">
+                <table style="width: 100%" id="table_submit_score" class="main-table-submit-score">
+                    <thead>
+                        <tr>
+                            <th class="tieu-de" fieldName="Code">
+                                <div class="tieu-de-tren">Mã học sinh</div>
+                            </th>
+                            <th class="tieu-de" fieldName="Name">
+                                <div class="tieu-de-tren">Họ và tên</div>
+
+                            </th>
+                            <th class="tieu-de" fieldName="">
+                                <div class="tieu-de-tren">Điểm</div>
+
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+
+            </div>
+
+
+        </div>
+
+        <div id="dialog-edit">
+            <div class="dialog-add-tieu-de">
+                <div style="color: white; line-height: 30px; margin-left: 15px; ">Sửa học sinh</div>
+                <button class="icon-tieu-de-dialog-edit"></button>
+            </div>
+            <div class="dialog-add-than">
+                <div style="height: 5px; "></div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Mã học sinh<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="code-dialog-edit" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Họ và tên<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="name-dialog-edit" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Giới tính<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1 input4" id="sex-dialog-edit" />
+                    <label class="text-dialog text1">Ngày sinh<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1 input4" id="birthday-dialog-edit" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Địa chỉ<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="address-dialog-edit" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Họ và tên PH<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="parentname-dialog-edit" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">SĐT phụ huynh<span class="dau-sao">(*)</span></label>
+                    <input type="text" name="name" value="" class="input1" id="parentphone-dialog-edit" />
+                </div>
+                <div class="dong1">
+                    <label class="text-dialog text1">Ghi chú</label>
+                    <textarea style="height: 48px" id="note-dialog-edit"></textarea>
+                </div>
+
+                <div class="dong1 list-btn">
+
+                    <button class="btn-dialogAdd cat" id="save-edit">
+                        <img src="/Contents/imgs/Save16.png" />
+                        <div>Lưu lại</div>
+
+                    </button>
+                    <button class="btn-dialogAdd" id="huy-bo-edit">
+                        <img src="/Contents/imgs/Disable16.png" />
+                        <div>Hủy bỏ</div>
+                    </button>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+    </div>
+    <script src='https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)'></script>
+    <script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="/Scripts/Libraries/jquery-3.4.1.js"></script>
+    <script src="/Scripts/Libraries/jquery-ui.js"></script>
+    <script src="/Scripts/Project/class_student.js"></script>
+    <script src="/Scripts/Project/base_student.js"></script>
+    <script src="/Scripts/Project/student.js"></script>
+    <script src="/Scripts/Project/sort.js"></script>
+
+</body>
+</html>

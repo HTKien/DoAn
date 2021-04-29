@@ -170,7 +170,7 @@ class Class extends BaseClass {
             id: listID[0]
         });
         localStorage.setItem('classIDStorage', JSON.stringify(classIDStorage));
-        location.href = "/Views/student.html";
+        location.href = "/Views/go_class.html";
     }
     /**
      * Hàm thực hiện việc mở dialog Sửa giáo viên

@@ -28,3 +28,10 @@ th, td{
 tr{
     height: 30px !important;
 }
+
+.w3-modal span:hover {
+    background-color: #0973B9 !important;
+}
+.btn-save-parent:hover {
+    background-color: #0199FC !important;
+}
