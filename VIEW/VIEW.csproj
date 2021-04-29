@@ -158,6 +158,7 @@
     <Content Include="CSS\Project\parent.css" />
     <Content Include="CSS\Project\class_management.css" />
     <Content Include="CSS\Project\student.css" />
+    <Content Include="CSS\Project\student_parent.css" />
     <Content Include="CSS\Project\view.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\Libraries\jquery-1.12.4.js" />

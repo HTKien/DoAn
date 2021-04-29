@@ -44,7 +44,7 @@
                             $('#teacher_code').text("Mã giáo viên: " + res.Code);
                             $('#teacher_name').text("Tên giáo viên: " + res.Name);
                             $('#teacher_address').text("Địa chỉ: " + res.Address);
-                            $('#teacher_phone').text("Điện thoại: " + res.Phone);
+                            $('#teacher_phone').text("Điện thoại GVCN: " + res.Phone);
 
                         },
                         error: function (res) {

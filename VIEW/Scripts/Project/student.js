@@ -52,14 +52,11 @@ class Student extends BaseStudent {
         $(document).on('keyup', '#code_search', this.searchByCode.bind(this));
         $(document).on('keyup', '#name_search', this.searchByName.bind(this));
         $(document).on('keyup', '#sex_search', this.searchBySex.bind(this));
-        $(document).on('keyup', '#birthday_search', this.searchByBirthday.bind(this));
-        $(document).on('keyup', '#address_search', this.searchByAddress.bind(this));
         $(document).on('keyup', '#bonus_search', this.searchByBonus.bind(this));
         $(document).on('keyup', '#critic_search', this.searchByCritic.bind(this));
         $(document).on('keyup', '#conduct_search', this.searchByConduct.bind(this));
         $(document).on('keyup', '#medium_score_search', this.searchByMediumScore.bind(this));
         $(document).on('keyup', '#classify_search', this.searchByClassify.bind(this));
-        $(document).on('keyup', '#note_search', this.searchByNote.bind(this));
 
         //sự kiện chọn một hay nhiều hàng rồi ấn nút xóa thì xóa dữ liệu:
         //$(document).on('click', 'button.delete', this.ClickButtonXoa.bind(this));

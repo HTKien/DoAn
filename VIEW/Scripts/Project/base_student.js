@@ -680,31 +680,24 @@
         this.search(2, "sex_search");
 
     }
-    searchByBirthday() {
-        this.search(3, "birthday_search");
-
-    }
-    searchByAddress() {
-        this.search(4, "address_search");
-    }
+    
+    
     searchByBonus() {
-        this.search(5, "bonus_search");
+        this.search(3, "bonus_search");
     }
     searchByCritic() {
-        this.search(6, "critic_search");
+        this.search(4, "critic_search");
     }
     searchByConduct() {
-        this.search(7, "conduct_search");
+        this.search(5, "conduct_search");
     }
     searchByMediumScore() {
-        this.search(8, "medium_score_search");
+        this.search(6, "medium_score_search");
     }
     searchByClassify() {
-        this.search(9, "classify_search");
+        this.search(7, "classify_search");
     }
-    searchByNote() {
-        this.search(10, "note_search");
-    }
+    
     /**
     * Hàm  thực hiện load dữ liệu của hàm getRefreshData lên table
     * Người tạo: Hàn Trung Kiên
