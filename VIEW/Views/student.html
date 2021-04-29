@@ -12,6 +12,7 @@
     <link href="/CSS/Project/student.css" rel="stylesheet" />
     <link href="/CSS/Project/admin_dashboard.css" rel="stylesheet" />
     <link href="/CSS/Project/header_table.css" rel="stylesheet" />
+    <link href="/CSS/Project/student_goclass.css" rel="stylesheet" />
 
 
 </head>
@@ -135,14 +136,14 @@
                 <i class="fab fa-pushed icon-btn"></i>
                 <div class="btn-text">Submit Điểm danh</div>
             </button>
-            <button class="btn export btn-nav" onclick="exportClassToExcel(this)">
+            <button class="btn export btn-nav" onclick="exportStudent(this)">
                 <i class="fas fa-file-export icon-btn"></i>
                 <div class="btn-text">Xuất file</div>
             </button>
             <div class="btn importfile btn-nav">
                 <i class="fas fa-file-alt icon-btn"></i>
-                <label for="input_file_class" class="btn-nav import-file">Nhập file</label>
-                <input id="input_file_class" style="display: none;" type="file" accept=".xls,.xlsx,.ods">
+                <label for="input_file_student" class="btn-nav import-file">Nhập file</label>
+                <input id="input_file_student" style="display: none;" type="file" accept=".xls,.xlsx,.ods">
             </div>
 
         </div>
@@ -506,45 +507,44 @@
                 <div style="height: 5px; "></div>
                 <div class="dong1">
                     <label class="text-dialog text1">Mã học sinh<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1" id="code-dialog" />
-                </div>
-                <div class="dong1">
+                    <input style="width: 150px;" type="text" name="name" value="" class="input1" id="code-dialog" />
                     <label class="text-dialog text1">Họ và tên<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1" id="name-dialog" />
+                    <input style="width: 200px" type="text" name="name" value="" class="input1" id="name-dialog" />
                 </div>
                 <div class="dong1">
-                    <label class="text-dialog text1">Giới tính<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1 input4" id="sex-dialog" />
+                    <label style="" class="text-dialog text1">Giới tính<span class="dau-sao">(*)</span></label>
+                    <select style="width: 172px; margin-left: 15px" id="sex-dialog">
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
+                    </select>
                     <label class="text-dialog text1">Ngày sinh<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1 input4" id="birthday-dialog" />
+                    <input style="width: 200px;" class="input1" type="date" id="birthday-dialog" name="birthday">
                 </div>
                 <div class="dong1">
                     <label class="text-dialog text1">Địa chỉ<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1" id="address-dialog" />
+                    <input style="width: 509px;" type="text" name="name" value="" class="input1" id="address-dialog" />
                 </div>
                 <div class="dong1">
-                    <label class="text-dialog text1">Họ và tên PH<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1" id="parentname-dialog" />
-                </div>
-                <div class="dong1">
-                    <label class="text-dialog text1">SĐT phụ huynh<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1" id="parentphone-dialog" />
+                    <label style="width: 117px;" class="text-dialog text1">Họ và tên PH<span class="dau-sao">(*)</span></label>
+                    <input style="width: 150px; margin-left: unset" type="text" name="name" value="" class="input1" id="parentname-dialog" />
+                    <label style="width: 117px;" class="text-dialog text1">SĐT PH<span class="dau-sao">(*)</span></label>
+                    <input style="width: 200px; margin-left: unset" type="text" name="name" value="" class="input1" id="parentphone-dialog" />
                 </div>
                 <div class="dong1">
                     <label class="text-dialog text1">Ghi chú</label>
-                    <textarea style="height: 48px" id="note-dialog"></textarea>
+                    <textarea style="height: 66px; width: 525px; margin-left: 15px;" id="note-dialog"></textarea>
                 </div>
 
                 <div class="dong1 list-btn">
 
                     <button class="btn-dialogAdd cat" id="save">
-                        <img src="/Contents/imgs/Save16.png" />
-                        <div>Lưu</div>
+                        <i style="font-size: 15px; line-height: 30px; margin-left: 10px;" class="fas fa-save"></i>
+                        <div style="font-size: 15px; line-height: 30px;">Lưu lại</div>
 
                     </button>
                     <button class="btn-dialogAdd" id="huy-bo">
-                        <img src="/Contents/imgs/Disable16.png" />
-                        <div>Hủy bỏ</div>
+                        <i style="font-size: 15px; line-height: 30px; margin-left: 10px;" class="fas fa-ban"></i>
+                        <div style="font-size: 15px; line-height: 30px;">Hủy bỏ</div>
                     </button>
 
                 </div>
@@ -553,47 +553,53 @@
 
         </div>
         <div id="dialog-score">
-            <div class="dialog-add-tieu-de">
+            <div style="padding: 10px 10px 2px 10px;" class="dialog-add-tieu-de">
                 <div style="color: white; line-height: 30px; margin-left: 15px; ">Nhập điểm</div>
                 <button class="icon-tieu-de-dialog-score"></button>
             </div>
-            <div class="">
-                <div>
+            <div >
+                <div style="padding: 15px 12px">
                     <label>Môn học</label>
-                    <select id="submit_score_subject">
-                        <option>Toán</option>
-                        <option>Vật lý</option>
-                        <option>Hóa học</option>
-                        <option>Toán</option>
-                        <option>Toán</option>
-                        <option>Toán</option>
+                    <select style="height: 30px; border: 1px solid #bfbfbf; width: 178px;" id="submit_score_subject">
+                        <option selected value="Toán">Toán</option>
+                        <option value="Vật lý">Vật lý</option>
+                        <option value="Hóa học">Hóa học</option>
+                        <option value="Sinh học">Sinh học</option>
+                        <option value="Ngữ văn">Ngữ văn</option>
+                        <option value="Lịch sử">Lịch sử</option>
+                        <option value="Địa lý">Địa lý</option>
+                        <option value="Tin học">Tin học</option>
+                        <option value="Giáo dục công dân">Giáo dục công dân</option>
+                        <option value="Tiếng Anh">Tiếng Anh</option>
+                        <option value="Thể dục">Thể dục</option>
+                        <option value="Công nghệ">Công nghệ</option>
                     </select>
-                    <label>Loại điểm</label>
-                    <select id="submit_score_type">
-                        <option>Điểm miệng</option>
-                        <option>Điểm 15 phút</option>
-                        <option>Điểm 45 phút</option>
-                        <option>Điểm 90 phút</option>
-                        <option>Điểm thi học kỳ</option>
+                    <label style="margin-left: 38px;">Loại điểm</label>
+                    <select style="height: 30px; border: 1px solid #bfbfbf; width: 178px;" id="submit_score_type">
+                        <option selected value="Điểm miệng">Điểm miệng</option>
+                        <option value="Điểm 15 phút">Điểm 15 phút</option>
+                        <option value="Điểm 45 phút">Điểm 45 phút</option>
+                        <option value="Điểm 90 phút">Điểm 90 phút</option>
+                        <option value="Điểm thi học kỳ">Điểm thi học kỳ</option>
                     </select>
-                    <button id="save_submit_score">Submit</button>
+                    <button style="height: 29px; background-color: #0973B9; border: none; border-radius: 3px; color: #fff; margin-left: 37px;" id="save_submit_score">Lưu điểm</button>
                 </div>
 
 
 
             </div>
-            <div class="">
-                <table style="width: 100%" id="table_submit_score" class="main-table-submit-score">
+            <div style="height:456px; overflow: auto; margin-right: 10px;" class="table" >
+                <table style="width: 100%; text-align: center" id="table_submit_score" class="main-table-submit-score">
                     <thead>
-                        <tr>
-                            <th class="tieu-de" fieldName="Code">
+                        <tr >
+                            <th  class="tieu-de title-submit-score" fieldName="Code">
                                 <div class="tieu-de-tren">Mã học sinh</div>
                             </th>
-                            <th class="tieu-de" fieldName="Name">
+                            <th  class="tieu-de title-submit-score" fieldName="Name">
                                 <div class="tieu-de-tren">Họ và tên</div>
 
                             </th>
-                            <th class="tieu-de" fieldName="">
+                            <th  class="tieu-de title-submit-score" fieldName="">
                                 <div class="tieu-de-tren">Điểm</div>
 
                             </th>
@@ -618,45 +624,44 @@
                 <div style="height: 5px; "></div>
                 <div class="dong1">
                     <label class="text-dialog text1">Mã học sinh<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1" id="code-dialog-edit" />
-                </div>
-                <div class="dong1">
+                    <input style="width: 150px;" type="text" name="name" value="" class="input1" id="code-dialog-edit" />
                     <label class="text-dialog text1">Họ và tên<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1" id="name-dialog-edit" />
+                    <input style="width: 200px" type="text" name="name" value="" class="input1" id="name-dialog-edit" />
                 </div>
                 <div class="dong1">
-                    <label class="text-dialog text1">Giới tính<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1 input4" id="sex-dialog-edit" />
+                    <label style="" class="text-dialog text1">Giới tính<span class="dau-sao">(*)</span></label>
+                    <select style="width: 172px; margin-left: 15px" id="sex-dialog-edit">
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
+                    </select>
                     <label class="text-dialog text1">Ngày sinh<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1 input4" id="birthday-dialog-edit" />
+                    <input style="width: 200px;" class="input1" type="date" id="birthday-dialog-edit" name="birthday">
                 </div>
                 <div class="dong1">
                     <label class="text-dialog text1">Địa chỉ<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1" id="address-dialog-edit" />
+                    <input style="width: 509px;" type="text" name="name" value="" class="input1" id="address-dialog-edit" />
                 </div>
                 <div class="dong1">
-                    <label class="text-dialog text1">Họ và tên PH<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1" id="parentname-dialog-edit" />
-                </div>
-                <div class="dong1">
-                    <label class="text-dialog text1">SĐT phụ huynh<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1" id="parentphone-dialog-edit" />
+                    <label style="width: 117px;" class="text-dialog text1">Họ và tên PH<span class="dau-sao">(*)</span></label>
+                    <input style="width: 150px; margin-left: unset" type="text" name="name" value="" class="input1" id="parentname-dialog-edit" />
+                    <label style="width: 117px;" class="text-dialog text1">SĐT PH<span class="dau-sao">(*)</span></label>
+                    <input style="width: 200px; margin-left: unset" type="text" name="name" value="" class="input1" id="parentphone-dialog-edit" />
                 </div>
                 <div class="dong1">
                     <label class="text-dialog text1">Ghi chú</label>
-                    <textarea style="height: 48px" id="note-dialog-edit"></textarea>
+                    <textarea style="height: 66px; width: 525px; margin-left: 15px;" id="note-dialog-edit"></textarea>
                 </div>
 
                 <div class="dong1 list-btn">
 
                     <button class="btn-dialogAdd cat" id="save-edit">
-                        <img src="/Contents/imgs/Save16.png" />
-                        <div>Lưu lại</div>
+                        <i style="font-size: 15px; line-height: 30px; margin-left: 10px;" class="fas fa-save"></i>
+                        <div style="font-size: 15px; line-height: 30px;">Lưu lại</div>
 
                     </button>
                     <button class="btn-dialogAdd" id="huy-bo-edit">
-                        <img src="/Contents/imgs/Disable16.png" />
-                        <div>Hủy bỏ</div>
+                        <i style="font-size: 15px; line-height: 30px; margin-left: 10px;" class="fas fa-ban"></i>
+                        <div style="font-size: 15px; line-height: 30px;">Hủy bỏ</div>
                     </button>
 
                 </div>
@@ -682,6 +687,8 @@
     <script src="/Scripts/Project/base_student.js"></script>
     <script src="/Scripts/Project/student.js"></script>
     <script src="/Scripts/Project/sort.js"></script>
+    <script src="/Scripts/Project/export.js"></script>
+    <script src="/Scripts/Project/import.js"></script>
 
 </body>
 </html>

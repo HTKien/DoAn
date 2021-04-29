@@ -197,6 +197,7 @@ class Student extends BaseStudent {
 
         });
         this.loadSubmitScore();
+        sortTable("table_submit_score", 0, ">");
     }
     
     student_id;
@@ -948,7 +949,9 @@ class Student extends BaseStudent {
                 });
             }
         }
-        alert("Thêm danh sách điểm thành công!")
+        alert("Thêm danh sách điểm thành công!");
+        $('#dialog-score').dialog('close');
+
     }
     AddCritic() {
         var me = this;
