@@ -224,8 +224,8 @@ class Student extends BaseStudent {
                 $('#dialog-student-detail #student_sex').text("Giới tính: " + res.Sex);
                 $('#dialog-student-detail #student_birthday').text("Ngày sinh: " + res.Birthday);
                 $('#dialog-student-detail #student_address').text("Địa chỉ: " + res.Address);
-                $('#dialog-student-detail #student_bonus').text("Số khen thưởng/tuyên dương: " + res.Bonus);
-                $('#dialog-student-detail #student_critic').text("Số phê bình: " + res.Critic);
+                $('#dialog-student-detail #student_bonus').text("Điểm cộng (khen thưởng): " + res.Bonus);
+                $('#dialog-student-detail #student_critic').text("Điểm trừ (phê bình): " + res.Critic);
                 $('#dialog-student-detail #student_attendance').text("Điểm danh: " + res.Attendence + "/" + res.Status);
                 $('#dialog-student-detail #student_conduct').text("Hạnh kiểm: " + res.Conduct);
                 $('#dialog-student-detail #student_mediumscore').text("Điểm TB các môn: " + res.MediumScore);
@@ -652,7 +652,7 @@ class Student extends BaseStudent {
                 success: function (res) {
                     ma = res.Code;
                     ten = res.Name;
-                    var html = "Bạn có chắc chắn muốn xóa Học sinh << " + ma + " - " + ten + " >> không?";
+                    var html = "Bạn có chắc chắn muốn xóa Học sinh '" + ma + " - " + ten + "' không?";
 
                     $('#thong-bao').empty();
 

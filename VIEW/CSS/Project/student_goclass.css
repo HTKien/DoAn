@@ -3,3 +3,33 @@
 .input1{
     width: 300px;
 }
+#dialog-student-detail {
+    border-radius: 7px;
+    padding: 0;
+    margin-top: -268px !important;
+    width: 80vw !important;
+    margin-left: -27vw !important;
+    height: 92vh !important;
+    border-bottom: 9px solid #0973B9;
+}
+.dialog-detail-title{
+    margin: 0;
+    width: 100% !important;
+    
+}
+.info-student {
+    font-size: 15px;
+    padding-top: 8px;
+    
+}
+.student-score {
+    border-top: none;
+}
+.title_info_detail {
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 10px;
+    border-bottom: 1px solid #BFBFBF;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}

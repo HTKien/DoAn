@@ -134,7 +134,7 @@
             </button>
             <button class="btn attendence btn-nav">
                 <i class="fab fa-pushed icon-btn"></i>
-                <div class="btn-text">Submit Điểm danh</div>
+                <div class="btn-text">Điểm danh</div>
             </button>
             <button class="btn export btn-nav" onclick="exportStudent(this)">
                 <i class="fas fa-file-export icon-btn"></i>
@@ -273,34 +273,36 @@
                 <button class="icon-tieu-de-dialog-detail"></button>
             </div>
             <div class="main-content">
-                <div class="grid-info">
+                <div style="padding-left: 15px;padding-right: 15px; " class="grid-info">
                     <div class="col">
-                        <div id="student_code">Mã học sinh:</div>
-                        <div id="student_name">Họ và tên:</div>
-                        <div id="student_sex">Giới tính:</div>
-                        <div id="student_birthday">Ngày sinh:</div>
-                        <div id="student_address">Địa chỉ:</div>
-                        <div id="student_class">Lớp:</div>
-                        <div id="student_teacher">GVCN:</div>
+                        <div class="info-student" id="student_code">Mã học sinh:</div>
+                        <div class="info-student" id="student_name">Họ và tên:</div>
+                        <div class="info-student" id="student_sex">Giới tính:</div>
+                        <div class="info-student" id="student_birthday">Ngày sinh:</div>
+                        <div class="info-student" id="student_address">Địa chỉ:</div>
+                        <div class="info-student" id="student_class">Lớp:</div>
+                        <div class="info-student" id="student_teacher">GVCN:</div>
                     </div>
                     <div class="col">
-                        <div id="student_bonus">Số khen thưởng/tuyên dương:</div>
-                        <div id="student_critic">Số phê bình:</div>
-                        <div id="student_attendance">Điểm danh:</div>
-                        <div id="student_conduct">Hạnh kiểm:</div>
-                        <div id="student_mediumscore">Điểm trung bình:</div>
-                        <div id="student_classify">Xếp loại:</div>
-                        <div id="student_status">Tình trạng:</div>
+                        <div class="info-student" id="student_bonus">Điểm cộng (khen thưởng)</div>
+                        <div class="info-student" id="student_critic">Điểm trừ (phê bình):</div>
+                        <div class="info-student" id="student_attendance">Điểm danh:</div>
+                        <div class="info-student" id="student_conduct">Hạnh kiểm:</div>
+                        <div class="info-student" id="student_mediumscore">Điểm trung bình:</div>
+                        <div class="info-student" id="student_classify">Xếp loại:</div>
+                        <div class="info-student" id="student_status">Tình trạng:</div>
                     </div>
                     <div class="col">
-                        <div>Thông tin phụ huynh</div>
-                        <div id="parent_name">Họ và tên:</div>
-                        <div id="parent_phone">Số điện thoại:</div>
+                        <div style="font-weight: bold" class="info-student">Thông tin phụ huynh</div>
+                        <div class="info-student" id="parent_name">Họ và tên:</div>
+                        <div class="info-student" id="parent_phone">Số điện thoại:</div>
                     </div>
                 </div>
-                <div class="student-score">
-                    <div>Thông tin chi tiết điểm</div>
-                    <div class="student-score-content">
+                <div style="padding-left: 15px; padding-right: 15px !important; width: unset; " class="student-score">
+                    <div class="title_info_detail">Thông tin chi tiết điểm</div>
+                    <label style="font-weight: normal; margin-left: 15px;" class="label-search">Tìm kiếm</label><input id="search_bonus" class="imput-search" />
+
+                    <div style="margin-top: 15px; padding-left: 15px; padding-right: 15px;" class="student-score-content">
                         <div class="student-score-table">
                             <table class="main-table-score">
                                 <thead>
