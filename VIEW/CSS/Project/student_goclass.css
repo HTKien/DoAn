@@ -24,6 +24,7 @@
 }
 .student-score {
     border-top: none;
+    height: unset;
 }
 .title_info_detail {
     font-size: 20px;
@@ -32,4 +33,38 @@
     border-bottom: 1px solid #BFBFBF;
     margin-bottom: 15px;
     padding-bottom: 5px;
+}
+.tieu-de-detail{
+    height: 27px;
+}
+.main-table-score{
+    text-align: center;
+}
+.student-score-table{
+    border-radius: 4px;
+    
+}
+.student-score-table-detail{
+    max-height: 300px;
+    height: unset;
+}
+.student-score-table-detail tr{
+    height: 27px;
+}
+.btn-student-detail {
+    background-color: #0973B9;
+    border:none; 
+    outline: none;
+    color: white;
+    width: 70px;
+    height: 30px;
+    text-align: center;
+    border-radius: 4px;
+}
+    .btn-student-detail:hover {
+        background-color: #0199FC;
+    }
+.show-item{
+    margin-top: 10px;
+    margin-left: 66px;
 }

@@ -69,8 +69,8 @@
     scroll-behavior: smooth;
 }
 .main-content::-webkit-scrollbar {
-     width: 0 !important;
-     display: none;
+     /*width: 0 !important;
+     display: none;*/
 }
 .score-medium {
     display: flex;
