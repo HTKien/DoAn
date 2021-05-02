@@ -209,7 +209,7 @@ class User extends BaseUser {
                 success: function (res) {
                     ma = res.Code;
                     ten = res.Name;
-                    var html = "Bạn có chắc chắn muốn xóa Tài khoản << " + ma + " - " + ten + " >> không?";
+                    var html = "Bạn có chắc chắn muốn xóa Tài khoản đã chọn không?";
 
                     $('#thong-bao').empty();
 
@@ -235,7 +235,7 @@ class User extends BaseUser {
         //$('#thong-bao').append(html);
 
         $('#dialog').dialog({
-            title: "CUKCUK - Quản lý nhà hàng",
+            title: "Xác nhận",
             modal: true,
             buttons: {
                 "Có": function () {
