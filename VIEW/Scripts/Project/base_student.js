@@ -560,9 +560,9 @@
             var tmp = totalBonus + totalCritic;
             if (tmp >= 0) {
                 conduct = "Tốt";
-            } else if (-100 <= tmp < 0) {
+            } else if (tmp >= -100 && tmp <0) {
                 conduct = "Khá";
-            } else if (-200 <= tmp < -100) {
+            } else if (tmp >= -200 && tmp < -100) {
                 conduct = "Trung bình";
             } else if (tmp < -200) {
                 conduct = "Yếu";

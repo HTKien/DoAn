@@ -68,3 +68,18 @@
     margin-top: 10px;
     margin-left: 66px;
 }
+#total_bonus {
+    font-weight: bold;
+    color: #0973B9;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+#total_critic{
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 10px;
+    color: red;
+}
+.main-content{
+    height: 554px;
+}

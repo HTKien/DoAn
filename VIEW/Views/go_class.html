@@ -273,45 +273,47 @@
                 <button class="icon-tieu-de-dialog-detail"></button>
             </div>
             <div class="main-content">
-                <div class="grid-info">
+                <div style="padding-left: 15px;padding-right: 15px; " class="grid-info">
                     <div class="col">
-                        <div id="student_code">Mã học sinh:</div>
-                        <div id="student_name">Họ và tên:</div>
-                        <div id="student_sex">Giới tính:</div>
-                        <div id="student_birthday">Ngày sinh:</div>
-                        <div id="student_address">Địa chỉ:</div>
-                        <div id="student_class">Lớp:</div>
-                        <div id="student_teacher">GVCN:</div>
+                        <div class="info-student" id="student_code">Mã học sinh:</div>
+                        <div class="info-student" id="student_name">Họ và tên:</div>
+                        <div class="info-student" id="student_sex">Giới tính:</div>
+                        <div class="info-student" id="student_birthday">Ngày sinh:</div>
+                        <div class="info-student" id="student_address">Địa chỉ:</div>
+                        <div class="info-student" id="student_class">Lớp:</div>
+                        <div class="info-student" id="student_teacher">GVCN:</div>
                     </div>
                     <div class="col">
-                        <div id="student_bonus">Số khen thưởng/tuyên dương:</div>
-                        <div id="student_critic">Số phê bình:</div>
-                        <div id="student_attendance">Điểm danh:</div>
-                        <div id="student_conduct">Hạnh kiểm:</div>
-                        <div id="student_mediumscore">Điểm trung bình:</div>
-                        <div id="student_classify">Xếp loại:</div>
-                        <div id="student_status">Tình trạng:</div>
+                        <div class="info-student" id="student_bonus">Điểm cộng (khen thưởng)</div>
+                        <div class="info-student" id="student_critic">Điểm trừ (phê bình):</div>
+                        <div class="info-student" id="student_attendance">Điểm danh:</div>
+                        <div class="info-student" id="student_conduct">Hạnh kiểm:</div>
+                        <div class="info-student" id="student_mediumscore">Điểm trung bình:</div>
+                        <div class="info-student" id="student_classify">Xếp loại:</div>
+                        <div class="info-student" id="student_status">Tình trạng:</div>
                     </div>
                     <div class="col">
-                        <div>Thông tin phụ huynh</div>
-                        <div id="parent_name">Họ và tên:</div>
-                        <div id="parent_phone">Số điện thoại:</div>
+                        <div style="font-weight: bold" class="info-student">Thông tin phụ huynh</div>
+                        <div class="info-student" id="parent_name">Họ và tên:</div>
+                        <div class="info-student" id="parent_phone">Số điện thoại:</div>
                     </div>
                 </div>
-                <div class="student-score">
-                    <div>Thông tin chi tiết điểm</div>
-                    <div class="student-score-content">
-                        <div class="student-score-table">
+                <div style="padding-left: 15px; padding-right: 15px !important; width: unset; margin-top: 40px;" class="student-score">
+                    <div class="title_info_detail">Thông tin chi tiết điểm</div>
+                    <label style="font-weight: normal; margin-left: 15px;" class="label-search">Tìm kiếm</label><input id="search_bonus" class="imput-search" />
+
+                    <div style="margin-top: 15px; padding-left: 15px; padding-right: 15px;" class="student-score-content">
+                        <div class="student-score-table student-score-table-detail">
                             <table class="main-table-score">
                                 <thead>
                                     <tr>
-                                        <th class="tieu-de" fieldName="Subject">
+                                        <th class="tieu-de tieu-de-detail" fieldName="Subject">
                                             <div class="tieu-de-tren">Môn học</div>
                                         </th>
-                                        <th class="tieu-de" fieldName="Type">
+                                        <th class="tieu-de tieu-de-detail" fieldName="Type">
                                             <div class="tieu-de-tren">Loại điểm</div>
                                         </th>
-                                        <th class="tieu-de cot1" fieldName="Point">
+                                        <th class="tieu-de tieu-de-detail" fieldName="Point">
                                             <div class="tieu-de-tren">Điểm</div>
                                         </th>
 
@@ -323,15 +325,14 @@
                         </div>
                         <div class="student-score-show">
                             <div class="score-nav">
-                                <button id="add_score">Thêm</button>
-                                <button id="edit_score">Sửa</button>
-                                <button id="delete_score">Xóa</button>
-                                <button>Làm mới</button>
+                                <button class="btn-student-detail" id="add_score">Thêm</button>
+                                <button class="btn-student-detail" id="edit_score">Sửa</button>
+                                <button class="btn-student-detail" id="delete_score">Xóa</button>
                             </div>
                             <div class="show-item">
-                                <label>Môn học</label>
+                                <label>Môn học <span class="dau-sao">(*)</span></label>
                                 <!--<input id="score_subject" />-->
-                                <select id="score_subject">
+                                <select style="width: 250px; height: 30px;margin-left: 20px;border: 1px solid #bfbfbf;" id="score_subject">
                                     <option selected value="Toán">Toán</option>
                                     <option value="Vật lý">Vật lý</option>
                                     <option value="Hóa học">Hóa học</option>
@@ -347,8 +348,8 @@
                                 </select>
                             </div>
                             <div class="show-item">
-                                <label>Loại điểm</label>
-                                <select id="score_type">
+                                <label>Loại điểm<span class="dau-sao">(*)</span></label>
+                                <select style="width: 250px; height: 30px;margin-left: 16px;border: 1px solid #bfbfbf;" id="score_type">
                                     <option selected value="Điểm miệng">Điểm miệng</option>
                                     <option value="Điểm 15 phút">Điểm 15 phút</option>
                                     <option value="Điểm 45 phút">Điểm 45 phút</option>
@@ -357,55 +358,56 @@
                                 </select>
                             </div>
                             <div class="show-item">
-                                <label>Nhập điểm</label>
-                                <input id="score_point" />
+                                <label>Nhập điểm<span class="dau-sao">(*)</span></label>
+                                <input style="width: 244px; height: 24px;margin-left: 9px; outline: none; border: 1px solid #bfbfbf; border-radius: 4px;" type="number" id="score_point" />
                             </div>
 
                         </div>
                     </div>
-                    <div>Điểm trung bình từng môn học</div>
-                    <div class="score-medium">
+                    <div style="font-weight: bold; margin-top: 10px; margin-left: 15px">Điểm trung bình từng môn học</div>
+                    <div style="padding-left: 15px; padding-right: 15px;" class="score-medium">
                         <div>
-                            <div id="scoreToan"></div>
-                            <div id="scoreVatLy"></div>
-                            <div id="scoreHoaHoc"></div>
+                            <div class="info-student" id="scoreToan"></div>
+                            <div class="info-student" id="scoreVatLy"></div>
+                            <div class="info-student" id="scoreHoaHoc"></div>
                         </div>
                         <div>
-                            <div id="scoreSinhHoc"></div>
-                            <div id="scoreNguVan"></div>
-                            <div id="scoreLichSu"></div>
+                            <div class="info-student" id="scoreSinhHoc"></div>
+                            <div class="info-student" id="scoreNguVan"></div>
+                            <div class="info-student" id="scoreLichSu"></div>
                         </div>
                         <div>
-                            <div id="scoreDiaLy"></div>
-                            <div id="scoreTinHoc"></div>
-                            <div id="scoreCongDan"></div>
+                            <div class="info-student" id="scoreDiaLy"></div>
+                            <div class="info-student" id="scoreTinHoc"></div>
+                            <div class="info-student" id="scoreCongDan"></div>
                         </div>
                         <div>
-                            <div id="scoreTiengAnh"></div>
-                            <div id="scoreTheDuc"></div>
-                            <div id="scoreCongNghe"></div>
+                            <div class="info-student" id="scoreTiengAnh"></div>
+                            <div class="info-student" id="scoreTheDuc"></div>
+                            <div class="info-student" id="scoreCongNghe"></div>
                         </div>
 
                     </div>
 
                 </div>
-                <div class="student-score">
-                    <div>Thông tin khen thưởng/tuyên dương</div>
-                    <div class="student-score-content">
-                        <div class="student-score-table">
-                            <table style="width: 100%;" class="main-table-bonus">
+                <div style="padding-left: 15px; padding-right: 15px !important; width: unset;  margin-top: 40px;" class="student-score">
+                    <div class="title_info_detail">Thông tin khen thưởng - tuyên dương</div>
+                    <label style="font-weight: normal; margin-left: 15px;" class="label-search">Tìm kiếm</label><input id="search_bonus" class="imput-search" />
+                    <div style="margin-top: 15px; padding-left: 15px; padding-right: 15px;" class="student-score-content student-score-table-detail">
+                        <div class="student-score-table student-score-table-detail">
+                            <table style="width: 100%; text-align: center" class="main-table-bonus">
                                 <thead>
                                     <tr>
-                                        <th class="tieu-de" fieldName="Time">
+                                        <th class="tieu-de tieu-de-detail" fieldName="Time">
                                             <div class="tieu-de-tren">Thời gian</div>
                                         </th>
-                                        <th class="tieu-de" fieldName="Content">
+                                        <th class="tieu-de tieu-de-detail" fieldName="Content">
                                             <div class="tieu-de-tren">Nội dung</div>
                                         </th>
-                                        <th class="tieu-de cot1" fieldName="Subject">
+                                        <th class="tieu-de tieu-de-detail" fieldName="Subject">
                                             <div class="tieu-de-tren">Môn học</div>
                                         </th>
-                                        <th class="tieu-de cot1" fieldName="Value">
+                                        <th class="tieu-de tieu-de-detail" fieldName="Value">
                                             <div class="tieu-de-tren">Điểm cộng</div>
                                         </th>
                                     </tr>
@@ -416,49 +418,64 @@
                         </div>
                         <div class="student-score-show">
                             <div class="score-nav">
-                                <button id="add_bonus">Thêm</button>
-                                <button id="edit_bonus">Sửa</button>
-                                <button id="delete_bonus">Xóa</button>
-                                <button>Làm mới</button>
+                                <button class="btn-student-detail" id="add_bonus">Thêm</button>
+                                <button class="btn-student-detail" id="edit_bonus">Sửa</button>
+                                <button class="btn-student-detail" id="delete_bonus">Xóa</button>
                             </div>
-                            <div>
-                                <label>Thời gian</label>
-                                <input id="bonus_time" />
+                            <div class="show-item">
+                                <label>Thời gian<span class="dau-sao">(*)</span></label>
+                                <input style="width: 228px; height: 28px; margin-left: 20px" class="input1" type="date" id="bonus_time">
                             </div>
-                            <div>
-                                <label>Nội dung</label>
-                                <input id="bonus_content" />
+                            <div class="show-item">
+                                <label>Nội dung<span class="dau-sao">(*)</span></label>
+                                <input style="width: 244px; height: 24px;margin-left: 22px; outline: none; border: 1px solid #bfbfbf; border-radius: 4px;" id="bonus_content" />
                             </div>
-                            <div>
-                                <label>Môn học</label>
-                                <input id="bonus_subject" />
+                            <div class="show-item">
+                                <label>Môn học <span class="dau-sao">(*)</span></label>
+                                <!--<input id="score_subject" />-->
+                                <select style="width: 250px; height: 30px;margin-left: 20px;border: 1px solid #bfbfbf;" id="bonus_subject">
+                                    <option selected value="Toán">Toán</option>
+                                    <option value="Vật lý">Vật lý</option>
+                                    <option value="Hóa học">Hóa học</option>
+                                    <option value="Sinh học">Sinh học</option>
+                                    <option value="Ngữ văn">Ngữ văn</option>
+                                    <option value="Lịch sử">Lịch sử</option>
+                                    <option value="Địa lý">Địa lý</option>
+                                    <option value="Tin học">Tin học</option>
+                                    <option value="Giáo dục công dân">Giáo dục công dân</option>
+                                    <option value="Tiếng Anh">Tiếng Anh</option>
+                                    <option value="Thể dục">Thể dục</option>
+                                    <option value="Công nghệ">Công nghệ</option>
+                                </select>
                             </div>
-                            <div>
-                                <label>Điểm cộng</label>
-                                <input id="bonus_value" />
+                            <div class="show-item">
+                                <label>Điểm cộng<span class="dau-sao">(*)</span></label>
+                                <input style="width: 244px; height: 24px;margin-left: 10px; outline: none; border: 1px solid #bfbfbf; border-radius: 4px;" type="number" id="bonus_value" />
+
                             </div>
                         </div>
                     </div>
                     <div id="total_bonus">Tổng điểm cộng: </div>
 
                 </div>
-                <div class="student-score">
-                    <div>Thông tin phê bình</div>
-                    <div class="student-score-content">
-                        <div class="student-score-table">
-                            <table style="width: 100%" class="main-table-critic">
+                <div style="padding-left: 15px; padding-right: 15px !important; width: unset; margin-top: 40px; margin-bottom: 30px; " class="student-score">
+                    <div class="title_info_detail">Thông tin phê bình</div>
+                    <label style="font-weight: normal; margin-left: 15px;" class="label-search">Tìm kiếm</label><input id="search_bonus" class="imput-search" />
+                    <div style="margin-top: 15px; padding-left: 15px; padding-right: 15px;" class="student-score-content student-score-table-detail">
+                        <div class="student-score-table student-score-table-detail">
+                            <table style="width: 100%; text-align: center" class="main-table-critic">
                                 <thead>
                                     <tr>
-                                        <th class="tieu-de" fieldName="Time">
+                                        <th class="tieu-de tieu-de-detail" fieldName="Time">
                                             <div class="tieu-de-tren">Thời gian</div>
                                         </th>
-                                        <th class="tieu-de" fieldName="Content">
+                                        <th class="tieu-de tieu-de-detail" fieldName="Content">
                                             <div class="tieu-de-tren">Nội dung</div>
                                         </th>
-                                        <th class="tieu-de cot1" fieldName="Subject">
+                                        <th class="tieu-de tieu-de-detail" fieldName="Subject">
                                             <div class="tieu-de-tren">Môn học</div>
                                         </th>
-                                        <th class="tieu-de cot1" fieldName="Value">
+                                        <th class="tieu-de tieu-de-detail" fieldName="Value">
                                             <div class="tieu-de-tren">Điểm trừ</div>
                                         </th>
                                     </tr>
@@ -469,26 +486,40 @@
                         </div>
                         <div class="student-score-show">
                             <div class="score-nav">
-                                <button id="add_critic">Thêm</button>
-                                <button id="edit_critic">Sửa</button>
-                                <button id="delete_critic">Xóa</button>
-                                <button>Làm mới</button>
+                                <button class="btn-student-detail" id="add_critic">Thêm</button>
+                                <button class="btn-student-detail" id="edit_critic">Sửa</button>
+                                <button class="btn-student-detail" id="delete_critic">Xóa</button>
                             </div>
-                            <div>
-                                <label>Thời gian</label>
-                                <input id="critic_time" />
+                            <div class="show-item">
+                                <label>Thời gian<span class="dau-sao">(*)</span></label>
+                                <input style="width: 228px; height: 28px; margin-left: 20px" class="input1" type="date" id="critic_time">
                             </div>
-                            <div>
-                                <label>Nội dung</label>
-                                <input id="critic_content" />
+                            <div class="show-item">
+                                <label>Nội dung<span class="dau-sao">(*)</span></label>
+                                <input style="width: 244px; height: 24px;margin-left: 22px; outline: none; border: 1px solid #bfbfbf; border-radius: 4px;" id="critic_content" />
                             </div>
-                            <div>
-                                <label>Môn học</label>
-                                <input id="critic_subject" />
+                            <div class="show-item">
+                                <label>Môn học <span class="dau-sao">(*)</span></label>
+                                <!--<input id="score_subject" />-->
+                                <select style="width: 250px; height: 30px;margin-left: 20px;border: 1px solid #bfbfbf;" id="critic_subject">
+                                    <option selected value="Toán">Toán</option>
+                                    <option value="Vật lý">Vật lý</option>
+                                    <option value="Hóa học">Hóa học</option>
+                                    <option value="Sinh học">Sinh học</option>
+                                    <option value="Ngữ văn">Ngữ văn</option>
+                                    <option value="Lịch sử">Lịch sử</option>
+                                    <option value="Địa lý">Địa lý</option>
+                                    <option value="Tin học">Tin học</option>
+                                    <option value="Giáo dục công dân">Giáo dục công dân</option>
+                                    <option value="Tiếng Anh">Tiếng Anh</option>
+                                    <option value="Thể dục">Thể dục</option>
+                                    <option value="Công nghệ">Công nghệ</option>
+                                </select>
                             </div>
-                            <div>
-                                <label>Điểm cộng</label>
-                                <input id="critic_value" />
+                            <div class="show-item">
+                                <label>Điểm trừ<span class="dau-sao">(*)</span></label>
+                                <input style="width: 244px; height: 24px;margin-left: 24px; outline: none; border: 1px solid #bfbfbf; border-radius: 4px;" type="number" id="critic_value" />
+
                             </div>
                         </div>
                     </div>
