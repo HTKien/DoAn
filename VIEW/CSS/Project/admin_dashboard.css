@@ -266,3 +266,6 @@ table input {
     border-radius: 3px;
     height: 18px;
 }
+button:disabled{
+    opacity: 0.5
+}

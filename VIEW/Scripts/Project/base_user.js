@@ -476,6 +476,14 @@
             $.each(fields, function (fieldIndex, fieldItem) {
                 var fieldName = fieldItem.getAttribute('fieldName');
                 var fieldValue = item[fieldName];
+                if (fieldValue == 1) {
+                    fieldValue = "Admin";
+                } else if (fieldValue == 2) {
+                    fieldValue = "Giáo viên chủ nhiệm";
+                } else if (fieldValue == 3) {
+                    fieldValue = "Phụ huynh học sinh";
+                }
+                
                 rowHTML.append('<td>' + fieldValue + '</td>');
             });
             $('.main-table tbody').append(rowHTML);

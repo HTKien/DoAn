@@ -1023,22 +1023,7 @@
 
         }
 
-        //if (pageIndex > parseInt((this.getAllData().length / pageSize))) {
-        //    $('.page-index').prop('disabled', true);
-        //    $('button#trang-sau').prop('disabled', true);
-        //    $('button#trang-cuoi').prop('disabled', true);
 
-
-
-        //} else {
-        //    $('.page-index').prop('disabled', false);
-        //    $('button#trang-sau').prop('disabled', false);
-        //    $('button#trang-cuoi').prop('disabled', false);
-
-
-
-
-        //}
         $('button.duplicate').prop('disabled', true);
         $('button.delete').prop('disabled', true);
         $('button.edit').prop('disabled', true);

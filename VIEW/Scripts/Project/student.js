@@ -6,6 +6,24 @@
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
     });
+    $("#search_bonus").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#table_bonus_detail tbody tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+    $("#search_tuyen_duong").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#table_tuyen_duong tbody tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+    $("#search_critic").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#table_critic tbody tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
 })
 
 class Student extends BaseStudent {
@@ -333,6 +351,7 @@ class Student extends BaseStudent {
             success: function (res) {
                 alert("Xóa điểm thành công!");
                 me.loadScore(me.student_id);
+                me.RowOnClick();
             },
             error: function (res) {
                 alert("Hệ thống đang bị lỗi!");
@@ -361,6 +380,7 @@ class Student extends BaseStudent {
             success: function (res) {
                 alert("Xóa khen thưởng thành công!");
                 me.loadBonusStudent(me.student_id);
+                me.RowOnClick();
             },
             error: function (res) {
                 alert("Hệ thống đang bị lỗi!");
@@ -387,6 +407,7 @@ class Student extends BaseStudent {
             success: function (res) {
                 alert("Xóa phê bình thành công!");
                 me.loadCritic(me.student_id);
+                me.RowOnClick();
             },
             error: function (res) {
                 alert("Hệ thống đang bị lỗi!");
@@ -414,7 +435,7 @@ class Student extends BaseStudent {
                     $('#score_subject').val(res.Subject);
                     $('#score_type').val(res.Type);
                     $('#score_point').val(res.Point);
-                    $('#edit_score').text("Lưu lại")
+                    $('#edit_score').text("Lưu lại");
                 },
                 error: function (res) {
                     alert("Hệ thống đang bị lỗi!");
@@ -442,6 +463,7 @@ class Student extends BaseStudent {
                     $('#score_subject').val("");
                     $('#score_type').val("");
                     $('#score_point').val("");
+                    me.RowOnClick();
 
                 },
                 error: function () {
@@ -474,7 +496,7 @@ class Student extends BaseStudent {
                     $('#bonus_content').val(res.Content);
                     $('#bonus_subject').val(res.Subject);
                     $('#bonus_value').val(res.Value);
-                    $('#edit_bonus').text("Lưu lại")
+                    $('#edit_bonus').text("Lưu lại");
                 },
                 error: function (res) {
                     alert("Hệ thống đang bị lỗi!");
@@ -504,6 +526,7 @@ class Student extends BaseStudent {
                     $('#bonus_content').val("");
                     $('#bonus_subject').val("");
                     $('#bonus_value').val("");
+                    me.RowOnClick();
 
                 },
                 error: function () {
@@ -534,7 +557,7 @@ class Student extends BaseStudent {
                     $('#critic_content').val(res.Content);
                     $('#critic_subject').val(res.Subject);
                     $('#critic_value').val(res.Value);
-                    $('#edit_critic').text("Lưu lại")
+                    $('#edit_critic').text("Lưu lại");
                 },
                 error: function (res) {
                     alert("Hệ thống đang bị lỗi!");
@@ -564,6 +587,7 @@ class Student extends BaseStudent {
                     $('#critic_content').val("");
                     $('#critic_subject').val("");
                     $('#critic_value').val("");
+                    me.RowOnClick();
 
                 },
                 error: function () {
@@ -732,27 +756,66 @@ class Student extends BaseStudent {
 
         }
         var selected = $('.main-table tbody tr.select').length;
+        var selected_table_score = $('#table_bonus_detail tbody tr.select').length;
+        var selected_table_bonus = $('#table_tuyen_duong tbody tr.select').length;
+        var selected_table_critic = $('#table_critic tbody tr.select').length;
+
         if (selected === 0) {
             $('button.delete').prop('disabled', true);
             $('button.duplicate').prop('disabled', true);
             $('button.edit').prop('disabled', true);
+            $('button.detail').prop('disabled', true);
         } else if (selected === 1) {
             $('button.delete').removeAttr('disabled');
             $('button.duplicate').removeAttr('disabled');
             $('button.edit').removeAttr('disabled');
+            $('button.detail').removeAttr('disabled');
         } else if (selected > 1) {
             $('button.delete').removeAttr('disabled');
             $('button.duplicate').prop('disabled', true);
             $('button.edit').prop('disabled', true);
+            $('button.detail').prop('disabled', true);
         }
 
+        if (selected_table_score === 0) {
+            $('#edit_score').prop('disabled', true);
+            $('#delete_score').prop('disabled', true);
+        } else if (selected_table_score === 1) {
+            $('#edit_score').removeAttr('disabled');
+            $('#delete_score').removeAttr('disabled');
 
-        //$('.main-table tbody tr').removeClass('select');
-        //$(this).addClass('select');
-        //$('button.delete').removeAttr('disabled');
-        //$('button.duplicate').removeAttr('disabled');
-        //$('button.edit').removeAttr('disabled');
+        } else if (selected_table_score > 1) {
+            $('#edit_score').prop('disabled', true);
+            $('#delete_score').removeAttr('disabled');
+
+        }
+
+        if (selected_table_bonus === 0) {
+            $('#edit_bonus').prop('disabled', true);
+            $('#delete_bonus').prop('disabled', true);
+        } else if (selected_table_bonus === 1) {
+            $('#edit_bonus').removeAttr('disabled');
+            $('#delete_bonus').removeAttr('disabled');
+
+        } else if (selected_table_bonus > 1) {
+            $('#edit_bonus').prop('disabled', true);
+            $('#delete_bonus').removeAttr('disabled');
+
+        }
+        if (selected_table_critic === 0) {
+            $('#edit_critic').prop('disabled', true);
+            $('#delete_critic').prop('disabled', true);
+        } else if (selected_table_critic === 1) {
+            $('#edit_critic').removeAttr('disabled');
+            $('#delete_critic').removeAttr('disabled');
+
+        } else if (selected_table_critic > 1) {
+            $('#edit_critic').prop('disabled', true);
+            $('#delete_critic').removeAttr('disabled');
+
+        }
     }
+    
     /**
      *Hàm thực hiện load lại dữ liệu khi chọn trang tương ứng
      * Người tạo: Hàn Trung Kiên
@@ -855,7 +918,8 @@ class Student extends BaseStudent {
         object["Type"] = $('#score_type').val();
         object["Point"] = $('#score_point').val();
         object["StudentID"] = this.student_id;
-        if (false) {
+
+        if (object["Subject"] == "" || object["Type"] == "" || object["Point"] == "") {
             alert("Bạn phải nhập thông tin trong các trường bắt buộc!");
         } else {
             $.ajax({
@@ -885,7 +949,7 @@ class Student extends BaseStudent {
         object["Subject"] = $('#bonus_subject').val();
         object["Value"] = $('#bonus_value').val();
         object["StudentID"] = this.student_id;
-        if (false) {
+        if (object["Time"] == "" || object["Content"] == "" || object["Subject"] == "" || object["Value"] == "") {
             alert("Bạn phải nhập thông tin trong các trường bắt buộc!");
         } else {
             $.ajax({
@@ -961,7 +1025,7 @@ class Student extends BaseStudent {
         object["Subject"] = $('#critic_subject').val();
         object["Value"] = $('#critic_value').val();
         object["StudentID"] = this.student_id;
-        if (false) {
+        if (object["Time"] == "" || object["Content"] == "" || object["Subject"] == "" || object["Value"] == "") {
             alert("Bạn phải nhập thông tin trong các trường bắt buộc!");
         } else {
             $.ajax({

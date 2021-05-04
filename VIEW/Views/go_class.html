@@ -304,7 +304,7 @@
 
                     <div style="margin-top: 15px; padding-left: 15px; padding-right: 15px;" class="student-score-content">
                         <div class="student-score-table student-score-table-detail">
-                            <table class="main-table-score">
+                            <table id="table_bonus_detail" class="main-table-score">
                                 <thead>
                                     <tr>
                                         <th class="tieu-de tieu-de-detail" fieldName="Subject">
@@ -326,8 +326,8 @@
                         <div class="student-score-show">
                             <div class="score-nav">
                                 <button class="btn-student-detail" id="add_score">Thêm</button>
-                                <button class="btn-student-detail" id="edit_score">Sửa</button>
-                                <button class="btn-student-detail" id="delete_score">Xóa</button>
+                                <button class="btn-student-detail" id="edit_score" disabled>Sửa</button>
+                                <button class="btn-student-detail" id="delete_score" disabled>Xóa</button>
                             </div>
                             <div class="show-item">
                                 <label>Môn học <span class="dau-sao">(*)</span></label>
@@ -392,10 +392,10 @@
                 </div>
                 <div style="padding-left: 15px; padding-right: 15px !important; width: unset;  margin-top: 40px;" class="student-score">
                     <div class="title_info_detail">Thông tin khen thưởng - tuyên dương</div>
-                    <label style="font-weight: normal; margin-left: 15px;" class="label-search">Tìm kiếm</label><input id="search_bonus" class="imput-search" />
+                    <label style="font-weight: normal; margin-left: 15px;" class="label-search">Tìm kiếm</label><input id="search_tuyen_duong" class="imput-search" />
                     <div style="margin-top: 15px; padding-left: 15px; padding-right: 15px;" class="student-score-content student-score-table-detail">
                         <div class="student-score-table student-score-table-detail">
-                            <table style="width: 100%; text-align: center" class="main-table-bonus">
+                            <table id="table_tuyen_duong" style="width: 100%; text-align: center" class="main-table-bonus">
                                 <thead>
                                     <tr>
                                         <th class="tieu-de tieu-de-detail" fieldName="Time">
@@ -419,8 +419,8 @@
                         <div class="student-score-show">
                             <div class="score-nav">
                                 <button class="btn-student-detail" id="add_bonus">Thêm</button>
-                                <button class="btn-student-detail" id="edit_bonus">Sửa</button>
-                                <button class="btn-student-detail" id="delete_bonus">Xóa</button>
+                                <button class="btn-student-detail" id="edit_bonus" disabled>Sửa</button>
+                                <button class="btn-student-detail" id="delete_bonus" disabled>Xóa</button>
                             </div>
                             <div class="show-item">
                                 <label>Thời gian<span class="dau-sao">(*)</span></label>
@@ -458,12 +458,12 @@
                     <div id="total_bonus">Tổng điểm cộng: </div>
 
                 </div>
-                <div style="padding-left: 15px; padding-right: 15px !important; width: unset; margin-top: 40px; margin-bottom: 30px; " class="student-score">
+                <div style="padding-left: 15px; padding-right: 15px !important; width: unset; margin-top: 40px; margin-bottom: 30px " class="student-score">
                     <div class="title_info_detail">Thông tin phê bình</div>
-                    <label style="font-weight: normal; margin-left: 15px;" class="label-search">Tìm kiếm</label><input id="search_bonus" class="imput-search" />
+                    <label style="font-weight: normal; margin-left: 15px;" class="label-search">Tìm kiếm</label><input id="search_critic" class="imput-search" />
                     <div style="margin-top: 15px; padding-left: 15px; padding-right: 15px;" class="student-score-content student-score-table-detail">
                         <div class="student-score-table student-score-table-detail">
-                            <table style="width: 100%; text-align: center" class="main-table-critic">
+                            <table id="table_critic" style="width: 100%; text-align: center" class="main-table-critic">
                                 <thead>
                                     <tr>
                                         <th class="tieu-de tieu-de-detail" fieldName="Time">

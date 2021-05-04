@@ -1,5 +1,11 @@
 ﻿$(document).ready(function () {
     var user = new User();
+    $("#search_fulltable_user").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#table_user tbody tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
 })
 
 class User extends BaseUser {
