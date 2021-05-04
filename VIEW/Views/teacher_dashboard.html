@@ -6,12 +6,15 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="/CSS/Libraries/jquery-ui.css" rel="stylesheet" />
     <link href="/CSS/Project/view.css" rel="stylesheet" />
     <link href="/CSS/Project/common.css" rel="stylesheet" />
     <link href="/CSS/Project/admin_dashboard.css" rel="stylesheet" />
+    <link href="/CSS/Libraries/dashboard.css" rel="stylesheet" />
+
 </head>
-<body>
+<body style="background-color: #F2F2F2">
     <div class="div-trai">
         <div class="div-trai-tren">
             <i class="fas fa-book-reader logo"></i>
@@ -24,7 +27,7 @@
                     <div class="trai-duoi-text">Tổng quan</div>
                 </div>
             </a>
-           
+
             <div class="line"></div>
             <a href="/Views/student.html">
                 <div class="trai-duoi-1cai">
@@ -32,7 +35,7 @@
                     <div class="trai-duoi-text">Quản lý học sinh</div>
                 </div>
             </a>
-            
+
             <div class="line"></div>
             <a href="/Views/score_by_class.html">
                 <div class="trai-duoi-1cai">
@@ -40,7 +43,7 @@
                     <div class="trai-duoi-text">Quản lý điểm</div>
                 </div>
             </a>
-            
+
             <div class="line"></div>
             <a href="/Views/bonus_by_class.html">
                 <div class="trai-duoi-1cai">
@@ -48,7 +51,7 @@
                     <div class="trai-duoi-text">Quản lý khen thưởng</div>
                 </div>
             </a>
-            
+
             <div class="line"></div>
             <a href="/Views/critic_by_class.html">
                 <div class="trai-duoi-1cai">
@@ -56,7 +59,7 @@
                     <div class="trai-duoi-text">Quản lý phê bình</div>
                 </div>
             </a>
-           
+
             <div class="line"></div>
             <a href="/Views/all_bonus.html">
                 <div class="trai-duoi-1cai">
@@ -64,7 +67,7 @@
                     <div class="trai-duoi-text">Thông tin cá nhân</div>
                 </div>
             </a>
-            
+
             <div class="line"></div>
             <a href="/Views/user_manual.html">
                 <div class="trai-duoi-1cai">
@@ -72,7 +75,7 @@
                     <div class="trai-duoi-text">Hướng dẫn sử dụng</div>
                 </div>
             </a>
-            
+
             <div class="line"></div>
             <a href="/Views/">
                 <div class="trai-duoi-1cai">
@@ -80,7 +83,7 @@
                     <div class="trai-duoi-text">Đổi mật khẩu</div>
                 </div>
             </a>
-           
+
             <div class="line"></div>
             <a href="/Views/">
                 <div class="trai-duoi-1cai">
@@ -88,7 +91,7 @@
                     <div class="trai-duoi-text">Đăng xuất</div>
                 </div>
             </a>
-            
+
         </div>
 
     </div>
@@ -98,22 +101,211 @@
                 <option value="value">Teacher</option>
             </select>
         </div>
-        <div class="div-phai-giua-tren">
+        <div style="display: block" class="div-phai-giua-tren">
             <div id="class_title" class="text-danh-muc">Lớp ...</div>
+            <div style="background-color: #F2F2F2" class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <div class="card card-stats mb-4 mb-xl-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="card-title text-uppercase text-muted mb-0">Tổng số lớp học</h5>
+                                        <span id="total_class" class="h2 font-weight-bold mb-0">0</span>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                                            <i class="fas fa-chart-bar"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-stats mb-4 mb-xl-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="card-title text-uppercase text-muted mb-0">Tổng số giáo viên</h5>
+                                        <span id="total_teacher" class="h2 font-weight-bold mb-0">0</span>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+                                            <i class="fas fa-chart-pie"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-stats mb-4 mb-xl-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="card-title text-uppercase text-muted mb-0">Tổng số học sinh</h5>
+                                        <span id="total_student" class="h2 font-weight-bold mb-0">0</span>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p style="margin-bottom: 0; font-weight: bold; margin-left: 5px; margin-top:10px ">Hạnh kiểm</p>
+                <div style="margin-top: 0px;" class="row">
+                    <div class="col">
+                        <div class="card card-stats mb-4 mb-xl-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="card-title text-uppercase text-muted mb-0">Hạnh kiểm Tốt</h5>
+                                        <span id="conduct_good" class="h2 font-weight-bold mb-0">0</span>
+                                    </div>
+                                </div>
+                                <p class="mt-4 mb-0 text-muted text-sm">
+                                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
+                                    <span class="text-nowrap">Since last month</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-stats mb-4 mb-xl-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="card-title text-uppercase text-muted mb-0">Hạnh kiểm Khá</h5>
+                                        <span id="conduct_kha" class="h2 font-weight-bold mb-0">0</span>
+                                    </div>
+
+                                </div>
+                                <p class="mt-4 mb-0 text-muted text-sm">
+                                    <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>
+                                    <span class="text-nowrap">Since last week</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-stats mb-4 mb-xl-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="card-title text-uppercase text-muted mb-0">Hạnh kiểm Trung bình</h5>
+                                        <span id="conduct_tb" class="h2 font-weight-bold mb-0">0</span>
+                                    </div>
+
+                                </div>
+                                <p class="mt-4 mb-0 text-muted text-sm">
+                                    <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
+                                    <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-stats mb-4 mb-xl-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="card-title text-uppercase text-muted mb-0">Hạnh kiểm Yếu</h5>
+                                        <span id="conduct_yeu" class="h2 font-weight-bold mb-0">0</span>
+                                    </div>
+
+                                </div>
+                                <p class="mt-4 mb-0 text-muted text-sm">
+                                    <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
+                                    <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p style="margin-bottom: 0; font-weight: bold; margin-left: 5px;margin-top:10px">Học lực</p>
+                <div style="margin-top: 0px;" class="row">
+                    <div class="col">
+                        <div class="card card-stats mb-4 mb-xl-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="card-title text-uppercase text-muted mb-0">Học lực Giỏi</h5>
+                                        <span id="hocluc_gioi" class="h2 font-weight-bold mb-0">0</span>
+                                    </div>
+                                </div>
+                                <p class="mt-4 mb-0 text-muted text-sm">
+                                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
+                                    <span class="text-nowrap">Since last month</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-stats mb-4 mb-xl-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="card-title text-uppercase text-muted mb-0">Học lực Khá</h5>
+                                        <span id="hocluc_kha" class="h2 font-weight-bold mb-0">0</span>
+                                    </div>
+
+                                </div>
+                                <p class="mt-4 mb-0 text-muted text-sm">
+                                    <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>
+                                    <span class="text-nowrap">Since last week</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-stats mb-4 mb-xl-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="card-title text-uppercase text-muted mb-0">Học lực Trung bình</h5>
+                                        <span id="hocluc_tb" class="h2 font-weight-bold mb-0">0</span>
+                                    </div>
+
+                                </div>
+                                <p class="mt-4 mb-0 text-muted text-sm">
+                                    <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
+                                    <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-stats mb-4 mb-xl-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="card-title text-uppercase text-muted mb-0">Học lực Yếu</h5>
+                                        <span id="hocluc_yeu" class="h2 font-weight-bold mb-0">0</span>
+                                    </div>
+
+                                </div>
+                                <p class="mt-4 mb-0 text-muted text-sm">
+                                    <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
+                                    <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
         </div>
-
-        
-           
-
-
-        
-
-
-
-
 
 
     </div>
-   
+    <script src="/Scripts/Libraries/jquery-3.4.1.js"></script>
+    <script src="/Scripts/Libraries/jquery-ui.js"></script>
+    <script src="/Scripts/Project/teacher_dashboard.js"></script>
 </body>
 </html>

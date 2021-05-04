@@ -149,6 +149,7 @@
     <Content Include="Contents\imgs\trigger.png" />
     <Content Include="Contents\imgs\vector-smart-object.png" />
     <Content Include="Contents\imgs\viewEmail.png" />
+    <Content Include="CSS\Libraries\dashboard.css" />
     <Content Include="CSS\Libraries\jquery-ui.css" />
     <Content Include="CSS\Libraries\sb-admin-2.min.css" />
     <Content Include="CSS\Project\admin_dashboard.css" />
@@ -172,6 +173,7 @@
     <Content Include="Scripts\Libraries\jquery-1.12.4.js" />
     <Content Include="Scripts\Libraries\jquery-3.4.1.js" />
     <Content Include="Scripts\Libraries\jquery-ui.js" />
+    <Content Include="Scripts\Project\admin_dashboard.js" />
     <Content Include="Scripts\Project\all_critic.js" />
     <Content Include="Scripts\Project\base_bonus_by_class.js" />
     <Content Include="Scripts\Project\base_critic_by_class.js" />
@@ -201,6 +203,7 @@
     <Content Include="Scripts\Project\all_student.js" />
     <Content Include="Scripts\Project\all_score.js" />
     <Content Include="Scripts\Project\all_bonus.js" />
+    <Content Include="Scripts\Project\teacher_dashboard.js" />
     <Content Include="Scripts\Project\user.js" />
     <Content Include="Scripts\Project\teacher.js" />
     <Content Include="Scripts\Project\parent.js" />
