@@ -332,87 +332,133 @@ class Student extends BaseStudent {
      * Ngày tạo: 24/8/2019
      * */
     deleteScore() {
-        alert("Xác nhận xóa điểm?");
-        var me = this;
-        var listRow = $('.select');
-        var listID = [];
-        $.each(listRow, function (index, item) {
-            listID.push($(item).data('recordid'));
-        });
-        var listID_update = [];
-        for (var i = 1; i < listID.length; i++) {
-            listID_update.push(listID[i]);
-        }
-        $.ajax({
-            method: 'DELETE',
-            url: '/scores',
-            contentType: "application/json; charset=utf-8",
-            data: JSON.stringify(listID_update),
-            success: function (res) {
-                alert("Xóa điểm thành công!");
-                me.loadScore(me.student_id);
-                me.RowOnClick();
-            },
-            error: function (res) {
-                alert("Hệ thống đang bị lỗi!");
+        cuteAlert({
+            type: "question",
+            title: "Xác nhận",
+            message: "Bạn có chắc chắn xóa điểm đã chọn?",
+            confirmText: "Có",
+            cancelText: "Hủy"
+        }).then((e) => {
+            if (e == "confirm") {
+                var me = this;
+                var listRow = $('.select');
+                var listID = [];
+                $.each(listRow, function (index, item) {
+                    listID.push($(item).data('recordid'));
+                });
+                var listID_update = [];
+                for (var i = 1; i < listID.length; i++) {
+                    listID_update.push(listID[i]);
+                }
+                $.ajax({
+                    method: 'DELETE',
+                    url: '/scores',
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(listID_update),
+                    success: function (res) {
+                        cuteAlert({
+                            type: "success",
+                            title: "Thông báo",
+                            message: "Xóa điểm thành công!",
+                            buttonText: "OK"
+                        })
+                        me.loadScore(me.student_id);
+                        me.RowOnClick();
+                    },
+                    error: function (res) {
+                        alert("Hệ thống đang bị lỗi!");
+                    }
+                });
             }
         });
 
         
+
+        
     }
     deleteBonus() {
-        alert("Xác nhận xóa khen thưởng?");
-        var me = this;
-        var listRow = $('.select');
-        var listID = [];
-        $.each(listRow, function (index, item) {
-            listID.push($(item).data('recordid'));
-        });
-        var listID_update = [];
-        for (var i = 1; i < listID.length; i++) {
-            listID_update.push(listID[i]);
-        }
-        $.ajax({
-            method: 'DELETE',
-            url: '/bonusStudents',
-            contentType: "application/json; charset=utf-8",
-            data: JSON.stringify(listID_update),
-            success: function (res) {
-                alert("Xóa khen thưởng thành công!");
-                me.loadBonusStudent(me.student_id);
-                me.RowOnClick();
-            },
-            error: function (res) {
-                alert("Hệ thống đang bị lỗi!");
+        cuteAlert({
+            type: "question",
+            title: "Xác nhận",
+            message: "Bạn có chắc chắn xóa khen thưởng đã chọn?",
+            confirmText: "Có",
+            cancelText: "Hủy"
+        }).then((e) => {
+            if (e == "confirm") {
+                var me = this;
+                var listRow = $('.select');
+                var listID = [];
+                $.each(listRow, function (index, item) {
+                    listID.push($(item).data('recordid'));
+                });
+                var listID_update = [];
+                for (var i = 1; i < listID.length; i++) {
+                    listID_update.push(listID[i]);
+                }
+                $.ajax({
+                    method: 'DELETE',
+                    url: '/bonusStudents',
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(listID_update),
+                    success: function (res) {
+                        cuteAlert({
+                            type: "success",
+                            title: "Thông báo",
+                            message: "Xóa khen thưởng thành công!",
+                            buttonText: "OK"
+                        })
+                        me.loadBonusStudent(me.student_id);
+                        me.RowOnClick();
+                    },
+                    error: function (res) {
+                        alert("Hệ thống đang bị lỗi!");
+                    }
+                });
             }
-        });
+        })
+        
     }
     deleteCritic() {
-        alert("Xác nhận xóa phê bình?");
-        var me = this;
-        var listRow = $('.select');
-        var listID = [];
-        $.each(listRow, function (index, item) {
-            listID.push($(item).data('recordid'));
-        });
-        var listID_update = [];
-        for (var i = 1; i < listID.length; i++) {
-            listID_update.push(listID[i]);
-        }
-        $.ajax({
-            method: 'DELETE',
-            url: '/critics',
-            contentType: "application/json; charset=utf-8",
-            data: JSON.stringify(listID_update),
-            success: function (res) {
-                alert("Xóa phê bình thành công!");
-                me.loadCritic(me.student_id);
-                me.RowOnClick();
-            },
-            error: function (res) {
-                alert("Hệ thống đang bị lỗi!");
+        cuteAlert({
+            type: "question",
+            title: "Xác nhận",
+            message: "Bạn có chắc chắn xóa phê bình đã chọn?",
+            confirmText: "Có",
+            cancelText: "Hủy"
+        }).then((e) => {
+            if (e == "confirm") {
+                var me = this;
+                var listRow = $('.select');
+                var listID = [];
+                $.each(listRow, function (index, item) {
+                    listID.push($(item).data('recordid'));
+                });
+                var listID_update = [];
+                for (var i = 1; i < listID.length; i++) {
+                    listID_update.push(listID[i]);
+                }
+                $.ajax({
+                    method: 'DELETE',
+                    url: '/critics',
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(listID_update),
+                    success: function (res) {
+                        cuteAlert({
+                            type: "success",
+                            title: "Thông báo",
+                            message: "Xóa phê bình thành công!",
+                            buttonText: "OK"
+                        })
+                        me.loadCritic(me.student_id);
+                        me.RowOnClick();
+                    },
+                    error: function (res) {
+                        alert("Hệ thống đang bị lỗi!");
+                    }
+                });
             }
-        });
+        })
+        
     }
     editScore() {
         var me = this;
@@ -457,7 +503,12 @@ class Student extends BaseStudent {
                 data: JSON.stringify(object),
                 contentType: "application/json; charset=utf-8",
                 success: function (res) {
-                    alert("Sửa điểm thành công!");
+                    cuteAlert({
+                        type: "success",
+                        title: "Thông báo",
+                        message: "Sửa điểm thành công!",
+                        buttonText: "OK"
+                    })
                     me.loadScore(me.student_id);
                     $('#edit_score').text("Sửa");
                     $('#score_subject').val("");
@@ -519,7 +570,12 @@ class Student extends BaseStudent {
                 data: JSON.stringify(object),
                 contentType: "application/json; charset=utf-8",
                 success: function (res) {
-                    alert("Sửa khen thưởng thành công!");
+                    cuteAlert({
+                        type: "success",
+                        title: "Thông báo",
+                        message: "Sửa khen thưởng thành công!",
+                        buttonText: "OK"
+                    })
                     me.loadBonusStudent(me.student_id);
                     $('#edit_bonus').text("Sửa");
                     $('#bonus_time').val("");
@@ -580,7 +636,12 @@ class Student extends BaseStudent {
                 data: JSON.stringify(object),
                 contentType: "application/json; charset=utf-8",
                 success: function (res) {
-                    alert("Sửa phê bình thành công!");
+                    cuteAlert({
+                        type: "success",
+                        title: "Thông báo",
+                        message: "Sửa phê bình thành công!",
+                        buttonText: "OK"
+                    })
                     me.loadCritic(me.student_id);
                     $('#edit_critic').text("Sửa");
                     $('#critic_time').val("");
@@ -597,25 +658,58 @@ class Student extends BaseStudent {
         }
     }
     submitAttendence() {
-        
-        var me = this;
-        var listRow = $('.select');
-        var listID = [];
+        cuteAlert({
+            type: "question",
+            title: "Xác nhận",
+            message: "Bạn có chắc chắn điểm danh những học sinh đã chọn?",
+            confirmText: "Có",
+            cancelText: "Hủy"
+        }).then((e) => {
+            if (e == "confirm") {
+                var me = this;
+                var listRow = $('.select');
+                var listID = [];
 
-        $.each(listRow, function (index, item) {
-            listID.push($(item).data('recordid'));
-        });
-        for (var i = 0; i < listID.length; i++) {
-            $.ajax({
-                method: 'GET',
-                url: '/students/' + listID[i],
-                success: function (ress) {
+                $.each(listRow, function (index, item) {
+                    listID.push($(item).data('recordid'));
+                });
+                for (var i = 0; i < listID.length; i++) {
+                    $.ajax({
+                        method: 'GET',
+                        url: '/students/' + listID[i],
+                        success: function (ress) {
+                            var object = {};
+                            object["StudentID"] = ress.StudentID;
+                            object["Attendence"] = parseInt(ress.Attendence) + 1;
+                            $.ajax({
+                                method: 'PUT',
+                                url: '/students_attendence',
+                                data: JSON.stringify(object),
+                                contentType: "application/json; charset=utf-8",
+                                success: function (res) {
+                                },
+                                error: function () {
+                                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                                }
+                            });
+                        },
+                        error: function () {
+                            alert("Hệ thống đang bị lỗi!");
+                        }
+                    });
+
+
+                }
+                //submit total điểm danh: 
+                var listAllStudent = [];
+                listAllStudent = this.getAllData(classID);
+                for (var k = 0; k < listAllStudent.length; k++) {
                     var object = {};
-                    object["StudentID"] = ress.StudentID;
-                    object["Attendence"] = parseInt(ress.Attendence) + 1;
+                    object["StudentID"] = listAllStudent[k].StudentID;
+                    object["Status"] = parseInt(listAllStudent[k].Status) + 1;
                     $.ajax({
                         method: 'PUT',
-                        url: '/students_attendence',
+                        url: '/students_total_attendence',
                         data: JSON.stringify(object),
                         contentType: "application/json; charset=utf-8",
                         success: function (res) {
@@ -624,39 +718,22 @@ class Student extends BaseStudent {
                             alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
                         }
                     });
-                },
-                error: function () {
-                    alert("Hệ thống đang bị lỗi!");
+
+
                 }
-            });
-            
-           
-        }
-        //submit total điểm danh: 
-        var listAllStudent = [];
-        listAllStudent = this.getAllData(classID);
-        for (var k = 0; k < listAllStudent.length; k++) {
-            var object = {};
-            object["StudentID"] = listAllStudent[k].StudentID;
-            object["Status"] = parseInt(listAllStudent[k].Status) + 1;
+                //
+                me.loadData();
+                cuteAlert({
+                    type: "success",
+                    title: "Thông báo",
+                    message: "Điểm danh thành công!",
+                    buttonText: "OK"
+                })
 
-            $.ajax({
-                method: 'PUT',
-                url: '/students_total_attendence',
-                data: JSON.stringify(object),
-                contentType: "application/json; charset=utf-8",
-                success: function (res) {
-                },
-                error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
-                }
-            });
-
-
-        }
-        //
-        me.loadData();
-        alert("Đã submit điểm danh!");
+            } else {
+               
+            }
+        })
     }
     showDiaLog() {
 
@@ -712,6 +789,12 @@ class Student extends BaseStudent {
                         contentType: "application/json; charset=utf-8",
                         data: JSON.stringify(listID),
                         success: function (res) {
+                            cuteAlert({
+                                type: "success",
+                                title: "Thông báo",
+                                message: "Xóa học sinh thành công!",
+                                buttonText: "OK"
+                            })
                         },
                         error: function (res) {
                             alert("Hệ thống đang bị lỗi!");
@@ -893,7 +976,12 @@ class Student extends BaseStudent {
         object["ClassID"] = classID;
 
         if (object["Code"] == "" || object["Name"] == "" || object["Sex"] == "" || object["Birthday"] === "" || object["Address"] === "" || object["ParentName"] === "" || object["ParentPhone"] === "") {
-            alert("Bạn phải nhập thông tin trong các trường bắt buộc!");
+            cuteAlert({
+                type: "warning",
+                title: "Thông báo",
+                message: "Bạn phải nhập thông tin trong các trường bắt buộc!",
+                buttonText: "OK"
+            })
         } else {
             $.ajax({
                 method: 'POST',
@@ -904,6 +992,12 @@ class Student extends BaseStudent {
                     $('.dong1 input').val("");
                     $('#dialog-add').dialog('close');
                     me.loadData();
+                    cuteAlert({
+                        type: "success",
+                        title: "Thông báo",
+                        message: "Thêm học sinh thành công!",
+                        buttonText: "OK"
+                    })
                 },
                 error: function () {
                     alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
@@ -928,12 +1022,16 @@ class Student extends BaseStudent {
                 data: JSON.stringify(object),
                 contentType: "application/json; charset=utf-8",
                 success: function (res) {
-                    alert("Thêm mới điểm thành công!");
                     $('#score_subject').val("Toán");
                     $('#score_type').val("Điểm miệng");
                     $('#score_point').val("");
                     me.loadScore(me.student_id);
-
+                    cuteAlert({
+                        type: "success",
+                        title: "Thông báo",
+                        message: "Thêm mới điểm thành công!",
+                        buttonText: "OK"
+                    })
                 },
                 error: function () {
                     alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
@@ -958,12 +1056,17 @@ class Student extends BaseStudent {
                 data: JSON.stringify(object),
                 contentType: "application/json; charset=utf-8",
                 success: function (res) {
-                    alert("Thêm mới khen thưởng thành công!");
                     $('#bonus_time').val("");
                     $('#bonus_content').val("");
                     $('#bonus_subject').val("");
                     $('#bonus_value').val("");
                     me.loadBonusStudent(me.student_id);
+                    cuteAlert({
+                        type: "success",
+                        title: "Thông báo",
+                        message: "Thêm mới khen thưởng thành công!",
+                        buttonText: "OK"
+                    })
 
                 },
                 error: function () {
@@ -1013,7 +1116,12 @@ class Student extends BaseStudent {
                 });
             }
         }
-        alert("Thêm danh sách điểm thành công!");
+        cuteAlert({
+            type: "success",
+            title: "Thông báo",
+            message: "Thêm danh sách điểm thành công!",
+            buttonText: "OK"
+        })
         $('#dialog-score').dialog('close');
 
     }
@@ -1034,12 +1142,17 @@ class Student extends BaseStudent {
                 data: JSON.stringify(object),
                 contentType: "application/json; charset=utf-8",
                 success: function (res) {
-                    alert("Thêm mới phê bình thành công!");
                     $('#critic_time').val("");
                     $('#critic_content').val("");
                     $('#critic_subject').val("");
                     $('#critic_value').val("");
                     me.loadCritic(me.student_id);
+                    cuteAlert({
+                        type: "success",
+                        title: "Thông báo",
+                        message: "Thêm mới phê bình thành công!",
+                        buttonText: "OK"
+                    })
 
                 },
                 error: function () {
@@ -1088,6 +1201,12 @@ class Student extends BaseStudent {
                     //$('.dong1 input').val("");
                     $('#dialog-edit').dialog('close');
                     me.loadData();
+                    cuteAlert({
+                        type: "success",
+                        title: "Thông báo",
+                        message: "Sửa học sinh thành công!",
+                        buttonText: "OK"
+                    })
                 },
                 error: function () {
                     alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");

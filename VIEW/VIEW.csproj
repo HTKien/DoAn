@@ -162,6 +162,13 @@
     <Content Include="CSS\Project\student_parent.css" />
     <Content Include="CSS\Project\view.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Libraries\cute-alert-master\cute-alert.js" />
+    <Content Include="Scripts\Libraries\cute-alert-master\img\error.svg" />
+    <Content Include="Scripts\Libraries\cute-alert-master\img\info.svg" />
+    <Content Include="Scripts\Libraries\cute-alert-master\img\question.svg" />
+    <Content Include="Scripts\Libraries\cute-alert-master\img\success.svg" />
+    <Content Include="Scripts\Libraries\cute-alert-master\img\warning.svg" />
+    <Content Include="Scripts\Libraries\cute-alert-master\style.css" />
     <Content Include="Scripts\Libraries\jquery-1.12.4.js" />
     <Content Include="Scripts\Libraries\jquery-3.4.1.js" />
     <Content Include="Scripts\Libraries\jquery-ui.js" />
@@ -235,6 +242,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Scripts\Libraries\cute-alert-master\LICENSE" />
+    <Content Include="Scripts\Libraries\cute-alert-master\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

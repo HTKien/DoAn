@@ -315,14 +315,17 @@ class Class extends BaseClass {
             $('button.delete').prop('disabled', true);
             $('button.duplicate').prop('disabled', true);
             $('button.edit').prop('disabled', true);
+            $('button.goclass').prop('disabled', true);
         } else if (selected === 1) {
             $('button.delete').removeAttr('disabled');
             $('button.duplicate').removeAttr('disabled');
             $('button.edit').removeAttr('disabled');
+            $('button.goclass').removeAttr('disabled');
         } else if (selected > 1) {
             $('button.delete').removeAttr('disabled');
             $('button.duplicate').prop('disabled', true);
             $('button.edit').prop('disabled', true);
+            $('button.goclass').prop('disabled', true);
         }
 
 
@@ -403,6 +406,7 @@ class Class extends BaseClass {
         $.each(listRow, function (index, item) {
             listID.push($(item).data('recordid'));
         });
+        
 
         object["TeacherID"] = listID[0];
         object["Code"] = $('#code-dialog').val();
@@ -410,22 +414,43 @@ class Class extends BaseClass {
         object["SchoolYear"] = $('#schoolyear-dialog').val();
         object["Note"] = $('#note-dialog').val();
         if (object["Code"] == "" || object["Name"] == "" || object["SchoolYear"] == "") {
-            alert("Bạn phải nhập thông tin trong các trường bắt buộc!");
+            cuteAlert({
+                type: "warning",
+                title: "Thông báo",
+                message: "Bạn phải nhập thông tin các trường bắt buộc!",
+                buttonText: "OK"
+            })
         } else {
-            $.ajax({
-                method: 'POST',
-                url: '/classes',
-                data: JSON.stringify(object),
-                contentType: "application/json; charset=utf-8",
-                success: function (res) {
-                    $('.dong1 input').val("");
-                    $('#dialog-add').dialog('close');
-                    me.loadData();
-                },
-                error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
-                }
-            });
+            if (listID.length > 1) {
+                cuteAlert({
+                    type: "warning",
+                    title: "Thông báo",
+                    message: "Chỉ được chọn tối đa 1 giáo viên!",
+                    buttonText: "OK"
+                })
+            } else if (listID.length <= 1) {
+                $.ajax({
+                    method: 'POST',
+                    url: '/classes',
+                    data: JSON.stringify(object),
+                    contentType: "application/json; charset=utf-8",
+                    success: function (res) {
+                        $('.dong1 input').val("");
+                        $('#dialog-add').dialog('close');
+                        me.loadData();
+                        cuteAlert({
+                            type: "success",
+                            title: "Thông báo",
+                            message: "Thêm lớp học thành công!",
+                            buttonText: "OK"
+                        })
+                    },
+                    error: function () {
+                        alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    }
+                });
+            }
+            
         }
     }
     /**
@@ -452,21 +477,42 @@ class Class extends BaseClass {
         object["TeacherID"] = listID[1];
 
         if (object["Code"] == "" || object["Name"] == "" || object["SchoolYear"] == "") {
-            alert("Bạn phải nhập thông tin trong các trường bắt buộc!");
+            cuteAlert({
+                type: "warning",
+                title: "Thông báo",
+                message: "Bạn phải nhập thông tin các trường bắt buộc!",
+                buttonText: "OK"
+            })
         } else {
-            $.ajax({
-                method: 'PUT',
-                url: '/classes',
-                data: JSON.stringify(object),
-                contentType: "application/json; charset=utf-8",
-                success: function (res) {
-                    $('#dialog-edit').dialog('close');
-                    me.loadData();
-                },
-                error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
-                }
-            });
+            if (listID.length > 2) {
+                cuteAlert({
+                    type: "warning",
+                    title: "Thông báo",
+                    message: "Chỉ được chọn tối đa 1 giáo viên!",
+                    buttonText: "OK"
+                })
+            } else if (listID.length <= 2) {
+                $.ajax({
+                    method: 'PUT',
+                    url: '/classes',
+                    data: JSON.stringify(object),
+                    contentType: "application/json; charset=utf-8",
+                    success: function (res) {
+                        $('#dialog-edit').dialog('close');
+                        me.loadData();
+                        cuteAlert({
+                            type: "success",
+                            title: "Thông báo",
+                            message: "Sửa lớp học thành công!",
+                            buttonText: "OK"
+                        })
+                    },
+                    error: function () {
+                        alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    }
+                });
+            }
+            
         }
 
     }

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Scripts/Libraries/cute-alert-master/style.css" />
     <link href="/CSS/Libraries/jquery-ui.css" rel="stylesheet" />
     <link href="/CSS/Project/view.css" rel="stylesheet" />
     <link href="/CSS/Project/common.css" rel="stylesheet" />
@@ -364,7 +365,7 @@
 
                         </div>
                     </div>
-                    <div  style="font-weight: bold; margin-top: 10px; margin-left: 15px">Điểm trung bình từng môn học</div>
+                    <div style="font-weight: bold; margin-top: 10px; margin-left: 15px">Điểm trung bình từng môn học</div>
                     <div style="padding-left: 15px; padding-right: 15px;" class="score-medium">
                         <div>
                             <div class="info-student" id="scoreToan"></div>
@@ -394,14 +395,14 @@
                     <div class="title_info_detail">Thông tin khen thưởng - tuyên dương</div>
                     <label style="font-weight: normal; margin-left: 15px;" class="label-search">Tìm kiếm</label><input id="search_tuyen_duong" class="imput-search" />
                     <div style="margin-top: 15px; padding-left: 15px; padding-right: 15px;" class="student-score-content student-score-table-detail">
-                        <div  class="student-score-table student-score-table-detail">
+                        <div class="student-score-table student-score-table-detail">
                             <table id="table_tuyen_duong" style="width: 100%; text-align: center" class="main-table-bonus">
                                 <thead>
                                     <tr>
-                                        <th  class="tieu-de tieu-de-detail" fieldName="Time">
+                                        <th class="tieu-de tieu-de-detail" fieldName="Time">
                                             <div class="tieu-de-tren">Thời gian</div>
                                         </th>
-                                        <th  class="tieu-de tieu-de-detail" fieldName="Content">
+                                        <th class="tieu-de tieu-de-detail" fieldName="Content">
                                             <div class="tieu-de-tren">Nội dung</div>
                                         </th>
                                         <th class="tieu-de tieu-de-detail" fieldName="Subject">
@@ -424,11 +425,11 @@
                             </div>
                             <div class="show-item">
                                 <label>Thời gian<span class="dau-sao">(*)</span></label>
-                                <input style="width: 228px; height: 28px; margin-left: 20px" class="input1" type="date" id="bonus_time" >
+                                <input style="width: 228px; height: 28px; margin-left: 20px" class="input1" type="date" id="bonus_time">
                             </div>
                             <div class="show-item">
                                 <label>Nội dung<span class="dau-sao">(*)</span></label>
-                                <input style="width: 244px; height: 24px;margin-left: 22px; outline: none; border: 1px solid #bfbfbf; border-radius: 4px;"  id="bonus_content" />
+                                <input style="width: 244px; height: 24px;margin-left: 22px; outline: none; border: 1px solid #bfbfbf; border-radius: 4px;" id="bonus_content" />
                             </div>
                             <div class="show-item">
                                 <label>Môn học <span class="dau-sao">(*)</span></label>
@@ -466,16 +467,16 @@
                             <table id="table_critic" style="width: 100%; text-align: center" class="main-table-critic">
                                 <thead>
                                     <tr>
-                                        <th class="tieu-de tieu-de-detail"  fieldName="Time">
+                                        <th class="tieu-de tieu-de-detail" fieldName="Time">
                                             <div class="tieu-de-tren">Thời gian</div>
                                         </th>
-                                        <th class="tieu-de tieu-de-detail"  fieldName="Content">
+                                        <th class="tieu-de tieu-de-detail" fieldName="Content">
                                             <div class="tieu-de-tren">Nội dung</div>
                                         </th>
-                                        <th class="tieu-de tieu-de-detail"  fieldName="Subject">
+                                        <th class="tieu-de tieu-de-detail" fieldName="Subject">
                                             <div class="tieu-de-tren">Môn học</div>
                                         </th>
-                                        <th class="tieu-de tieu-de-detail"  fieldName="Value">
+                                        <th class="tieu-de tieu-de-detail" fieldName="Value">
                                             <div class="tieu-de-tren">Điểm trừ</div>
                                         </th>
                                     </tr>
@@ -588,7 +589,7 @@
                 <div style="color: white; line-height: 30px; margin-left: 15px; ">Nhập điểm</div>
                 <button class="icon-tieu-de-dialog-score"></button>
             </div>
-            <div >
+            <div>
                 <div style="padding: 15px 12px">
                     <label>Môn học</label>
                     <select style="height: 30px; border: 1px solid #bfbfbf; width: 178px;" id="submit_score_subject">
@@ -619,18 +620,18 @@
 
 
             </div>
-            <div style="height:456px; overflow: auto; margin-right: 10px; border: 1px solid #BFBFBF; border-radius: 4px" class="table" >
+            <div style="height:456px; overflow: auto; margin-right: 10px; border: 1px solid #BFBFBF; border-radius: 4px" class="table">
                 <table style="width: 100%; text-align: center" id="table_submit_score" class="main-table-submit-score">
                     <thead>
-                        <tr >
-                            <th  class="tieu-de title-submit-score" fieldName="Code">
+                        <tr>
+                            <th class="tieu-de title-submit-score" fieldName="Code">
                                 <div class="tieu-de-tren">Mã học sinh</div>
                             </th>
-                            <th  class="tieu-de title-submit-score" fieldName="Name">
+                            <th class="tieu-de title-submit-score" fieldName="Name">
                                 <div class="tieu-de-tren">Họ và tên</div>
 
                             </th>
-                            <th  class="tieu-de title-submit-score" fieldName="">
+                            <th class="tieu-de title-submit-score" fieldName="">
                                 <div class="tieu-de-tren">Điểm</div>
 
                             </th>
@@ -712,6 +713,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.5/xlsx.full.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="/Scripts/Libraries/cute-alert-master/cute-alert.js"></script>
     <script src="/Scripts/Libraries/jquery-3.4.1.js"></script>
     <script src="/Scripts/Libraries/jquery-ui.js"></script>
     <script src="/Scripts/Project/class_student.js"></script>
