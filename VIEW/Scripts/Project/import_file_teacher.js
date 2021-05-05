@@ -35,7 +35,7 @@
                 success: function (res) {
                 },
                 error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    alert("Hệ thống đang bị lỗi!");
                 }
             });
         }

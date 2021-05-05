@@ -360,7 +360,7 @@ class Score extends BaseScore {
                 me.loadData();
             },
             error: function (res) {
-                alert("Hệ thống đang bị lỗi tại hàm ClickButton!");
+                alert("Hệ thống đang bị lỗi!");
             }
         });
 
@@ -404,7 +404,7 @@ class Score extends BaseScore {
                     me.loadData();
                 },
                 error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    alert("Hệ thống đang bị lỗi!");
                 }
             });
         }
@@ -446,7 +446,7 @@ class Score extends BaseScore {
                     me.loadData();
                 },
                 error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    alert("Hệ thống đang bị lỗi!");
                 }
             });
         }
@@ -498,7 +498,7 @@ class Score extends BaseScore {
 
                 },
                 error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    alert("Hệ thống đang bị lỗi!");
                 }
             });
         }
@@ -540,7 +540,7 @@ class Score extends BaseScore {
                     $('#dialog-add').dialog();
                 },
                 error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    alert("Hệ thống đang bị lỗi!");
                 }
             });
         }

@@ -39,7 +39,7 @@ $("#input_file_class").on("change", function (e) {
                         success: function (res) {
                         },
                         error: function () {
-                            alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                            alert("Hệ thống đang bị lỗi!");
                         }
                     });
                 }
@@ -109,7 +109,7 @@ $("#input_file_student").on("change", function (e) {
 
                         },
                         error: function () {
-                            alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                            alert("Hệ thống đang bị lỗi!");
                         }
                     });
                 }

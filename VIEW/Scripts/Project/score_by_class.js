@@ -396,7 +396,7 @@ class ScoreByClass extends BaseScoreByClass {
                     me.loadData();
                 },
                 error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    alert("Hệ thống đang bị lỗi!");
                 }
             });
         }
@@ -438,7 +438,7 @@ class ScoreByClass extends BaseScoreByClass {
                     me.loadData();
                 },
                 error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    alert("Hệ thống đang bị lỗi!");
                 }
             });
         }
@@ -490,7 +490,7 @@ class ScoreByClass extends BaseScoreByClass {
 
                 },
                 error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    alert("Hệ thống đang bị lỗi!");
                 }
             });
         }
@@ -532,7 +532,7 @@ class ScoreByClass extends BaseScoreByClass {
                     $('#dialog-add').dialog();
                 },
                 error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    alert("Hệ thống đang bị lỗi!");
                 }
             });
         }

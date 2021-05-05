@@ -352,7 +352,7 @@ class Critic extends BaseCritic {
                 me.loadData();
             },
             error: function (res) {
-                alert("Hệ thống đang bị lỗi tại hàm ClickButton!");
+                alert("Hệ thống đang bị lỗi!");
             }
         });
 
@@ -396,7 +396,7 @@ class Critic extends BaseCritic {
                     me.loadData();
                 },
                 error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    alert("Hệ thống đang bị lỗi!");
                 }
             });
         }
@@ -438,7 +438,7 @@ class Critic extends BaseCritic {
                     me.loadData();
                 },
                 error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    alert("Hệ thống đang bị lỗi!");
                 }
             });
         }
@@ -490,7 +490,7 @@ class Critic extends BaseCritic {
 
                 },
                 error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    alert("Hệ thống đang bị lỗi!");
                 }
             });
         }
@@ -532,7 +532,7 @@ class Critic extends BaseCritic {
                     $('#dialog-add').dialog();
                 },
                 error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    alert("Hệ thống đang bị lỗi!");
                 }
             });
         }

@@ -518,7 +518,7 @@ class Student extends BaseStudent {
 
                 },
                 error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    alert("Hệ thống đang bị lỗi!");
                 }
             });
         }
@@ -586,7 +586,7 @@ class Student extends BaseStudent {
 
                 },
                 error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    alert("Hệ thống đang bị lỗi!");
                 }
             });
         }
@@ -652,7 +652,7 @@ class Student extends BaseStudent {
 
                 },
                 error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    alert("Hệ thống đang bị lỗi!");
                 }
             });
         }
@@ -689,7 +689,7 @@ class Student extends BaseStudent {
                                 success: function (res) {
                                 },
                                 error: function () {
-                                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                                    alert("Hệ thống đang bị lỗi!");
                                 }
                             });
                         },
@@ -715,7 +715,7 @@ class Student extends BaseStudent {
                         success: function (res) {
                         },
                         error: function () {
-                            alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                            alert("Hệ thống đang bị lỗi!");
                         }
                     });
 
@@ -1007,7 +1007,7 @@ class Student extends BaseStudent {
                     })
                 },
                 error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    alert("Hệ thống đang bị lỗi!");
                 }
             });
         }
@@ -1041,7 +1041,7 @@ class Student extends BaseStudent {
                     })
                 },
                 error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    alert("Hệ thống đang bị lỗi!");
                 }
             });
         }
@@ -1077,7 +1077,7 @@ class Student extends BaseStudent {
 
                 },
                 error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    alert("Hệ thống đang bị lỗi!");
                 }
             });
         }
@@ -1118,7 +1118,7 @@ class Student extends BaseStudent {
 
                     },
                     error: function () {
-                        alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                        alert("Hệ thống đang bị lỗi!");
                     }
                 });
             }
@@ -1163,7 +1163,7 @@ class Student extends BaseStudent {
 
                 },
                 error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    alert("Hệ thống đang bị lỗi!");
                 }
             });
         }
@@ -1216,7 +1216,7 @@ class Student extends BaseStudent {
                     })
                 },
                 error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    alert("Hệ thống đang bị lỗi!");
                 }
             });
         }
