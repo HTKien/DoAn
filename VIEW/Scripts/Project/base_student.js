@@ -54,13 +54,13 @@
         this.allStudentClass = this.getAllData(classID);
 
         function compare(a, b) {
-            const NameA = a.Name.toUpperCase();
-            const NameB = b.Name.toUpperCase();
+            const CodeA = a.Code.toUpperCase();
+            const CodeB = b.Code.toUpperCase();
 
             let comparison = 0;
-            if (NameA > NameB) {
+            if (CodeA > CodeB) {
                 comparison = 1;
-            } else if (NameA < NameB) {
+            } else if (CodeA < CodeB) {
                 comparison = -1;
             }
             return comparison;
@@ -685,6 +685,9 @@
     sortByName() {
         sortTable("table_student", 1, ">");
     }
+    sortByCode() {
+        sortTable("table_student", 0, ">");
+    }
     sortByBonus() {
         sortTable("table_student",3, "<");
 
@@ -1037,6 +1040,9 @@
                 alert("Hệ thống đang bị lỗi!");
             }
         })
+        if (teacherName == undefined) {
+            teacherName = "Chưa có";
+        }
         var classTitle = "Mã lớp: " + classCode + " - Tên lớp: " + className + " - Giáo viên chủ nhiệm: " + teacherName;
         $("#class_title").text(classTitle);
         var fields = $('.main-table th[fieldName]');

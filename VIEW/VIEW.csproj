@@ -149,6 +149,7 @@
     <Content Include="Contents\imgs\trigger.png" />
     <Content Include="Contents\imgs\vector-smart-object.png" />
     <Content Include="Contents\imgs\viewEmail.png" />
+    <Content Include="Contents\login.jpg" />
     <Content Include="CSS\Libraries\dashboard.css" />
     <Content Include="CSS\Libraries\jquery-ui.css" />
     <Content Include="CSS\Libraries\sb-admin-2.min.css" />

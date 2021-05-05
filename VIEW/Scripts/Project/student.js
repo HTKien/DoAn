@@ -65,6 +65,7 @@ class Student extends BaseStudent {
         $(document).on('click', '#refresh', this.loadRefreshData.bind(this));
         $(document).on('click', '#sort_by_score', this.sortByScoreMedium.bind(this));
         $(document).on('click', '#sort_by_name', this.sortByName.bind(this));
+        $(document).on('click', '#sort_by_code', this.sortByCode.bind(this));
         $(document).on('click', '#sort_by_bonus', this.sortByBonus.bind(this));
         $(document).on('click', '#sort_by_critic', this.sortByCritic.bind(this));
         $(document).on('keyup', '#code_search', this.searchByCode.bind(this));
