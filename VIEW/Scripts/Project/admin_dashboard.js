@@ -83,7 +83,12 @@
                     }
                 });
             }
-            $('#conduct_good').text(conduct_good + " học sinh")
+            $('#conduct_good').text(conduct_good + " học sinh");
+            $('#rating_hk_tot').text(((conduct_good / res.length) * 100).toFixed(2) + "%");
+            $('#rating_hk_kha').text(((conduct_kha / res.length) * 100).toFixed(2) + "%");
+            $('#rating_hk_tb').text(((conduct_tb / res.length) * 100).toFixed(2) + "%");
+            $('#rating_hk_yeu').text(((conduct_yeu / res.length) * 100).toFixed(2) + "%");
+
             $('#conduct_kha').text(conduct_kha + " học sinh")
             $('#conduct_tb').text(conduct_tb + " học sinh")
             $('#conduct_yeu').text(conduct_yeu + " học sinh")

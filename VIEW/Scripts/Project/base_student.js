@@ -156,6 +156,7 @@
             var countToan = 0;
             for (var i = 0; i < scores.length; i++) {
                 if (scores[i].Subject === "Toán") {
+
                     if (scores[i].Type === "Điểm miệng" || scores[i].Type === "Điểm 15 phút") {
                         if (scores[i].Point !== "Thiếu điểm") {
                             totalToan = totalToan + parseFloat(scores[i].Point);
@@ -1074,7 +1075,12 @@
             var rowHTML = $('<tr></tr>').data("recordid", item["StudentID"]);
             $.each(fields, function (fieldIndex, fieldItem) {
                 var fieldName = fieldItem.getAttribute('fieldName');
-                var fieldValue = item[fieldName];
+                var fieldValue;
+                if (fieldName == "Classify") {
+                    fieldValue = "Chưa xếp loại";
+                } else {
+                    fieldValue = item[fieldName];
+                }
                 rowHTML.append('<td>' + fieldValue + '</td>');
             });
             $('.main-table tbody').append(rowHTML);

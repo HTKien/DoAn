@@ -110,8 +110,8 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Tổng số lớp học</h5>
-                                        <span id="total_class" class="h2 font-weight-bold mb-0">0</span>
+                                        <h5 class="card-title text-uppercase text-muted mb-0">Tổng số học sinh</h5>
+                                        <span id="total_student" class="h2 font-weight-bold mb-0">0</span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -127,8 +127,8 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Tổng số giáo viên</h5>
-                                        <span id="total_teacher" class="h2 font-weight-bold mb-0">0</span>
+                                        <h5 class="card-title text-uppercase text-muted mb-0">Loại lớp</h5>
+                                        <span id="type_class" class="h2 font-weight-bold mb-0">0</span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-info text-white rounded-circle shadow">
@@ -144,8 +144,8 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Tổng số học sinh</h5>
-                                        <span id="total_student" class="h2 font-weight-bold mb-0">0</span>
+                                        <h5 class="card-title text-uppercase text-muted mb-0">Năm học</h5>
+                                        <span id="school_year" class="h2 font-weight-bold mb-0">0</span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
@@ -169,8 +169,7 @@
                                     </div>
                                 </div>
                                 <p class="mt-4 mb-0 text-muted text-sm">
-                                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                                    <span class="text-nowrap">Since last month</span>
+                                    <span id="rating_hk_tot" class="text-success mr-2">0%</span>
                                 </p>
                             </div>
                         </div>
@@ -186,8 +185,7 @@
 
                                 </div>
                                 <p class="mt-4 mb-0 text-muted text-sm">
-                                    <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>
-                                    <span class="text-nowrap">Since last week</span>
+                                    <span id="rating_hk_kha" class="text-danger mr-2"> 0%</span>
                                 </p>
                             </div>
                         </div>
@@ -203,8 +201,7 @@
 
                                 </div>
                                 <p class="mt-4 mb-0 text-muted text-sm">
-                                    <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
-                                    <span class="text-nowrap">Since yesterday</span>
+                                    <span id="rating_hk_tb" class="text-warning mr-2"> 0%</span>
                                 </p>
                             </div>
                         </div>
@@ -220,8 +217,7 @@
 
                                 </div>
                                 <p class="mt-4 mb-0 text-muted text-sm">
-                                    <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
-                                    <span class="text-nowrap">Since yesterday</span>
+                                    <span id="rating_hk_yeu" class="text-warning mr-2"> 1.10%</span>
                                 </p>
                             </div>
                         </div>
@@ -239,8 +235,7 @@
                                     </div>
                                 </div>
                                 <p class="mt-4 mb-0 text-muted text-sm">
-                                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                                    <span class="text-nowrap">Since last month</span>
+                                    <span class="text-success mr-2">0%</span>
                                 </p>
                             </div>
                         </div>
@@ -256,8 +251,7 @@
 
                                 </div>
                                 <p class="mt-4 mb-0 text-muted text-sm">
-                                    <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>
-                                    <span class="text-nowrap">Since last week</span>
+                                    <span class="text-danger mr-2"> 0%</span>
                                 </p>
                             </div>
                         </div>
@@ -273,8 +267,7 @@
 
                                 </div>
                                 <p class="mt-4 mb-0 text-muted text-sm">
-                                    <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
-                                    <span class="text-nowrap">Since yesterday</span>
+                                    <span class="text-warning mr-2">0%</span>
                                 </p>
                             </div>
                         </div>
@@ -290,14 +283,48 @@
 
                                 </div>
                                 <p class="mt-4 mb-0 text-muted text-sm">
-                                    <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
-                                    <span class="text-nowrap">Since yesterday</span>
+                                    <span class="text-warning mr-2">0%</span>
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+                <p style="margin-bottom: 0; font-weight: bold; margin-left: 5px;margin-top:10px">Tuyên dương - Phê bình</p>
+                <div style="margin-top: 0px;" class="row">
+                    <div class="col">
+                        <div class="card card-stats mb-4 mb-xl-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="card-title text-uppercase text-muted mb-0">Tổng số Tuyên dương - Khen thưởng</h5>
+                                        <span id="bonus" class="h2 font-weight-bold mb-0">0</span>
+                                    </div>
+
+                                </div>
+                                <p class="mt-4 mb-0 text-muted text-sm">
+                                    <span class="text-success mr-2"> 3.48%</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-stats mb-4 mb-xl-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="card-title text-uppercase text-muted mb-0">Tổng số Phê bình</h5>
+                                        <span id="critic" class="h2 font-weight-bold mb-0">0</span>
+                                    </div>
+
+
+                                </div>
+                                <p class="mt-4 mb-0 text-muted text-sm">
+                                    <span class="text-danger mr-2"> 3.48%</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
