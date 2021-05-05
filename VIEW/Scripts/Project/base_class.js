@@ -521,6 +521,9 @@
                 if (fieldName === "StudentNumber") {
                     fieldValue = studentNumber;
                 }
+                if (fieldValue == undefined) {
+                    fieldValue = "";
+                }
                 rowHTML.append('<td>' + fieldValue + '</td>');
             });
             $('.main-table tbody').append(rowHTML);

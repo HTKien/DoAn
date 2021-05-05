@@ -973,6 +973,13 @@ class Student extends BaseStudent {
         object["ParentName"] = $('#parentname-dialog').val();
         object["ParentPhone"] = $('#parentphone-dialog').val();
         object["Note"] = $('#note-dialog').val();
+        object["Bonus"] = 0;
+        object["Critic"] = 0;
+        object["MediumScore"] = "0.00";
+        object["Conduct"] = "Tốt";
+        object["Attendence"] =0;
+        object["Status"] = 0;
+        object["Classify"] = "Chưa xếp loại";
         object["ClassID"] = classID;
 
         if (object["Code"] == "" || object["Name"] == "" || object["Sex"] == "" || object["Birthday"] === "" || object["Address"] === "" || object["ParentName"] === "" || object["ParentPhone"] === "") {

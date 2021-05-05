@@ -14,31 +14,45 @@ $("#input_file_class").on("change", function (e) {
         var result = XLSX.utils.sheet_to_json(firstSheet, { header: 1 });
 
         // data preview
-        alert("Xác nhận import file?");
+        cuteAlert({
+            type: "question",
+            title: "Xác nhận",
+            message: "Bạn có chắc chắn nhập file lớp học?",
+            confirmText: "Có",
+            cancelText: "Hủy"
+        }).then((e) => {
+            if (e == "confirm") {
+                for (var i = 0; i < result.length; i++) {
+                    var object = {};
 
-        //
-        for (var i = 0; i < result.length; i++) {
-            var object = {};
 
+                    object["Code"] = result[i][0];
+                    object["Name"] = result[i][1];
+                    object["SchoolYear"] = result[i][2];
+                    object["Note"] = result[i][3];
 
-            object["Code"] = result[i][0];
-            object["Name"] = result[i][1];
-            object["SchoolYear"] = result[i][2];
-            object["Note"] = result[i][3];
-
-            $.ajax({
-                method: 'POST',
-                url: '/classes',
-                data: JSON.stringify(object),
-                contentType: "application/json; charset=utf-8",
-                success: function (res) {
-                },
-                error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                    $.ajax({
+                        method: 'POST',
+                        url: '/classes',
+                        data: JSON.stringify(object),
+                        contentType: "application/json; charset=utf-8",
+                        success: function (res) {
+                        },
+                        error: function () {
+                            alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                        }
+                    });
                 }
-            });
-        }
-        alert("Thêm thành công");
+            }
+        })
+        //
+        
+        cuteAlert({
+            type: "success",
+            title: "Thông báo",
+            message: "Nhập file thành công!",
+            buttonText: "OK"
+        })
 
 
     };
@@ -59,35 +73,54 @@ $("#input_file_student").on("change", function (e) {
         // header: 1 instructs xlsx to create an 'array of arrays'
         var result = XLSX.utils.sheet_to_json(firstSheet, { header: 1 });
         // data preview
-        alert("Xác nhận import file?");
+        cuteAlert({
+            type: "question",
+            title: "Xác nhận",
+            message: "Bạn có chắc chắn nhập file học sinh?",
+            confirmText: "Có",
+            cancelText: "Hủy"
+        }).then((e) => {
+            if (e == "confirm") {
+                for (var i = 0; i < result.length; i++) {
+                    var object = {};
 
-        //
-        for (var i = 0; i < result.length; i++) {
-            var object = {};
 
+                    object["Code"] = result[i][0];
+                    object["Name"] = result[i][1];
+                    object["Sex"] = result[i][2];
+                    object["Birthday"] = result[i][3];
+                    object["Address"] = result[i][4];
+                    object["ParentName"] = result[i][5];
+                    object["ParentPhone"] = result[i][6];
+                    object["Bonus"] = 0;
+                    object["Critic"] = 0;
+                    object["MediumScore"] = "0.00";
+                    object["Conduct"] = "Tốt";
+                    object["Attendence"] = 0;
+                    object["Status"] = 0;
+                    object["Classify"] = "Chưa xếp loại";
+                    object["ClassID"] = classID;
+                    $.ajax({
+                        method: 'POST',
+                        url: '/students',
+                        data: JSON.stringify(object),
+                        contentType: "application/json; charset=utf-8",
+                        success: function (res) {
 
-            object["Code"] = result[i][0];
-            object["Name"] = result[i][1];
-            object["Sex"] = result[i][2];
-            object["Birthday"] = result[i][3];
-            object["Address"] = result[i][4];
-            object["ParentName"] = result[i][5];
-            object["ParentPhone"] = result[i][6];
-            object["ClassID"] = classID;
-            $.ajax({
-                method: 'POST',
-                url: '/students',
-                data: JSON.stringify(object),
-                contentType: "application/json; charset=utf-8",
-                success: function (res) {
-
-                },
-                error: function () {
-                    alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                        },
+                        error: function () {
+                            alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
+                        }
+                    });
                 }
-            });
-        }
-        alert("Thêm thành công");
+            }
+        })
+        cuteAlert({
+            type: "success",
+            title: "Thông báo",
+            message: "Nhập file thành công!",
+            buttonText: "OK"
+        })
 
 
     };
