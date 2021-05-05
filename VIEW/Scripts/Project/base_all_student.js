@@ -1,4 +1,4 @@
-﻿class BaseStudent {
+﻿class BaseAllStudent {
     constructor() {
         this.loadData();
     }

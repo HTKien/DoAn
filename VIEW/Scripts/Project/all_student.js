@@ -8,7 +8,7 @@
     });
 })
 
-class Student extends BaseStudent {
+class Student extends BaseAllStudent {
 
     constructor() {
         super();

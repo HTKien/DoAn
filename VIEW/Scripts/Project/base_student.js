@@ -37,40 +37,54 @@
     * Người tạo: Hàn Trung Kiên
     * Ngày tạo: 22/8/2019
     * */
+    allStudentClass=[];
     getData() {
         
         var pageIndex = $('.page-index').val();
         var pageSize = $('.page-size option:selected').val();
 
-
         this.FormatBtn(pageIndex, pageSize);
+
         var fakeData = [];
+
         if (this.getAllData(classID).length === 0) {
             return fakeData;
         }
-        var allStudentClass = [];
 
+        this.allStudentClass = this.getAllData(classID);
 
-        if (pageIndex >= (parseInt(this.getAllData(classID).length / pageSize) + 1)) {
-            if (this.getAllData(classID).length % pageSize !== 0) {
-                $('.page-index').val((parseInt(this.getAllData(classID).length / pageSize) + 1));
+        function compare(a, b) {
+            const NameA = a.Name.toUpperCase();
+            const NameB = b.Name.toUpperCase();
+
+            let comparison = 0;
+            if (NameA > NameB) {
+                comparison = 1;
+            } else if (NameA < NameB) {
+                comparison = -1;
+            }
+            return comparison;
+        }
+        this.allStudentClass.sort(compare);
+        if (pageSize >= this.allStudentClass.length) {
+            fakeData = this.allStudentClass;
+        }else if (pageIndex >= (parseInt(this.allStudentClass.length / pageSize) + 1)) {
+            if (allStudentClass.length % pageSize !== 0) {
+                $('.page-index').val((parseInt(this.allStudentClass.length / pageSize) + 1));
 
             } else {
-                $('.page-index').val(parseInt(this.getAllData(classID).length / pageSize));
+                $('.page-index').val(parseInt(this.allStudentClass.length / pageSize));
 
             }
 
 
-            allStudentClass = this.getAllData(classID);
-            for (var i = ($('.page-index').val() - 1) * pageSize; i < allStudentClass.length; i++) {
-                fakeData.push(allStudentClass[i]);
+            for (var i = ($('.page-index').val() - 1) * pageSize; i < this.allStudentClass.length; i++) {
+                fakeData.push(this.allStudentClass[i]);
             }
 
         } else {
-            
-            allStudentClass = this.getAllData(classID);
             for (var i = (pageIndex - 1) * pageSize; i < (pageIndex * pageSize); i++) {
-                fakeData.push(allStudentClass[i]);
+                fakeData.push(this.allStudentClass[i]);
             }
 
 
@@ -608,6 +622,14 @@
         sortTable("table_student",0, ">");
 
     }
+    loadChangePageSize() {
+        var me = this;
+        var data = me.getData();
+        this.AppenData(data);
+        this.CountRecord();
+        sortTable("table_student", 0, ">");
+
+    }
     search(colNumber, id_input) {
         var input, filter, table, tr, td, i, txtValue;
         input = document.getElementById(id_input);
@@ -722,13 +744,11 @@
         $('.loading').show();
 
         var me = this;
-        var data = me.getTrangDau(classID);
+        var data = me.getTrangDau();
         this.AppenData(data);
         this.CountRecord();
-        //$('.loading').hide();
         setTimeout(function () {
             $('.loading').hide();
-
         }, 500);
     }
     loadTrangCuoi() {
@@ -738,37 +758,29 @@
         var data = me.getTrangCuoi(classID);
         this.AppenData(data);
         this.CountRecord();
-        //$('.loading').hide();
         setTimeout(function () {
             $('.loading').hide();
-
         }, 500);
     }
     loadTrangTruoc() {
         $('.loading').show();
 
         var me = this;
-        var data = me.getTrangTruoc(classID);
+        var data = me.getTrangTruoc();
         this.AppenData(data);
         this.CountRecord();
-        //$('.loading').hide();
         setTimeout(function () {
             $('.loading').hide();
 
         }, 500);
     }
     loadTrangSau() {
-        $('.loading').show();
 
         var me = this;
-        var data = me.getTrangSau(classID);
+        var data = me.getTrangSau();
         this.AppenData(data);
         this.CountRecord();
-        //$('.loading').hide();
-        setTimeout(function () {
-            $('.loading').hide();
-
-        }, 500);
+        
     }
     
 
@@ -792,19 +804,11 @@
 
 
         var fakeData = [];
-        var allStudentClass = [];
-        allStudentClass = this.getAllData(classID);
         for (var i = (pageIndex - 1) * pageSize; i < (pageIndex * pageSize); i++) {
-            fakeData.push(allStudentClass[i]);
+            fakeData.push(this.allStudentClass[i]);
         }
 
-        this.AppenData(fakeData);
-
-        this.CountRecord();
-        setTimeout(function () {
-            $('.loading').hide();
-
-        }, 500);
+        return fakeData;
 
 
 
@@ -816,7 +820,7 @@
     * Người tạo: Hàn Trung Kiên
     * Ngày tạo: 22/8/2019
     * */
-    getTrangTruoc(classID) {
+    getTrangTruoc() {
         $('.loading').show();
 
 
@@ -832,18 +836,10 @@
 
 
         var fakeData = [];
-        var allStudentClass = [];
-        allStudentClass = this.getAllData(classID);
         for (var i = (pageIndex - 1) * pageSize; i < (pageIndex * pageSize); i++) {
-            fakeData.push(allStudentClass[i]);
+            fakeData.push(this.allStudentClass[i]);
         }
-        this.AppenData(fakeData);
-
-        this.CountRecord();
-        setTimeout(function () {
-            $('.loading').hide();
-
-        }, 500);
+        return fakeData;
 
 
 
@@ -854,36 +850,17 @@
     * Người tạo: Hàn Trung Kiên
     * Ngày tạo: 22/8/2019
     * */
-    getTrangSau(classID) {
-        $('.loading').show();
-
-
-
+    getTrangSau() {
         $('.page-index').val(parseInt($('.page-index').val()) + 1);
-
         var pageIndex = $('.page-index').val();
-
         var pageSize = $('.page-size option:selected').val();
         this.FormatBtn(pageIndex, pageSize);
 
-
-
-
         var fakeData = [];
-        var allStudentClass = [];
-        allStudentClass = this.getAllData(classID);
         for (var i = (pageIndex - 1) * pageSize; i < (pageIndex * pageSize); i++) {
-            fakeData.push(allStudentClass[i]);
+            fakeData.push(this.allStudentClass[i]);
         }
-        this.AppenData(fakeData);
-
-        this.CountRecord();
-
-        setTimeout(function () {
-            $('.loading').hide();
-
-        }, 500);
-
+        return fakeData;
     }
 
     /**
@@ -915,19 +892,11 @@
 
 
         var fakeData = [];
-        var allStudentClass = [];
-        allStudentClass = this.getAllData(classID);
-        for (var i = (pageIndex - 1) * pageSize; i < allStudentClass.length; i++) {
-            fakeData.push(allStudentClass[i]);
+        for (var i = (pageIndex - 1) * pageSize; i < this.allStudentClass.length; i++) {
+            fakeData.push(this.allStudentClass[i]);
         }
-        this.AppenData(fakeData);
 
-        this.CountRecord();
-        setTimeout(function () {
-            $('.loading').hide();
-
-        }, 500);
-
+        return fakeData;
 
     }
     /**
@@ -948,7 +917,8 @@
         } else {
             var a = ($('.page-index').val() - 1) * $('.page-size').val() + 1;
             var b = ($('.page-index').val() - 1) * $('.page-size').val() + $('.main-table tbody tr').length;
-            var c = me.getAllData(classID).length;
+            var c = this.allStudentClass.length;
+            
 
             if (c % ($('.page-size').val()) !== 0) {
                 $('.phan-trang .so-trang-max').text("trên " + parseInt(c / ($('.page-size').val()) + 1));
