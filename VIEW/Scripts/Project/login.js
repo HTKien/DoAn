@@ -1,4 +1,5 @@
 ﻿$('#btn_login').on('click', function () {
+    
     var email = $('#email').val();
     var password = $('#password').val();
     //call all user:
@@ -24,10 +25,10 @@
                     id: allUser[i].ReferenceID
                 });
                 localStorage.setItem('classIDStorage', JSON.stringify(classIDStorage));
-                location.href = "/Views/student.html";
+                location.href = "/Views/teacher_dashboard.html";
             } else if (allUser[i].Role == 1) {
                 //điều hướng đến trang admin:
-                location.href = "/Views/class_managment.html";
+                location.href = "/Views/admin_dashboard.html";
 
             }
         }
@@ -54,3 +55,16 @@ function getAllUser() {
     return fakeData;
 
 }
+$('#logout').on('click', function () {
+    cuteAlert({
+        type: "question",
+        title: "Xác nhận",
+        message: "Bạn có chắc chắn muốn đăng xuất?",
+        confirmText: "Có",
+        cancelText: "Hủy"
+    }).then((e) => {
+        if (e == "confirm") {
+            location.href = "/Views/login.html";
+        }
+    })
+})

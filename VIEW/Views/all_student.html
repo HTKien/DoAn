@@ -284,37 +284,44 @@
                 <div style="height: 5px; "></div>
                 <div class="dong1">
                     <label class="text-dialog text1">Mã học sinh<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1" id="code-dialog-edit" />
-                </div>
-                <div class="dong1">
+                    <input style="width: 150px;" type="text" name="name" value="" class="input1" id="code-dialog-edit" />
                     <label class="text-dialog text1">Họ và tên<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1" id="name-dialog-edit" />
+                    <input style="width: 200px" type="text" name="name" value="" class="input1" id="name-dialog-edit" />
                 </div>
                 <div class="dong1">
-                    <label class="text-dialog text1">Địa chỉ</label>
-                    <input type="text" name="name" value="" class="input1 input3" id="address-dialog-edit" />
+                    <label style="" class="text-dialog text1">Giới tính<span class="dau-sao">(*)</span></label>
+                    <select style="width: 172px; margin-left: 15px" id="sex-dialog-edit">
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
+                    </select>
+                    <label class="text-dialog text1">Ngày sinh<span class="dau-sao">(*)</span></label>
+                    <input style="width: 200px;" class="input1" type="date" id="birthday-dialog-edit" name="birthday">
                 </div>
                 <div class="dong1">
-                    <label class="text-dialog text1">Điện thoại<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1 input4" id="phone-dialog-edit" />
-                    <label class="text-dialog text1">Giới tính<span class="dau-sao">(*)</span></label>
-                    <input type="text" name="name" value="" class="input1 input4" id="sex-dialog-edit" />
+                    <label class="text-dialog text1">Địa chỉ<span class="dau-sao">(*)</span></label>
+                    <input style="width: 509px;" type="text" name="name" value="" class="input1" id="address-dialog-edit" />
+                </div>
+                <div class="dong1">
+                    <label style="width: 117px;" class="text-dialog text1">Họ và tên PH<span class="dau-sao">(*)</span></label>
+                    <input style="width: 150px; margin-left: unset" type="text" name="name" value="" class="input1" id="parentname-dialog-edit" />
+                    <label style="width: 117px;" class="text-dialog text1">SĐT PH<span class="dau-sao">(*)</span></label>
+                    <input style="width: 200px; margin-left: unset" type="text" name="name" value="" class="input1" id="parentphone-dialog-edit" />
                 </div>
                 <div class="dong1">
                     <label class="text-dialog text1">Ghi chú</label>
-                    <textarea id="note-dialog-edit"></textarea>
+                    <textarea style="height: 66px; width: 525px; margin-left: 15px;" id="note-dialog-edit"></textarea>
                 </div>
 
                 <div class="dong1 list-btn">
 
                     <button class="btn-dialogAdd cat" id="save-edit">
-                        <img src="/Contents/imgs/Save16.png" />
-                        <div>Lưu lại</div>
+                        <i style="font-size: 15px; line-height: 30px; margin-left: 10px;" class="fas fa-save"></i>
+                        <div style="font-size: 15px; line-height: 30px;">Lưu lại</div>
 
                     </button>
                     <button class="btn-dialogAdd" id="huy-bo-edit">
-                        <img src="/Contents/imgs/Disable16.png" />
-                        <div>Hủy bỏ</div>
+                        <i style="font-size: 15px; line-height: 30px; margin-left: 10px;" class="fas fa-ban"></i>
+                        <div style="font-size: 15px; line-height: 30px;">Hủy bỏ</div>
                     </button>
 
                 </div>

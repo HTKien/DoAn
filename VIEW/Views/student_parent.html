@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Scripts/Libraries/cute-alert-master/style.css" />
     <link href="/CSS/Libraries/jquery-ui.css" rel="stylesheet" />
     <link href="/CSS/Project/view.css" rel="stylesheet" />
     <link href="/CSS/Project/common.css" rel="stylesheet" />
@@ -96,7 +97,7 @@
             </a>
 
             <div class="line"></div>
-            <a href="/Views/">
+            <a id="logout">
                 <div class="trai-duoi-1cai">
                     <i class="fas fa-book icon-sidebar"></i>
                     <div class="trai-duoi-text">Đăng xuất</div>
@@ -270,7 +271,7 @@
         </div>
     </div>
 
-    <div   id="id01" class="w3-modal">
+    <div id="id01" class="w3-modal">
         <div style="border-radius: 5px; width: 500px; " class="w3-modal-content w3-animate-top w3-card-4">
             <header style="border-top-left-radius: 5px; border-top-right-radius: 5px; background-color: #0973B9 !important;" class="w3-container w3-teal">
                 <span style="margin-right: 10px;" onclick="document.getElementById('id01').style.display='none'"
@@ -281,10 +282,10 @@
                 <div>Họ và tên PH <span class="dau-sao">(*)</span> <input id="parent_name_modal" style="width: 292px; margin-left: 30px;" class="input1" /></div>
                 <div style="margin-top: 10px;">Số điện thoại PH <span class="dau-sao">(*)</span><input id="parent_phone_modal" style="width: 292px; margin-left: 10px;" class="input1" /></div>
                 <div style="margin-left: 150px; margin-top:15px;">
-                    <button onclick="savePH()" class="btn-save-parent" style="border: none; background-color: #0973B9; border-radius: 3px; text-align: center; width: 70px; height: 30px; color: white"  >Lưu lại</button>
+                    <button onclick="savePH()" class="btn-save-parent" style="border: none; background-color: #0973B9; border-radius: 3px; text-align: center; width: 70px; height: 30px; color: white">Lưu lại</button>
                     <button class="btn-save-parent" style="border: none; background-color: #0973B9; border-radius: 3px; text-align: center; width: 70px; height: 30px; color: white">Hủy bỏ</button>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -294,9 +295,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src='https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)'></script>
+    <script src="/Scripts/Libraries/cute-alert-master/cute-alert.js"></script>
     <script src="/Scripts/Libraries/jquery-3.4.1.js"></script>
     <script src="/Scripts/Libraries/jquery-ui.js"></script>
     <script src="/Scripts/Project/student_parent.js"></script>
+    <script src="/Scripts/Project/login.js"></script>
 
 </body>
 </html>
