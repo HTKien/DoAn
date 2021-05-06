@@ -9,6 +9,12 @@
         if (email === allUser[i].Email && password === allUser[i].Password) {
             count = 1;
             if (allUser[i].Role == 3) {
+                let userIDStorage = localStorage.getItem('userIDStorage') ? JSON.parse(localStorage.getItem('userIDStorage')) : [];
+
+                userIDStorage.push({
+                    id: allUser[i].UserID
+                });
+                localStorage.setItem('userIDStorage', JSON.stringify(userIDStorage));
                 //điều hướng đến trang học sinh phụ huynh:
                 let studentIDStorage = localStorage.getItem('studentIDStorage') ? JSON.parse(localStorage.getItem('studentIDStorage')) : [];
 

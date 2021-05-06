@@ -106,22 +106,22 @@ namespace VIEW.Controllers
         //Người tạo: Hàn Trung Kiên
         //Ngày tạo: 26/8/2019
 
-        //[Route("users")]
-        //[HttpPut]
-        //public AjaxResult PutUser([FromBody] User _user)
-        //{
-        //    var ajaxResult = new AjaxResult();
-        //    try
-        //    {
-        //        _userDL.UpdateUser(_user);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ajaxResult.Data = ex;
-        //        ajaxResult.Success = false;
-        //        ajaxResult.Message = "Hệ thống đang bị lỗi!";
-        //    }
-        //    return ajaxResult;
-        //}
+        [Route("users")]
+        [HttpPut]
+        public AjaxResult PutUser([FromBody] User _user)
+        {
+            var ajaxResult = new AjaxResult();
+            try
+            {
+                _userDL.UpdateUser(_user);
+            }
+            catch (Exception ex)
+            {
+                ajaxResult.Data = ex;
+                ajaxResult.Success = false;
+                ajaxResult.Message = "Hệ thống đang bị lỗi!";
+            }
+            return ajaxResult;
+        }
     }
 }

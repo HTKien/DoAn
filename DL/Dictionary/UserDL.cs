@@ -46,15 +46,11 @@ namespace DL
         //Hàm thực hiện sửa thông tin phụ huynh
         //Người tạo: Hàn Trung Kiên
         //Ngày tạo: 26/8/2019
-        //public void UpdateUser(User _user)
-        //{
-        //    var userFind = db.Users.Where(n => n.UserID == _user.UserID).SingleOrDefault();
-        //    userFind.Username = _user.Username;
-        //    userFind.Password = _user.Password;
-        //    userFind.Address = _user.Address;
-        //    userFind.Phone = _user.Phone;
-        //    userFind.Note = _user.Note;
-        //    db.SaveChanges();
-        //}
+        public void UpdateUser(User _user)
+        {
+            var userFind = db.Users.Where(n => n.UserID == _user.UserID).SingleOrDefault();
+            userFind.Password = _user.Password;
+            db.SaveChanges();
+        }
     }
 }

@@ -617,6 +617,9 @@ function editPH() {
         }
     });
 }
+function changePassword() {
+    document.getElementById('id02').style.display = 'block';
+}
 function savePH() {
     var studentID;
     let studentIDStorageGet = localStorage.getItem('studentIDStorage') ? JSON.parse(localStorage.getItem('studentIDStorage')) : [];
@@ -640,4 +643,69 @@ function savePH() {
             alert("Hệ thống đang bị lỗi!");
         }
     });
+}
+function savePassword() {
+
+    //
+    var _oldPass = $('#old_password').val();
+    var _newPass = $('#new_password').val();
+    if (_oldPass == "" || _newPass == "") {
+        cuteAlert({
+            type: "warning",
+            title: "Thông báo",
+            message: "Bạn phải nhập thông tin trong các trường bắt buộc!",
+            buttonText: "OK"
+        })
+    } else {
+        var oldPassInData;
+        var userID;
+        let userIDStorageGet = localStorage.getItem('userIDStorage') ? JSON.parse(localStorage.getItem('userIDStorage')) : [];
+        userID = userIDStorageGet[userIDStorageGet.length - 1].id;
+        $.ajax({
+            method: 'GET',
+            url: '/users/' + userID,
+            success: function (res) {
+                oldPassInData = res.Password;
+                if (oldPassInData !== _oldPass) {
+                    cuteAlert({
+                        type: "warning",
+                        title: "Thông báo",
+                        message: "Mật khẩu cũ không trùng khớp!",
+                        buttonText: "OK"
+                    })
+                } else if (oldPassInData === _oldPass) {
+                    var objectStudent = {};
+                    objectStudent["UserID"] = userID;
+                    objectStudent["Password"] = $('#new_password').val();
+
+                    $.ajax({
+                        method: 'PUT',
+                        url: '/users',
+                        data: JSON.stringify(objectStudent),
+                        contentType: "application/json; charset=utf-8",
+                        success: function (res) {
+                            document.getElementById('id02').style.display = 'none';
+                            cuteAlert({
+                                type: "success",
+                                title: "Thông báo",
+                                message: "Đổi mật khẩu thành công!",
+                                buttonText: "OK"
+                            })
+                        },
+                        error: function () {
+                            alert("Hệ thống đang bị lỗi!");
+                        }
+                    });
+                }
+            },
+            error: function () {
+                alert("Hệ thống đang bị lỗi!");
+            }
+        });
+        
+       
+    }
+    //
+    
+    
 }

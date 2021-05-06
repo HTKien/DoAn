@@ -89,7 +89,7 @@
             </a>
 
             <div class="line"></div>
-            <a href="/Views/">
+            <a onclick="changePassword()">
                 <div class="trai-duoi-1cai">
                     <i class="fas fa-user-friends icon-sidebar"></i>
                     <div class="trai-duoi-text">Đổi mật khẩu</div>
@@ -283,6 +283,24 @@
                 <div style="margin-top: 10px;">Số điện thoại PH <span class="dau-sao">(*)</span><input id="parent_phone_modal" style="width: 292px; margin-left: 10px;" class="input1" /></div>
                 <div style="margin-left: 150px; margin-top:15px;">
                     <button onclick="savePH()" class="btn-save-parent" style="border: none; background-color: #0973B9; border-radius: 3px; text-align: center; width: 70px; height: 30px; color: white">Lưu lại</button>
+                    <button class="btn-save-parent" style="border: none; background-color: #0973B9; border-radius: 3px; text-align: center; width: 70px; height: 30px; color: white">Hủy bỏ</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="id02" class="w3-modal">
+        <div style="border-radius: 5px; width: 500px; " class="w3-modal-content w3-animate-top w3-card-4">
+            <header style="border-top-left-radius: 5px; border-top-right-radius: 5px; background-color: #0973B9 !important;" class="w3-container w3-teal">
+                <span style="margin-right: 10px;" onclick="document.getElementById('id02').style.display='none'"
+                      class="w3-button w3-display-topright">&times;</span>
+                <h4>Đổi mật khẩu</h4>
+            </header>
+            <div style="padding: 25px 30px;" class="w3-container">
+                <div>Mật khẩu cũ <span class="dau-sao">(*)</span> <input id="old_password" style="width: 292px; margin-left: 30px;" class="input1" type="password" /></div>
+                <div style="margin-top: 10px;">Mật khẩu mới <span class="dau-sao">(*)</span><input type="password" id="new_password" style="width: 292px; margin-left: 25px;" class="input1" /></div>
+                <div style="margin-left: 150px; margin-top:15px;">
+                    <button onclick="savePassword()" class="btn-save-parent" style="border: none; background-color: #0973B9; border-radius: 3px; text-align: center; width: 70px; height: 30px; color: white">Lưu lại</button>
                     <button class="btn-save-parent" style="border: none; background-color: #0973B9; border-radius: 3px; text-align: center; width: 70px; height: 30px; color: white">Hủy bỏ</button>
                 </div>
 
