@@ -67,6 +67,7 @@ namespace DL
             studentFind.Bonus = _student.Bonus;
             studentFind.Critic = _student.Critic;
             studentFind.Conduct = _student.Conduct;
+            studentFind.Classify = _student.Classify;
             db.SaveChanges();
         }
         //Hàm thực hiện việc update điểm danh:

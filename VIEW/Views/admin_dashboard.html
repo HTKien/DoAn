@@ -117,7 +117,25 @@
             </select>
         </div>
         <div style="display: block; background-color: #F2F2F2" class="div-phai-giua-tren">
-            <div id="class_title" class="text-danh-muc">Trường THCS Chu Văn An - Nga Sơn - Thanh Hóa</div>
+            <div style="display: flex; align-items: center; justify-content: space-between">
+                <div id="class_title" class="text-danh-muc">
+                    Trường THCS Chu Văn An - Nga Sơn - Thanh Hóa
+                    
+                </div>
+                <div>
+                    <span style="font-weight: bold">Năm học</span>
+                    <select style="width: 100px; height: 27px; border: 1px solid #cecece; margin-right: 17px; padding-left: 9px">
+                        <option >2020-2021</option>
+                        <option disabled>2021-2022</option>
+                    </select>
+                    <span style="font-weight: bold">Học kỳ</span>
+                    <select style="width: 83px; height: 27px; border: 1px solid #cecece; margin-right: 17px; padding-left: 8px;">
+                        <option>Học kỳ I</option>
+                        <option disabled>Học kỳ II</option>
+                    </select>
+                </div>
+            </div>
+            
             <div style="background-color: #F2F2F2" class="container-fluid">
                 <div class="row">
                     <div class="col">
@@ -129,8 +147,8 @@
                                         <span id="total_class" class="h2 font-weight-bold mb-0">0</span>
                                     </div>
                                     <div class="col-auto">
-                                        <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                                            <i class="fas fa-chart-bar"></i>
+                                        <div style="background-color: #0973B9" class="icon icon-shape  text-white rounded-circle shadow">
+                                            <i class="fas fa-chalkboard"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -146,8 +164,8 @@
                                         <span id="total_teacher" class="h2 font-weight-bold mb-0">0</span>
                                     </div>
                                     <div class="col-auto">
-                                        <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                                            <i class="fas fa-chart-pie"></i>
+                                        <div style="background-color: #0973B9" class="icon icon-shape  text-white rounded-circle shadow">
+                                            <i class="fas fa-chalkboard-teacher"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -163,8 +181,8 @@
                                         <span id="total_student" class="h2 font-weight-bold mb-0">0</span>
                                     </div>
                                     <div class="col-auto">
-                                        <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                                            <i class="fas fa-users"></i>
+                                        <div style="background-color: #0973B9" class="icon icon-shape bg-primary text-white rounded-circle shadow">
+                                            <i class="fas fa-user-graduate"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -175,7 +193,7 @@
                 <p style="margin-bottom: 0; font-weight: bold; margin-left: 5px; margin-top:10px ">Hạnh kiểm</p>
                 <div style="margin-top: 0px;" class="row">
                     <div class="col">
-                        <div class="card card-stats mb-4 mb-xl-0">
+                        <div style="border-left: 5px solid #FFC107" class="card card-stats mb-4 mb-xl-0">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
@@ -184,29 +202,29 @@
                                     </div>
                                 </div>
                                 <p class="mt-4 mb-0 text-muted text-sm">
-                                    <span id="rating_hk_tot" class="text-success mr-2">0%</span>
+                                    <span style="color: #FFC107" id="rating_hk_tot" class=" mr-2">0%</span>
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card card-stats mb-4 mb-xl-0">
+                        <div style="border-left: 5px solid #FFC107" class="card card-stats mb-4 mb-xl-0">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
                                         <h5 class="card-title text-uppercase text-muted mb-0">Hạnh kiểm Khá</h5>
-                                        <span id="conduct_kha" class="h2 font-weight-bold mb-0">0</span>
+                                        <span  id="conduct_kha" class="h2 font-weight-bold mb-0">0</span>
                                     </div>
 
                                 </div>
                                 <p class="mt-4 mb-0 text-muted text-sm">
-                                    <span id="rating_hk_kha" class="text-danger mr-2">0%</span>
+                                    <span style="color: #FFC107" id="rating_hk_kha" class=" mr-2">0%</span>
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card card-stats mb-4 mb-xl-0">
+                        <div style="border-left: 5px solid #FFC107" class="card card-stats mb-4 mb-xl-0">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
@@ -216,13 +234,13 @@
 
                                 </div>
                                 <p class="mt-4 mb-0 text-muted text-sm">
-                                    <span id="rating_hk_tb" class="text-warning mr-2"> 0%</span>
+                                    <span style="color: #FFC107" id="rating_hk_tb" class=" mr-2"> 0%</span>
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card card-stats mb-4 mb-xl-0">
+                        <div style="border-left: 5px solid #FFC107" class="card card-stats mb-4 mb-xl-0">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
@@ -232,7 +250,7 @@
 
                                 </div>
                                 <p class="mt-4 mb-0 text-muted text-sm">
-                                    <span id="rating_hk_yeu" class="text-warning mr-2"> 0%</span>
+                                    <span style="color: #FFC107" id="rating_hk_yeu" class=" mr-2"> 0%</span>
                                 </p>
                             </div>
                         </div>
@@ -241,7 +259,7 @@
                 <p style="margin-bottom: 0; font-weight: bold; margin-left: 5px;margin-top:10px">Học lực</p>
                 <div style="margin-top: 0px;" class="row">
                     <div class="col">
-                        <div class="card card-stats mb-4 mb-xl-0">
+                        <div style="border-left: 5px solid rgb(40,167,69)" class="card card-stats mb-4 mb-xl-0">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
@@ -250,13 +268,13 @@
                                     </div>
                                 </div>
                                 <p class="mt-4 mb-0 text-muted text-sm">
-                                    <span class="text-success mr-2"> 0%</span>
+                                    <span id="rating_hl_gioi" style="color: rgb(40,167,69)" class=" mr-2"> 0%</span>
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card card-stats mb-4 mb-xl-0">
+                        <div style="border-left: 5px solid rgb(40,167,69)" class="card card-stats mb-4 mb-xl-0">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
@@ -266,13 +284,13 @@
 
                                 </div>
                                 <p class="mt-4 mb-0 text-muted text-sm">
-                                    <span class="text-danger mr-2"> 0%</span>
+                                    <span id="rating_hl_kha" style="color: rgb(40,167,69)" class=" mr-2"> 0%</span>
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card card-stats mb-4 mb-xl-0">
+                        <div style="border-left: 5px solid rgb(40,167,69)" class="card card-stats mb-4 mb-xl-0">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
@@ -282,13 +300,13 @@
 
                                 </div>
                                 <p class="mt-4 mb-0 text-muted text-sm">
-                                    <span class="text-warning mr-2"> 0%</span>
+                                    <span id="rating_hl_tb" style="color: rgb(40,167,69)" class=" mr-2"> 0%</span>
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card card-stats mb-4 mb-xl-0">
+                        <div style="border-left: 5px solid rgb(40,167,69)" class="card card-stats mb-4 mb-xl-0">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
@@ -298,7 +316,7 @@
 
                                 </div>
                                 <p class="mt-4 mb-0 text-muted text-sm">
-                                    <span class="text-warning mr-2">0%</span>
+                                    <span id="rating_hl_yeu" style="color: rgb(40,167,69)" class=" mr-2">0%</span>
                                 </p>
                             </div>
                         </div>
@@ -307,7 +325,7 @@
                 <p style="margin-bottom: 0; font-weight: bold; margin-left: 5px;margin-top:10px">Tuyên dương - Phê bình</p>
                 <div style="margin-top: 0px;" class="row">
                     <div class="col">
-                        <div class="card card-stats mb-4 mb-xl-0">
+                        <div style="border-left: 5px solid #DC3545" class="card card-stats mb-4 mb-xl-0">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
@@ -316,14 +334,14 @@
                                     </div>
                                     
                                 </div>
-                                <p class="mt-4 mb-0 text-muted text-sm">
-                                    <span class="text-success mr-2"> 3.48%</span>
-                                </p>
+                                <!--<p class="mt-4 mb-0 text-muted text-sm">
+                                    <span  class="text-warning mr-2"> 3.48%</span>
+                                </p>-->
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card card-stats mb-4 mb-xl-0">
+                        <div style="border-left: 5px solid #DC3545" class="card card-stats mb-4 mb-xl-0">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
@@ -333,9 +351,9 @@
                                    
 
                                 </div>
-                                <p class="mt-4 mb-0 text-muted text-sm">
+                                <!--<p class="mt-4 mb-0 text-muted text-sm">
                                     <span class="text-danger mr-2"> 3.48%</span>
-                                </p>
+                                </p>-->
                             </div>
                         </div>
                     </div>

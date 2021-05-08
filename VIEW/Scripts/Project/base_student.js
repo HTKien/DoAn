@@ -139,6 +139,24 @@
      * Người tạo: Hàn Trung Kiên
      * Ngày tạo: 22/8/2019
      * */
+    listScore = [];
+    exportTableScore() {
+
+        // array of objects to save in Excel
+        let binary_univers = this.listScore;
+
+        let binaryWS = XLSX.utils.json_to_sheet(binary_univers);
+
+        // Create a new Workbook
+        var wb = XLSX.utils.book_new()
+
+        // Name your sheet
+        XLSX.utils.book_append_sheet(wb, binaryWS, 'Bảng điểm')
+
+        // export your excel
+        XLSX.writeFile(wb, 'score_table.xlsx');
+    }
+
     Calculate() {
         var me = this;
         var data = me.getData();
@@ -583,6 +601,18 @@
                 conduct = "Yếu";
             }
             //
+            //tính xếp loại: 
+            var classify;
+            if ((this.tb >= 8) && (tbToan >= 8 || tbNguVan >= 8 || tbTiengAnh >= 8) && (tbToan >= 6.5 && tbVatLy >= 6.5 && tbHoaHoc >= 6.5 && tbSinhHoc >= 6.5 && tbNguVan >= 6.5 && tbLichSu >= 6.5 && tbDiaLy >= 6.5 && tbTinHoc >= 6.5 && tbCongDan >= 6.5 && tbTiengAnh >= 6.5 && tbTheDuc >= 6.5 && tbCongNghe >= 6.5)) {
+                classify = "Giỏi";
+            } else if ((this.tb >= 6.5) && (tbToan >= 6.5 || tbNguVan >= 6.5 || tbTiengAnh >= 6.5) && (tbToan >= 5 && tbVatLy >= 5 && tbHoaHoc >= 5 && tbSinhHoc >= 5 && tbNguVan >= 5 && tbLichSu >= 5 && tbDiaLy >= 5 && tbTinHoc >= 5 && tbCongDan >= 5 && tbTiengAnh >= 5 && tbTheDuc >= 5 && tbCongNghe >= 5)) {
+                classify = "Khá";
+            } else if ((this.tb >= 5) && (tbToan >= 5 || tbNguVan >= 5 || tbTiengAnh >= 5) && (tbToan >= 3.5 && tbVatLy >= 3.5 && tbHoaHoc >= 3.5 && tbSinhHoc >= 3.5 && tbNguVan >= 3.5 && tbLichSu >= 3.5 && tbDiaLy >= 3.5 && tbTinHoc >= 3.5 && tbCongDan >= 3.5 && tbTiengAnh >= 3.5 && tbTheDuc >= 3.5 && tbCongNghe >= 3.5)) {
+                classify = "Trung bình";
+            } else {
+                classify = "Yếu";
+            }
+
             //put
             var objectStudent = {};
             objectStudent["StudentID"] = data[t].StudentID;
@@ -590,6 +620,7 @@
             objectStudent["Bonus"] = totalBonus;
             objectStudent["Critic"] = totalCritic;
             objectStudent["Conduct"] = conduct;
+            objectStudent["Classify"] = classify;
             $.ajax({
                 method: 'PUT',
                 url: '/studentscalculate',
@@ -601,7 +632,28 @@
                     alert("Hệ thống đang bị lỗi! Vui lòng liên hệ MISA!");
                 }
             });
-            //
+            //xuất bảng điểm
+            
+            var listScoreItem = {};
+            listScoreItem["Mã học sinh"] = data[t].Code;
+            listScoreItem["Họ và tên"] = data[t].Name;
+            listScoreItem["Toán"] = tbToan;
+            listScoreItem["Vật lý"] = tbVatLy;
+            listScoreItem["Hóa học"] = tbHoaHoc;
+            listScoreItem["Sinh học"] = tbSinhHoc;
+            listScoreItem["Ngữ văn"] = tbNguVan;
+            listScoreItem["Lịch sử"] = tbLichSu;
+            listScoreItem["Địa lý"] = tbDiaLy;
+            listScoreItem["Tin học"] = tbTinHoc;
+            listScoreItem["Giáo dục công dân"] = tbCongDan;
+            listScoreItem["Tiếng Anh"] = tbTiengAnh;
+            listScoreItem["Thể dục"] = tbTheDuc;
+            listScoreItem["Công nghệ"] = tbCongNghe;
+            listScoreItem["Trung bình HK"] = this.tb;
+            this.listScore.push(listScoreItem);
+            
+
+
 
         }
         
@@ -1052,11 +1104,7 @@
             $.each(fields, function (fieldIndex, fieldItem) {
                 var fieldName = fieldItem.getAttribute('fieldName');
                 var fieldValue;
-                if (fieldName == "Classify") {
-                    fieldValue = "Chưa xếp loại";
-                } else {
-                    fieldValue = item[fieldName];
-                }
+                fieldValue = item[fieldName];
                 rowHTML.append('<td>' + fieldValue + '</td>');
             });
             $('.main-table tbody').append(rowHTML);

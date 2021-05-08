@@ -84,6 +84,7 @@ class Student extends BaseStudent {
         //sự kiện show dialog xác nhận xóa khách hàng:
         $(document).on('click', 'button.delete', this.showDiaLog.bind(this));
         $(document).on('click', 'button.attendence', this.submitAttendence.bind(this));
+        $(document).on('click', 'button.export_table_score', this.exportTableScore.bind(this));
         $(document).on('click', '#delete_score', this.deleteScore.bind(this));
         $(document).on('click', '#delete_bonus', this.deleteBonus.bind(this));
         $(document).on('click', '#delete_critic', this.deleteCritic.bind(this));
@@ -658,6 +659,7 @@ class Student extends BaseStudent {
             });
         }
     }
+    
     submitAttendence() {
         cuteAlert({
             type: "question",

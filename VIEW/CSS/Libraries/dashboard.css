@@ -301,6 +301,7 @@ h5,
     border-radius: .375rem;
     background-color: #fff;
     background-clip: border-box;
+    border-left: 5px solid #0973B9;
 }
 
 .card-body {
@@ -717,4 +718,5 @@ p {
     font-weight: 300;
     line-height: 1.7;
 }
+
 }
