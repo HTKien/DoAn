@@ -10,9 +10,7 @@ namespace BL
     public class ParentBL
     {
         private ParentDL _parentDL = new ParentDL();
-        //Hàm thực hiện lấy dữ liệu theo số trang và kích thước trang:
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 22/8/2019
+        
         public IEnumerable<Parent> GetPagingData(int _pageIndex, int _pageSize)
         {
             var _parents = _parentDL.GetParent();

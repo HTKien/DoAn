@@ -12,14 +12,12 @@ namespace DL
         private VIEWContext db = new VIEWContext();
 
         //Hàm thực hiện lấy dữ liệu lớp học từ database về 
-        //Người tạo: Hàn Trung Kiên
         public IEnumerable<Class> GetClass()
         {
             return db.Classes;
         }
 
         //Hàm thực hiện việc xóa dữ  liệu  bản ghi lớp học: xoa nhieu hoac xoa 1 deu duoc
-        //Người tạo: Hàn Trung Kiên
         public void DeleteClass(List<Guid> ids)
         {
             foreach (var id in ids)
@@ -33,8 +31,6 @@ namespace DL
         }
 
         //Hàm thực hiện thêm mới lớp học: 
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 26/8/2019
         public void AddClass(Class _class)
         {
             _class.ClassID = Guid.NewGuid();
@@ -44,8 +40,6 @@ namespace DL
 
 
         //Hàm thực hiện sửa thông tin lớp học
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 26/8/2019
         public void UpdateClass(Class _class)
         {
             var classFind = db.Classes.Where(n => n.ClassID == _class.ClassID).SingleOrDefault();

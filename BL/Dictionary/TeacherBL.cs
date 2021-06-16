@@ -11,9 +11,7 @@ namespace BL
     public class TeacherBL
     {
         private TeacherDL _teacherDL = new TeacherDL();
-        //Hàm thực hiện lấy dữ liệu theo số trang và kích thước trang:
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 22/8/2019
+        
         public IEnumerable<Teacher> GetPagingData(int _pageIndex, int _pageSize)
         {
             var _teachers = _teacherDL.GetTeacher();

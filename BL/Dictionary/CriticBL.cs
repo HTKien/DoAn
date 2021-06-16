@@ -11,9 +11,7 @@ namespace BL
     public class CriticBL
     {
         private CriticDL _criticDL = new CriticDL();
-        //Hàm thực hiện lấy dữ liệu theo số trang và kích thước trang:
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 22/8/2019
+        
         public IEnumerable<Critic> GetPagingData(int _pageIndex, int _pageSize)
         {
             var _critics = _criticDL.GetCritic();

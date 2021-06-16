@@ -11,9 +11,6 @@ namespace BL
     public class BonusStudentBL
     {
         private BonusStudentDL _bonusStudentDL = new BonusStudentDL();
-        //Hàm thực hiện lấy dữ liệu theo số trang và kích thước trang:
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 22/8/2019
         public IEnumerable<BonusStudent> GetPagingData(int _pageIndex, int _pageSize)
         {
             var _bonusStudents = _bonusStudentDL.GetBonusStudent();

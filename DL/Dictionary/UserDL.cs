@@ -12,14 +12,12 @@ namespace DL
         private VIEWContext db = new VIEWContext();
 
         //Hàm thực hiện lấy dữ liệu phụ huynh từ database về 
-        //Người tạo: Hàn Trung Kiên
         public IEnumerable<User> GetUser()
         {
             return db.Users;
         }
 
         //Hàm thực hiện việc xóa dữ  liệu  bản ghi phụ huynh: xoa nhieu hoac xoa 1 deu duoc
-        //Người tạo: Hàn Trung Kiên
         public void DeleteUser(List<Guid> ids)
         {
             foreach (var id in ids)
@@ -33,8 +31,6 @@ namespace DL
         }
 
         //Hàm thực hiện thêm mới phụ huynh: 
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 26/8/2019
         public void AddUser(User _user)
         {
             _user.UserID = Guid.NewGuid();
@@ -44,8 +40,6 @@ namespace DL
 
 
         //Hàm thực hiện sửa thông tin phụ huynh
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 26/8/2019
         public void UpdateUser(User _user)
         {
             var userFind = db.Users.Where(n => n.UserID == _user.UserID).SingleOrDefault();

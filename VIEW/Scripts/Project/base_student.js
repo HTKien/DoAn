@@ -7,10 +7,7 @@
     tbScore;
     tb;
 
-    /**
-     * Hàm thực hiện lấy toàn bộ dữ liệu
-     * Người tạo: Hàn Trung Kiên 
-     * */
+  
     getAllData(classID) {
         var fakeData = [];
         $.ajax({
@@ -32,11 +29,7 @@
         return fakeData;
 
     }
-    /**
-    * Hàm  thực hiện lấy dữ liệu từ database theo phân trang
-    * Người tạo: Hàn Trung Kiên
-    * Ngày tạo: 22/8/2019
-    * */
+   
     allStudentClass=[];
     getData() {
         
@@ -96,11 +89,7 @@
 
 
     }
-    /**
-    * Hàm  thực hiện load mới dữ liệu theo phân trang phục vụ cho button
-    * Người tạo: Hàn Trung Kiên
-    * Ngày tạo: 22/8/2019
-    * */
+   
     getRefreshData(classID) {
         var pageIndex = $('.page-index').val(1);
         var pageSize = $('.page-size').val(25);
@@ -134,11 +123,7 @@
 
     }
 
-    /**
-     * Hàm thực hiện load dữ liệu lên html
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 22/8/2019
-     * */
+    
     listScore = [];
     exportTableScore() {
 
@@ -776,11 +761,7 @@
         this.search(7, "classify_search");
     }
     
-    /**
-    * Hàm  thực hiện load dữ liệu của hàm getRefreshData lên table
-    * Người tạo: Hàn Trung Kiên
-    * Ngày tạo: 22/8/2019
-    * */
+    
     loadRefreshData() {
         $('.loading').show();
 
@@ -840,11 +821,7 @@
     
 
 
-    /**
-    * Hàm  thực hiện load dữ liệu trang đầu tiên cho page-size hiện tại
-    * Người tạo: Hàn Trung Kiên
-    * Ngày tạo: 22/8/2019
-    * */
+    
     getTrangDau(classID) {
         $('.loading').show();
 
@@ -870,11 +847,7 @@
 
     }
 
-    /**
-    * Hàm thực hiện việc quay lại một trang so với trang hiện tại:
-    * Người tạo: Hàn Trung Kiên
-    * Ngày tạo: 22/8/2019
-    * */
+    
     getTrangTruoc() {
         $('.loading').show();
 
@@ -900,11 +873,7 @@
 
 
     }
-    /**
-    * Hàm thực hiện việc load trang sau so với trang hiện tại:
-    * Người tạo: Hàn Trung Kiên
-    * Ngày tạo: 22/8/2019
-    * */
+    
     getTrangSau() {
         $('.page-index').val(parseInt($('.page-index').val()) + 1);
         var pageIndex = $('.page-index').val();
@@ -918,11 +887,7 @@
         return fakeData;
     }
 
-    /**
-     * Hàm thực hiện load trang cuối cùng
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 22/8/2019
-     * */
+     
 
     getTrangCuoi(classID) {
         $('.loading').show();
@@ -954,11 +919,7 @@
         return fakeData;
 
     }
-    /**
-    *Hàm thực hiện in ra câu hiện thị bao nhiêu bản ghi trong phần Trang:
-    * Người tạo: Hàn Trung Kiên
-    * Ngày tạo: 22/8/2019
-    * */
+    
 
     CountRecord() {
         var me = this;
@@ -991,11 +952,7 @@
 
 
     }
-    /**
-    *Hàm thực hiện việc format trạng thái cho các button ở phần phân trang:
-    * Người tạo: Hàn Trung Kiên
-    * Ngày tạo: 22/8/2019
-    * */
+    
     FormatBtn(pageIndex, pageSize) {
         if (this.getAllData(classID).length % pageSize !== 0) {
             $('.page-index').attr("max", this.getAllData(classID).length / pageSize + 1);
@@ -1056,11 +1013,7 @@
 
     }
 
-    /**
-    *Hàm thực hiện đơn thuần công việc appen dữ liệu lên table
-    * Người tạo: Hàn Trung Kiên
-    * Ngày tạo: 22/8/2019
-    * */
+    
     AppenData(fakeData) {
         var classCode;
         var className;

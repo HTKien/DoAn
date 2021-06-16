@@ -12,14 +12,12 @@ namespace DL
         private VIEWContext db = new VIEWContext();
 
         //Hàm thực hiện lấy dữ liệu điểm từ database về 
-        //Người tạo: Hàn Trung Kiên
         public IEnumerable<BonusStudent> GetBonusStudent()
         {
             return db.BonusStudents;
         }
 
         //Hàm thực hiện việc xóa dữ  liệu  bản ghi điểm: xoa nhieu hoac xoa 1 deu duoc
-        //Người tạo: Hàn Trung Kiên
         public void DeleteBonusStudent(List<Guid> ids)
         {
             foreach (var id in ids)
@@ -33,8 +31,6 @@ namespace DL
         }
 
         //Hàm thực hiện thêm mới điểm: 
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 26/8/2019
         public void AddBonusStudent(BonusStudent _bonusStudent)
         {
             _bonusStudent.BonusStudentID = Guid.NewGuid();
@@ -44,8 +40,6 @@ namespace DL
 
 
         //Hàm thực hiện sửa thông tin điểm
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 26/8/2019
         public void UpdateBonusStudent(BonusStudent _bonusStudent)
         {
             var bonusStudentFind = db.BonusStudents.Where(n => n.BonusStudentID == _bonusStudent.BonusStudentID).SingleOrDefault();

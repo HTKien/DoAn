@@ -10,78 +10,56 @@ class Critic extends BaseCritic {
 
 
     }
-    //Hàm để gọi các sự kiện xử lý cho bài toán
-    //Người tạo: Hàn Trung Kiên
-    //Ngày tạo: 22/8/2019
+     
     InitEvent() {
 
-        //sự kiện click chuột vào một hàng: 
+         
         $('tbody').on('click', 'tr', this.RowOnClick);
 
-        //sự kiện thay đổi số trang thì load lại dữ liệu cho trang tương ứng :
+         
         $(document).on('keyup', 'input.page-index', this.PagingData.bind(this));
 
-        //sự kiện thay đổi kích thước trang thì phải load lại data luôn:
         $(document).on('change', '.page-size', this.loadData.bind(this));
 
-        //sự kiện quay về trang đầu tiên:
         $(document).on('click', '#trang-dau', this.loadTrangDau.bind(this));
 
-        //sự kiện cho nút quay lại trang trước:
         $(document).on('click', '#trang-truoc', this.loadTrangTruoc.bind(this));
 
-        //sự kiện cho nút load trang sau:
         $(document).on('click', '#trang-sau', this.loadTrangSau.bind(this));
 
-        //sự kiện cho nút load trang cuối: 
         $(document).on('click', '#trang-cuoi', this.loadTrangCuoi.bind(this));
 
-        //sự kiện cho nút refresh ở phần trang:
         $(document).on('click', '#refresh', this.loadRefreshData.bind(this));
 
-        //sự kiện chọn một hay nhiều hàng rồi ấn nút xóa thì xóa dữ liệu:
-        //$(document).on('click', 'button.delete', this.ClickButtonXoa.bind(this));
 
 
-        //sự kiện show dialog xác nhận xóa khách hàng:
         $(document).on('click', 'button.delete', this.showDiaLog.bind(this));
 
-        //sự kiện show dialog thêm khách hàng:
         $(document).on('click', 'button.add', this.showDiaLogAdd.bind(this));
         $(document).on('click', 'button.importfile', this.AddByFile.bind(this));
 
-        //sự kiện đóng dialog khi nhấn icon đóng:
         $(document).on('click', 'button.icon-tieu-de-dialog-add', this.CloseDiaLog.bind(this));
         $(document).on('click', 'button.icon-tieu-de-dialog-edit', this.CloseDiaLogEdit.bind(this));
 
 
-        //sự kiện cho nút Nạp là load lại bảng dữ liệu: 
         $(document).on('click', 'button.nap', this.loadRefreshData.bind(this));
 
-        //sự kiên click vào ô checkox cho 2 cột 5Food và Ngừng theo dõi: 
         $(document).on('click', '#checkbox', this.Check);
 
-        //sự kiện cho phím Ctrl+ leftClick vào một hàng:
         $(document).on('keydown', 'main-table tbody tr', this.ChonNhieu.bind(this));
 
-        //sự kiện thêm mới khách hàng: 
         $(document).on('click', '#save', this.SaveCritic.bind(this));
 
-        //sự kiện cho nút cất và thêm khách hàng: 
         $(document).on('click', '#cat-them', this.CatVaThem.bind(this));
 
-        //sự kiện cho nút Hủy bỏ trong dialog :
         $(document).on('click', '#huy-bo', this.CloseDiaLog.bind(this));
         $(document).on('click', '#huy-bo-edit', this.CloseDiaLogEdit.bind(this));
 
 
-        //sự kiện cho nút sửa khách hàng: 
         $(document).on('click', 'button.edit', this.showDiaLogEdit.bind(this));
 
-        //sự kiện cho nút cất trong SỬA KHÁCH HÀNG:
         $(document).on('click', '#save-edit', this.SaveCriticEdit.bind(this));
 
-        //sự kiện cho nút cất và Thêm trong dialog Sửa:
         $(document).on('click', '#cat-them-edit', this.CatVaThemEdit.bind(this));
 
 
@@ -93,11 +71,7 @@ class Critic extends BaseCritic {
 
 
     }
-    /**
-     * Hàm thực hiện sự kiện click vào checkbox cho hai cột Thành viên 5Food và Ngừng theo dõi: 
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 25/8/2019
-     * */
+     
     Check() {
         if ($(this).hasClass('uncheck')) {
             $(this).removeClass('uncheck').addClass('check');
@@ -113,32 +87,19 @@ class Critic extends BaseCritic {
     ChonNhieu() {
         alert(1);
     }
-    /**
-     * Hàm thực hiện việc đóng dialog Thêm khách hàng
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 25/8/2019
-     * */
+     
     CloseDiaLog() {
         $('#dialog-add').dialog("close");
 
 
     }
 
-    /**
-     * Hàm thực hiện việc đóng dialog Sửa khách hàng
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 25/8/2019
-     * */
+    
     CloseDiaLogEdit() {
         $('#dialog-edit').dialog("close");
 
     }
 
-    /**
-     * Hàm thực hiện việc mở dialog Thêm khách hàng
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 25/8/2019
-     * */
     showDiaLogAdd() {
         $('#dialog-add').dialog({
 
@@ -151,10 +112,7 @@ class Critic extends BaseCritic {
     AddByFile() {
         alert("kien")
     }
-    /**
-     * Hàm thực hiện việc mở dialog Sửa giáo viên
-     * Người tạo: Hàn Trung Kiên
-     * */
+     
     showDiaLogEdit() {
         $('#dialog-edit').dialog({
             modal: true,
@@ -186,11 +144,7 @@ class Critic extends BaseCritic {
 
 
     }
-    /**
-     * Hàm thực hiện show dialog xác nhận xóa khách hàng
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 24/8/2019
-     * */
+   
     showDiaLog() {
 
         var me = this;
@@ -229,10 +183,7 @@ class Critic extends BaseCritic {
 
 
 
-        //var html = "Bạn có chắc chắn muốn xóa khách hàng << " + ma + " - " + ten + " >> không?";
-        //$('#thong-bao').empty();
-
-        //$('#thong-bao').append(html);
+       
 
         $('#dialog').dialog({
             title: "Xác nhận",
@@ -275,11 +226,7 @@ class Critic extends BaseCritic {
 
     }
 
-    /**
-     * Hàm thực hiện việc click chuột vào một bản ghi dữ liệu
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 11/8/2019
-     * */
+    
     RowOnClick() {
         if ($(this).hasClass('select')) {
             $(this).removeClass('select');
@@ -310,11 +257,7 @@ class Critic extends BaseCritic {
         //$('button.duplicate').removeAttr('disabled');
         //$('button.edit').removeAttr('disabled');
     }
-    /**
-     *Hàm thực hiện load lại dữ liệu khi chọn trang tương ứng
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 11/8/2019
-     * */
+    
     PagingData(event) {
         if (event.keyCode === 13) {
             $('.main-table tbody').empty();
@@ -329,11 +272,7 @@ class Critic extends BaseCritic {
 
     }
 
-    /**
-     * Hàm thực hiện sự kiện xóa dữ liệu khách hàng :
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 17/8/2019
-     * */
+    
     ClickButtonXoa(event) {
 
 
@@ -365,11 +304,7 @@ class Critic extends BaseCritic {
 
     }
 
-    /**
-     * Hàm thực hiện lưu khách hàng lên database : (dialog Thêm mới)
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 26/8/2019
-     * */
+   
     SaveCritic() {
 
         var me = this;
@@ -401,11 +336,7 @@ class Critic extends BaseCritic {
             });
         }
     }
-    /**
-    * Hàm thực hiện lưu khách hàng lên database : (dialog Sửa)
-    * Người tạo: Hàn Trung Kiên
-    * Ngày tạo: 26/8/2019
-    * */
+     
     SaveCriticEdit() {
         var me = this;
         var object = {};
@@ -444,11 +375,7 @@ class Critic extends BaseCritic {
         }
 
     }
-    /**
-    * Hàm thực hiện lưu khách hàng lên database và mở dialog Thêm mới : (đang trong dialog sửa)
-    * Người tạo: Hàn Trung Kiên
-    * Ngày tạo: 26/8/2019
-    * */
+     
     CatVaThemEdit() {
         var me = this;
         var object = {};
@@ -496,11 +423,7 @@ class Critic extends BaseCritic {
         }
 
     }
-    /**
-    * Hàm thực hiện lưu khách hàng lên database và mở dialog Thêm mới : (đang trong dialog Thêm mới)
-    * Người tạo: Hàn Trung Kiên
-    * Ngày tạo: 26/8/2019
-    * */
+     
     CatVaThem() {
         var me = this;
         var object = {};

@@ -22,7 +22,6 @@ namespace VIEW.Controllers
         public VIEWContext db = new VIEWContext();
         /// <summary>
         /// service thực hiện lấy toàn bộ danh sách phụ huynh
-        /// Người tạo: Hàn Trung Kiên
         /// </summary>
         /// <returns></returns>
 
@@ -35,7 +34,6 @@ namespace VIEW.Controllers
 
         /// <summary>
         /// service thực hiện lấy danh sách phụ huynh tùy vào trang và kích thước trang:
-        /// Người tạo: Hàn Trung Kiên
         /// </summary>
         /// <param name="pageIndex"></param>
         /// <param name="pageSize"></param>
@@ -51,7 +49,6 @@ namespace VIEW.Controllers
 
 
         //service thực hiện xóa dữ liệu phụ huynh trên database:
-        //Người tạo : Hàn Trung Kiên
         [Route("scores")]
         [HttpDelete]
         public async Task<AjaxResult> DeleteScoreCtrl([FromBody] List<Guid> ids)
@@ -72,7 +69,6 @@ namespace VIEW.Controllers
         }
 
         //service thực hiện lấy thông tin bản ghi theo ID
-        //Người tạo : Hàn Trung Kiên
         [Route("scores/{id}")]
         [HttpGet]
         public Score GetInforScore(Guid id)
@@ -83,8 +79,6 @@ namespace VIEW.Controllers
 
 
         //Service thực hiện thêm mới phụ huynh: 
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 26/8/2019
         [Route("scores")]
         [HttpPost]
         public AjaxResult PostScore([FromBody] Score _score)
@@ -103,8 +97,6 @@ namespace VIEW.Controllers
             return ajaxResult;
         }
         //Hàm thực hiện sửa thông tin khách hàng
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 26/8/2019
 
         [Route("scores")]
         [HttpPut]

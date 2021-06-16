@@ -11,9 +11,6 @@ namespace BL
     public class ClassBL
     {
         private ClassDL _classDL = new ClassDL();
-        //Hàm thực hiện lấy dữ liệu theo số trang và kích thước trang:
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 22/8/2019
         public IEnumerable<Class> GetPagingData(int _pageIndex, int _pageSize)
         {
             var _classs = _classDL.GetClass();

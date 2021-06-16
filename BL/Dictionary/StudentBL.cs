@@ -11,9 +11,7 @@ namespace BL
     public class StudentBL
     {
         private StudentDL _studentDL = new StudentDL();
-        //Hàm thực hiện lấy dữ liệu theo số trang và kích thước trang:
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 22/8/2019
+       
         public IEnumerable<Student> GetPagingData(int _pageIndex, int _pageSize)
         {
             var _students = _studentDL.GetStudent();

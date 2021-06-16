@@ -12,14 +12,12 @@ namespace DL
         private VIEWContext db = new VIEWContext();
 
         //Hàm thực hiện lấy dữ liệu giáo viên từ database về 
-        //Người tạo: Hàn Trung Kiên
         public IEnumerable<Teacher> GetTeacher()
         {
             return db.Teachers;
         }
 
         //Hàm thực hiện việc xóa dữ  liệu  bản ghi giáo viên: xoa nhieu hoac xoa 1 deu duoc
-        //Người tạo: Hàn Trung Kiên
         public void DeleteTeacher(List<Guid> ids)
         {
             foreach (var id in ids)
@@ -33,8 +31,6 @@ namespace DL
         }
 
         //Hàm thực hiện thêm mới giáo viên: 
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 26/8/2019
         public void AddTeacher(Teacher _teacher)
         {
             _teacher.TeacherID = Guid.NewGuid();
@@ -44,8 +40,6 @@ namespace DL
 
 
         //Hàm thực hiện sửa thông tin giáo viên
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 26/8/2019
         public void UpdateTeacher(Teacher _teacher)
         {
             var teacherFind = db.Teachers.Where(n => n.TeacherID == _teacher.TeacherID).SingleOrDefault();

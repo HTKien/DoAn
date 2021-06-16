@@ -12,14 +12,12 @@ namespace DL
         private VIEWContext db = new VIEWContext();
 
         //Hàm thực hiện lấy dữ liệu điểm từ database về 
-        //Người tạo: Hàn Trung Kiên
         public IEnumerable<Critic> GetCritic()
         {
             return db.Critics;
         }
 
         //Hàm thực hiện việc xóa dữ  liệu  bản ghi điểm: xoa nhieu hoac xoa 1 deu duoc
-        //Người tạo: Hàn Trung Kiên
         public void DeleteCritic(List<Guid> ids)
         {
             foreach (var id in ids)
@@ -33,8 +31,6 @@ namespace DL
         }
 
         //Hàm thực hiện thêm mới điểm: 
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 26/8/2019
         public void AddCritic(Critic _critic)
         {
             _critic.CriticID = Guid.NewGuid();
@@ -44,8 +40,6 @@ namespace DL
 
 
         //Hàm thực hiện sửa thông tin điểm
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 26/8/2019
         public void UpdateCritic(Critic _critic)
         {
             var criticFind = db.Critics.Where(n => n.CriticID == _critic.CriticID).SingleOrDefault();

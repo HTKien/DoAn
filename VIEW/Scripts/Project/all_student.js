@@ -16,9 +16,7 @@ class Student extends BaseAllStudent {
 
 
     }
-    //Hàm để gọi các sự kiện xử lý cho bài toán
-    //Người tạo: Hàn Trung Kiên
-    //Ngày tạo: 22/8/2019
+ 
     InitEvent() {
 
         //sự kiện click chuột vào một hàng: 
@@ -101,11 +99,7 @@ class Student extends BaseAllStudent {
 
 
     }
-    /**
-     * Hàm thực hiện sự kiện click vào checkbox cho hai cột Thành viên 5Food và Ngừng theo dõi: 
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 25/8/2019
-     * */
+    
     Check() {
         if ($(this).hasClass('uncheck')) {
             $(this).removeClass('uncheck').addClass('check');
@@ -121,32 +115,20 @@ class Student extends BaseAllStudent {
     ChonNhieu() {
         alert(1);
     }
-    /**
-     * Hàm thực hiện việc đóng dialog Thêm khách hàng
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 25/8/2019
-     * */
+    
     CloseDiaLog() {
         $('#dialog-add').dialog("close");
 
 
     }
 
-    /**
-     * Hàm thực hiện việc đóng dialog Sửa khách hàng
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 25/8/2019
-     * */
+     
     CloseDiaLogEdit() {
         $('#dialog-edit').dialog("close");
 
     }
 
-    /**
-     * Hàm thực hiện việc mở dialog Thêm khách hàng
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 25/8/2019
-     * */
+    
     showDiaLogAdd() {
         $('#dialog-add').dialog({
 
@@ -159,10 +141,7 @@ class Student extends BaseAllStudent {
     AddByFile() {
         alert("kien")
     }
-    /**
-     * Hàm thực hiện việc mở dialog Sửa giáo viên
-     * Người tạo: Hàn Trung Kiên
-     * */
+     
     showDiaLogEdit() {
         $('#dialog-edit').dialog({
             modal: true,
@@ -194,11 +173,7 @@ class Student extends BaseAllStudent {
 
 
     }
-    /**
-     * Hàm thực hiện show dialog xác nhận xóa khách hàng
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 24/8/2019
-     * */
+    
     showDiaLog() {
 
         var me = this;
@@ -236,11 +211,7 @@ class Student extends BaseAllStudent {
         }
 
 
-
-        //var html = "Bạn có chắc chắn muốn xóa khách hàng << " + ma + " - " + ten + " >> không?";
-        //$('#thong-bao').empty();
-
-        //$('#thong-bao').append(html);
+ 
 
         $('#dialog').dialog({
             title: "Xác nhận",
@@ -283,11 +254,7 @@ class Student extends BaseAllStudent {
 
     }
 
-    /**
-     * Hàm thực hiện việc click chuột vào một bản ghi dữ liệu
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 11/8/2019
-     * */
+   
     RowOnClick() {
         if ($(this).hasClass('select')) {
             $(this).removeClass('select');
@@ -318,11 +285,7 @@ class Student extends BaseAllStudent {
         //$('button.duplicate').removeAttr('disabled');
         //$('button.edit').removeAttr('disabled');
     }
-    /**
-     *Hàm thực hiện load lại dữ liệu khi chọn trang tương ứng
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 11/8/2019
-     * */
+    
     PagingData(event) {
         if (event.keyCode === 13) {
             $('.main-table tbody').empty();
@@ -337,11 +300,7 @@ class Student extends BaseAllStudent {
 
     }
 
-    /**
-     * Hàm thực hiện sự kiện xóa dữ liệu khách hàng :
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 17/8/2019
-     * */
+    
     ClickButtonXoa(event) {
 
 
@@ -373,11 +332,7 @@ class Student extends BaseAllStudent {
 
     }
 
-    /**
-     * Hàm thực hiện lưu khách hàng lên database : (dialog Thêm mới)
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 26/8/2019
-     * */
+   
     SaveStudent() {
 
         var me = this;
@@ -409,11 +364,7 @@ class Student extends BaseAllStudent {
             });
         }
     }
-    /**
-    * Hàm thực hiện lưu khách hàng lên database : (dialog Sửa)
-    * Người tạo: Hàn Trung Kiên
-    * Ngày tạo: 26/8/2019
-    * */
+   
     SaveStudentEdit() {
         var me = this;
         var object = {};
@@ -452,11 +403,7 @@ class Student extends BaseAllStudent {
         }
 
     }
-    /**
-    * Hàm thực hiện lưu khách hàng lên database và mở dialog Thêm mới : (đang trong dialog sửa)
-    * Người tạo: Hàn Trung Kiên
-    * Ngày tạo: 26/8/2019
-    * */
+     
     CatVaThemEdit() {
         var me = this;
         var object = {};
@@ -504,11 +451,7 @@ class Student extends BaseAllStudent {
         }
 
     }
-    /**
-    * Hàm thực hiện lưu khách hàng lên database và mở dialog Thêm mới : (đang trong dialog Thêm mới)
-    * Người tạo: Hàn Trung Kiên
-    * Ngày tạo: 26/8/2019
-    * */
+    
     CatVaThem() {
         var me = this;
         var object = {};

@@ -16,9 +16,7 @@ class Class extends BaseClass {
 
 
     }
-    //Hàm để gọi các sự kiện xử lý cho bài toán
-    //Người tạo: Hàn Trung Kiên
-    //Ngày tạo: 22/8/2019
+   
     InitEvent() {
 
         //sự kiện click chuột vào một hàng: 
@@ -103,11 +101,7 @@ class Class extends BaseClass {
 
 
     }
-    /**
-     * Hàm thực hiện sự kiện click vào checkbox cho hai cột Thành viên 5Food và Ngừng theo dõi: 
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 25/8/2019
-     * */
+   
     Check() {
         if ($(this).hasClass('uncheck')) {
             $(this).removeClass('uncheck').addClass('check');
@@ -123,32 +117,21 @@ class Class extends BaseClass {
     ChonNhieu() {
         alert(1);
     }
-    /**
-     * Hàm thực hiện việc đóng dialog Thêm khách hàng
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 25/8/2019
-     * */
+    
     CloseDiaLog() {
         $('#dialog-add').dialog("close");
 
 
     }
 
-    /**
-     * Hàm thực hiện việc đóng dialog Sửa khách hàng
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 25/8/2019
-     * */
+  
+    
     CloseDiaLogEdit() {
         $('#dialog-edit').dialog("close");
 
     }
 
-    /**
-     * Hàm thực hiện việc mở dialog Thêm khách hàng
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 25/8/2019
-     * */
+     
     showDiaLogAdd() {
         $('#dialog-add').dialog({
             modal: true,
@@ -172,10 +155,7 @@ class Class extends BaseClass {
         localStorage.setItem('classIDStorage', JSON.stringify(classIDStorage));
         location.href = "/Views/go_class.html";
     }
-    /**
-     * Hàm thực hiện việc mở dialog Sửa giáo viên
-     * Người tạo: Hàn Trung Kiên
-     * */
+     
     showDiaLogEdit() {
         
         $('#dialog-edit').dialog({
@@ -208,11 +188,7 @@ class Class extends BaseClass {
 
 
     }
-    /**
-     * Hàm thực hiện show dialog xác nhận xóa khách hàng
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 24/8/2019
-     * */
+    
     showDiaLog() {
 
         var me = this;
@@ -251,11 +227,7 @@ class Class extends BaseClass {
 
 
 
-        //var html = "Bạn có chắc chắn muốn xóa khách hàng << " + ma + " - " + ten + " >> không?";
-        //$('#thong-bao').empty();
-
-        //$('#thong-bao').append(html);
-
+       
         $('#dialog').dialog({
             title: "Xác nhận",
             modal: true,
@@ -297,11 +269,7 @@ class Class extends BaseClass {
 
     }
 
-    /**
-     * Hàm thực hiện việc click chuột vào một bản ghi dữ liệu
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 11/8/2019
-     * */
+   
     RowOnClick() {
         if ($(this).hasClass('select')) {
             $(this).removeClass('select');
@@ -329,17 +297,9 @@ class Class extends BaseClass {
         }
 
 
-        //$('.main-table tbody tr').removeClass('select');
-        //$(this).addClass('select');
-        //$('button.delete').removeAttr('disabled');
-        //$('button.duplicate').removeAttr('disabled');
-        //$('button.edit').removeAttr('disabled');
+     
     }
-    /**
-     *Hàm thực hiện load lại dữ liệu khi chọn trang tương ứng
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 11/8/2019
-     * */
+    
     PagingData(event) {
         if (event.keyCode === 13) {
             $('.main-table tbody').empty();
@@ -354,11 +314,7 @@ class Class extends BaseClass {
 
     }
 
-    /**
-     * Hàm thực hiện sự kiện xóa dữ liệu khách hàng :
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 17/8/2019
-     * */
+    
     ClickButtonXoa(event) {
 
 
@@ -390,11 +346,7 @@ class Class extends BaseClass {
 
     }
 
-    /**
-     * Hàm thực hiện lưu khách hàng lên database : (dialog Thêm mới)
-     * Người tạo: Hàn Trung Kiên
-     * Ngày tạo: 26/8/2019
-     * */
+    
     SaveClass() {
 
 
@@ -453,11 +405,7 @@ class Class extends BaseClass {
             
         }
     }
-    /**
-    * Hàm thực hiện lưu khách hàng lên database : (dialog Sửa)
-    * Người tạo: Hàn Trung Kiên
-    * Ngày tạo: 26/8/2019
-    * */
+    
     SaveClassEdit() {
         var me = this;
         var object = {};

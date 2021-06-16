@@ -22,7 +22,6 @@ namespace VIEW.Controllers
         public VIEWContext db = new VIEWContext();
         /// <summary>
         /// service thực hiện lấy toàn bộ danh sách học sinh
-        /// Người tạo: Hàn Trung Kiên
         /// </summary>
         /// <returns></returns>
 
@@ -35,7 +34,6 @@ namespace VIEW.Controllers
 
         /// <summary>
         /// service thực hiện lấy danh sách học sinh tùy vào trang và kích thước trang:
-        /// Người tạo: Hàn Trung Kiên
         /// </summary>
         /// <param name="pageIndex"></param>
         /// <param name="pageSize"></param>
@@ -51,7 +49,6 @@ namespace VIEW.Controllers
 
 
         //service thực hiện xóa dữ liệu học sinh trên database:
-        //Người tạo : Hàn Trung Kiên
         [Route("students")]
         [HttpDelete]
         public async Task<AjaxResult> DeleteStudentCtrl([FromBody] List<Guid> ids)
@@ -72,7 +69,6 @@ namespace VIEW.Controllers
         }
 
         //service thực hiện lấy thông tin bản ghi theo ID
-        //Người tạo : Hàn Trung Kiên
         [Route("students/{id}")]
         [HttpGet]
         public Student GetInforStudent(Guid id)
@@ -83,8 +79,6 @@ namespace VIEW.Controllers
 
 
         //Service thực hiện thêm mới học sinh: 
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 26/8/2019
         [Route("students")]
         [HttpPost]
         public AjaxResult PostStudent([FromBody] Student _student)
@@ -103,8 +97,6 @@ namespace VIEW.Controllers
             return ajaxResult;
         }
         //Hàm thực hiện sửa thông tin khách hàng
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 26/8/2019
 
         [Route("students")]
         [HttpPut]
@@ -124,8 +116,6 @@ namespace VIEW.Controllers
             return ajaxResult;
         }
         //Hàm thực hiện sửa thông tin cập nhật thêm của học sinh
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 26/8/2019
 
         [Route("studentscalculate")]
         [HttpPut]
@@ -145,8 +135,6 @@ namespace VIEW.Controllers
             return ajaxResult;
         }
         //Hàm thực hiện update điểm danh của học sinh
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 26/8/2019
 
         [Route("students_attendence")]
         [HttpPut]
@@ -166,8 +154,6 @@ namespace VIEW.Controllers
             return ajaxResult;
         }
         //Hàm thực hiện update total điểm danh của học sinh
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 26/8/2019
 
         [Route("students_total_attendence")]
         [HttpPut]
@@ -187,8 +173,6 @@ namespace VIEW.Controllers
             return ajaxResult;
         }
         //Hàm thực hiện update PH
-        //Người tạo: Hàn Trung Kiên
-        //Ngày tạo: 26/8/2019
 
         [Route("students_parent")]
         [HttpPut]
